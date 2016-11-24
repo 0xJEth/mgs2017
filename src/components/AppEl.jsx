@@ -5,7 +5,7 @@ import Me from './Me'
 
 function AppEl() {
   return (
-    <div className="App">
+    <div className="App text-center">
       <div className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h2>Welcome to MGS 2017</h2>

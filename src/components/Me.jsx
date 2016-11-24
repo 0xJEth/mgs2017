@@ -7,7 +7,7 @@ function Me({ auth, isAuthenticated, user }) {
   return (
     <div>
       <h2>{displayName}</h2>
-      <ul>
+      <ul className="ls-none m0 p0">
         <li><img src={photoURL} alt={displayName} /></li>
         <li><strong>Email:</strong>{email}</li>
       </ul>
