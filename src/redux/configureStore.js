@@ -10,6 +10,7 @@ import {
 
 import * as firebase from '../fire'
 import fireMiddleware from '../fire/middleware'
+import storeListener from '../fire/storeListener'
 
 /* global window */
 
@@ -37,6 +38,6 @@ export default function configureStore(initialState) {
     applyMiddleware(...middleware)
   )
   syncHistoryWithStore(store, window)
-  // storeListener(store, firebase)
+  storeListener(store, firebase)
   return store
 }

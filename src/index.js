@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 // Redux code to build store.
 import configureStore from './redux/configureStore'
 // Root React component.
-import App from './components/App'
+import Root from './components/Root'
 import './index.css'
 
 /* global window */
@@ -16,4 +16,4 @@ const store = configureStore(initialState)
 // Define our destination where we insert our root react component.
 const destEl = window.document.getElementById('root')
 
-render(React.createElement(App, { store }), destEl)
+render(React.createElement(Root, { store }), destEl)
