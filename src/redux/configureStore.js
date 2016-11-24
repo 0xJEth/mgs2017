@@ -8,11 +8,14 @@ import {
   syncHistoryWithStore,
 } from 'redux-history-sync'
 
+import * as firebase from '../fire'
+import fireMiddleware from '../fire/middleware'
+
 /* global window */
 
 const middleware = [
   historyMiddleware(window.history),
-  // fireMiddleware(firebase),
+  fireMiddleware(firebase),
   // socket,
   // cookieMiddleware,
   thunk,

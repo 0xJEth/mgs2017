@@ -10,11 +10,14 @@
     "react-scripts": "0.7.0"
   },
   "dependencies": {
+    "cape-redux": "^2.3.0",
     "cape-redux-reducer": "^3.0.5",
+    "classnames": "^2.2.5",
     "firebase": "^3.6.1",
     "lodash": "^4.17.2",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
+    "react-redux": "^4.4.6",
     "redux-history-sync": "^3.1.0",
     "redux-thunk": "^2.1.0"
   },

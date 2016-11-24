@@ -1136,9 +1136,9 @@ cape-redux-reducer@^3.0.5:
     redux-history-sync "^3.1.0"
     redux-thunk "^2.1.0"
 
-cape-redux@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/cape-redux/-/cape-redux-2.2.1.tgz#12c841bb268dc28f4ace3c1e19f3c7daf356cd25"
+cape-redux@^2.2.1, cape-redux@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/cape-redux/-/cape-redux-2.3.0.tgz#2784680e16df774ba728c4fcca8b3751d201bd57"
   dependencies:
     cape-lodash "^1.7.0"
     lodash "^4.17.2"
@@ -4432,7 +4432,7 @@ react-dom@^15.4.1:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
 
-react-redux@^4.4.5:
+react-redux@^4.4.5, react-redux@^4.4.6:
   version "4.4.6"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-4.4.6.tgz#4b9d32985307a11096a2dd61561980044fcc6209"
   dependencies:
