@@ -1,16 +1,17 @@
-import React, { Component, PropTypes } from 'react'
+import { createElement, Component, PropTypes } from 'react'
 // Component makes Redux store available to the connect() calls in children.
-import { Provider } from 'react-redux'
-import App from './App'
+import { connect, Provider } from 'react-redux'
+import Router from './Router'
+import routing from './routing'
 
 // Using a class for live/hot reload
 class Root extends Component {
   render() {
     // Provider only wants a single child.
     const { store } = this.props
-    return React.createElement(Provider, { store },
-      React.createElement('div', null,
-        React.createElement(App, null)
+    return createElement(Provider, { store },
+      createElement('div', null,
+        createElement(connect(routing)(Router), null)
       )
     )
   }

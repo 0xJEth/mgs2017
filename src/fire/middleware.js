@@ -8,7 +8,6 @@ export const dispatcher = {
 
 export default function listMiddleware(firebase) {
   return store => next => (action) => {
-    console.log(action)
     if (!action.type) return next(action)
     if (isFunction(dispatcher[action.type])) {
       return dispatcher[action.type](firebase, store, action, next)

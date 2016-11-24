@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 // Redux code to build store.
 import configureStore from './redux/configureStore'
 // Root React component.
-import Root from './components/Root'
+import Root from './redux/Root'
 import './index.css'
 
 /* global window */
