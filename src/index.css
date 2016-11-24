@@ -1,13 +1,222 @@
+/*Can we use LESS?*/
+@yellow: #FEDB00;
+
+@alpha: 1;
+@yellowrgba: rgba(254,219,0,@alpha);
+
+@dyellow-1: darken(@yellow, 5%);
+@dyellow-2: darken(@yellow, 10%);
+@dyellow-3: darken(@yellow, 20%);
+@dyellow-4: darken(@yellow, 30%);
+@dyellow-5: darken(@yellow, 40%);
+@dyellow-6: darken(@yellow, 50%);
+
+@lyellow-1: lighten(@yellow, 10%);
+@lyellow-2: lighten(@yellow, 20%);
+@lyellow-3: lighten(@yellow, 30%);
+@lyellow-4: lighten(@yellow, 40%);
+@lyellow-5: lighten(@yellow, 48%);
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  /* type stuff */
+  -moz-font-feature-settings: "kern";
+  -webkit-font-feature-settings: "kern";
+  -ms-font-feature-settings: "kern";
+  -o-font-feature-settings: "kern";
+  font-feature-settings: "kern";
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  /*Non standard for webkit */
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
 
+html,
+body {
+  color: @dyellow-5;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+h1 { font-size: 4.235801032rem; }
+h2 { font-size: 2.617924rem; }
+h3 { font-size: 1.618rem; }
+h4 { font-size: 1rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 1rem; }
+
+p {margin:0;}
+p + p { margin-top: 1rem; }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/** ============================= **/
+/** ============================= **/
+/** Functional CSS atomic modules **/
+/** ============================= **/
+/** ============================= **/
+
+.cf::after,
+.group::after,
+.row::after,
+.clearfix::after {
+  content:'';
+  display:table;
+  clear:both;
+}
+
+/** text color modules **/
+.yellow     { color: @yellow; }
+.yellow-p1  { color: @dyellow-1; }
+.yellow-p2  { color: @dyellow-2; }
+.yellow-p3  { color: @dyellow-3; }
+.yellow-p4  { color: @dyellow-4; }
+.yellow-p5  { color: @dyellow-5; }
+.yellow-p6  { color: @dyellow-6; }
+.yellow-m1  { color: @lyellow-1; }
+.yellow-m2  { color: @lyellow-2; }
+.yellow-m3  { color: @lyellow-3; }
+.yellow-m4  { color: @lyellow-4; }
+.yellow-m5  { color: @lyellow-5; }
+
+/** background color modules **/
+.bg-yellow     { background-color: @yellow; }
+.bg-yellow-p1  { background-color: @dyellow-1; }
+.bg-yellow-p2  { background-color: @dyellow-2; }
+.bg-yellow-p3  { background-color: @dyellow-3; }
+.bg-yellow-p4  { background-color: @dyellow-4; }
+.bg-yellow-p5  { background-color: @dyellow-5; }
+.bg-yellow-p6  { background-color: @dyellow-6; }
+.bg-yellow-m1  { background-color: @lyellow-1; }
+.bg-yellow-m2  { background-color: @lyellow-2; }
+.bg-yellow-m3  { background-color: @lyellow-3; }
+.bg-yellow-m4  { background-color: @lyellow-4; }
+.bg-yellow-m5  { background-color: @lyellow-5; }
+
+/** border color modules **/
+.border-yellow     { border-color: @yellow; }
+.border-yellow-p1  { border-color: @dyellow-1; }
+.border-yellow-p2  { border-color: @dyellow-2; }
+.border-yellow-p3  { border-color: @dyellow-3; }
+.border-yellow-p4  { border-color: @dyellow-4; }
+.border-yellow-p5  { border-color: @dyellow-5; }
+.border-yellow-p6  { border-color: @dyellow-6; }
+.border-yellow-m1  { border-color: @lyellow-1; }
+.border-yellow-m2  { border-color: @lyellow-2; }
+.border-yellow-m3  { border-color: @lyellow-3; }
+.border-yellow-m4  { border-color: @lyellow-4; }
+.border-yellow-m5  { border-color: @lyellow-5; }
+
+/* border modules */
+.b0      { border: none; }
+.b1      { border: 1px solid currentColor; }
+.b2      { border: 2px solid currentColor; }
+.b3      { border: 3px solid currentColor; }
+.b4      { border: 4px solid currentColor; }
+
+.bt0     { border-top: none;     }
+.bt1     { border-top: 1px solid currentColor;  }
+.bt2     { border-top: 2px solid currentColor;  }
+.bt3     { border-top: 3px solid currentColor;  }
+.bt4     { border-top: 4px solid currentColor;  }
+
+.bb0     { border-bottom: none;     }
+.bb1     { border-bottom: 1px solid currentColor;  }
+.bb2     { border-bottom: 2px solid currentColor;  }
+.bb3     { border-bottom: 3px solid currentColor;  }
+.bb4     { border-bottom: 4px solid currentColor;  }
+
+/* text/links related */
+.fs1 { font-size: 1rem; }
+.fs2 { font-size: 2rem; }
+.fs3 { font-size: 3rem; }
 .ls-none { list-style: none; }
-
-.m0      { margin:  0; }
-
-.p0      { padding: 0;}
-
 .text-center { text-align: center; }
+
+/* margin, padding */
+.m0    { margin: 0;      }
+.m0p5  { margin: 0.5rem; }
+.m1    { margin: 1rem;   }
+.m2    { margin: 2rem;   }
+.m3    { margin: 3rem;   }
+.m4    { margin: 4rem;   }
+
+.mt0   { margin-top: 0;      }
+.mt0p5 { margin-top: 0.5rem; }
+.mt1   { margin-top: 1rem;   }
+.mt2   { margin-top: 2rem;   }
+.mt3   { margin-top: 3rem;   }
+.mt4   { margin-top: 4rem;   }
+
+.mb0   { margin-bottom: 0;      }
+.mb0p5 { margin-bottom: 0.5rem; }
+.mb1   { margin-bottom: 1rem;   }
+.mb2   { margin-bottom: 2rem;   }
+.mb3   { margin-bottom: 3rem;   }
+.mb4   { margin-bottom: 4rem;   }
+
+.p0    { padding: 0;      }
+.p0p5  { padding: 0.5rem; }
+.p1    { padding: 1rem;   }
+.p2    { padding: 2rem;   }
+.p3    { padding: 3rem;   }
+.p4    { padding: 4rem;   }
+
+.pt0   { padding-top: 0;    }
+.pt1   { padding-top: 1rem; }
+.pt2   { padding-top: 2rem; }
+.pt3   { padding-top: 3rem; }
+.pt4   { padding-top: 4rem; }
+
+.pb0   { padding-bottom: 0;    }
+.pb1   { padding-bottom: 1rem; }
+.pb2   { padding-bottom: 2rem; }
+.pb3   { padding-bottom: 3rem; }
+.pb4   { padding-bottom: 4rem; }
+.pb5   { padding-bottom: 5rem; }
+.pb6   { padding-bottom: 6rem; }
+
+/** positioning stuff **/
+.static   { position: static;   }
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed    { position: fixed;    }
+.top-0    { top: 0;    }
+.right-0  { right: 0;  }
+.bottom-0 { bottom: 0; }
+.left-0   { left: 0;   }
+
+/** z index stuff **/
+.z0  { z-index:  0; }
+.z1  { z-index:  1; }
+.z2  { z-index:  2; }
+.z3  { z-index:  3; }
+.z4  { z-index:  4; }
+.z5  { z-index:  5; }
+.z6  { z-index:  6; }
+.z7  { z-index:  7; }
+.z8  { z-index:  8; }
+.z9  { z-index:  9; }
+.z10 { z-index: 10; }
