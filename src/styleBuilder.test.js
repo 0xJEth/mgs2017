@@ -1,4 +1,4 @@
-import css, { styles } from './style'
+import css, { styles } from './styleBuilder'
 
 /* global it expect */
 

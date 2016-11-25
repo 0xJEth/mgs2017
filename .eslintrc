@@ -7,6 +7,7 @@
   },
   "rules": {
     "comma-dangle": [2, "always-multiline"],
+    "import/no-named-as-default": 2,
     "id-length": [2, {
       "min": 3,
       "max": 30,
