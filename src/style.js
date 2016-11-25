@@ -27,12 +27,14 @@ export function buildNumSizes(style, prefix, start = 0, end = 10) {
   const sizeBuilder = createObj(style)
   return zipObject(map(sizes, key => prefix + key), map(sizes, sizeBuilder))
 }
+export const pos = createObj('position')
 export const styles = {
   ...merge({}, ...map(remStyles, styleBuilder)),
-  static: { position: 'static' },
-  relative: { position: 'relative' },
-  absolute: { position: 'absolute' },
-  fixed: { position: 'fixed' },
+  pos,
+  static: pos('static'),
+  relative: pos('relative'),
+  absolute: pos('absolute'),
+  fixed: pos('fixed'),
   top0: { top: 0 },
   right0: { right: 0 },
   bottom0: { bottom: 0 },
