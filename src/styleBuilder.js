@@ -37,6 +37,7 @@ export function buildNumSizes(style, prefix, start = 0, end = 10) {
 // Builds an object with the position property set to the first argument.
 // Example: pos('static') == { position: 'static' }
 export const pos = createObj('position')
+export const bgColor = createObj('backgroundColor')
 
 // Combine all the builders to make the bulk of what index.css was. Basically an index of className
 // values that will turn into the style.
@@ -52,6 +53,8 @@ export const styles = {
   right0: { right: 0 },
   bottom0: { bottom: 0 },
   left0: { left: 0 },
+  lsNone: { listStyle: 'none' },
+  textCenter: { textAlign: 'center' },
   ...buildNumSizes('zIndex', 'z'),
 }
 // Takes a className string and converts it into an object that can be sent to react style prop.

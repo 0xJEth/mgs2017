@@ -3,7 +3,7 @@ import css from '../style'
 import logo from '../micaLogo.svg'
 import './App.css'
 import Me from './Me'
-import Footer from './Footer'
+import Footer from './Footer/Footer'
 
 function AppEl() {
   return (
