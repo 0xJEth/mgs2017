@@ -20,12 +20,17 @@ export function remStyleBuilder(style, prefix) {
 // Define the things that should be sent to remStyleBuilder.
 const remStyles = {
   fs: 'fontSize',
+  lh: 'lineHeight',
   m: 'margin',
   mt: 'marginTop',
+  mr: 'marginRight',
   mb: 'marginBottom',
+  ml: 'marginLeft',
   p: 'padding',
   pt: 'paddingTop',
+  pr: 'paddingRight',
   pb: 'paddingBottom',
+  pl: 'paddingLeft',
 }
 // Similar to remStyleBuilder but where the value is a number instead of rem string.
 // buildNumSizes('zIndex', 'z') == { z0: { zIndex: 0 }, z1: { zIndex: 1 }, z2: { zIndex: 2 } ...}
