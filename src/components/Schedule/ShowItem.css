@@ -1,8 +1,15 @@
+.showItem {
+  background-color: white;
+  transition: all 400ms;
+  z-index: 1;
+}
+
 .showItem:hover {
   box-shadow: 0 0 1em;
   z-index: 9;
   cursor: pointer;
-  transform: scale(105%,105%);
+  transform: scale(1.1,1.1);
+  z-index: 10;
 }
 
 .item h1 {

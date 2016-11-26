@@ -60,6 +60,8 @@ export const styles = {
   bottom0: { bottom: 0 },
   left0: { left: 0 },
   left1p5: { left: '1.5rem' },
+  h100p: { height: '100%' },
+  h100vh: { height: '100vh' },
   lsNone: { listStyle: 'none' },
   textCenter: { textAlign: 'center' },
   b1: { border: '1px solid currentColor' },

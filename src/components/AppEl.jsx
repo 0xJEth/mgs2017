@@ -3,6 +3,7 @@ import css from '../style'
 import logo from '../micaLogo.svg'
 import './App.css'
 import Me from './Me'
+import Detail from './Detail/Detail'
 import Footer from './Footer/Footer'
 import Header from './Header/Header'
 import Schedule from './Schedule/Schedule'
@@ -20,6 +21,7 @@ function AppEl() {
       </p>
       <Me />
       <Schedule />
+      <Detail />
       <Footer />
     </div>
   )

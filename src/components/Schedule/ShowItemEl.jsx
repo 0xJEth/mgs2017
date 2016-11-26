@@ -4,7 +4,7 @@ import './ShowItem.css'
 
 function ShowItemEl({ gallery, program, receptionDate, showDate, showName }) {
   return (
-    <div className="showItem fl item" style={css('b1')}>
+    <div className="showItem fl item relative" style={css('b1')}>
       <div className="inner" style={css('p1')}>
         <h1>{ showName }</h1>
         <p className="dateRange">{ showDate }</p>

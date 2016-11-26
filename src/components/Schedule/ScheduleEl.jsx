@@ -25,6 +25,31 @@ function ScheduleEl() {
         </div>
       </section>
 
+      <section>
+        <h2 className="bb4 mt3 mb2">OneDays</h2>
+        <div className="shows item-grid">
+          <ShowItem />
+          <ShowItem />
+        </div>
+      </section>
+
+      <section>
+        <h2 className="bb4 mt3 mb2">Curatorial...</h2>
+        <div className="shows item-grid">
+          <ShowItem />
+          <ShowItem />
+          <ShowItem />
+          <ShowItem />
+          <ShowItem />
+          <ShowItem />
+          <ShowItem />
+          <ShowItem />
+          <ShowItem />
+          <ShowItem />
+          <ShowItem />
+        </div>
+      </section>
+
     </article>
   )
 }
