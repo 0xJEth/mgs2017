@@ -5,6 +5,7 @@ import './App.css'
 import Me from './Me'
 import Footer from './Footer/Footer'
 import Header from './Header/Header'
+import Schedule from './Schedule/Schedule'
 
 function AppEl() {
   return (
@@ -18,6 +19,7 @@ function AppEl() {
         To get started, edit <code>src/App.js</code> and save to reload.
       </p>
       <Me />
+      <Schedule />
       <Footer />
     </div>
   )
