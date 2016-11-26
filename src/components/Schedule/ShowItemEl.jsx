@@ -4,14 +4,14 @@ import './ShowItem.css'
 
 function ShowItemEl({ gallery, program, receptionDate, showDate, showName }) {
   return (
-    <div className="showItem">
-      <div className="inner">
+    <div className="showItem fl item" style={css('b1')}>
+      <div className="inner" style={css('p1')}>
         <h1>{ showName }</h1>
         <p className="dateRange">{ showDate }</p>
         <h2>Reception</h2>
         <p>{ receptionDate }</p>
         <h2>Includes</h2>
-        <ul>
+        <ul style={css('lsnone m0 p0')}>
           <li>
             <h3>{ program }</h3>
             <p>{ gallery }</p>

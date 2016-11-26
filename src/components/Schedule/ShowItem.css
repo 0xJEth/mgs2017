@@ -1,0 +1,19 @@
+.showItem:hover {
+  box-shadow: 0 0 1em;
+  z-index: 9;
+  cursor: pointer;
+  transform: scale(105%,105%);
+}
+
+.item h1 {
+  font-size: 1.618rem;
+}
+.item h2 {
+  font-size: .9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.item h3 {
+  font-size: 1rem;
+  margin-bottom: 0;
+}

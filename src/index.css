@@ -81,7 +81,8 @@ img {
 .cf::after,
 .group::after,
 .row::after,
-.clearfix::after {
+.clearfix::after,
+.item-grid::after {
   content:'';
   display:table;
   clear:both;
@@ -154,6 +155,8 @@ img {
 .fs3 { font-size: 3rem; }
 .ls-none { list-style: none; }
 .text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
 
 /* margin, padding */
 .m0    { margin: 0;      }
@@ -250,4 +253,27 @@ img {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center
+}
+
+/**** some @media things ****/
+.item-grid .item {
+  width: calc(100% / 2);
+}
+
+@media (min-width: 50rem ) {
+  .item-grid .item {
+    width: calc(100% / 3);
+  }
+}
+
+@media (min-width: 70rem ) {
+  .item-grid .item {
+    width: calc(100% / 4);
+  }
+}
+
+@media (min-width: 90rem ) {
+  .item-grid .item {
+    width: calc(100% / 5);
+  }
 }

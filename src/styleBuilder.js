@@ -59,6 +59,7 @@ export const styles = {
   right0: { right: 0 },
   bottom0: { bottom: 0 },
   left0: { left: 0 },
+  left1p5: { left: '1.5rem' },
   lsNone: { listStyle: 'none' },
   textCenter: { textAlign: 'center' },
   b1: { border: '1px solid currentColor' },

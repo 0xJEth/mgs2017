@@ -1,0 +1,29 @@
+/** search stuff **/
+.search-wrapper label {
+  position: absolute;
+  left: 1rem;
+  display: inline-block;
+  line-height: 3rem;
+}
+
+.search-wrapper input {
+  padding: .5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  border-radius: 1.5rem;
+  height: 3rem;
+  font-size: 1.25rem;
+  line-height: 3rem;
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid currentColor;
+  outline: 0;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  transition: all 400ms;
+}
