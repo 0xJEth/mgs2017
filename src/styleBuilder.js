@@ -19,6 +19,7 @@ export function remStyleBuilder(style, prefix) {
 }
 // Define the things that should be sent to remStyleBuilder.
 const remStyles = {
+  br: 'borderRadius',
   fs: 'fontSize',
   lh: 'lineHeight',
   m: 'margin',
@@ -60,6 +61,8 @@ export const styles = {
   left0: { left: 0 },
   lsNone: { listStyle: 'none' },
   textCenter: { textAlign: 'center' },
+  b1: { border: '1px solid currentColor' },
+  bb1: { borderBottom: '1px solid currentColor' },
   ...buildNumSizes('zIndex', 'z'),
 }
 // Takes a className string and converts it into an object that can be sent to react style prop.

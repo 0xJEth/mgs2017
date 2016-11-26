@@ -4,10 +4,12 @@ import logo from '../micaLogo.svg'
 import './App.css'
 import Me from './Me'
 import Footer from './Footer/Footer'
+import Header from './Header/Header'
 
 function AppEl() {
   return (
     <div className="App text-center">
+      <Header />
       <div className="App-header" style={css('pt2')}>
         <img src={logo} className="App-logo" alt="logo" />
         <h2>Welcome to MGS 2017</h2>
