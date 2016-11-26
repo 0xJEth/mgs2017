@@ -1,0 +1,12 @@
+import { curry, isEmpty, map } from 'lodash'
+import { ENTITY_PUTALL } from 'redux-graph'
+import { ensureIdType, getChild } from './util'
+
+export const handleInit = curry(({ dispatch }, type, result) => {
+  const payload = map(result, ensureIdType(type))
+  if (isEmpty(payload)) return null
+  return dispatch({ type: ENTITY_PUTALL, payload, meta: { sendSocket: false } })
+})
+export const typeLoader = curry((store, { entity }, typeId) =>
+  getChild(entity, typeId).then(handleInit(store, typeId))
+)
