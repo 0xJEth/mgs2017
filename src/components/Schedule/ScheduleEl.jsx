@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 import css from '../../style'
 import './Schedule.css'
+import Search from '../Search/Search'
 import ShowItem from './ShowItem'
 
 function ScheduleEl() {
@@ -8,10 +9,7 @@ function ScheduleEl() {
     <article id="schedule" className="text-left" style={css('pl1 pr1 pb2')}>
       <header>
         <h1 style={css('m0 p0')}>Schedule</h1>
-        <label className="search-wrapper relative" htmlFor="search" style={css('fs1p5 lh3')}>
-          <i className="fa fa-search absolute" aria-hidden="true" style={css('lh3 left1p5')} />
-          <input className="search" style={css('lh3')} />
-        </label>
+        <Search />
       </header>
 
       <section>
