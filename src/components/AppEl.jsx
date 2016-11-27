@@ -7,6 +7,7 @@ import Detail from './Detail/Detail'
 import Footer from './Footer/Footer'
 import Header from './Header/Header'
 import Schedule from './Schedule/Schedule'
+import StudentList from './StudentList/StudentList'
 
 function AppEl() {
   return (
@@ -22,6 +23,7 @@ function AppEl() {
       <Me />
       <Schedule />
       <Detail />
+      <StudentList />
       <Footer />
     </div>
   )
