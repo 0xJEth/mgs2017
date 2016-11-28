@@ -19,13 +19,19 @@ export function remStyleBuilder(style, prefix) {
 }
 // Define the things that should be sent to remStyleBuilder.
 const remStyles = {
+  br: 'borderRadius',
   fs: 'fontSize',
+  lh: 'lineHeight',
   m: 'margin',
   mt: 'marginTop',
+  mr: 'marginRight',
   mb: 'marginBottom',
+  ml: 'marginLeft',
   p: 'padding',
   pt: 'paddingTop',
+  pr: 'paddingRight',
   pb: 'paddingBottom',
+  pl: 'paddingLeft',
 }
 // Similar to remStyleBuilder but where the value is a number instead of rem string.
 // buildNumSizes('zIndex', 'z') == { z0: { zIndex: 0 }, z1: { zIndex: 1 }, z2: { zIndex: 2 } ...}
@@ -53,8 +59,17 @@ export const styles = {
   right0: { right: 0 },
   bottom0: { bottom: 0 },
   left0: { left: 0 },
+  left1p5: { left: '1.5rem' },
+  h100: { height: '100%' },
+  h100vh: { height: '100vh' },
+  w50: { width: '50%' },
+  w100vw: { width: '100vw' },
   lsNone: { listStyle: 'none' },
+  fl: { float: 'left' },
   textCenter: { textAlign: 'center' },
+  b1: { border: '1px solid currentColor' },
+  bt1: { borderTop: '1px solid currentColor' },
+  bb1: { borderBottom: '1px solid currentColor' },
   ...buildNumSizes('zIndex', 'z'),
 }
 // Takes a className string and converts it into an object that can be sent to react style prop.
