@@ -3,7 +3,7 @@ import micaLogo from '../../micaLogo.svg'
 import './Footer.css'
 import Links from './Links'
 
-function FooterEl({ archive }) {
+function FooterEl({ archive, siteId, social }) {
   return (
     <footer className="bg-yellow p1 pt6 pb6">
       <div className="group">
@@ -29,39 +29,17 @@ function FooterEl({ archive }) {
             <li><a href="http://eepurl.com/bciqMT">Sign up for the MICA Grad Show mailing list</a></li>
           </ul>
         </section>
-        <Links className="tenth archive" links={archive} />
-        <section className="tenth column social">
-          <ul className="ls-none m0 p0">
-            <li>
-              <a href="https://www.instagram.com/micagrad/">
-                <i className="fa fa-instagram fa-2x" />
-              </a>
-            </li>
-            <li>
-              <a href="https://www.facebook.com/MICAGradAdmission/">
-                <i className="fa fa-facebook-square fa-2x" />
-              </a>
-            </li>
-            <li>
-              <a href="https://twitter.com/MICAgrad">
-                <i className="fa fa-twitter fa-2x" />
-              </a>
-            </li>
-          </ul>
-        </section>
+        <Links className="tenth archive" links={archive} siteId={siteId} />
+
       </div>
     </footer>
   )
 }
 FooterEl.defaultProps = {
-  archive: [
-    { title: '2016', src: 'https://2016.micagradshow.com/?utm_source=mgs2017' },
-    { title: '2015', src: 'http://2015.micagradshow.com?utm_source=mgs2017' },
-    { title: '2014', src: 'http://graduate.mica.edu/gradshow/2014/?utm_source=mgs2017' },
-    { title: '2013', src: 'http://graduate.mica.edu/thesis/?utm_source=mgs2017' },
-  ],
 }
 FooterEl.propTypes = {
   archive: PropTypes.array.isRequired,
+  siteId: PropTypes.string.isRequired,
+  social: PropTypes.array.isRequired,
 }
 export default FooterEl
