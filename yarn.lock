@@ -1123,9 +1123,9 @@ cape-redux-collection@^4.0.1:
     redux-history-sync "^3.1.0"
     reselect "^2.5.4"
 
-cape-redux-reducer@^3.0.5:
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/cape-redux-reducer/-/cape-redux-reducer-3.0.5.tgz#efbbe81d1c88a4589bce90ba973a95df5398ea92"
+cape-redux-reducer@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/cape-redux-reducer/-/cape-redux-reducer-3.1.0.tgz#e5589e2a0f17e070b96bf6d6a834faf1862df6fc"
   dependencies:
     cape-redux "^2.2.1"
     cape-redux-auth "^4.0.0"
