@@ -6,7 +6,7 @@ import { getFieldId, isActive } from './utils'
 import Component from './FieldGroup.jsx'
 
 export function getStateProps(state, props) {
-  const fieldState = getState(state)
+  const fieldState = getState(state, props)
   return {
     id: getFieldId(props),
     isActive: isActive(fieldState, props),

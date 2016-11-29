@@ -9,7 +9,7 @@ import Component from './FieldEdit.jsx'
 export const pickFieldState = pick('errorMessage', 'hasError', 'suggestion', 'value')
 
 export function mapStateToProps(state, props) {
-  const fieldState = getState(state)
+  const fieldState = getState(state, props)
   return {
     ...pickFieldState(fieldState),
     id: getFieldId(props),

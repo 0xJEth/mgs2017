@@ -10,7 +10,7 @@ import Component from './Field.jsx'
 
 // Add in the props we will pull out and use in Field.jsx component.
 export function getStateProps(state, props) {
-  const fieldState = getState(state)
+  const fieldState = getState(state, props)
   return {
     isEditable: isEditable(fieldState, props),
     showPreview: showPreview(fieldState, props),

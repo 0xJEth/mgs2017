@@ -11,7 +11,7 @@ const getActions = mapDispatchToProps(({ prefix }) => ({
   onClick: partial(open, prefix),
 }))
 
-const openPayload = pick('id', 'initialValue')
+const openPayload = pick(['id', 'initialValue'])
 // Only create a handler when the form is editable.
 export function getHandler(stateProps, dispatchProps, ownProps) {
   if (!ownProps.isEditable) return undefined
