@@ -28,7 +28,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: system, -apple-system, BlinkMacSystemFont, 'Balto', Balto, Roboto, "Droid Sans", "Segoe UI", Segoe, "Liberation Sans", "Nimbus Sans L", 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 html,
@@ -380,7 +380,12 @@ a.highlighted.hl2 .mark {
 }
 
 /**** some @media things ****/
+.item-grid {
+  margin-left: -1em;
+  margin-right: -1em;
+}
 .item-grid .item {
+  padding: 1em;
   width: calc(100% / 2);
 }
 

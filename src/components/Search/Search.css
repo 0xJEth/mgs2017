@@ -1,0 +1,24 @@
+/** search stuff **/
+.search-wrapper input {
+  background-color: transparent;
+  background-image: none;
+  border-bottom: 1px solid currentColor;
+  display: block;
+  height: 3rem;
+  font-size: 1.25rem;
+  line-height: 3rem;
+  width: calc(100% + 2rem);
+  margin-left: -1rem;
+  margin-right: -1rem;
+  transition: all 300ms;
+}
+
+.search-wrapper input:focus {
+  background-color: #fedb00;
+  border-color: #fedb00;
+  outline-color: #fedb00;
+}
+
+.search-wrapper input:focus ~ i {
+  color: white;
+}

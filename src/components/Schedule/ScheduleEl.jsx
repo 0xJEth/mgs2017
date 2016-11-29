@@ -6,14 +6,14 @@ import ShowItem from './ShowItem'
 
 function ScheduleEl() {
   return (
-    <article id="schedule" className="text-left" style={css('pl1 pr1 pb2')}>
+    <article id="schedule" style={css('pl1 pr1 pb2')}>
       <header>
         <h1 style={css('m0 p0')}>Schedule</h1>
         <Search />
       </header>
 
       <section>
-        <h2 className="bb4 mt3 mb2">Exhibitions?</h2>
+        <h2 className="bb4 mt3 mb0p5">Exhibitions?</h2>
         <div className="shows item-grid">
           <ShowItem />
           <ShowItem />
@@ -24,7 +24,7 @@ function ScheduleEl() {
       </section>
 
       <section>
-        <h2 className="bb4 mt3 mb2">OneDays</h2>
+        <h2 className="bb4 mt3 mb0p5">OneDays</h2>
         <div className="shows item-grid">
           <ShowItem />
           <ShowItem />
@@ -32,7 +32,7 @@ function ScheduleEl() {
       </section>
 
       <section>
-        <h2 className="bb4 mt3 mb2">Curatorial...</h2>
+        <h2 className="bb4 mt3 mb0p5">Curatorial...</h2>
         <div className="shows item-grid">
           <ShowItem />
           <ShowItem />
