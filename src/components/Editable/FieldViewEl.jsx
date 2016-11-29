@@ -6,7 +6,7 @@ import Editable from './FieldViewEditable'
 import Static from './FieldViewStatic'
 
 // The preview of a field value. Used for really simple text fields.
-function PreviewText({ className, emptyText, isEditable, value, ...props }) {
+function FieldView({ className, emptyText, isEditable, value, ...props }) {
   const cssClasses = {
     editable: isEditable,
     'editable-empty': isEmpty(props.value),
@@ -19,15 +19,16 @@ function PreviewText({ className, emptyText, isEditable, value, ...props }) {
     </div>
   )
 }
-PreviewText.defaultProps = {
+FieldView.defaultProps = {
+  emptyText: 'Empty',
   isEditable: true,
 }
-PreviewText.propTypes = {
+FieldView.propTypes = {
   className: PropTypes.string,
   emptyText: PropTypes.string,
   isEditable: PropTypes.bool.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   value: PropTypes.string,
 }
 
-export default PreviewText
+export default FieldView

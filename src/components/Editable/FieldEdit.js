@@ -6,7 +6,7 @@ import { clear, getState, onChange } from 'redux-field'
 import { getFieldId } from './utils'
 import Component from './FieldEditEl'
 
-export const pickFieldState = pick('errorMessage', 'hasError', 'suggestion', 'value')
+export const pickFieldState = pick(['errorMessage', 'hasError', 'suggestion', 'value'])
 
 export function mapStateToProps(state, props) {
   const fieldState = getState(state, props)

@@ -48,7 +48,6 @@ function PreviewTextEditable({ className, emptyText, title, value, onClick, styl
 PreviewTextEditable.defaultProps = {
   className: 'btn btn-secret',
   title: 'Click to edit',
-  emptyText: 'Empty',
 }
 PreviewTextEditable.propTypes = {
   className: PropTypes.string,
