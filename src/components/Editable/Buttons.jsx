@@ -3,7 +3,7 @@ import Icon from '../Icon'
 
 function EditableButtons(props) {
   const {
-    closeTxt, disabled, onClose, onSubmit, preventClose, submitTxt,
+    closeTxt, disabled, onClose, onSubmit, showClose, submitTxt,
   } = props
   return (
     <div className="editable-buttons">
@@ -17,7 +17,7 @@ function EditableButtons(props) {
         <span className="hidden">{submitTxt}</span>
         <Icon symbol="check" />
       </button>
-      {!preventClose &&
+      {showClose &&
         <button
           className="editable-close"
           type="button"
@@ -37,11 +37,12 @@ EditableButtons.propTypes = {
   disabled: PropTypes.bool,
   onClose: PropTypes.func,
   onSubmit: PropTypes.func,
-  preventClose: PropTypes.bool,
+  showClose: PropTypes.bool,
   submitTxt: PropTypes.string.isRequired,
 }
 EditableButtons.defaultProps = {
   closeTxt: 'Cancel',
+  showClose: true,
   submitTxt: 'Submit',
 }
 export default EditableButtons
