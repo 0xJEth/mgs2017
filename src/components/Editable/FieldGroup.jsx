@@ -19,16 +19,12 @@ export function getId(id) {
 function FormGroup(props) {
   const {
     children, className, isEditing, id, name, onSubmit, isRequired,
-    isSaving, savingTxt, status, value,
+    isSaving, savingTxt, status,
   } = props
 
-  function handleSubmit(event) {
-    event.preventDefault()
-    onSubmit(value)
-  }
   const formStyle = formClassName(className, isEditing, status)
   return (
-    <form className={formStyle} id={getId(id)} onSubmit={handleSubmit}>
+    <form className={formStyle} id={getId(id)} onSubmit={onSubmit}>
       {name &&
         <label className="control-label" htmlFor={id}>
           {name}{isRequired ? '*' : false}
@@ -47,12 +43,11 @@ FormGroup.propTypes = {
   id: PropTypes.string.isRequired, // Used for a form id.
   isEditing: PropTypes.bool.isRequired, // Used in css classes.
   name: PropTypes.string, // The label.
-  onSubmit: PropTypes.func.isRequired, // Capture the submit event.
-  isRequired: PropTypes.bool,
-  isSaving: PropTypes.bool,
-  savingTxt: PropTypes.string.isRequired,
-  status: PropTypes.string,
-  value: PropTypes.string,
+  onSubmit: PropTypes.func.isRequired, // Capture the submit event. Value partially applied.
+  isRequired: PropTypes.bool, // Little asterisk next to field name.
+  isSaving: PropTypes.bool, // Show saving text.
+  savingTxt: PropTypes.string.isRequired, // Text to display when saving.
+  status: PropTypes.string, // Status string sent from redux-field.
 }
 
 FormGroup.defaultProps = {
