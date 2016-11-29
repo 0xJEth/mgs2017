@@ -4,6 +4,7 @@ const { addRoutes, locationInfo } = createRouter({ trailingSlash: false })
 addRoutes({
   home: '/',
   me: '/me',
+  studentList: '/students',
 })
 
 export default locationInfo
