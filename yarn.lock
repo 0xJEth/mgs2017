@@ -1131,15 +1131,15 @@ cape-redux-collection@^4.0.1:
     redux-history-sync "^3.1.0"
     reselect "^2.5.4"
 
-cape-redux-reducer@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/cape-redux-reducer/-/cape-redux-reducer-3.1.1.tgz#9680dae1660a9b087cb5aa050517af63374f7f46"
+cape-redux-reducer@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/cape-redux-reducer/-/cape-redux-reducer-3.2.0.tgz#ee701863b9e98a5fc08260f8a103da308aa39bad"
   dependencies:
     cape-redux "^2.2.1"
     cape-redux-auth "^4.0.0"
     cape-redux-collection "^4.0.1"
     lodash "^4.17.2"
-    redux-field "^3.4.1"
+    redux-field "^4.0.0"
     redux-graph "^2.7.0"
     redux-history-sync "^3.1.0"
     redux-thunk "^2.1.0"
@@ -3547,7 +3547,7 @@ lodash.words@^3.0.0:
   dependencies:
     lodash._root "^3.0.0"
 
-"lodash@>=3.5 <5", lodash@^4.0.0, lodash@^4.15.0, lodash@^4.16.2, lodash@^4.16.4, lodash@^4.16.6, lodash@^4.17.2, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0:
+"lodash@>=3.5 <5", "lodash@^ 4.17.2", lodash@^4.0.0, lodash@^4.15.0, lodash@^4.16.2, lodash@^4.16.4, lodash@^4.16.6, lodash@^4.17.2, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0:
   version "4.17.2"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.2.tgz#34a3055babe04ce42467b607d700072c7ff6bf42"
 
@@ -4733,11 +4733,13 @@ redux-devtools@^3.3.1:
     redux "^3.5.2"
     redux-devtools-instrument "^1.0.1"
 
-redux-field@^3.4.1:
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/redux-field/-/redux-field-3.4.1.tgz#bde3c2657bc162eb90465d2d3e8cb66ac634f5df"
+redux-field@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/redux-field/-/redux-field-4.0.0.tgz#59cb6764467dae20e17d49479ad8c6d0bf3fd15c"
   dependencies:
-    lodash "^4.16.2"
+    cape-redux "^2.3.0"
+    cape-select "^2.3.1"
+    lodash "^ 4.17.2"
     react-redux "^4.4.5"
     redux "^3.6.0"
     reselect "^2.5.4"
