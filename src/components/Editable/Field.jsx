@@ -1,15 +1,15 @@
 import React, { PropTypes } from 'react'
 
 import FieldGroup from './FieldGroup'
-import PreviewText from './PreviewText'
-import EditField from './EditField'
+import FieldEdit from './FieldEdit'
+import FieldView from './FieldView'
 
 // Using this for a typical horizontal editable field. Mostly a passthrough. Field form container.
 function FieldWrapper({ isEditable, showEdit, showPreview, ...field }) {
   return (
     <FieldGroup {...field}>
-      {showPreview && <PreviewText {...field} isEditable={isEditable} />}
-      {showEdit && <EditField {...field} />}
+      {showEdit && <FieldEdit {...field} />}
+      {showPreview && <FieldView {...field} isEditable={isEditable} />}
     </FieldGroup>
   )
 }
