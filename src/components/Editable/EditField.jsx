@@ -8,15 +8,16 @@ import Help from './Help'
 
 function EditField(props) {
   const {
-    buttons, fieldEvent, formEvent, className, id, form, onSubmit, preventClose, type, ...other,
+    className, hasError, errorMessage, help, id,
+    onChange, onSubmit, preventClose, showButtons, suggestion, type, value,
   } = props
-  const { hasError, errorMessage, help, suggestion, value } = form
+
   const helpTxt = hasError ? errorMessage : help
   return (
     <div className={className}>
       <div className="editable-row">
-        <input id={id} type={type} onChange={handleChange} value={value} />
-        {buttons &&
+        <input id={id} type={type} onChange={onChange} value={value} />
+        {showButtons &&
           <EditableButtons
             handleSubmit={onSubmit}
             disabled={hasError}
@@ -37,20 +38,20 @@ function EditField(props) {
 }
 
 EditField.propTypes = {
-  buttons: PropTypes.bool.isRequired,
-  fieldEvent: PropTypes.object.isRequired,
-  formEvent: PropTypes.object.isRequired,
   className: PropTypes.string,
-  defaultValue: PropTypes.any,
-  form: PropTypes.object.isRequired,
+  errorMessage: PropTypes.string,
+  hasError: PropTypes.bool.isRequired,
   help: PropTypes.string,
   id: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
   onSubmit: PropTypes.func,
   preventClose: PropTypes.bool,
+  showButtons: PropTypes.bool.isRequired,
+  suggestion: PropTypes.string,
   type: PropTypes.string.isRequired,
   value: PropTypes.string,
 }
 EditField.defaultProps = {
-  buttons: true,
+  showButtons: true,
 }
 export default EditField
