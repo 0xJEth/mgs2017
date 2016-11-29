@@ -7,6 +7,7 @@ export const email = {
   validators: ['isRequired', 'isEmail'],
 }
 export const facebook = {
+  id: 'facebook',
   position: 2,
   name: 'Facebook',
   type: 'text',

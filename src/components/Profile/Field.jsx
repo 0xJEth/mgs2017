@@ -16,7 +16,6 @@ Field.propTypes = {
   name: PropTypes.string.isRequired,
   open: PropTypes.func.isRequired,
   prefix: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
 }
 Field.defaultProps = {
 }
