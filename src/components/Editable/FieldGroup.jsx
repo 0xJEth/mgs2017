@@ -54,5 +54,6 @@ FormGroup.defaultProps = {
   savingTxt: 'Saving...',
   wrapClass: 'form-horizontal',
 }
+//   const handleSubmit = ary(partial(onSubmit, value))
 
 export default FormGroup

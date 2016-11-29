@@ -1,14 +1,15 @@
 import React, { PropTypes } from 'react'
 import classNames from 'classnames'
+import { isEmpty } from 'lodash'
 
 import Editable from './PreviewTextEditable'
 import Static from './PreviewTextStatic'
 
 // The preview of a field value. Used for really simple text fields.
-function PreviewText({ className, isEditable, isEmpty, onClick, value }) {
+function PreviewText({ className, isEditable, onClick, value }) {
   const cssClasses = {
     editable: isEditable,
-    'editable-empty': isEmpty,
+    'editable-empty': isEmpty(value),
   }
   return (
     <div className={classNames('editable-click form-value', cssClasses, className)}>
@@ -23,9 +24,9 @@ PreviewText.defaultProps = {
 PreviewText.propTypes = {
   className: PropTypes.string,
   isEditable: PropTypes.bool.isRequired,
-  isEmpty: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
   value: PropTypes.string,
 }
+//   const handleOpen = ary(partial(open, pick(props, 'id', 'initialValue')))
 
 export default PreviewText
