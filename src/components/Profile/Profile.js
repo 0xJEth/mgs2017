@@ -6,10 +6,12 @@ import { fieldValue, open } from 'redux-field'
 import Component from './Fields'
 import fields from './personFields'
 
+export const PREFIX = 'profile'
 // Load the entity we want to edit and the schema defining the fields.
 export const getState = createStructuredSelector({
   entity: selectAuthUser,
   fields: constant(fields),
   editing: fieldValue('profile', 'id'),
+  prefix: constant(PREFIX),
 })
-export default connect(getState, { open: partial(open, 'profile') })(Component)
+export default connect(getState, { open: partial(open, PREFIX) })(Component)

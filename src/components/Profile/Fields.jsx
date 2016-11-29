@@ -24,9 +24,10 @@ function Fields({ editing, entity, fields, open, prefix, title }) {
 }
 
 Fields.propTypes = {
-  editing: PropTypes.string.isRequired,
+  editing: PropTypes.string,
   entity: PropTypes.object.isRequired,
   fields: PropTypes.array.isRequired,
+  open: PropTypes.func.isRequired,
   prefix: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 }

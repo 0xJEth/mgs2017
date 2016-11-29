@@ -27,12 +27,14 @@ function FieldEdit({ clearField, handleChange, id, name, onSubmit, type, value }
 
 FieldEdit.propTypes = {
   clearField: PropTypes.func.isRequired,
-  fields: PropTypes.array.isRequired,
   handleChange: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
   value: PropTypes.string,
 }
 FieldEdit.defaultProps = {
+  type: 'text',
 }
 
 function getActions({ prefix }) {
