@@ -1,36 +1,27 @@
-import { ary, partial } from 'lodash'
+import { ary, flow, partial } from 'lodash'
+import { pick } from 'lodash/fp'
 import { connect } from 'react-redux'
 import { mapDispatchToProps } from 'cape-redux'
-import { getState, onSubmit } from 'redux-field'
-import { getFieldId, isActive } from './utils'
-import Component from './FieldGroup.jsx'
+import { getState, open } from 'redux-field'
+import Component from './FieldView.jsx'
 
-export function getStateProps(state, props) {
-  const fieldState = getState(state)
-  return {
-    id: getFieldId(props),
-    isActive: isActive(fieldState, props),
-    isSaving: fieldState.isSaving,
-    status: fieldState.status,
-    value: fieldState.value,
-  }
-}
+export const getStateProps = flow(getState, pick('value'))
+
 const getActions = mapDispatchToProps(({ prefix }) => ({
-  onSubmit: partial(onSubmit, prefix),
+  onClick: partial(open, prefix),
 }))
 
-// Only create a submit handler when the form is active.
-export function getSubmitHandler(stateProps, dispatchProps) {
-  if (!stateProps.isActive) return undefined
-  // This would be the place to add an additional onSubmit handler.
-  // Propbably want to use middleware to listen to this action instead?
-  return ary(partial(dispatchProps.onSubmit, stateProps.value))
+const openPayload = pick('id', 'initialValue')
+// Only create a handler when the form is editable.
+export function getHandler(stateProps, dispatchProps, ownProps) {
+  if (!ownProps.isEditable) return undefined
+  return ary(partial(dispatchProps.onClick, openPayload(ownProps)))
 }
 function mergeProps(stateProps, dispatchProps, ownProps) {
   return {
     ...ownProps,
     ...stateProps,
-    onSubmit: getSubmitHandler(stateProps, dispatchProps),
+    onClick: getHandler(stateProps, dispatchProps, ownProps),
   }
 }
 export default connect(getStateProps, getActions, mergeProps)(Component)
