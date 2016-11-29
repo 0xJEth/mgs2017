@@ -1,21 +1,21 @@
-import { flow, negate } from 'lodash'
 import { connect } from 'react-redux'
 import { getState } from 'redux-field'
+import { isEditable, showEdit, showPreview } from './utils'
 import Component from './Field.jsx'
 
-// Only deal with the state needed to build Group and View or Edit.
+// Expected Props
+// ['description', id', 'initialValue', 'isRequired', 'name', 'prefix', 'type', 'validate']
 
-// Define if we should show the (FieldView) preview text/button.
-export function showPreview({ isOpen, isSaving }) {
-  return isSaving || !isOpen
-}
-// When showPreview false we want to show Edit.
-export const showEdit = negate(showPreview)
+// Only deal with the state needed to build Group and decide on View or Edit display.
 
 // Add in the props we will pull out and use in Field.jsx component.
-export const getStateProps = flow(getState, fieldState => ({
-  isEditable: !fieldState.isSaving,
-  showPreview: showPreview(fieldState),
-  showEdit: showEdit(fieldState),
-}))
+export function getStateProps(state, props) {
+  const fieldState = getState(state)
+  return {
+    isEditable: isEditable(fieldState, props),
+    showPreview: showPreview(fieldState, props),
+    showEdit: showEdit(fieldState, props),
+  }
+}
+
 export default connect(getStateProps)(Component)

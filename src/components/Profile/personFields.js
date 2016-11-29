@@ -1,7 +1,7 @@
 export const email = {
   id: 'email',
   position: 1,
-  required: true,
+  isRequired: true,
   type: 'email',
   name: 'Contact Email',
   validators: ['isRequired', 'isEmail'],
@@ -16,7 +16,7 @@ export const name = {
   id: 'name',
   description: 'Name as you would like it displayed',
   position: 0,
-  required: true,
+  isRequired: true,
   name: 'Display Name',
   type: 'text',
   validators: ['isRequired'],
