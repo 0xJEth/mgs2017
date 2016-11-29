@@ -1,11 +1,9 @@
-import { ary, flow, partial } from 'lodash'
+import { ary, partial } from 'lodash'
 import { pick } from 'lodash/fp'
 import { connect } from 'react-redux'
 import { mapDispatchToProps } from 'cape-redux'
-import { getState, open } from 'redux-field'
-import Component from './FieldView.jsx'
-
-export const getStateProps = flow(getState, pick('value'))
+import { open } from 'redux-field'
+import Component from './FieldViewEl'
 
 const getActions = mapDispatchToProps(({ prefix }) => ({
   onClick: partial(open, prefix),
@@ -22,6 +20,7 @@ function mergeProps(stateProps, dispatchProps, ownProps) {
     ...ownProps,
     ...stateProps,
     onClick: getHandler(stateProps, dispatchProps, ownProps),
+    value: ownProps.initialValue,
   }
 }
-export default connect(getStateProps, getActions, mergeProps)(Component)
+export default connect(null, getActions, mergeProps)(Component)

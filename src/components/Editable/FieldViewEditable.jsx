@@ -37,8 +37,9 @@ function PreviewTextEditable({ className, emptyText, title, value, onClick, styl
     <button
       className={className}
       onClick={onClick}
-      title={title}
       style={style}
+      title={title}
+      type="button"
     >
       {value || emptyText}
     </button>

@@ -19,6 +19,7 @@ FieldWrapper.propTypes = {
   showEdit: PropTypes.bool.isRequired,
   showPreview: PropTypes.bool.isRequired,
 }
+
 FieldWrapper.defaultProps = {
 }
 export default FieldWrapper

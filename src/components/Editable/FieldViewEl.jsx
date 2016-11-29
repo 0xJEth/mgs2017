@@ -1,19 +1,20 @@
 import React, { PropTypes } from 'react'
+import { isEmpty, pick } from 'lodash'
 import classNames from 'classnames'
-import { isEmpty } from 'lodash'
 
 import Editable from './FieldViewEditable'
 import Static from './FieldViewStatic'
 
 // The preview of a field value. Used for really simple text fields.
-function PreviewText({ className, emptyText, isEditable, onClick, value }) {
+function PreviewText({ className, emptyText, isEditable, value, ...props }) {
   const cssClasses = {
     editable: isEditable,
-    'editable-empty': isEmpty(value),
+    'editable-empty': isEmpty(props.value),
   }
+  const editableProps = pick(props, 'id', 'initialValue', 'onClick')
   return (
     <div className={classNames('editable-click form-value', cssClasses, className)}>
-      { isEditable && <Editable emptyText={emptyText} onClick={onClick} value={value} /> }
+      { isEditable && <Editable {...editableProps} emptyText={emptyText} value={value} /> }
       { !isEditable && <Static value={value || emptyText} /> }
     </div>
   )

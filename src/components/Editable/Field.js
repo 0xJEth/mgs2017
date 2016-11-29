@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { getState } from 'redux-field'
 import { isEditable, showEdit, showPreview } from './utils'
-import Component from './Field.jsx'
+import Component from './FieldEl'
 
 // Expected Props
 // ['description', id', 'initialValue', 'isRequired', 'name', 'prefix', 'type', 'validate']

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { mapDispatchToProps } from 'cape-redux'
 import { getState, onSubmit } from 'redux-field'
 import { getFieldId, isActive } from './utils'
-import Component from './FieldGroup.jsx'
+import Component from './FieldGroupEl'
 
 export function getStateProps(state, props) {
   const fieldState = getState(state, props)

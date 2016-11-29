@@ -9,7 +9,7 @@ import Help from './FieldHelp'
 function EditField(props) {
   const {
     className, description, hasError, errorMessage, id,
-    onChange, preventClose, showButtons, suggestion, type, value,
+    onChange, onClose, preventClose, showButtons, suggestion, type, value,
   } = props
 
   const helpTxt = hasError ? errorMessage : description
@@ -20,6 +20,7 @@ function EditField(props) {
         {showButtons &&
           <EditableButtons
             disabled={hasError}
+            onClose={onClose}
             preventClose={preventClose}
           />
         }
@@ -43,6 +44,7 @@ EditField.propTypes = {
   hasError: PropTypes.bool.isRequired,
   id: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
   preventClose: PropTypes.bool,
   showButtons: PropTypes.bool.isRequired,
   suggestion: PropTypes.string,
