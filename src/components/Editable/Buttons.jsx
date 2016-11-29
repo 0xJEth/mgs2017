@@ -3,13 +3,8 @@ import Icon from '../Icon'
 
 function EditableButtons(props) {
   const {
-    closeTxt, disabled, handleSubmit, onSubmit, close, preventClose, submitTxt, value,
+    closeTxt, disabled, onClose, onSubmit, preventClose, submitTxt,
   } = props
-  function onClick(event) {
-    event.preventDefault()
-    onSubmit(value)
-    if (handleSubmit) handleSubmit(value)
-  }
   return (
     <div className="editable-buttons">
       <button
@@ -17,7 +12,7 @@ function EditableButtons(props) {
         disabled={disabled}
         type="submit"
         title={submitTxt}
-        onClick={onClick}
+        onClick={onSubmit}
       >
         <span className="hidden">{submitTxt}</span>
         <Icon symbol="check" />
@@ -27,7 +22,7 @@ function EditableButtons(props) {
           className="editable-close"
           type="button"
           title={closeTxt}
-          onClick={close}
+          onClick={onClose}
         >
           <span className="hidden">{closeTxt}</span>
           <Icon symbol="ban" />
@@ -38,14 +33,12 @@ function EditableButtons(props) {
 }
 
 EditableButtons.propTypes = {
-  close: PropTypes.func,
   closeTxt: PropTypes.string.isRequired,
   disabled: PropTypes.bool,
-  handleSubmit: PropTypes.func,
-  onSubmit: PropTypes.func.isRequired,
+  onClose: PropTypes.func,
+  onSubmit: PropTypes.func,
   preventClose: PropTypes.bool,
   submitTxt: PropTypes.string.isRequired,
-  value: PropTypes.any,
 }
 EditableButtons.defaultProps = {
   closeTxt: 'Cancel',
