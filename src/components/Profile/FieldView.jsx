@@ -5,7 +5,7 @@ function FieldView({ name, onClick, initialValue }) {
   return (
     <div>
       <strong>{name}: </strong>
-      <span>{initialValue} </span>
+      <span>{initialValue}</span>
       <Button onClick={onClick} icon="edit">Edit</Button>
     </div>
   )

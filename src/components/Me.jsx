@@ -7,14 +7,14 @@ function Me({ auth, isAuthenticated, user }) {
   const { displayName, email, photoURL } = user
   return (
     <div id="profile" className="p2 cf">
-      <div className="fl w50">
+      <div className="fl w50 pr1">
         <h2>{displayName}</h2>
         <ul className="ls-none m0 p0">
           <li><img src={photoURL} alt={displayName} /></li>
           <li><strong>Email:</strong>{email}</li>
         </ul>
       </div>
-      <div className="fl w50">
+      <div className="fl w50 pl1">
         <Profile />
       </div>
     </div>
