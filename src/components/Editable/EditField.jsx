@@ -8,11 +8,11 @@ import Help from './Help'
 
 function EditField(props) {
   const {
-    className, hasError, errorMessage, help, id,
+    className, description, hasError, errorMessage, id,
     onChange, onSubmit, preventClose, showButtons, suggestion, type, value,
   } = props
 
-  const helpTxt = hasError ? errorMessage : help
+  const helpTxt = hasError ? errorMessage : description
   return (
     <div className={className}>
       <div className="editable-row">
@@ -39,9 +39,9 @@ function EditField(props) {
 
 EditField.propTypes = {
   className: PropTypes.string,
+  description: PropTypes.string,
   errorMessage: PropTypes.string,
   hasError: PropTypes.bool.isRequired,
-  help: PropTypes.string,
   id: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   onSubmit: PropTypes.func,

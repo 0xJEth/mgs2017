@@ -8,8 +8,7 @@ function Help({ help, hasErrors, id, suggestion, onChange }) {
   const preTxt = 'Do you mean '
   const postTxt = '? '
 
-  const className = classNames({
-    'help-block': true,
+  const className = classNames('help-block', {
     'validation-message': hasErrors,
   })
 
