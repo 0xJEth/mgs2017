@@ -12,6 +12,6 @@ export const typeLoader = curry((store, { entity }, typeId) =>
   getChild(entity, typeId).then(handleInit(store, typeId))
 )
 export const dbChange = curry(({ dispatch }, result) => dispatch(replaceDb(result)))
-export function dbChanges({ entity }, store) {
-  return getWatchChild(entity, 'db', dbChange(store))
+export function dbChanges({ db }, store) {
+  return getWatchChild(db, 'db', dbChange(store))
 }
