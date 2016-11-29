@@ -8,7 +8,6 @@ import Button from '../Button'
 function FieldEdit({ clearField, handleChange, id, name, onSubmit, type, value }) {
   function handleSubmit(event) {
     event.preventDefault()
-    clearField()
     onSubmit(value)
   }
   return (
@@ -30,6 +29,7 @@ FieldEdit.propTypes = {
   handleChange: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  onSubmit: PropTypes.func.isRequired,
   type: PropTypes.string.isRequired,
   value: PropTypes.string,
 }
