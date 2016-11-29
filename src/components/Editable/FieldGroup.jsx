@@ -40,7 +40,7 @@ FormGroup.propTypes = {
   id: PropTypes.string.isRequired, // Used for id html prop on form element.
   isActive: PropTypes.bool.isRequired, // Used in css classes.
   name: PropTypes.string.isRequired, // The label.
-  onSubmit: PropTypes.func.isRequired, // Capture the submit event. Value partially applied.
+  onSubmit: PropTypes.func, // Capture the submit event. Value partially applied.
   isRequired: PropTypes.bool, // Little asterisk next to field name.
   isSaving: PropTypes.bool, // Show saving text.
   savingTxt: PropTypes.string.isRequired, // Text to display when saving.
@@ -51,6 +51,5 @@ FormGroup.defaultProps = {
   savingTxt: 'Saving...',
   wrapClass: 'form-horizontal',
 }
-//   const handleSubmit = ary(partial(onSubmit, value))
 
 export default FormGroup

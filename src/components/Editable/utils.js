@@ -1,8 +1,12 @@
-import { negate, overSome, property } from 'lodash'
+import { negate, overEvery, overSome, property } from 'lodash'
 
-export function isEditable({ id, isSaving }, props) {
-  return !isSaving && (!id || id === props.id)
+export function isActive(fieldState, props) {
+  return fieldState.id === props.id
 }
+export const isEditable = overEvery(
+  negate(property('isSaving')),
+  overSome(negate(property('id')), isActive)
+)
 export const isStatic = negate(isEditable)
 
 // Define if we should show the (FieldView) preview text/button.
