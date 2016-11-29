@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 
-import EditableButtons from './Buttons'
-import Help from './Help'
+import EditableButtons from './FieldButtons'
+import Help from './FieldHelp'
 
 // Manage help text.
 // Bubble hasError (and value?) up.
