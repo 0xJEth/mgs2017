@@ -7,7 +7,9 @@ function Page({ children, className, id }) {
   return (
     <div className={className} id={id}>
       <Header />
-      {children}
+      <main>
+        {children}
+      </main>
       <Footer />
     </div>
   )

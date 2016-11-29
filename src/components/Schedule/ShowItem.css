@@ -1,14 +1,14 @@
 .showItem {
-  background-color: white;
+  background-color: #fffdf4;
   transition: all 400ms;
   z-index: 1;
 }
 
 .showItem:hover {
-  box-shadow: 0 0 1em;
-  z-index: 9;
+  background-color: #fff198;
+  box-shadow: 0 0 1em 0 #211a00;
+  color: #322b00;
   cursor: pointer;
-  transform: scale(1.1,1.1);
   z-index: 10;
 }
 
