@@ -7,7 +7,7 @@ import Schedule from './Schedule/Schedule'
 
 function AppEl() {
   return (
-    <Page className="App text-center">
+    <Page className="App">
       <Schedule />
       <Detail />
     </Page>
