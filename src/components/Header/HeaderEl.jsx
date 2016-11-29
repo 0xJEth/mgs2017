@@ -2,25 +2,27 @@ import React, { PropTypes } from 'react'
 import css from '../../style'
 import './Header.css'
 
-function HeaderEl() {
+function HeaderEl({ siteName }) {
   return (
-    <header style={css('mb2 p1 bb1')}>
+    <header className="p1 mb2">
       <nav className="clearfix">
-        <ul style={css('lsNone m0 p0')}>
-          <li className="left">
-            <button id="scheduleButton" style={css('fs2 m0 p1 b1 br1')}>Schedule</button>
+        <ul className="ls-none m0 p0">
+          <li className="fl">
+            <button id="scheduleButton" className="fs1 m0 p1 b0 brad2 bg-yellow">Schedule</button>
           </li>
-          <li className="right">
-            <button id="studentButton" style={css('fs2 m0 p1 b1 br1')}>Students</button>
+          <li className="fr">
+            <button id="studentButton" className="fs1 m0 p1 b0 brad2 bg-yellow">Students</button>
           </li>
         </ul>
-        <h1 className="text-center" style={css('fs2 m0 pt1 br1')}>MICA Grad Show 2017</h1>
+        <h1 className="text-center" style={css('fs2 m0 pt0p5')}>{siteName}</h1>
       </nav>
     </header>
   )
 }
-HeaderEl.defaultProps = {
-}
 HeaderEl.propTypes = {
+  siteName: PropTypes.string,
+}
+HeaderEl.defaultProps = {
+  siteName: 'MICA Grad Show 2017',
 }
 export default HeaderEl

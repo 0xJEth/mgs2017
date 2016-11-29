@@ -5,6 +5,7 @@ addRoutes({
   home: '/',
   me: '/me',
   studentList: '/students',
+  colors: '/colors',
 })
 
 export default locationInfo

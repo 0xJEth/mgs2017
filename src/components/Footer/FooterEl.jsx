@@ -5,7 +5,7 @@ import Links from './Links'
 
 function FooterEl({ archive, siteId, social }) {
   return (
-    <footer className="bg-yellow p1 pt6 pb6">
+    <footer className="bg-yellow p1 pt6 pb6 mt4">
       <div className="group">
         <section className="fifth column">
           <div className="mica logo mr1">
