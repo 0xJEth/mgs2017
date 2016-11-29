@@ -1,4 +1,4 @@
-import { applyMiddleware, createStore } from 'redux'
+import { applyMiddleware, compose, createStore } from 'redux'
 import thunk from 'redux-thunk'
 import reducer from 'cape-redux-reducer'
 
@@ -21,6 +21,13 @@ const middleware = [
   // cookieMiddleware,
   thunk,
 ]
+/* eslint-disable no-underscore-dangle */
+const composeEnhancers = (
+  process.env.NODE_ENV !== 'production' &&
+  typeof window === 'object' &&
+  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+) || compose
+/* eslint-enable */
 
 // Configure and create Redux store.
 // Function requires an initialState object.
@@ -35,7 +42,9 @@ export default function configureStore(initialState) {
   const store = createStore(
     reducer,
     calculatedState,
-    applyMiddleware(...middleware)
+    composeEnhancers(
+      applyMiddleware(...middleware),
+    )
   )
   syncHistoryWithStore(store, window)
   storeListener(store, firebase)
