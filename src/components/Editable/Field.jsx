@@ -9,18 +9,18 @@ import EditField from './EditField'
 // Using this for a typical horizontal editable field.
 // Think of this as the field form container.
 function FieldWrapper(props) {
-  const { editable, emptyText, id, type, onSubmit, value } = props
-  const preventClose = !saving && props.open
+  const { emptyText, id, isSaving, type, onSubmit, value } = props
+  const preventClose = !isSaving && props.open
   const open = preventClose || form.open
   const handleOpen = ary(partial(open, pick(props, 'id', 'initialValue')))
   return (
     <FieldGroup {...props}>
       {!open &&
         <PreviewText
-          editable={!saving && editable}
+          editable={!isSaving}
           emptyText={emptyText}
           onClick={handleOpen}
-          value={form.value || value}
+          value={value}
         />
       }
       {open &&
