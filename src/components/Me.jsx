@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import Button from './Button'
+import Profile from './Profile/Profile'
 
 function Me({ auth, isAuthenticated, user }) {
   if (!isAuthenticated) return <Button onClick={auth}>Login</Button>
@@ -11,6 +12,7 @@ function Me({ auth, isAuthenticated, user }) {
         <li><img src={photoURL} alt={displayName} /></li>
         <li><strong>Email:</strong>{email}</li>
       </ul>
+      <Profile />
     </div>
   )
 }
