@@ -5,56 +5,49 @@ import classnames from 'classnames'
 export function formClassName(className, editing, status) {
   const cssClasses = {
     editing,
-    'form-group': true,
     'has-error': (status === 'error'),
     'has-success': (status === 'success'),
     'has-warning': (status === 'warning'),
     'has-feedback': status,
   }
-  return classnames(cssClasses, className)
+  return classnames('editable-field', cssClasses, className)
+}
+export function getId(id) {
+  return `${id}-group`
 }
 // Editable formGroup wrapper.
 function FormGroup(props) {
   const {
-    children, className, editing, id, name, onSubmit, required,
-    wrapClass, saving, savingTxt, status, value,
+    children, className, isEditing, id, name, onSubmit, isRequired,
+    isSaving, savingTxt, status,
   } = props
 
-  function handleSubmit(event) {
-    event.preventDefault()
-    onSubmit(value)
-  }
-  const formStyle = formClassName(className, editing, status)
+  const formStyle = formClassName(className, isEditing, status)
   return (
-    <div className={classnames('editable-field', wrapClass)}>
-      <form className={formStyle} id={`${id}-group`} onSubmit={handleSubmit}>
-        {name &&
-          <label className="control-label" htmlFor={id}>
-            {name}
-            {required ? '*' : false}
-            {children}
-          </label>
-        }
-        {saving && <span className="saving small mono">{savingTxt}</span>}
-      </form>
-    </div>
+    <form className={formStyle} id={getId(id)} onSubmit={onSubmit}>
+      {name &&
+        <label className="control-label" htmlFor={id}>
+          {name}{isRequired ? '*' : false}
+          {children}
+          {isSaving && <span className="field-saving small mono">{savingTxt}</span>}
+        </label>
+      }
+    </form>
   )
 }
 
 FormGroup.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  editing: PropTypes.bool.isRequired,
+  children: PropTypes.node.isRequired, // The input field.
+  className: PropTypes.string, // Optional className given to container.
   // errorMessage: PropTypes.string,
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string,
-  onSubmit: PropTypes.func.isRequired,
-  required: PropTypes.bool,
-  saving: PropTypes.bool,
-  savingTxt: PropTypes.string.isRequired,
-  status: PropTypes.string,
-  value: PropTypes.string,
-  wrapClass: PropTypes.string,
+  id: PropTypes.string.isRequired, // Used for a form id.
+  isEditing: PropTypes.bool.isRequired, // Used in css classes.
+  name: PropTypes.string, // The label.
+  onSubmit: PropTypes.func.isRequired, // Capture the submit event. Value partially applied.
+  isRequired: PropTypes.bool, // Little asterisk next to field name.
+  isSaving: PropTypes.bool, // Show saving text.
+  savingTxt: PropTypes.string.isRequired, // Text to display when saving.
+  status: PropTypes.string, // Status string sent from redux-field.
 }
 
 FormGroup.defaultProps = {
