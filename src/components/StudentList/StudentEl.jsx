@@ -2,10 +2,10 @@ import React, { PropTypes } from 'react'
 import css from '../../style'
 import './Student.css'
 
-function StudentEl({ name, program, website }) {
+function StudentEl({ displayName, program, website }) {
   return (
     <li className="student clearfix" style={css('pt0p5 pb0p5 bt1')}>
-      <span className="name">{ name }</span>
+      <span className="name">{ displayName }</span>
       <span className="program">{ program }</span>
       <span className="website">{ website }</span>
       <span className="social">
@@ -18,12 +18,12 @@ function StudentEl({ name, program, website }) {
 }
 
 StudentEl.propTypes = {
-  name: PropTypes.string.isRequired,
+  displayName: PropTypes.string.isRequired,
   program: PropTypes.string.isRequired,
   website: PropTypes.string.isRequired,
 }
 StudentEl.defaultProps = {
-  name: 'Kristian Bjornard',
+  displayName: 'Kristian Bjornard',
   program: 'MFA Graphic Design',
   website: 'www.ookb.co',
 }
