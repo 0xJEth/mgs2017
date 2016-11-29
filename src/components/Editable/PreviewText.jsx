@@ -5,24 +5,24 @@ import Editable from './PreviewTextEditable'
 import Static from './PreviewTextStatic'
 
 // The preview of a field value. Used for really simple text fields.
-function PreviewText({ className, editable, isEmpty, onClick, value }) {
+function PreviewText({ className, isEditable, isEmpty, onClick, value }) {
   const cssClasses = {
+    editable: isEditable,
     'editable-empty': isEmpty,
   }
   return (
     <div className={classNames('editable-click form-value', cssClasses, className)}>
-      { editable && <Editable onClick={onClick} value={value} /> }
-      { !editable && <Static value={value} /> }
+      { isEditable && <Editable onClick={onClick} value={value} /> }
+      { !isEditable && <Static value={value} /> }
     </div>
   )
 }
-
 PreviewText.defaultProps = {
-  editable: true,
+  isEditable: true,
 }
 PreviewText.propTypes = {
   className: PropTypes.string,
-  editable: PropTypes.bool.isRequired,
+  isEditable: PropTypes.bool.isRequired,
   isEmpty: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
   value: PropTypes.string,

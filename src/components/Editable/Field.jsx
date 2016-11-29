@@ -25,7 +25,6 @@ function FieldWrapper(props) {
       {isOpen && !isSaving &&
         <EditField
           defaultValue={value}
-          form={form}
           id={id}
           key={id}
           onSubmit={onSubmit}
