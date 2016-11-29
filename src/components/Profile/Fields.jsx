@@ -27,6 +27,7 @@ Fields.propTypes = {
   editing: PropTypes.string.isRequired,
   entity: PropTypes.object.isRequired,
   fields: PropTypes.array.isRequired,
+  open: PropTypes.func.isRequired,
   prefix: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 }
