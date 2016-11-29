@@ -4,9 +4,9 @@ import Button from '../Button'
 function FieldView({ name, onClick, initialValue }) {
   return (
     <div>
-      <strong>{name}</strong>
-      <span>{initialValue}</span>
-      <Button onClick={onClick}>Edit</Button>
+      <strong>{name}: </strong>
+      <span>{initialValue} </span>
+      <Button onClick={onClick} icon="edit">Edit</Button>
     </div>
   )
 }

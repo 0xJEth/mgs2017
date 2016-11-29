@@ -228,6 +228,10 @@ img {
 .fl, .left { float: left; }
 .fr, .right { float: right; }
 
+@media (min-width: 50rem) {
+  .w50 { width: 50%; }
+}
+
 /** FlexBox stuff **/
 .flex {
   display: -webkit-box;
