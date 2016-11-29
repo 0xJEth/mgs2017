@@ -193,6 +193,14 @@ img {
 .pt3   { padding-top: 3rem; }
 .pt4   { padding-top: 4rem; }
 
+.pr0   { padding-right: 0;    }
+.pr1   { padding-right: 1rem; }
+.pr2   { padding-right: 2rem; }
+.pr3   { padding-right: 3rem; }
+.pr4   { padding-right: 4rem; }
+.pr5   { padding-right: 5rem; }
+.pr6   { padding-right: 6rem; }
+
 .pb0   { padding-bottom: 0;    }
 .pb1   { padding-bottom: 1rem; }
 .pb2   { padding-bottom: 2rem; }
@@ -200,6 +208,14 @@ img {
 .pb4   { padding-bottom: 4rem; }
 .pb5   { padding-bottom: 5rem; }
 .pb6   { padding-bottom: 6rem; }
+
+.pl0   { padding-left: 0;    }
+.pl1   { padding-left: 1rem; }
+.pl2   { padding-left: 2rem; }
+.pl3   { padding-left: 3rem; }
+.pl4   { padding-left: 4rem; }
+.pl5   { padding-left: 5rem; }
+.pl6   { padding-left: 6rem; }
 
 /** positioning stuff **/
 .static   { position: static;   }
@@ -227,6 +243,16 @@ img {
 /** Floats, grids, etc. **/
 .fl, .left { float: left; }
 .fr, .right { float: right; }
+
+@media (min-width: 50rem) {
+  .w10 { width: 10%; }
+  .w20 { width: 20%; }
+  .w25 { width: 25%; }
+  .w30 { width: 30%; }
+  .w33 { width: calc(100% / 3); }
+  .w40 { width: 40%; }
+  .w50 { width: 50%; }
+}
 
 /** FlexBox stuff **/
 .flex {

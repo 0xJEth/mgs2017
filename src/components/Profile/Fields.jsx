@@ -4,7 +4,7 @@ import Field from './Field'
 
 function Fields({ editing, entity, fields, open, prefix, title }) {
   return (
-    <div className="p2">
+    <div>
       <h2>{title}</h2>
       <ul className="ls-none m0 p0">
         {map(fields, field => (
