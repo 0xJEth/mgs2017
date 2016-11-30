@@ -1,5 +1,5 @@
 import React, { createElement, PropTypes } from 'react'
-import { isObject, isString } from 'lodash'
+import { isObject, isString, pick } from 'lodash'
 import InternalLink from 'redux-history-component'
 import Icon from './Icon'
 
@@ -18,10 +18,10 @@ function getIcon(icon) {
   return createElement(Icon, buildIconInfo(icon))
 }
 export function getContent({ icon, name }) {
-  if (name && !icon) return createElement('span', name)
+  if (name && !icon) return createElement('span', null, name)
   if (!name && icon) return getIcon(icon)
   if (icon && name) {
-    return createElement('span', null, getIcon(icon), createElement('span', name))
+    return createElement('span', null, getIcon(icon), createElement('span', null, name))
   }
   return 'click here'
 }
@@ -31,7 +31,7 @@ function Link(props) {
     return <InternalLink href={href} alt={name} {...rest}>{getContent(props)}</InternalLink>
   }
   return (
-    <a href={getHref(props)} {...rest}>
+    <a href={getHref(props)} {...pick(rest, 'className', 'title')}>
       {getContent(props)}
     </a>
   )
