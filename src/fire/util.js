@@ -37,7 +37,6 @@ export function getValue(method, db, id) {
 }
 export const getChild = partial(getValue, 'once')
 export function getEntity(firebase, entity) {
-  console.log(firebase)
   return getChild(firebase.entity.child(entity.type), entity.id)
 }
 export function getWatchChild(db, id, callback) {
