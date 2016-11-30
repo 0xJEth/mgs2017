@@ -9,7 +9,7 @@ function Menu({ activeId, links, logout }) {
   function isActive({ id }) { return activeId === id }
   function getAction({ action }) { return (action === 'logout' && logout) || undefined }
   return (
-    <ul className="menu" style={css('lsNone lsInline')}>
+    <ul className="menu" style={css('lsNone lsInline m0 p0')}>
       {map(links, link => (
         <NavItem {...link} key={link.id} isActive={isActive(link)} action={getAction(link)} />
       ))}
@@ -18,7 +18,7 @@ function Menu({ activeId, links, logout }) {
 }
 Menu.propTypes = {
   activeId: PropTypes.string.isRequired,
-  links: PropTypes.object.isRequired,
+  links: PropTypes.array.isRequired,
   logout: PropTypes.func.isRequired,
 }
 Menu.defaultProps = {

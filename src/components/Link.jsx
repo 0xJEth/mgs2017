@@ -12,7 +12,7 @@ export function getHref({ href, link, siteId, src }) {
 function Link(props) {
   const { action, internal, ...rest } = props
   if (action) return <button onClick={action}><LinkContent {...rest} /></button>
-  if (internal) return <InternalLink {...rest}><LinkContent {...props} /></InternalLink>
+  if (internal) return <InternalLink {...rest}><LinkContent {...rest} /></InternalLink>
 
   return (
     <a href={getHref(props)} {...pick(rest, 'className', 'title')}>
@@ -23,7 +23,7 @@ function Link(props) {
 Link.propTypes = {
   action: PropTypes.func,
   className: PropTypes.string,
-  internal: PropTypes.string,
+  internal: PropTypes.bool,
   href: PropTypes.string,
   name: PropTypes.string,
   // siteId: PropTypes.string,

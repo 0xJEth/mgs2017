@@ -5,9 +5,9 @@ import Menu from './Menu'
 
 function HeaderEl({ siteName }) {
   return (
-    <header className="p1 mb2" id="siteHeader">
+    <header id="siteHeader" style={css('p1 mb2')}>
       <nav className="clearfix">
-        <h1 style={css('fs2 m0 pt0p5')}>{siteName}</h1>
+        <h1 style={css('fs2 m0 pt0p5 textCenter')}>{siteName}</h1>
         <Menu />
       </nav>
     </header>

@@ -1,12 +1,13 @@
 import React, { PropTypes } from 'react'
 import Button from '../Button'
+import Page from '../Page'
 import Profile from './Profile'
 
 function Me({ auth, isAuthenticated, user }) {
   if (!isAuthenticated) return <Button onClick={auth}>Login</Button>
   const { email, name, image } = user
   return (
-    <div id="profile" className="p2 cf">
+    <Page id="profile" className="p2 cf">
       <div className="fl w50 pr1">
         <h2>{name}</h2>
         <ul className="ls-none m0 p0">
@@ -17,7 +18,7 @@ function Me({ auth, isAuthenticated, user }) {
       <div className="fl w50 pl1">
         <Profile />
       </div>
-    </div>
+    </Page>
   )
 }
 

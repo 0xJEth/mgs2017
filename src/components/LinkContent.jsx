@@ -13,8 +13,8 @@ function getIcon(icon) {
 }
 
 // You can send it an icon or a name or both.
-function LinkContent({ defaultName, icon, name, ...rest }) {
-  if (name && !icon) return <span {...rest}>{name}</span>
+function LinkContent({ defaultName, icon, name }) {
+  if (name && !icon) return <span>{name}</span>
   if (!name && icon) return getIcon(icon)
   if (icon && name) {
     return createElement('span', null, getIcon(icon), createElement('span', null, name))
@@ -26,7 +26,7 @@ LinkContent.defaultProps = {
 }
 LinkContent.propTypes = {
   defaultName: PropTypes.string.isRequired,
-  icon: PropTypes.oneOfType([PropTypes.string, React.PropTypes.Object]),
+  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   name: PropTypes.string,
 }
 export default LinkContent
