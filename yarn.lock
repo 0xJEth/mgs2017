@@ -4756,6 +4756,18 @@ redux-graph@^2.7.0:
     redux "^3.6.0"
     reselect "^2.5.4"
 
+redux-history-component@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/redux-history-component/-/redux-history-component-1.0.2.tgz#a2bbb28d0b58cd555deb914249b788156824d5be"
+  dependencies:
+    cape-redux "^2.2.1"
+    classnames "^2.2.5"
+    lodash "^4.17.2"
+    react "^15.4.1"
+    react-redux "^4.4.6"
+    redux "^3.2.1"
+    redux-history-sync "^3.1.0"
+
 redux-history-sync@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/redux-history-sync/-/redux-history-sync-3.1.0.tgz#892998c5413d7c13dc26fe03230de054e8a13751"
@@ -4769,7 +4781,7 @@ redux-thunk@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.1.0.tgz#c724bfee75dbe352da2e3ba9bc14302badd89a98"
 
-redux@^3.5.2, redux@^3.6.0:
+redux@^3.2.1, redux@^3.5.2, redux@^3.6.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/redux/-/redux-3.6.0.tgz#887c2b3d0b9bd86eca2be70571c27654c19e188d"
   dependencies:

@@ -64,6 +64,7 @@ export const styles = {
   h100vh: { height: '100vh' },
   w50: { width: '50%' },
   w100vw: { width: '100vw' },
+  lsInline: { display: 'flex', justifyContent: 'center' },
   lsNone: { listStyle: 'none' },
   fl: { float: 'left' },
   textCenter: { textAlign: 'center' },

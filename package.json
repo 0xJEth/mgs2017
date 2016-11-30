@@ -28,6 +28,7 @@
     "redux-devtools-log-monitor": "^1.1.1",
     "redux-field": "^4.0.2",
     "redux-graph": "^2.7.0",
+    "redux-history-component": "^1.0.2",
     "redux-history-sync": "^3.1.0",
     "redux-thunk": "^2.1.0",
     "reselect": "^2.5.4"
