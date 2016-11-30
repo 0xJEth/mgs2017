@@ -4,7 +4,7 @@ import './Detail.css'
 
 function DetailEl({ gallery, program, receptionDate, showDate, showName }) {
   return (
-    <detail className="text-left" style={css('h100vh w100')}>
+    <detail className="text-left">
       <div className="clearfix relative">
         <a href="/" className="absolute top-1 left-1 close z10">
           <i className="fa fa-close-circle-outline fa-2x black" />

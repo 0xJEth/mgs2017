@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import css from '../../style'
 import './StudentList.css'
 import Page from '../Page'
@@ -14,7 +14,7 @@ function StudentListEl() {
           <Search />
         </header>
         <section>
-          <ul className="student-list" style={css('lsNone m0 p0 mt1 bb1')}>
+          <ul className="student-list" style={css('lsNone m0 p0 mt1')}>
             <Student />
             <Student />
             <Student />

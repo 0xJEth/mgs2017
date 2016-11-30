@@ -5,6 +5,7 @@ import configureStore from './redux/configureStore'
 // Root React component.
 import Root from './redux/Root'
 import './index.css'
+import './components/Editable/Editable.css'
 
 /* global window */
 

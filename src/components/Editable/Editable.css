@@ -1,0 +1,31 @@
+.editable-click,
+.editable-parent,
+.editable-row,
+.editable-buttons {
+  display:inline-block;
+}
+
+.btn-secret,
+.editable-row > input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #fedb00;
+  font-size: 1rem;
+  line-height: 1.4;
+  padding:0;
+  margin-left: .5rem;
+  transition: all 300ms;
+  cursor: pointer;
+}
+
+.btn-secret:focus,
+.editable-row > input:focus {
+  background-color: #fedb00;
+  outline-color: #fedb00;
+  padding-left: .3rem;
+  padding-right: .3rem;
+}
+
+.editable-buttons {
+  margin-left: .3rem;
+}
