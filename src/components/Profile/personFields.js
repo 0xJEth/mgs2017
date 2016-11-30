@@ -35,9 +35,16 @@ export const name = {
   type: 'text',
   validators: ['isRequired'],
 }
+export const url = {
+  id: 'url',
+  description: 'Homepage URL',
+  name: 'Website',
+  type: 'url',
+}
 const personFields = [
-  email,
   name,
+  email,
+  url,
   facebook,
   instagram,
   twitter,
