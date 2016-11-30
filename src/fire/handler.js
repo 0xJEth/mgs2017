@@ -3,7 +3,7 @@ import { ENTITY_PUTALL } from 'redux-graph'
 import { replaceDb } from 'cape-redux-reducer'
 import { login } from 'cape-redux-auth'
 import {
-  ensureIdType, entitySet, getChild, getEntity, getWatchChild, userEntity,
+  authUsr, ensureIdType, entitySet, getChild, getEntity, getWatchChild, userEntity,
 } from './util'
 // import { authUsr, entitySet, getEntity, nextAction, userEntity } from './util'
 
@@ -20,8 +20,8 @@ export function dbChanges({ db }, store) {
   return getWatchChild(db, 'db', dbChange(store))
 }
 export const loginUser = curry((firebase, { dispatch }, user) => {
-  dispatch(login(user))
   const entity = userEntity(user)
+  dispatch(login(authUsr(entity)))
   return getEntity(firebase, entity)
   .then((dbEntity) => {
     if (!dbEntity) return entitySet(firebase, entity)
