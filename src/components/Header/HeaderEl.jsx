@@ -6,19 +6,19 @@ function HeaderEl({ siteName }) {
   return (
     <header className="p1 mb2">
       <nav className="clearfix">
+        <h1 className="fr" style={css('fs2 m0 pt0p5')}>{siteName}</h1>
         <ul className="ls-none m0 p0">
           <li className="fl">
             <button id="scheduleButton" className="fs1 m0 p1 b0 brad2 bg-yellow">
               <a href="/">Schedule</a>
             </button>
           </li>
-          <li className="fr">
+          <li className="fl ml1">
             <button id="studentButton" className="fs1 m0 p1 b0 brad2 bg-yellow">
               <a href="/students">Students</a>
             </button>
           </li>
         </ul>
-        <h1 className="text-center" style={css('fs2 m0 pt0p5')}>{siteName}</h1>
       </nav>
     </header>
   )

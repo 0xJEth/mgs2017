@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import css from '../../style'
 import './Schedule.css'
 import Search from '../Search/Search'
