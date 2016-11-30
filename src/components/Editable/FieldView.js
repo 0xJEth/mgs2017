@@ -1,9 +1,12 @@
-import { ary, partial } from 'lodash'
+import { ary, flow, partial } from 'lodash'
 import { pick } from 'lodash/fp'
 import { connect } from 'react-redux'
 import { mapDispatchToProps } from 'cape-redux'
-import { open } from 'redux-field'
+import { getState, open } from 'redux-field'
 import Component from './FieldViewEl'
+
+export const pickFieldState = pick(['isSaving', 'value'])
+export const getFieldState = flow(getState, pickFieldState)
 
 const getActions = mapDispatchToProps(({ prefix }) => ({
   onClick: partial(open, prefix),
@@ -16,11 +19,12 @@ export function getHandler(stateProps, dispatchProps, ownProps) {
   return ary(partial(dispatchProps.onClick, openPayload(ownProps)))
 }
 function mergeProps(stateProps, dispatchProps, ownProps) {
+  const value = (stateProps.isSaving && stateProps.value) || ownProps.initialValue
   return {
     ...ownProps,
     ...stateProps,
     onClick: getHandler(stateProps, dispatchProps, ownProps),
-    value: ownProps.initialValue,
+    value,
   }
 }
-export default connect(null, getActions, mergeProps)(Component)
+export default connect(getFieldState, getActions, mergeProps)(Component)
