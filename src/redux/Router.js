@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { get, isFunction } from 'lodash'
 
 // Top level "router". Heh.
-import * as RouteIndex from '../RouteIndex'
+import * as RouteIndex from '../components/RouteIndex'
 
 // It just uses a specific component given a prop value.
 // Less declaritive perhaps but really easy to reason about.
