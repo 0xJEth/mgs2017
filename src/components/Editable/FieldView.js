@@ -19,7 +19,8 @@ export function getHandler(stateProps, dispatchProps, ownProps) {
   return ary(partial(dispatchProps.onClick, openPayload(ownProps)))
 }
 function mergeProps(stateProps, dispatchProps, ownProps) {
-  const value = (stateProps.isSaving && stateProps.value) || ownProps.initialValue
+  const value = (stateProps.isSaving && ownProps.isActive && stateProps.value)
+  || ownProps.initialValue
   return {
     ...ownProps,
     ...stateProps,
