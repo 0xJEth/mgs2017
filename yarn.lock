@@ -1131,15 +1131,15 @@ cape-redux-collection@^4.0.1:
     redux-history-sync "^3.1.0"
     reselect "^2.5.4"
 
-cape-redux-reducer@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/cape-redux-reducer/-/cape-redux-reducer-3.2.1.tgz#32201786cc76999508244b55a2193c5ed97218e5"
+cape-redux-reducer@3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/cape-redux-reducer/-/cape-redux-reducer-3.3.0.tgz#1e7b14cdf91483f7a92af663c29b5cec387b77d5"
   dependencies:
     cape-redux "^2.2.1"
     cape-redux-auth "^4.0.0"
     cape-redux-collection "^4.0.1"
     lodash "^4.17.2"
-    redux-field "^4.0.1"
+    redux-field "^4.0.2"
     redux-graph "^2.7.0"
     redux-history-sync "^3.1.0"
     redux-thunk "^2.1.0"
@@ -4733,9 +4733,9 @@ redux-devtools@^3.3.1:
     redux "^3.5.2"
     redux-devtools-instrument "^1.0.1"
 
-redux-field@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/redux-field/-/redux-field-4.0.1.tgz#e173e56231557350e12104cf829104e813be6ef8"
+redux-field@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/redux-field/-/redux-field-4.0.2.tgz#2f5acd1b96e1421a34baa0148f34740b01530d0f"
   dependencies:
     cape-redux "^2.3.0"
     cape-select "^2.3.1"
