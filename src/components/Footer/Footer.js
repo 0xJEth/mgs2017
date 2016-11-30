@@ -1,10 +1,13 @@
 import { connect } from 'react-redux'
-import { property } from 'lodash'
 import { createStructuredSelector } from 'reselect'
 import Component from './FooterEl'
 
+import { getArchive, getSiteId, getSiteSocial } from '../../select/site'
+
 export const getState = createStructuredSelector({
-  archive: property('db.archive'),
+  archive: getArchive,
+  siteId: getSiteId,
+  social: getSiteSocial,
 })
 
 export default connect(getState)(Component)

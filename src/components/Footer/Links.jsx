@@ -19,7 +19,7 @@ function Links({ className, links, title, siteId }) {
 Links.propTypes = {
   className: PropTypes.string,
   links: PropTypes.array.isRequired,
-  siteId: PropTypes.string.isRequired,
+  siteId: PropTypes.string,
   title: PropTypes.string,
 }
 export default Links
