@@ -4,13 +4,13 @@ import Profile from './Profile/Profile'
 
 function Me({ auth, isAuthenticated, user }) {
   if (!isAuthenticated) return <Button onClick={auth}>Login</Button>
-  const { displayName, email, photoURL } = user
+  const { email, name, image } = user
   return (
     <div id="profile" className="p2 cf">
       <div className="fl w50 pr1">
-        <h2>{displayName}</h2>
+        <h2>{name}</h2>
         <ul className="ls-none m0 p0">
-          <li><img src={photoURL} alt={displayName} /></li>
+          <li><img src={image} alt={name} /></li>
           <li><strong>Email:</strong>{email}</li>
         </ul>
       </div>

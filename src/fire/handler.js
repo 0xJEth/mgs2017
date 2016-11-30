@@ -10,7 +10,6 @@ import {
 export const handleInit = curry(({ dispatch }, type, result) => {
   const payload = map(result, ensureIdType(type))
   if (isEmpty(payload)) return null
-  console.log(payload)
   return dispatch({ type: ENTITY_PUTALL, payload, meta: { sendSocket: false } })
 })
 export const handleChanged = curry(({ dispatch, getState }, typeId, change) => {
