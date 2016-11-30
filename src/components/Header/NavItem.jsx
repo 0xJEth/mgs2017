@@ -3,11 +3,10 @@ import classnames from 'classnames'
 import LinkEl from '../Link'
 
 
-function NavItem({ isActive, action, href, id, link, ...props }) {
+function NavItem({ isActive, id, ...props }) {
   return (
     <li className={classnames(id, { active: isActive })}>
-      {(href || link) && <LinkEl {...props} />}
-      {action && <button onClick={action}>{Label}</button>}
+      <LinkEl {...props} />
     </li>
   )
 }

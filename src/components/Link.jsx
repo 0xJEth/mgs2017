@@ -10,14 +10,10 @@ export function getHref({ href, link, siteId, src }) {
 }
 
 function Link(props) {
-  const { internal, ...rest } = props
-  if (internal) {
-    return (
-      <InternalLink {...props}>
-        <LinkContent {...props} />
-      </InternalLink>
-    )
-  }
+  const { action, internal, ...rest } = props
+  if (action) return <button onClick={action}><LinkContent {...rest} /></button>
+  if (internal) return <InternalLink {...rest}><LinkContent {...props} /></InternalLink>
+
   return (
     <a href={getHref(props)} {...pick(rest, 'className', 'title')}>
       <LinkContent {...props} />
@@ -25,6 +21,7 @@ function Link(props) {
   )
 }
 Link.propTypes = {
+  action: PropTypes.func,
   className: PropTypes.string,
   internal: PropTypes.string,
   href: PropTypes.string,
