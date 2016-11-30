@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
-import Button from './Button'
-import Profile from './Profile/Profile'
+import Button from '../Button'
+import Profile from './Profile'
 
 function Me({ auth, isAuthenticated, user }) {
   if (!isAuthenticated) return <Button onClick={auth}>Login</Button>
