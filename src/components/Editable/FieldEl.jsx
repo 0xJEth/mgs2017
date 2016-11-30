@@ -8,7 +8,7 @@ import FieldView from './FieldView'
 function FieldWrapper({ isEditable, showEdit, showPreview, ...field }) {
   return (
     <FieldGroup {...field}>
-      {showEdit && <FieldEdit {...field} />}
+      {showEdit && <FieldEdit {...field} className="editable-parent"/>}
       {showPreview && <FieldView {...field} isEditable={isEditable} />}
     </FieldGroup>
   )

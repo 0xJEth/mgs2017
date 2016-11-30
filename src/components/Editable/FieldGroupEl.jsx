@@ -25,7 +25,7 @@ function FormGroup(props) {
   return (
     <form className={formStyle} id={getFormId(props)} onSubmit={onSubmit}>
       <label className="control-label" htmlFor={id}>
-        {name}{isRequired ? '*' : false}
+        <strong>{name}{isRequired ? '*' : false}</strong>
         {children}
         {isSaving && <span className="field-saving small mono">{savingTxt}</span>}
       </label>
