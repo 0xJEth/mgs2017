@@ -39,9 +39,11 @@ export const getChild = partial(getValue, 'once')
 export function getEntity(firebase, entity) {
   return getChild(firebase.entity.child(entity.type), entity.id)
 }
-export function getWatchChild(db, id, callback) {
-  return db.child(id).on('value', res => callback(res.val()))
-}
+export const onChild = curry((actionType, db, id, callback) =>
+  db.child(id).on(actionType, res => callback(res.val()))
+)
+export const getWatchChild = onChild('value')
+export const onChildChanged = onChild('child_changed')
 export function nextAction(firebase, store, action, next) {
   return next(action)
 }
