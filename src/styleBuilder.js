@@ -45,32 +45,40 @@ export function buildNumSizes(style, prefix, start = 0, end = 10) {
 export const pos = createObj('position')
 export const bgColor = createObj('backgroundColor')
 
+export const floatLeft = { float: 'left' }
+export const floatRight = { flot: 'right' }
+
 // Combine all the builders to make the bulk of what index.css was. Basically an index of className
 // values that will turn into the style.
 // styles.pt3 == { paddingTop: '3rem' }
 export const styles = {
   ...merge({}, ...map(remStyles, remStyleBuilder)),
-  pos,
-  static: pos('static'),
-  relative: pos('relative'),
   absolute: pos('absolute'),
-  fixed: pos('fixed'),
-  top0: { top: 0 },
-  right0: { right: 0 },
+  b1: { border: '1px solid currentColor' },
+  bt1: { borderTop: '1px solid currentColor' },
+  bb1: { borderBottom: '1px solid currentColor' },
   bottom0: { bottom: 0 },
+  column: floatLeft,
+  columnRtl: floatRight,
+  fixed: pos('fixed'),
+  fl: floatLeft,
+  fr: floatRight,
+  left: floatLeft,
   left0: { left: 0 },
   left1p5: { left: '1.5rem' },
   h100: { height: '100%' },
   h100vh: { height: '100vh' },
-  w50: { width: '50%' },
-  w100vw: { width: '100vw' },
   lsInline: { display: 'flex', justifyContent: 'center' },
   lsNone: { listStyle: 'none' },
-  fl: { float: 'left' },
-  b1: { border: '1px solid currentColor' },
-  bt1: { borderTop: '1px solid currentColor' },
-  bb1: { borderBottom: '1px solid currentColor' },
+  pos,
+  right: floatRight,
+  right0: { right: 0 },
+  static: pos('static'),
+  relative: pos('relative'),
   textCenter: { textAlign: 'center' },
+  top0: { top: 0 },
+  w50: { width: '50%' },
+  w100vw: { width: '100vw' },
   ...buildNumSizes('zIndex', 'z'),
 }
 // Takes a className string and converts it into an object that can be sent to react style prop.
