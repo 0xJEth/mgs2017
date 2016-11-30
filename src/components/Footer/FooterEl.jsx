@@ -36,29 +36,6 @@ function FooterEl({ archive, siteId, social }) {
   )
 }
 FooterEl.defaultProps = {
-  archive: [
-    { title: '2016', src: 'https://2016.micagradshow.com/?utm_source=mgs2017' },
-    { title: '2015', src: 'http://2015.micagradshow.com?utm_source=mgs2017' },
-    { title: '2014', src: 'http://graduate.mica.edu/gradshow/2014/?utm_source=mgs2017' },
-    { title: '2013', src: 'http://graduate.mica.edu/thesis/?utm_source=mgs2017' },
-  ],
-  social: [
-    {
-      title: 'Instagram',
-      src: 'https://2016.micagradshow.com/?utm_source=mgs2017',
-      symbol: 'instagram',
-    },
-    {
-      title: 'Facebook',
-      src: 'http://2015.micagradshow.com?utm_source=mgs2017',
-      symbol: 'facebook-square',
-    },
-    {
-      title: 'Twitter',
-      src: 'http://graduate.mica.edu/gradshow/2014/?utm_source=mgs2017',
-      symbol: 'twitter',
-    },
-  ],
 }
 FooterEl.propTypes = {
   archive: PropTypes.array,
