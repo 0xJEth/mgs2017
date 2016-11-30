@@ -1,5 +1,5 @@
-import React, { createElement, PropTypes } from 'react'
-import { isObject, isString, pick } from 'lodash'
+import React, { PropTypes } from 'react'
+import { pick } from 'lodash'
 import InternalLink from 'redux-history-component'
 import LinkContent from './LinkContent'
 

@@ -67,10 +67,10 @@ export const styles = {
   lsInline: { display: 'flex', justifyContent: 'center' },
   lsNone: { listStyle: 'none' },
   fl: { float: 'left' },
-  textCenter: { textAlign: 'center' },
   b1: { border: '1px solid currentColor' },
   bt1: { borderTop: '1px solid currentColor' },
   bb1: { borderBottom: '1px solid currentColor' },
+  textCenter: { textAlign: 'center' },
   ...buildNumSizes('zIndex', 'z'),
 }
 // Takes a className string and converts it into an object that can be sent to react style prop.
