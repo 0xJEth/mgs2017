@@ -10,7 +10,7 @@ function Links({ className, links, title, siteId }) {
       {title && <h3 style={css('fs1, m0')}>{title}</h3>}
       <ul style={css('lsNone m0 p0')}>
         {map(links, (item, index) =>
-          <li key={index}><Link {...item} siteId={siteId} /></li>
+          <li key={index}><Link {...item} siteId={siteId} alt="" /></li>
         )}
       </ul>
     </section>

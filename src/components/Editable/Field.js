@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { getState } from 'redux-field'
-import { isEditable, showEdit, showPreview } from './utils'
+import { isActive, isEditable, showEdit, showPreview } from './utils'
 import Component from './FieldEl'
 
 // Expected Props
@@ -12,6 +12,7 @@ import Component from './FieldEl'
 export function getStateProps(state, props) {
   const fieldState = getState(state, props)
   return {
+    isActive: isActive(fieldState, props),
     isEditable: isEditable(fieldState, props),
     showPreview: showPreview(fieldState, props),
     showEdit: showEdit(fieldState, props),

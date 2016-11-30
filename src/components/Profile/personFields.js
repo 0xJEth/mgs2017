@@ -12,6 +12,20 @@ export const facebook = {
   name: 'Facebook',
   type: 'text',
 }
+export const instagram = {
+  description: 'Instagram ID',
+  id: 'instagram',
+  position: 3,
+  name: 'Instagram',
+  type: 'text',
+}
+export const twitter = {
+  description: 'Twitter Handle',
+  id: 'twitter',
+  position: 4,
+  name: 'Twitter',
+  type: 'text',
+}
 export const name = {
   id: 'name',
   description: 'Name as you would like it displayed',
@@ -21,10 +35,19 @@ export const name = {
   type: 'text',
   validators: ['isRequired'],
 }
+export const url = {
+  id: 'url',
+  description: 'Homepage URL',
+  name: 'Website',
+  type: 'url',
+}
 const personFields = [
-  email,
   name,
+  email,
+  url,
   facebook,
+  instagram,
+  twitter,
 ]
 
 export default personFields

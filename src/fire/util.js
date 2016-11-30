@@ -26,7 +26,7 @@ export function entitySet({ entity, TIMESTAMP }, node) {
   return entityDb(entity, item).set(item)
   .then(() => item)
 }
-export function updateItem({ entity, TIMESTAMP }, node) {
+export function entityUpdate({ entity, TIMESTAMP }, node) {
   const item = { ...node, dateModified: TIMESTAMP }
   return entityDb(entity, item).update(item)
   .then(() => item)
@@ -36,12 +36,14 @@ export function getValue(method, db, id) {
   return db.child(id)[method]('value').then(res => res.val())
 }
 export const getChild = partial(getValue, 'once')
-export function getEntity(firebase, entity) {
+export function getDbEntity(firebase, entity) {
   return getChild(firebase.entity.child(entity.type), entity.id)
 }
-export function getWatchChild(db, id, callback) {
-  return db.child(id).on('value', res => callback(res.val()))
-}
+export const onChild = curry((actionType, db, id, callback) =>
+  db.child(id).on(actionType, res => callback(res.val(), res.key))
+)
+export const getWatchChild = onChild('value')
+export const onChildChanged = onChild('child_changed')
 export function nextAction(firebase, store, action, next) {
   return next(action)
 }

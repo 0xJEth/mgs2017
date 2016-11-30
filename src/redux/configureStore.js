@@ -47,6 +47,6 @@ export default function configureStore(initialState) {
     )
   )
   syncHistoryWithStore(store, window)
-  storeListener(store, firebase)
+  storeListener(firebase, store)
   return store
 }

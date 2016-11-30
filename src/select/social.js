@@ -16,4 +16,5 @@ export function socialLinks({ facebook, instagram, twitter }) {
   if (facebook) links.push(facebookLink(facebook))
   if (instagram) links.push(instagramLink(instagram))
   if (twitter) links.push(twitterLink(twitter))
+  return links
 }

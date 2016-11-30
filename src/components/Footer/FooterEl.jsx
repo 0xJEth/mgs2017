@@ -29,8 +29,8 @@ function FooterEl({ archive, siteId, social }) {
             <li><a href="http://eepurl.com/bciqMT">Sign up for the MICA Grad Show mailing list</a></li>
           </ul>
         </section>
-        <Links className="tenth archive" links={archive} siteId={siteId} />
-        <Links className="tenth social" links={social} />
+        {archive && <Links className="tenth archive" links={archive} siteId={siteId} />}
+        {social && <Links className="tenth social" links={social} />}
       </div>
     </footer>
   )
@@ -61,8 +61,8 @@ FooterEl.defaultProps = {
   ],
 }
 FooterEl.propTypes = {
-  archive: PropTypes.array.isRequired,
+  archive: PropTypes.array,
   siteId: PropTypes.string,
-  social: PropTypes.array.isRequired,
+  social: PropTypes.array,
 }
 export default FooterEl

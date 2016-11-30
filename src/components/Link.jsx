@@ -3,7 +3,7 @@ import Icon from './Icon'
 
 export function getHref({ href, link, siteId, src }) {
   const linkHref = href || src || link
-  if (siteId) return `${linkHref}?utm_source=mgs2017${siteId}`
+  if (siteId) return `${linkHref}?utm_source=${siteId}`
   return linkHref
 }
 export function getContent({ icon, title }) {
