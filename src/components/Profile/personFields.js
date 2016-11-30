@@ -23,7 +23,7 @@ export const twitter = {
   description: 'Twitter Handle',
   id: 'twitter',
   position: 4,
-  name: 'Instagram',
+  name: 'Twitter',
   type: 'text',
 }
 export const name = {
