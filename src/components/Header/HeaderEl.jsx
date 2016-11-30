@@ -4,9 +4,9 @@ import './Header.css'
 
 function HeaderEl({ siteName }) {
   return (
-    <header className="p1 mb2">
+    <header className="p1 mb2" id="siteHeader">
       <nav className="clearfix">
-        <h1 className="fr" style={css('fs2 m0 pt0p5')}>{siteName}</h1>
+        <h1 style={css('fs2 m0 pt0p5')}>{siteName}</h1>
         <ul className="ls-none m0 p0">
           <li className="fl">
             <button id="scheduleButton" className="fs1 m0 p1 b0 brad2 bg-yellow">

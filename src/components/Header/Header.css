@@ -1,1 +1,11 @@
 /**Anythingspecial?**/
+#siteHeader h1 {
+  text-align: center;
+}
+
+@media (min-width: 50rem) {
+  #siteHeader h1 {
+    text-align: initial;
+    float: right;
+  }
+}
