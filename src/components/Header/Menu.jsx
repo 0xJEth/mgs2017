@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react'
 import map from 'lodash/map'
 import { connect } from 'react-redux'
-import { menuActions, menuSelector } from '../select/menu'
-import css from '../style'
+import { menuActions, menuSelector } from '../../select/menu'
+import css from '../../style'
 import NavItem from './NavItem'
 
 function Menu({ activeId, links, logout }) {
@@ -11,7 +11,7 @@ function Menu({ activeId, links, logout }) {
   return (
     <ul className="menu" style={css('lsNone lsInline')}>
       {map(links, link => (
-        <NavItem {...link} key={link.id} active={isActive(link)} action={getAction(link)} />
+        <NavItem {...link} key={link.id} isActive={isActive(link)} action={getAction(link)} />
       ))}
     </ul>
   )
