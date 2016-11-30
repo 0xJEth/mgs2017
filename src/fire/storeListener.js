@@ -1,14 +1,13 @@
 import { partial } from 'lodash'
-import { login, setUserId } from 'cape-redux-auth'
-import { userFields } from './util'
-import { dbChanges } from './handler'
+import { setUserId } from 'cape-redux-auth'
+import { dbChanges, loginUser } from './handler'
 
-function handleAuth(firebase, { dispatch }, fireUser) {
+function handleAuth(firebase, store, fireUser) {
   if (fireUser) {
     if (fireUser.isAnonymous) {
-      return dispatch(setUserId(fireUser.uid))
+      return store.dispatch(setUserId(fireUser.uid))
     }
-    return dispatch(login(userFields(fireUser)))
+    return loginUser(firebase, store, fireUser)
   }
   return null
 }

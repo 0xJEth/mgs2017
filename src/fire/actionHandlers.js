@@ -1,21 +1,15 @@
 import { cond, flow, nthArg, property, stubTrue } from 'lodash'
 import { eq } from 'lodash/fp'
-import { login } from 'cape-redux-auth'
-import { userFields } from './util'
+import { loginUser } from './handler'
+import { nextAction } from './util'
 
-export function nextAction(firebase, store, action, next) {
-  return next(action)
-}
-
-export function handleAuth({ auth, googleAuth }, { dispatch }) {
-  auth.signInWithPopup(googleAuth).then(({ user }) => {
-    dispatch(login(userFields(user)))
-    // console.log(credential)
-  })
+export function handleAuth(firebase, store) {
+  const { auth, googleAuth } = firebase
+  // console.log(credential)
+  return auth.signInWithPopup(googleAuth).then(flow(property('user'), loginUser(firebase, store)))
 }
 export function handleProfileField(firebase, store, action, next) {
-  console.log(action.payload)
-  return next(action)
+  next(action)
 }
 export const isProfileField = flow(nthArg(2), property('meta.prefix[0]'), eq('profile'))
 export const handleFieldSubmit = cond([

@@ -1,7 +1,11 @@
 import { curry, isEmpty, map } from 'lodash'
 import { ENTITY_PUTALL } from 'redux-graph'
 import { replaceDb } from 'cape-redux-reducer'
-import { ensureIdType, getChild, getWatchChild } from './util'
+import { login } from 'cape-redux-auth'
+import {
+  ensureIdType, entitySet, getChild, getEntity, getWatchChild, userEntity,
+} from './util'
+// import { authUsr, entitySet, getEntity, nextAction, userEntity } from './util'
 
 export const handleInit = curry(({ dispatch }, type, result) => {
   const payload = map(result, ensureIdType(type))
@@ -15,3 +19,12 @@ export const dbChange = curry(({ dispatch }, result) => dispatch(replaceDb(resul
 export function dbChanges({ db }, store) {
   return getWatchChild(db, 'db', dbChange(store))
 }
+export const loginUser = curry((firebase, { dispatch }, user) => {
+  dispatch(login(user))
+  const entity = userEntity(user)
+  return getEntity(firebase, entity)
+  .then((dbEntity) => {
+    if (!dbEntity) return entitySet(firebase, entity)
+    return null
+  })
+})
