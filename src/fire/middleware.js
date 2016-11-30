@@ -1,9 +1,11 @@
 import { isFunction } from 'lodash'
+import { SUBMIT } from 'redux-field'
 import { AUTH } from './actions'
-import { handleAuth } from './actionHandlers'
+import { handleAuth, handleFieldSubmit } from './actionHandlers'
 
 export const dispatcher = {
   [AUTH]: handleAuth,
+  [SUBMIT]: handleFieldSubmit,
 }
 
 export default function listMiddleware(firebase) {
