@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import { merge } from 'lodash'
+import { get, merge } from 'lodash'
 import classnames from 'classnames'
 import tinycolor from 'tinycolor2'
 
@@ -7,9 +7,14 @@ const styles = {
   base: {
     border: 'solid',
   },
+  color: {
+    danger: '#a94442',
+    success: '#3c763d',
+    warning: '#8a6d3b',
+  },
 }
 function getStyle({ color, type, style = {} }) {
-  const baseColor = tinycolor(color[type])
+  const baseColor = tinycolor(get(color, type, styles.color[type]))
   const colorStyles = {
     color: baseColor.toString(),
     backgroundColor: baseColor.lighten(45).toString(),
@@ -27,16 +32,13 @@ function Alert(props) {
   )
 }
 Alert.defaultProps = {
-  color: {
-    danger: '#a94442',
-    success: '#3c763d',
-    warning: '#8a6d3b',
-  },
+  color: styles.color,
 }
 Alert.propTypes = {
   color: PropTypes.objectOf(PropTypes.string).isRequired,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   style: PropTypes.object,
   type: PropTypes.oneOf(['success', 'info', 'warning', 'danger']),
 }
+
 export default Alert
