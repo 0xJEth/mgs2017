@@ -27,7 +27,7 @@ function Me({ auth, authWarn, isAuthenticated, isStudent, user }) {
 
 Me.propTypes = {
   auth: PropTypes.func.isRequired,
-  authWarn: PropTypes.string.isRequired,
+  authWarn: PropTypes.string,
   isAuthenticated: PropTypes.bool.isRequired,
   isStudent: PropTypes.bool.isRequired,
   user: PropTypes.object,

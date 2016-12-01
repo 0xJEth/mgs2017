@@ -5,9 +5,9 @@ import { menuActions, menuSelector } from '../../select/menu'
 import css from '../../style'
 import NavItem from './NavItem'
 
-function Menu({ activeId, links, logout }) {
+function Menu({ activeId, links, actions }) {
   function isActive({ id }) { return activeId === id }
-  function getAction({ action }) { return (action === 'logout' && logout) || undefined }
+  function getAction({ action }) { return actions[action] }
   return (
     <ul className="menu" style={css('lsNone lsInline m0 p0')}>
       {map(links, link => (
@@ -19,7 +19,7 @@ function Menu({ activeId, links, logout }) {
 Menu.propTypes = {
   activeId: PropTypes.string.isRequired,
   links: PropTypes.array.isRequired,
-  logout: PropTypes.func.isRequired,
+  actions: PropTypes.objectOf(PropTypes.func).isRequired,
 }
 Menu.defaultProps = {
 }
