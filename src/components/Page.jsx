@@ -6,7 +6,7 @@ function Page({ children, className, id, style }) {
   return (
     <div className={className} id={id} style={style}>
       <Header />
-      <main>
+      <main className="cf">
         {children}
       </main>
       <Footer />
