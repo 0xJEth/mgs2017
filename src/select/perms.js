@@ -1,5 +1,5 @@
-import { eq, filter, get, isMatch, map, partialRight } from 'lodash'
-import { omit } from 'lodash/fp'
+import { eq, flow, get, isMatch, partialRight } from 'lodash'
+import { filter, map, omit, sortBy } from 'lodash/fp'
 import { createSelector, createStructuredSelector } from 'reselect'
 import { isAnonymous, isAuthenticated, selectUid } from 'cape-redux-auth'
 import { selectGraph } from 'redux-graph'
@@ -9,7 +9,11 @@ export function validate(perms) {
 }
 
 export function filterItems(items, perms) {
-  return map(filter(items, validate(perms)), omit('validator'))
+  return flow(
+    filter(validate(perms)),
+    sortBy(['position', 'name']),
+    map(omit(['position', 'validator']))
+  )(items)
 }
 export function hasMicaEmail(state) {
   const userEmail = get(selectGraph(state), ['GoogleUser', selectUid(state), 'email'])
