@@ -84,7 +84,7 @@ export const styles = {
 // Takes a className string and converts it into an object that can be sent to react style prop.
 // First arg is the dictionary/index. Second arg is the className string.
 export const styleBuilder = curry((styleObj, className) =>
-  merge({}, ...map(className.split(' '), propertyOf(styles)))
+  merge({}, ...map(className.split(' '), propertyOf(styleObj)))
 )
 // styleBuilder with default styles defined above partially applied.
 // Example: css('static top0 p0 m3') == { position: 'static', top: 0, padding: 0, margin: '3rem' }
