@@ -1,37 +1,42 @@
 import React, { PropTypes } from 'react'
 import { merge } from 'lodash'
 import classnames from 'classnames'
+import tinycolor from 'tinycolor2'
 
-const style = {
+const styles = {
   base: {
     border: 'solid',
   },
-  danger: {
-    color: '#a94442',
-    backgroundColor: '#f2dede',
-    borderColor: '#ebccd1',
-  },
-  success: {
-    color: '#3c763d',
-    backgroundColor: '#dff0d8',
-    borderColor: '#d6e9c6',
-  },
-  warning: {
-    color: '#8a6d3b',
-    backgroundColor: '#fcf8e3',
-    borderColor: '#faebcc',
-  },
+}
+function getStyle({ color, type, style = {} }) {
+  const baseColor = tinycolor(color[type])
+  const colorStyles = {
+    color: baseColor.toString(),
+    backgroundColor: baseColor.lighten(45).toString(),
+    borderColor: baseColor.darken(50).toString(),
+  }
+  return merge({}, styles.base, colorStyles, style)
 }
 
-function Alert({ children, type }) {
+function Alert(props) {
+  const { children, type } = props
   return (
-    <div className={classnames('alert', type)} role="alert" style={merge(style.base, style[type])}>
+    <div className={classnames('alert', type)} role="alert" style={getStyle(props)}>
       {children}
     </div>
   )
 }
+Alert.defaultProps = {
+  color: {
+    danger: '#a94442',
+    success: '#3c763d',
+    warning: '#8a6d3b',
+  },
+}
 Alert.propTypes = {
+  color: PropTypes.objectOf(PropTypes.string).isRequired,
   children: PropTypes.node.isRequired,
+  style: PropTypes.object,
   type: PropTypes.oneOf(['success', 'info', 'warning', 'danger']),
 }
 export default Alert
