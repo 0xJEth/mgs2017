@@ -1,12 +1,36 @@
 import { curry, isEmpty, map } from 'lodash'
 import { ENTITY_PUT, entityPut, ENTITY_PUTALL, getEntity } from 'redux-graph'
 import { replaceDb } from 'cape-redux-reducer'
-import { login } from 'cape-redux-auth'
+import { isAuthenticated, login, logout, setUserId } from 'cape-redux-auth'
 import {
   authUsr, ensureIdType, entitySet,
   getChild, getDbEntity, getWatchChild, onChildChanged, userEntity,
 } from './util'
-// import { authUsr, entitySet, getEntity, nextAction, userEntity } from './util'
+
+export const loginUser = curry((firebase, { dispatch }, user) => {
+  // console.log(pickBy(user, isString))
+  const entity = userEntity(user)
+  dispatch(login(authUsr(entity)))
+  // entitySet(firebase, { ...entity, type: 'GoogleUser' })
+  dispatch(entityPut({ ...entity, type: 'GoogleUser' }))
+  return getDbEntity(firebase, entity)
+  .then((dbEntity) => {
+    if (!dbEntity) return entitySet(firebase, entity)
+    return null
+  })
+})
+
+export function handleAuth(firebase, store, fireUser) {
+  const { dispatch, getState } = store
+  if (fireUser) {
+    if (fireUser.isAnonymous) {
+      return dispatch(setUserId(fireUser.uid))
+    }
+    return loginUser(firebase, store, fireUser)
+  }
+  if (isAuthenticated(getState())) return dispatch(logout())
+  return null
+}
 
 export const handleInit = curry(({ dispatch }, type, result) => {
   const payload = map(result, ensureIdType(type))
@@ -33,15 +57,3 @@ export const dbChange = curry(({ dispatch }, result) => dispatch(replaceDb(resul
 export function dbChanges({ db }, store) {
   return getWatchChild(db, 'db', dbChange(store))
 }
-export const loginUser = curry((firebase, { dispatch }, user) => {
-  // console.log(pickBy(user, isString))
-  const entity = userEntity(user)
-  dispatch(login(authUsr(entity)))
-  // entitySet(firebase, { ...entity, type: 'GoogleUser' })
-  dispatch(entityPut({ ...entity, type: 'GoogleUser' }))
-  return getDbEntity(firebase, entity)
-  .then((dbEntity) => {
-    if (!dbEntity) return entitySet(firebase, entity)
-    return null
-  })
-})

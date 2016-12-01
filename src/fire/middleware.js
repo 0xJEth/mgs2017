@@ -1,10 +1,11 @@
 import { isFunction } from 'lodash'
 import { SUBMIT } from 'redux-field'
-import { AUTH } from './actions'
-import { handleAuth, handleFieldSubmit } from './actionHandlers'
+import { AUTH, LOGOUT } from './actions'
+import { handleAuth, handleFieldSubmit, handleLogout } from './actionHandlers'
 
 export const dispatcher = {
   [AUTH]: handleAuth,
+  [LOGOUT]: handleLogout,
   [SUBMIT]: handleFieldSubmit,
 }
 

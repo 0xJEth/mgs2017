@@ -1,16 +1,5 @@
 import { partial } from 'lodash'
-import { setUserId } from 'cape-redux-auth'
-import { dbChanges, loginUser, typeLoadWatch } from './handler'
-
-function handleAuth(firebase, store, fireUser) {
-  if (fireUser) {
-    if (fireUser.isAnonymous) {
-      return store.dispatch(setUserId(fireUser.uid))
-    }
-    return loginUser(firebase, store, fireUser)
-  }
-  return null
-}
+import { dbChanges, handleAuth, typeLoadWatch } from './handler'
 
 export default function storeListener(firebase, store) {
   const loadWatchType = typeLoadWatch(firebase, store)

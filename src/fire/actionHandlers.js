@@ -11,6 +11,9 @@ export function handleAuth(firebase, store) {
   // console.log(credential)
   return auth.signInWithPopup(googleAuth).then(flow(property('user'), loginUser(firebase, store)))
 }
+export function handleLogout({ auth }, action, next) {
+  return auth.signOut().then(next(action))
+}
 export function handleProfileField(firebase, { dispatch, getState }, action, next) {
   next(action)
   const state = getState()
