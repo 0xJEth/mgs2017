@@ -16,7 +16,7 @@ function EditField(props) {
   return (
     <div className={className}>
       <div className="editable-row">
-        <input id={id} type={type} onChange={onChange} value={value} />
+        <input id={id} type={type} onChange={onChange} value={value || ''} />
         {showButtons &&
           <EditableButtons
             disabled={hasError}
@@ -55,6 +55,7 @@ EditField.propTypes = {
     'select',
     'text',
     'textarea',
+    'url',
   ]).isRequired,
   value: PropTypes.string,
 }

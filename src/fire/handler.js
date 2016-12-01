@@ -1,5 +1,5 @@
 import { curry, isEmpty, map } from 'lodash'
-import { ENTITY_PUT, ENTITY_PUTALL, getEntity } from 'redux-graph'
+import { ENTITY_PUT, entityPut, ENTITY_PUTALL, getEntity } from 'redux-graph'
 import { replaceDb } from 'cape-redux-reducer'
 import { login } from 'cape-redux-auth'
 import {
@@ -34,8 +34,11 @@ export function dbChanges({ db }, store) {
   return getWatchChild(db, 'db', dbChange(store))
 }
 export const loginUser = curry((firebase, { dispatch }, user) => {
+  // console.log(pickBy(user, isString))
   const entity = userEntity(user)
   dispatch(login(authUsr(entity)))
+  // entitySet(firebase, { ...entity, type: 'GoogleUser' })
+  dispatch(entityPut({ ...entity, type: 'GoogleUser' }))
   return getDbEntity(firebase, entity)
   .then((dbEntity) => {
     if (!dbEntity) return entitySet(firebase, entity)
