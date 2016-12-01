@@ -2,13 +2,13 @@ import React, { PropTypes } from 'react'
 import { get, merge } from 'lodash'
 import classnames from 'classnames'
 import tinycolor from 'tinycolor2'
+import css from '../style'
 
 const styles = {
-  base: {
-    border: 'solid',
-  },
+  base: css('b1 br1 p1 m1'),
   color: {
     danger: '#a94442',
+    info: '#31708f',
     success: '#3c763d',
     warning: '#8a6d3b',
   },
@@ -17,7 +17,7 @@ function getStyle({ color, type, style = {} }) {
   const baseColor = tinycolor(get(color, type, styles.color[type]))
   const colorStyles = {
     color: baseColor.toString(),
-    backgroundColor: baseColor.lighten(45).toString(),
+    backgroundColor: baseColor.lighten(50).toString(),
     borderColor: baseColor.darken(50).toString(),
   }
   return merge({}, styles.base, colorStyles, style)
