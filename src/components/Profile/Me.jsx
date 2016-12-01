@@ -8,15 +8,15 @@ function Me({ auth, isAuthenticated, user }) {
   if (!isAuthenticated) return <Button onClick={auth}>Login</Button>
   const { email, name, image } = user
   return (
-    <Page id="profile" className="p2 cf">
-      <div style={css('fl w50 pr1')}>
+    <Page id="profile">
+      <div style={css('fl w50 pl2 pr1')}>
         <h2>{name}</h2>
-        <ul className="ls-none m0 p0">
+        <ul style={css('lsNone m0 p0')}>
           <li><img src={image} alt={name} /></li>
-          <li><strong>Email:</strong>{email}</li>
+          <li><strong>Email: </strong>{email}</li>
         </ul>
       </div>
-      <div className="fl w50 pl1">
+      <div className="fl w50 pl1 pr2">
         <Profile />
       </div>
     </Page>
