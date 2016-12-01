@@ -1,14 +1,16 @@
 import React, { PropTypes } from 'react'
 import css from '../../style'
 import Button from '../Button'
+import Alert from '../Alert'
 import Page from '../Page'
 import Profile from './Profile'
 
-function Me({ auth, isAuthenticated, user }) {
+function Me({ auth, authWarn, isAuthenticated, isStudent, user }) {
   if (!isAuthenticated) return <Button onClick={auth}>Login</Button>
   const { email, name, image } = user
   return (
     <Page id="profile">
+      {!isStudent && <Alert type="danger">{authWarn}</Alert>}
       <div style={css('fl w50 pl2 pr1')}>
         <h2>{name}</h2>
         <ul style={css('lsNone m0 p0')}>
@@ -25,7 +27,9 @@ function Me({ auth, isAuthenticated, user }) {
 
 Me.propTypes = {
   auth: PropTypes.func.isRequired,
+  authWarn: PropTypes.string.isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
+  isStudent: PropTypes.bool.isRequired,
   user: PropTypes.object,
 }
 
