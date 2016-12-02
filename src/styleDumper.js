@@ -6,5 +6,4 @@ import { styles } from './styleBuilder'
 const css = map(omitBy(styles, isFunction), (style, name) =>
   `.${name} { ${createMarkupForStyles(style)} }`
 )
-css.sort()
 fs.writeFileSync('src/cape.css', css.join('\n'))
