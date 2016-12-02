@@ -2,7 +2,6 @@
 .search-wrapper input {
   background-color: transparent;
   background-image: none;
-  border-bottom: 1px solid currentColor;
   display: block;
   height: 3rem;
   font-size: 1.25rem;

@@ -5,7 +5,7 @@ import LinkEl from '../Link'
 
 function NavItem({ isActive, id, ...props }) {
   return (
-    <li className={classnames(id, { active: isActive })} style={css('fl p1')}>
+    <li className={classnames(id, { active: isActive })} style={css('flexAuto textCenter')}>
       <LinkEl internal {...props} />
     </li>
   )
