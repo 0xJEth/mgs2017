@@ -46,7 +46,7 @@ const remStyles = {
 }
 // Similar to remStyleBuilder but where the value is a number instead of rem string.
 // buildNumSizes('zIndex', 'z') == { z0: { zIndex: 0 }, z1: { zIndex: 1 }, z2: { zIndex: 2 } ...}
-export function buildNumSizes(style, prefix, start = 0, end = 10) {
+export function buildNumSizes(style, prefix, start = 0, end = 11) {
   const sizes = range(start, end)
   const sizeBuilder = createObj(style)
   return zipObject(map(sizes, key => prefix + key), map(sizes, sizeBuilder))
