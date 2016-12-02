@@ -1,5 +1,12 @@
 import { curry, flow, keys, map, merge, method, propertyOf, range, zipObject } from 'lodash'
 import { createObj } from 'cape-lodash'
+import tinycolor from 'tinycolor2'
+
+export const grey = tinycolor({ r: 220, g: 220, b: 220 })
+
+export function boxShadow(color = grey) {
+  return { boxShadow: `0 0 .2em 0 ${color.setAlpha(0.2).toRgbString()}` }
+}
 
 // Takes a number or string and appends 'rem' to the end of it.
 // Example: rem(1) === '1rem'
@@ -71,6 +78,7 @@ export const styles = {
   bt1: { borderTop: '1px solid currentColor' },
   bb1: { borderBottom: '1px solid currentColor' },
   bottom0: { bottom: 0 },
+  br: { borderRightStyle: 'solid', borderRightWidth: '1px' },
   column: floatLeft,
   columnRtl: floatRight,
   fixed: pos('fixed'),

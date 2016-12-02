@@ -307,8 +307,8 @@ a.highlighted.hl2 .mark {
 .z10 { z-index: 10; }
 
 /** Floats, grids, etc. **/
-.fl, .left, .column      { float: left; }
-.fr, .right, .column-rtl { float: right; }
+.fl, .column      { float: left; }
+.fr, .column-rtl  { float: right; }
 
 @media (min-width: 50rem) {
   .w10  { width: 10%; }
