@@ -8,8 +8,8 @@ export const rem = flow(String, method('concat', 'rem'))
 // Takes css defination style and a className prefix and builds out options with sizes from 0-6.
 // Example: remStyleBuilder('margin', 'm') == { m0: { margin: 0 }, m0p5: { margin: '0.5rem' }, ...}
 export function remStyleBuilder(style, prefix) {
-  const sizeKeys = ['0p5', '1', '2', '3', '4', '5', '6']
-  const sizes = [0.5, 1, 2, 3, 4, 5, 6]
+  const sizeKeys = ['0p1', '0p2', '0p5', '1', '2', '3', '4', '5', '6']
+  const sizes = [0.125, 0.25, 0.5, 1, 2, 3, 4, 5, 6]
   const sizeBuilder = createObj(style)
   const remBuilder = flow(rem, sizeBuilder)
   return merge(
@@ -20,6 +20,7 @@ export function remStyleBuilder(style, prefix) {
 // Define the things that should be sent to remStyleBuilder.
 const remStyles = {
   br: 'borderRadius',
+  bw: 'borderWidth',
   fs: 'fontSize',
   lh: 'lineHeight',
   m: 'margin',
@@ -54,6 +55,7 @@ export const floatRight = { flot: 'right' }
 export const styles = {
   ...merge({}, ...map(remStyles, remStyleBuilder)),
   absolute: pos('absolute'),
+  bn: { borderStyle: 'none', borderWidth: 0 },
   b1: { border: '1px solid currentColor' },
   bt1: { borderTop: '1px solid currentColor' },
   bb1: { borderBottom: '1px solid currentColor' },
