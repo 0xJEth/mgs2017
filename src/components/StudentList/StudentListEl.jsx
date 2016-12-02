@@ -12,7 +12,7 @@ function StudentListEl({ students }) {
       <article id="studentList" className="text-left" style={css('pl1 pr1 pb2')}>
         <header>
           <h1 style={css('m0 p0')}>Students</h1>
-          <Search />
+          <Search collectionId="Student" />
         </header>
         <section>
           <ul className="student-list" style={css('lsNone m0 p0 mt1')}>
