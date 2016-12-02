@@ -150,42 +150,27 @@ a.highlighted.hl2 .mark {
 .border-black     { border-color: #211a00; }
 
 /* border modules */
-.b0      { border: none; }
-.b1      { border: 1px solid currentColor; }
-.b2      { border: 2px solid currentColor; }
-.b3      { border: 3px solid currentColor; }
-.b4      { border: 4px solid currentColor; }
+.ba { border-style: solid; border-width: 1px; }
+.bt { border-top-style: solid; border-top-width: 1px; }
+.br { border-right-style: solid; border-right-width: 1px; }
+.bb { border-bottom-style: solid; border-bottom-width: 1px; }
+.bl { border-left-style: solid; border-left-width: 1px; }
+.bn { border-style: none; border-width: 0; }
 
-.bt0     { border-top: none;     }
-.bt1     { border-top: 1px solid currentColor;  }
-.bt2     { border-top: 2px solid currentColor;  }
-.bt3     { border-top: 3px solid currentColor;  }
-.bt4     { border-top: 4px solid currentColor;  }
+.bw0     { border-width: 0;       }
+.bw0p125 { border-width: .125rem; }
+.bw0p25  { border-width: .25rem;  }
+.bw0p5   { border-width: .5rem;   }
+.bw1     { border-width: 1rem;    }
+.bw2     { border-width: 2rem;    }
 
-.br0     { border-right: none;     }
-.br1     { border-right: 1px solid currentColor;  }
-.br2     { border-right: 2px solid currentColor;  }
-.br3     { border-right: 3px solid currentColor;  }
-.br4     { border-right: 4px solid currentColor;  }
-
-.bb0     { border-bottom: none;     }
-.bb1     { border-bottom: 1px solid currentColor;  }
-.bb2     { border-bottom: 2px solid currentColor;  }
-.bb3     { border-bottom: 3px solid currentColor;  }
-.bb4     { border-bottom: 4px solid currentColor;  }
-
-.bl0     { border-left: none;     }
-.bl1     { border-left: 1px solid currentColor;  }
-.bl2     { border-left: 2px solid currentColor;  }
-.bl3     { border-left: 3px solid currentColor;  }
-.bl4     { border-left: 4px solid currentColor;  }
-
-.brad1     { border-radius: 1rem; }
-.brad2     { border-radius: 2rem; }
-.brad3     { border-radius: 3rem; }
-.brad4     { border-radius: 4rem; }
-.brad50p   { border-radius:  50%; }
-.brad100p  { border-radius: 100%; }
+.br0     { border-radius: 0;    }
+.br1     { border-radius: 1rem; }
+.br2     { border-radius: 2rem; }
+.br3     { border-radius: 3rem; }
+.br4     { border-radius: 4rem; }
+.br50p   { border-radius:  50%; }
+.br100p  { border-radius: 100%; }
 
 /* text/links related */
 .fs1 { font-size: 1rem; }

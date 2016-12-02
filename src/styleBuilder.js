@@ -91,6 +91,7 @@ export const styles = {
   h100vh: { height: '100vh' },
   lsInline: { display: 'flex', justifyContent: 'center' },
   lsNone: { listStyle: 'none' },
+  mlrauto: { marginLeft: 'auto', marginRight: 'auto' },
   pos,
   positionCenterX: merge({ transform: 'translateX(-50%)' }, left50p),
   positionCenterY: merge({ transform: 'translateY(-50%)' }, top50p),
