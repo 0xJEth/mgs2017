@@ -4,10 +4,10 @@ import css from '../../style'
 import LinkEl from '../Link'
 
 const styles = {
-  links: css('ba br1 p1 positionCenter fs2'),
+  links: css('ba br1 p1 inlineBlock fs1 textReset'),
 }
 
-function NavItem({ isActive, id, styles, ...props }) {
+function NavItem({ isActive, id, ...props }) {
   return (
     <li className={classnames(id, { active: isActive })} style={css('flexAuto textCenter')}>
       <LinkEl internal {...props} style={styles.links} />
