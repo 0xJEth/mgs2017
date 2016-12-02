@@ -92,7 +92,7 @@ export const styles = {
   ba: { borderStyle: 'solid', borderWidth: '1px' },
   bb: { borderBottomStyle: 'solid', borderBottomWidth: '1px' },
   bl: { borderLeftStyle: 'solid', borderLeftWidth: '1px' },
-  bn: { borderStyle: 'none', borderWidth: 0 },
+  bn: merge(allSides('border', '', 'none'), allSides('border', 'Width')),
   bottom0: { bottom: 0 },
   br: { borderRightStyle: 'solid', borderRightWidth: '1px' },
   bt: { borderTopStyle: 'solid', borderTopWidth: '1px' },
