@@ -58,7 +58,8 @@ export const bgColor = createObj('backgroundColor')
 
 export const floatLeft = { float: 'left' }
 export const floatRight = { flot: 'right' }
-
+export const left50p = { left: '50%' }
+export const top50p = { top: '50%' }
 // Combine all the builders to make the bulk of what index.css was. Basically an index of className
 // values that will turn into the style.
 // styles.pt3 == { paddingTop: '3rem' }
@@ -77,12 +78,14 @@ export const styles = {
   fr: floatRight,
   left: floatLeft,
   left0: { left: 0 },
+  left50p,
   left1p5: { left: '1.5rem' },
   h100: { height: '100%' },
   h100vh: { height: '100vh' },
   lsInline: { display: 'flex', justifyContent: 'center' },
   lsNone: { listStyle: 'none' },
   pos,
+  positionCenterX: merge({ transform: 'translateY(-50%)' }, top50p),
   right: floatRight,
   right0: { right: 0 },
   static: pos('static'),
@@ -95,6 +98,7 @@ export const styles = {
     letterSpacing: 'normal',
   },
   top0: { top: 0 },
+  top50p,
   w50: { width: '50%' },
   w100vw: { width: '100vw' },
   ...buildNumSizes('zIndex', 'z'),
