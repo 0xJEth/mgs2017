@@ -308,7 +308,7 @@ a.highlighted.hl2 .mark {
 
 /** Floats, grids, etc. **/
 .fl, .column      { float: left; }
-.fr, .column-rtl { float: right; }
+.fr, .column-rtl  { float: right; }
 
 @media (min-width: 50rem) {
   .w10  { width: 10%; }
