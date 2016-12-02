@@ -89,7 +89,7 @@ export const styles = {
   ...remStyleBuilder('margin', 'm', ['margin']),
   ...remStyleBuilder('padding', 'p', ['padding']),
   absolute: pos('absolute'),
-  bn: merge(allSides('border', '', 'none'), allSides('border', 'Width')),
+  bn: merge(allSides('border', 'Style', 'none'), allSides('border', 'Width')),
   ba: { borderStyle: 'solid', borderWidth: '1px' },
   bb: { borderBottomStyle: 'solid', borderBottomWidth: '1px' },
   bbn: { borderBottom: 'none' },
