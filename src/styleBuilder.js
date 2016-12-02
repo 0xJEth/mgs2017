@@ -93,6 +93,7 @@ export const styles = {
   ba: { borderStyle: 'solid', borderWidth: '1px' },
   bb: { borderBottomStyle: 'solid', borderBottomWidth: '1px' },
   bbn: { borderBottom: 'none' },
+  bgTrans: { background: 'transparent' },
   bl: { borderLeftStyle: 'solid', borderLeftWidth: '1px' },
   bln: { borderLeft: 'none' },
   block: { display: 'block' },
