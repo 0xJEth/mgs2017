@@ -67,7 +67,7 @@ export const styles = {
   ...merge({}, ...map(remStyles, remStyleBuilder)),
   absolute: pos('absolute'),
   bn: { borderStyle: 'none', borderWidth: 0 },
-  b1: { border: '1px solid currentColor' },
+  ba: { border: '1px solid currentColor' },
   bt1: { borderTop: '1px solid currentColor' },
   bb1: { borderBottom: '1px solid currentColor' },
   bottom0: { bottom: 0 },
