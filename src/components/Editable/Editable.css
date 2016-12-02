@@ -46,6 +46,9 @@
   margin-left: .3rem;
 }
 
+/** trying to figure out a good help text solution? **/
+/** how to make this reusable??? **/
+/** is this more of a tooltip? not just a help-block?**/
 .help-block {
   position: absolute;
   top:1.7em;
