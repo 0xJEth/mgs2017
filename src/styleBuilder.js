@@ -78,6 +78,7 @@ export const styles = {
   bt1: { borderTop: '1px solid currentColor' },
   bb1: { borderBottom: '1px solid currentColor' },
   bottom0: { bottom: 0 },
+  br: { borderRightStyle: 'solid', borderRightWidth: '1px' },
   column: floatLeft,
   columnRtl: floatRight,
   fixed: pos('fixed'),
