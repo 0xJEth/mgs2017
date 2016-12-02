@@ -62,9 +62,10 @@ export function buildNumSizes(style, prefix, start = 0, end = 11) {
 // Example: pos('static') == { position: 'static' }
 export const pos = createObj('position')
 export const bgColor = createObj('backgroundColor')
+export const float = createObj('float')
 
-export const floatLeft = { float: 'left' }
-export const floatRight = { flot: 'right' }
+export const floatLeft = float('left')
+export const floatRight = float('right')
 export const left50p = { left: '50%' }
 export const top50p = { top: '50%' }
 // Combine all the builders to make the bulk of what index.css was. Basically an index of className
