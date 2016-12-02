@@ -14,7 +14,7 @@ function HeaderEl({ siteName }) {
           alt={siteName}
           title={siteName}
           style={css('mw8 m1 mlrauto block')}
-          srcSet="{mgsBlock} 480w, {mgsInline} 50rem"
+          srcSet={`${mgsBlock} 480w, ${mgsInline} 50rem`}
           sizes="100vw"
         />
         <img src={mgsInline} alt={siteName} title={siteName} style={css('mw8 m1 mlrauto block')} />
