@@ -5,7 +5,7 @@ import tinycolor from 'tinycolor2'
 import css from '../style'
 
 const styles = {
-  base: css('b1 br1 p1 m1'),
+  base: css('ba br1 p1 m1'),
   color: {
     danger: '#a94442',
     info: '#31708f',
