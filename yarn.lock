@@ -1304,6 +1304,13 @@ cape-select@^2.3.1:
     cape-lodash "^1.7.0"
     lodash "^4.17.2"
 
+cape-select@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/cape-select/-/cape-select-2.3.2.tgz#4a4f269ba7cd118bbd599cf3bed3bb56ce8aa872"
+  dependencies:
+    cape-lodash "^1.7.0"
+    lodash "^4.17.2"
+
 cardinal@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/cardinal/-/cardinal-1.0.0.tgz#50e21c1b0aa37729f9377def196b5a9cec932ee9"

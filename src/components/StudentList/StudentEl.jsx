@@ -3,11 +3,12 @@ import css from '../../style'
 import './Student.css'
 import Icon from '../Icon'
 
-function StudentEl({ displayName, program, show, website }) {
+function StudentEl({ familyName, givenName, programName, show, website }) {
+  const displayName = `${givenName} ${familyName}`
   return (
     <li className="student clearfix" style={css('pt0p5 pb0p5 bb1')}>
       <span className="name">{ displayName }</span>
-      <span className="program">{ program }</span>
+      <span className="program">{ programName }</span>
       <span className="website">{ website }</span>
       <span className="show"><a href="/details">{ show }</a></span>
       <span className="social text-right">
@@ -20,14 +21,16 @@ function StudentEl({ displayName, program, show, website }) {
 }
 
 StudentEl.propTypes = {
-  displayName: PropTypes.string.isRequired,
-  program: PropTypes.string.isRequired,
+  familyName: PropTypes.string.isRequired,
+  givenName: PropTypes.string.isRequired,
+  programName: PropTypes.string.isRequired,
   show: PropTypes.string.isRequired,
   website: PropTypes.string.isRequired,
 }
 StudentEl.defaultProps = {
-  displayName: 'Kristian Bjornard',
-  program: 'MFA Graphic Design',
+  familyName: 'Bjornard',
+  givenName: 'Kristian',
+  programName: 'MFA Graphic Design',
   show: 'Name? Date? Opening?',
   website: 'www.ookb.co',
 }
