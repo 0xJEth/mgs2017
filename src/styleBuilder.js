@@ -91,6 +91,7 @@ export const styles = {
   fixed: pos('fixed'),
   fl: floatLeft,
   flex: { display: 'flex' },
+  ...buildNumSizes('flex', 'flex'),
   flexAuto: { flex: '1 1 auto', minWidth: 0, minHeight: 0 },
   flexColumn: { flexDirection: 'column' },
   flexNone: { flex: 'none' },
