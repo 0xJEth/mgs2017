@@ -32,7 +32,8 @@
     "redux-history-component": "^1.0.2",
     "redux-history-sync": "^3.1.0",
     "redux-thunk": "^2.1.0",
-    "reselect": "^2.5.4"
+    "reselect": "^2.5.4",
+    "tinycolor2": "^1.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
