@@ -6,5 +6,7 @@ export default function storeListener(firebase, store) {
   firebase.auth.onAuthStateChanged(partial(handleAuth, firebase, store))
   dbChanges(firebase, store)
   loadWatchType('Person')
+  loadWatchType('Program')
+  loadWatchType('Student')
   return store
 }
