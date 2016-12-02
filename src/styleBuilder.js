@@ -1,4 +1,6 @@
-import { curry, flow, keys, map, merge, method, propertyOf, range, zipObject } from 'lodash'
+import {
+  curry, flow, isArray, keys, map, merge, method, propertyOf, range, zipObject,
+} from 'lodash'
 import { createObj } from 'cape-lodash'
 import tinycolor from 'tinycolor2'
 
@@ -12,9 +14,18 @@ export function boxShadow(color = grey) {
 // Example: rem(1) === '1rem'
 export const rem = flow(String, method('concat', 'rem'))
 
+export function allSides(prefix = '', suffix = '', value = 0) {
+  return {
+    [`${prefix}Top${suffix}`]: value,
+    [`${prefix}Bottom${suffix}`]: value,
+    [`${prefix}Left${suffix}`]: value,
+    [`${prefix}Right${suffix}`]: value,
+  }
+}
+
 // Takes css defination style and a className prefix and builds out options with sizes from 0-6.
 // Example: remStyleBuilder('margin', 'm') == { m0: { margin: 0 }, m0p5: { margin: '0.5rem' }, ...}
-export function remStyleBuilder(style, prefix) {
+export function remStyleBuilder(style, prefix, allSidesArgs = false) {
   const sizes = {
     '0p125': 0.125,
     '0p25': 0.25,
@@ -29,8 +40,11 @@ export function remStyleBuilder(style, prefix) {
   }
   const sizeBuilder = createObj(style)
   const remBuilder = flow(rem, sizeBuilder)
+  const zero = {
+    [`${prefix}0`]: isArray(allSidesArgs) ? allSides(...allSidesArgs) : sizeBuilder(0),
+  }
   return merge(
-    { [prefix]: remBuilder, [`${prefix}0`]: sizeBuilder(0) },
+    zero,
     zipObject(map(keys(sizes), key => prefix + key), map(sizes, remBuilder))
   )
 }
@@ -40,17 +54,16 @@ const remStyles = {
   bw: 'borderWidth',
   fs: 'fontSize',
   lh: 'lineHeight',
-  m: 'margin',
   mt: 'marginTop',
   mr: 'marginRight',
   mb: 'marginBottom',
   ml: 'marginLeft',
-  p: 'padding',
   pt: 'paddingTop',
   pr: 'paddingRight',
   pb: 'paddingBottom',
   pl: 'paddingLeft',
 }
+
 // Similar to remStyleBuilder but where the value is a number instead of rem string.
 // buildNumSizes('zIndex', 'z') == { z0: { zIndex: 0 }, z1: { zIndex: 1 }, z2: { zIndex: 2 } ...}
 export function buildNumSizes(style, prefix, start = 0, end = 11) {
@@ -73,6 +86,8 @@ export const top50p = { top: '50%' }
 // styles.pt3 == { paddingTop: '3rem' }
 export const styles = {
   ...merge({}, ...map(remStyles, remStyleBuilder)),
+  ...remStyleBuilder('margin', 'm', ['margin']),
+  ...remStyleBuilder('padding', 'p', ['padding']),
   absolute: pos('absolute'),
   ba: { borderStyle: 'solid', borderWidth: '1px' },
   bb: { borderBottomStyle: 'solid', borderBottomWidth: '1px' },
