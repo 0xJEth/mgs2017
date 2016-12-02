@@ -1,4 +1,4 @@
-import { curry, flow, map, merge, method, propertyOf, range, zipObject } from 'lodash'
+import { curry, flow, keys, map, merge, method, propertyOf, range, zipObject } from 'lodash'
 import { createObj } from 'cape-lodash'
 
 // Takes a number or string and appends 'rem' to the end of it.
@@ -8,13 +8,23 @@ export const rem = flow(String, method('concat', 'rem'))
 // Takes css defination style and a className prefix and builds out options with sizes from 0-6.
 // Example: remStyleBuilder('margin', 'm') == { m0: { margin: 0 }, m0p5: { margin: '0.5rem' }, ...}
 export function remStyleBuilder(style, prefix) {
-  const sizeKeys = ['0p1', '0p2', '0p5', '1', '2', '3', '4', '5', '6']
-  const sizes = [0.125, 0.25, 0.5, 1, 2, 3, 4, 5, 6]
+  const sizes = {
+    '0p125': 0.125,
+    '0p25': 0.25,
+    '0p5': 0.5,
+    '0p75': 0.75,
+    1: 1,
+    2: 2,
+    3: 3,
+    4: 4,
+    5: 5,
+    6: 6,
+  }
   const sizeBuilder = createObj(style)
   const remBuilder = flow(rem, sizeBuilder)
   return merge(
     { [prefix]: remBuilder, [`${prefix}0`]: sizeBuilder(0) },
-    zipObject(map(sizeKeys, key => prefix + key), map(sizes, remBuilder))
+    zipObject(map(keys(sizes), key => prefix + key), map(sizes, remBuilder))
   )
 }
 // Define the things that should be sent to remStyleBuilder.
