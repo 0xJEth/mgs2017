@@ -88,6 +88,12 @@ export const styles = {
   static: pos('static'),
   relative: pos('relative'),
   textCenter: { textAlign: 'center' },
+  textReset: {
+    textDecoration: 'none',
+    textShadow: 'none',
+    textTransform: 'none',
+    letterSpacing: 'normal',
+  },
   top0: { top: 0 },
   w50: { width: '50%' },
   w100vw: { width: '100vw' },
