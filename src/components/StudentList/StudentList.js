@@ -1,12 +1,10 @@
 import { connect } from 'react-redux'
-import { entityTypeSelector } from 'redux-graph'
 import { structuredSelector } from 'cape-select'
+import { itemsSearched } from './'
 import Component from './StudentListEl'
 
-const getStudents = entityTypeSelector('Student')
-
 const getState = structuredSelector({
-  students: getStudents,
+  students: itemsSearched,
 })
 
 export default connect(getState)(Component)
