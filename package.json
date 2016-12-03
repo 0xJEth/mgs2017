@@ -1,6 +1,6 @@
 {
   "name": "mgs-2017",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-preset-es2015": "^6.18.0",
@@ -13,13 +13,13 @@
     "react-scripts": "0.7.0"
   },
   "dependencies": {
-    "cape-lodash": "^1.7.0",
-    "cape-redux": "^2.3.0",
+    "cape-lodash": "^1.8.0",
+    "cape-redux": "^3.0.0",
     "cape-redux-auth": "^4.0.0",
-    "cape-redux-reducer": "3.3.0",
+    "cape-redux-reducer": "^3.4.0",
     "cape-select": "^2.3.2",
     "classnames": "^2.2.5",
-    "firebase": "^3.6.1",
+    "firebase": "^3.6.2",
     "location-info": "^3.1.1",
     "lodash": "^4.17.2",
     "radium": "^0.18.1",
@@ -31,10 +31,11 @@
     "redux-devtools-dock-monitor": "^1.1.1",
     "redux-devtools-log-monitor": "^1.1.1",
     "redux-field": "^4.0.2",
-    "redux-graph": "^2.7.0",
+    "redux-graph": "^2.8.0",
     "redux-history-component": "^1.0.2",
     "redux-history-sync": "^3.1.0",
     "redux-thunk": "^2.1.0",
+    "redux-windowsize": "^1.0.3",
     "reselect": "^2.5.4",
     "tinycolor2": "^1.4.1"
   },
