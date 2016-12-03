@@ -1,16 +1,17 @@
 import React, { PropTypes } from 'react'
+import classnames from 'classnames'
 import Footer from './Footer/Footer'
 import Header from './Header/Header'
 
 function Page({ children, className, id, style }) {
   return (
-    <div className={className} id={id} style={style}>
+    <page className={classnames('', className)} id={id} style={style}>
       <Header />
-      <main className="cf">
+      <main>
         {children}
       </main>
       <Footer />
-    </div>
+    </page>
   )
 }
 

@@ -1,7 +1,17 @@
 detail {
   height: 100%;
-  height: 100vh;
   width: 100%;
+  position: relative;
+}
+
+detail flex {
+  display: flex;
+  min-height: 100vh;
+}
+
+detail flex > div,
+detail flex > flex {
+  flex: 1;
 }
 
 detail iframe {

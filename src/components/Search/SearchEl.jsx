@@ -6,15 +6,14 @@ import Icon from '../Icon'
 function SearchEl({ onChange, value }) {
   return (
     <div>
-      <label className="search-wrapper relative" htmlFor="search" style={css('fs1p5 lh3')}>
+      <label className="search-wrapper" htmlFor="search" style={css('relative fs1p5 lh3')}>
         <Icon
-          className="fs-golden left-0"
           hidden
-          style={css('absolute lh3 z2')}
+          style={css('absolute lh3 z2 fs1p618')}
           symbol="search"
         />
         <input
-          className="search bn bb p0p5 pr2 pl4 z1"
+          className="search"
           onChange={onChange} value={value || ''}
           type="text"
         />

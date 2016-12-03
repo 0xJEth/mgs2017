@@ -14,18 +14,32 @@ function ScheduleEl() {
 
       <section>
         <h2 className="bb4 mt3 mb0p5">Exhibitions?</h2>
+        <flex className="shows item-grid">
+          <ShowItem />
+          <ShowItem />
+          <ShowItem />
+          <ShowItem />
+          <ShowItem />
+        </flex>
+      </section>
+
+      <section>
+        <h2 className="bb4 mt3 mb0p5">OneDays</h2>
         <div className="shows item-grid">
-          <ShowItem />
-          <ShowItem />
-          <ShowItem />
           <ShowItem />
           <ShowItem />
         </div>
       </section>
 
       <section>
-        <h2 className="bb4 mt3 mb0p5">OneDays</h2>
+        <h2 className="bb4 mt3 mb0p5">FilmFest?</h2>
         <div className="shows item-grid">
+          <ShowItem />
+          <ShowItem />
+          <ShowItem />
+          <ShowItem />
+          <ShowItem />
+          <ShowItem />
           <ShowItem />
           <ShowItem />
         </div>

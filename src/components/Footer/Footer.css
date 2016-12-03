@@ -1,0 +1,14 @@
+flex section {
+  flex: 3;
+  padding: 1em;
+}
+
+flex section.archive,
+flex section.social {
+  flex: 1;
+}
+
+footer .mica.logo {
+  padding-top: 0;
+  padding-right: 3em;
+}

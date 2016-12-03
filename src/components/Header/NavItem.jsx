@@ -9,7 +9,7 @@ const styles = {
 
 function NavItem({ isActive, id, ...props }) {
   return (
-    <li className={classnames(id, { active: isActive })} style={css('flexAuto textCenter')}>
+    <li className={classnames(id, { active: isActive })}>
       <LinkEl internal {...props} style={styles.links} />
     </li>
   )
