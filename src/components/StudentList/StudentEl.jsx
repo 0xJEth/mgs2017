@@ -6,14 +6,14 @@ import Icon from '../Icon'
 function StudentEl({ familyName, givenName, programName, show, website }) {
   const displayName = `${givenName} ${familyName}`
   return (
-    <li className="student clearfix" style={css('pt0p5 pb0p5 bb1')}>
+    <li className="student" style={css('p0p5 pl2 pr2 bb')}>
       <span className="name">{ displayName }</span>
       <span className="program">{ programName }</span>
       <span className="website">{ website }</span>
       <span className="show"><a href="/details">{ show }</a></span>
-      <span className="social text-right">
-        <Icon symbol="facebook" className="mr0p5" aria-hidden="true" />
-        <Icon symbol="instagram" className="mr0p5" aria-hidden="true" />
+      <span className="social" style={css('textRight')}>
+        <Icon symbol="facebook" aria-hidden="true" />
+        <Icon symbol="instagram" aria-hidden="true" />
         <Icon symbol="twitter" aria-hidden="true" />
       </span>
     </li>
