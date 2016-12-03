@@ -1,6 +1,7 @@
 import { applyMiddleware, compose, createStore } from 'redux'
 import thunk from 'redux-thunk'
 import reducer from 'cape-redux-reducer'
+import { createSizeAction, listenSize } from 'redux-windowsize'
 
 import {
   getInitState,
@@ -48,5 +49,7 @@ export default function configureStore(initialState) {
   )
   syncHistoryWithStore(store, window)
   storeListener(firebase, store)
+  store.dispatch(createSizeAction(window))
+  listenSize(store.dispatch, window)
   return store
 }
