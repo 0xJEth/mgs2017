@@ -16,7 +16,7 @@
     "cape-lodash": "^1.8.0",
     "cape-redux": "^3.0.0",
     "cape-redux-auth": "^4.0.0",
-    "cape-redux-reducer": "3.3.0",
+    "cape-redux-reducer": "^3.4.0",
     "cape-select": "^2.3.2",
     "classnames": "^2.2.5",
     "firebase": "^3.6.2",
