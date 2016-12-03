@@ -1,7 +1,7 @@
 import { applyMiddleware, compose, createStore } from 'redux'
 import thunk from 'redux-thunk'
 import reducer from 'cape-redux-reducer'
-import { createSizeAction, createRemAction, doc, listenSize } from 'redux-windowsize'
+import { createSizeAction, createRemAction, listenSize } from 'redux-windowsize'
 
 import {
   getInitState,

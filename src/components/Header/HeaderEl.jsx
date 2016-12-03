@@ -5,16 +5,20 @@ import css from '../../style'
 import './Header.css'
 import Menu from './Menu'
 
-function HeaderEl({ siteName }) {
+const imgBySizeId = {
+  skinny: mgsBlock,
+  wide: mgsInline,
+}
+
+function HeaderEl({ siteName, sizeId }) {
   return (
     <header id="siteHeader" className="bg-yellow" style={css('p2 mb2')} >
       <nav className="clearfix">
         <img
-          src={mgsInline}
+          src={imgBySizeId[sizeId]}
           alt={siteName}
           title={siteName}
           style={css('mw8 m1 mlrauto block')}
-          srcSet={`${mgsBlock} 480w, ${mgsInline} 50rem`}
           sizes="100vw"
         />
         <img src={mgsInline} alt={siteName} title={siteName} style={css('mw8 m1 mlrauto block')} />
@@ -26,8 +30,10 @@ function HeaderEl({ siteName }) {
 }
 HeaderEl.propTypes = {
   siteName: PropTypes.string,
+  sizeId: PropTypes.string.isRequired,
 }
 HeaderEl.defaultProps = {
   siteName: 'MICA Grad Show 2017',
+  sizeId: 'wide',
 }
 export default HeaderEl
