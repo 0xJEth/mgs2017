@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react'
-import mgsBlock from '../../mgs2017LogoBlock.svg'
 import mgsInline from '../../mgs2017LogoInline.svg'
 import css from '../../style'
 import './Header.css'
@@ -9,16 +8,7 @@ function HeaderEl({ siteName }) {
   return (
     <header id="siteHeader" className="bg-yellow" style={css('p2 mb2')} >
       <nav className="clearfix">
-        <img
-          src={mgsInline}
-          alt={siteName}
-          title={siteName}
-          style={css('mw8 m1 mlrauto block')}
-          srcSet={`${mgsBlock} 480w, ${mgsInline} 50rem`}
-          sizes="100vw"
-        />
         <img src={mgsInline} alt={siteName} title={siteName} style={css('mw8 m1 mlrauto block')} />
-        {/* <h1 style={css('fs2 m0 pt0p5 textCenter')}>{siteName}</h1> */}
         <Menu />
       </nav>
     </header>
