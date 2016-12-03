@@ -35,7 +35,7 @@
     "redux-history-component": "^1.0.2",
     "redux-history-sync": "^3.1.0",
     "redux-thunk": "^2.1.0",
-    "redux-windowsize": "^1.0.0",
+    "redux-windowsize": "^1.0.3",
     "reselect": "^2.5.4",
     "tinycolor2": "^1.4.1"
   },
