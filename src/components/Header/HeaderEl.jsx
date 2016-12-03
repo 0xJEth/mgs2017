@@ -25,7 +25,7 @@ HeaderEl.propTypes = {
   sizeId: PropTypes.string,
 }
 HeaderEl.defaultProps = {
-  siteName: 'MICA Grad Show 2017',
+  siteName: 'MICA Grad Show',
   sizeId: 'wide',
 }
 export default HeaderEl
