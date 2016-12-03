@@ -1,6 +1,6 @@
 import { cond, flow, nthArg, property, stubTrue } from 'lodash'
 import { eq } from 'lodash/fp'
-import { set } from 'cape-redux'
+import { setKey } from 'cape-lodash'
 import { clear, fieldValue } from 'redux-field'
 import { selectAuthUser } from 'cape-redux-auth'
 import { loginUser } from './handler'
@@ -17,7 +17,7 @@ export function handleLogout({ auth }, action, next) {
 export function handleProfileField(firebase, { dispatch, getState }, action, next) {
   next(action)
   const state = getState()
-  const entity = set(fieldValue('profile', 'id')(state), selectAuthUser(state), action.payload)
+  const entity = setKey(fieldValue('profile', 'id')(state), selectAuthUser(state), action.payload)
   entityUpdate(firebase, entity).then(() => dispatch(clear('profile')))
 }
 export const isProfileField = flow(nthArg(2), property('meta.prefix[0]'), eq('profile'))
