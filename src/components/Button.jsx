@@ -3,7 +3,7 @@ import classnames from 'classnames'
 
 function Button({ children, className, icon, ...props }) {
   return (
-    <button {...props} className={classnames('absolute btn-block', className)}>
+    <button {...props} className={classnames('', className)}>
       {icon && <i className={classnames('fa', `fa-${icon}`)} aria-hidden="true" />}
       {children}
     </button>
