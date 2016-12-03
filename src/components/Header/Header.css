@@ -1,4 +1,12 @@
-/**Anythingspecial?**/
+/** Header.css **/
+#siteHeader .mgsLogo {
+  max-width: 30rem;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
 .menu,
 .menu > li a,
 .menu > li button {
@@ -20,5 +28,11 @@
   .menu > li a,
   .menu > li button {
     width: 100%;
+  }
+}
+
+@media (min-width: 50rem) {
+  #siteHeader .mgsLogo {
+    max-width: 64rem;
   }
 }

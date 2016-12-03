@@ -12,9 +12,9 @@ const imgBySizeId = {
 
 function HeaderEl({ siteName, sizeId }) {
   return (
-    <header id="siteHeader" className="bg-yellow" style={css('p2 mb2')} >
-      <nav className="clearfix">
-        <img src={imgBySizeId[sizeId]} alt={siteName} title={siteName} style={css('mw8 m1 mlrauto block')} />
+    <header id="siteHeader" className="bg-yellow" style={css('p2 pt1 mb2')} >
+      <nav>
+        <img src={imgBySizeId[sizeId]} alt={siteName} title={siteName} className="mgsLogo" />
         <Menu />
       </nav>
     </header>

@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import css from '../../style'
+import './Me.css'
 import Button from '../Button'
 import Alert from '../Alert'
 import Page from '../Page'
@@ -15,16 +16,18 @@ function Me({ auth, authWarn, isAuthenticated, isStudent, user }) {
   return (
     <Page id="profile">
       {!isStudent && <Alert type="danger">{authWarn}</Alert>}
-      <div style={css('fl w50 pl2 pr1')}>
-        <h2>{name}</h2>
-        <ul style={css('lsNone m0 p0')}>
-          <li><img src={image} alt={name} /></li>
-          <li><strong>Email: </strong>{email}</li>
-        </ul>
-      </div>
-      <div className="fl w50 pl1 pr2">
-        <Profile />
-      </div>
+      <flex>
+        <div style={css('pl2 pr2')}>
+          <h2>{name}</h2>
+          <ul style={css('lsNone m0 p0')}>
+            <li><img src={image} alt={name} /></li>
+            <li><strong>Email: </strong>{email}</li>
+          </ul>
+        </div>
+        <div className="pl2 pr2">
+          <Profile />
+        </div>
+      </flex>
     </Page>
   )
 }

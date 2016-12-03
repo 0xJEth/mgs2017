@@ -1,12 +1,13 @@
 import React, { PropTypes } from 'react'
 import { map } from 'lodash'
+import css from '../../style'
 import Field from './Field'
 
 function Fields({ entity, fields, prefix, title }) {
   return (
     <div>
       {title && <h2>{title}</h2>}
-      <ul className="ls-none m0 p0">
+      <ul style={css('lsNone m0 p0')}>
         {map(fields, field => (
           <li key={field.id}>
             <Field
