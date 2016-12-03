@@ -6,7 +6,7 @@ import Page from '../Page'
 import Profile from './Profile'
 
 const styles = {
-  login: css('ba br1 p1 positionCenter fs2'),
+  login: css('ba br1 p1 block mlrauto fs2 bgTrans'),
 }
 
 function Me({ auth, authWarn, isAuthenticated, isStudent, user }) {
