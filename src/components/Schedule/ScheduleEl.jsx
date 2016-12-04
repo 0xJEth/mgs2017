@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
+import { map } from 'lodash'
 import css from '../../style'
 import './Schedule.css'
 import Search from '../Search/Search'
-import ShowItem from './ShowItem'
+import ShowItem from './ShowGroup'
 
-function ScheduleEl() {
+function ScheduleEl({ showGroups }) {
+  const { onCampusExhibition, singleDay } = showGroups
   return (
     <article id="schedule" style={css('pl1 pr1 pb2')}>
       <header>
@@ -13,26 +15,25 @@ function ScheduleEl() {
       </header>
 
       <section>
-        <h2 className="bb4 mt3 mb0p5">Exhibitions?</h2>
+        <h2 className="bb4 mt3 mb0p5">Exhibitions</h2>
         <flex className="shows item-grid">
-          <ShowItem />
-          <ShowItem />
-          <ShowItem />
-          <ShowItem />
-          <ShowItem />
+          {onCampusExhibition &&
+            map(onCampusExhibition, item => <ShowItem key={item.id} {...item} />)
+          }
         </flex>
       </section>
 
       <section>
         <h2 className="bb4 mt3 mb0p5">OneDays</h2>
         <div className="shows item-grid">
-          <ShowItem />
-          <ShowItem />
+          {singleDay &&
+            map(singleDay, item => <ShowItem key={item.id} {...item} />)
+          }
         </div>
       </section>
 
       <section>
-        <h2 className="bb4 mt3 mb0p5">FilmFest?</h2>
+        <h2 className="bb4 mt3 mb0p5">FilmFest</h2>
         <div className="shows item-grid">
           <ShowItem />
           <ShowItem />
@@ -68,5 +69,9 @@ function ScheduleEl() {
 ScheduleEl.defaultProps = {
 }
 ScheduleEl.propTypes = {
+  showGroups: PropTypes.shape({
+    onCampusExhibition: PropTypes.arrayOf(PropTypes.object),
+    singleDay: PropTypes.arrayOf(PropTypes.object),
+  }),
 }
 export default ScheduleEl
