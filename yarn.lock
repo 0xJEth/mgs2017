@@ -1252,6 +1252,12 @@ cape-lodash@^1.7.0, cape-lodash@^1.8.0:
   dependencies:
     lodash "^4.17.2"
 
+cape-lodash@^1.9.1:
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/cape-lodash/-/cape-lodash-1.9.1.tgz#71418250125f7dd7fcb209ff22f61dad9f87118e"
+  dependencies:
+    lodash "^4.17.2"
+
 cape-redux-auth@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/cape-redux-auth/-/cape-redux-auth-4.0.0.tgz#c8f31fcb149d12cba5aaebd24aa63827335b32af"
@@ -4969,6 +4975,17 @@ redux-graph@^2.7.0, redux-graph@^2.8.0:
     redux "^3.6.0"
     reselect "^2.5.4"
 
+redux-graph@^2.9.0:
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/redux-graph/-/redux-graph-2.9.0.tgz#287301f95ad58499902ea6eda7f0a752d4f2acc0"
+  dependencies:
+    cape-lodash "^1.9.1"
+    cape-redux "^3.0.0"
+    cape-select "^2.3.2"
+    lodash "^4.17.2"
+    redux "^3.6.0"
+    reselect "^2.5.4"
+
 redux-history-component@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/redux-history-component/-/redux-history-component-1.0.2.tgz#a2bbb28d0b58cd555deb914249b788156824d5be"
@@ -4994,15 +5011,7 @@ redux-thunk@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.1.0.tgz#c724bfee75dbe352da2e3ba9bc14302badd89a98"
 
-redux-windowsize@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/redux-windowsize/-/redux-windowsize-1.0.0.tgz#2edda7be2190558ae7499ec3717189f11f570c05"
-  dependencies:
-    cape-lodash "^1.8.0"
-    cape-redux "^3.0.0"
-    lodash "^4.17.2"
-
-redux-windowsize@^1.0.3:
+redux-windowsize@^1.0.0, redux-windowsize@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/redux-windowsize/-/redux-windowsize-1.0.3.tgz#1cea4cbeba6451155c58145465317af72454caf1"
   dependencies:

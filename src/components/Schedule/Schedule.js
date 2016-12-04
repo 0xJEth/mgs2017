@@ -1,5 +1,10 @@
-// import { connect } from 'react-redux'
-
+import { connect } from 'react-redux'
+import { structuredSelector } from 'cape-select'
+import { showGroupByName } from './'
 import Component from './ScheduleEl'
 
-export default Component// connect()(Component)
+const mapStateToProps = structuredSelector({
+  showGroups: showGroupByName,
+})
+
+export default connect(mapStateToProps)(Component)
