@@ -1,6 +1,8 @@
-import { get, mapValues } from 'lodash'
+import { filter, get, mapValues } from 'lodash'
 import { entityTypeSelector, getRef } from 'redux-graph'
 import { createSelector } from 'reselect'
+import { select } from 'cape-select'
+import { selectForm } from 'redux-field'
 import { textSearchSelector } from '../Search'
 import { getProgram } from '../../select/program'
 
@@ -22,4 +24,11 @@ export const itemFill = program => (item) => {
 }
 export const fillItems = (student, program) => mapValues(student, itemFill(program))
 export const itemsFilled = createSelector(getStudents, getProgram, fillItems)
-export const itemsSearched = textSearchSelector(itemsFilled, 'Student')
+export const programFilterValue = select(selectForm, ['Student', 'program', 'value'])
+export function programFilter(items, id) {
+  if (!id) return items
+  return filter(items, { program: { id } })
+}
+export const itemsProgram = createSelector(itemsFilled, programFilterValue, programFilter)
+
+export const itemsSearched = textSearchSelector(itemsProgram, 'Student')
