@@ -16,6 +16,13 @@ function StudentListEl({ students }) {
         </header>
         <section>
           <ul className="student-list" style={css('mt2 bt')}>
+            <li className="student header" style={css('p0p5 pl2 pr2 bb')}>
+              <span className="name"><strong>Name</strong></span>
+              <span className="program"><strong>Program</strong></span>
+              <span className="website" />
+              <span className="show"><strong>Show</strong></span>
+              <span className="social" />
+            </li>
             {map(students, item => <Student key={item.id} {...item} />)}
           </ul>
         </section>

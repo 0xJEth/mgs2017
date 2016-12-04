@@ -31,7 +31,7 @@ StudentEl.defaultProps = {
   familyName: 'Bjornard',
   givenName: 'Kristian',
   programName: 'MFA Graphic Design',
-  show: 'Name? Date? Opening?',
+  show: 'Which show group, link to show details page',
   website: 'www.ookb.co',
 }
 export default StudentEl
