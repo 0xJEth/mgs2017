@@ -22,6 +22,7 @@ function StudentListEl({ programOptions, students }) {
                   collectionId={collectionId}
                   fieldId="program"
                   options={programOptions}
+                  firstOptionName="- Filter by Program -"
                 />
               </div>
             }

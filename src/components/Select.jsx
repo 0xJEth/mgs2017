@@ -55,7 +55,6 @@ Select.propTypes = {
   required: PropTypes.bool,
 }
 Select.defaultProps = {
-  firstOptionName: '- All -',
   value: '',
 }
 export default Select
