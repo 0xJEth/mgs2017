@@ -29,7 +29,7 @@ function StudentListEl({ programOptions, students }) {
           </div>
         </header>
         <section>
-          <ul className="student-list" style={css('mt2 bt')}>
+          <ul className="student-list">
             <li className="student header" style={css('p0p5 pl2 pr2 bb')}>
               <span className="name"><strong>Name</strong></span>
               <span className="program"><strong>Program</strong></span>
