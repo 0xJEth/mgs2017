@@ -5,20 +5,18 @@ import Icon from '../Icon'
 
 function SearchEl({ onChange, value }) {
   return (
-    <div>
-      <label className="search-wrapper" htmlFor="search" style={css('relative fs1p5 lh3')}>
-        <Icon
-          hidden
-          style={css('absolute lh3 z2 fs1p618')}
-          symbol="search"
-        />
-        <input
-          className="search"
-          onChange={onChange} value={value || ''}
-          type="text"
-        />
-      </label>
-    </div>
+    <label className="search-wrapper" htmlFor="search" style={css('flexAuto relative fs1p5 lh3')}>
+      <Icon
+        hidden
+        style={css('absolute lh3 z2 fs1p618 left1')}
+        symbol="search"
+      />
+      <input
+        className="search"
+        onChange={onChange} value={value || ''}
+        type="text"
+      />
+    </label>
   )
 }
 

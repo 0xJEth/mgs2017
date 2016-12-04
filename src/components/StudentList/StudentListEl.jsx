@@ -14,10 +14,18 @@ function StudentListEl({ programOptions, students }) {
       <article id="studentList" className="text-left" style={css('p0 pl1 pr1')}>
         <header>
           <h1 style={css('m0 p0')}>Students</h1>
-          <Search collectionId={collectionId} />
-          {programOptions &&
-            <FilterSelect collectionId={collectionId} fieldId="program" options={programOptions} />
-          }
+          <div className="group" style={css('flex')}>
+            <Search collectionId={collectionId} style={css('flexAuto')} />
+            {programOptions &&
+              <div className="customSelect" style={css('flexAuto')}>
+                <FilterSelect
+                  collectionId={collectionId}
+                  fieldId="program"
+                  options={programOptions}
+                />
+              </div>
+            }
+          </div>
         </header>
         <section>
           <ul className="student-list" style={css('mt2 bt')}>

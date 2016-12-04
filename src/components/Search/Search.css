@@ -1,16 +1,25 @@
+.group {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
 /** search stuff **/
+.search-wrapper {
+  position: relative;
+  width: 60%;
+}
+
 .search-wrapper input {
   background-color: transparent;
   background-image: none;
   border: none;
   border-bottom: 1px solid currentColor;
+  border-top: 1px solid currentColor;
   display: block;
   height: 3rem;
   font-size: 1.25rem;
   line-height: 3rem;
-  width: calc(100% + 2rem);
-  margin-left: -1rem;
-  margin-right: -1rem;
+  width: 100%;
   padding: .5rem 2rem .5rem 4rem;
   transition: all 300ms;
   position: relative;
@@ -25,4 +34,70 @@
 
 .search-wrapper input:focus ~ i {
   color: white;
+}
+
+/** selection picker, where to put this instead? **/
+.customSelect {
+  display:block;
+  position: relative;
+  width: 40%;
+}
+
+select {
+  position: relative;
+  margin: 0;
+  background-color: transparent;
+  background-image: none;
+  width: 100%;
+  padding: 0;
+  font-size: 1rem;
+  border: none;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  padding-left: 1rem;
+  border-radius: 0;
+  height: 3rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  z-index: 1;
+}
+
+.customSelect::after {
+  background-color: transparent;
+  display:block;
+  position: absolute;
+  right: 0;
+  top:0;
+  height: 3rem;
+  width: 1em;
+  line-height: 3rem;
+  font-family: 'MicaGradShow';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  text-rendering: auto;
+  content: '\f05c';
+  font-size: 3rem;
+  z-index: 2;
+  border-left: 1px solid black;
+  text-align: center;
+  pointer-events: none;
+}
+
+select:focus {
+  background-color: rgba(254,219,0,1);
+  border-color: rgba(254,219,0,1);
+  border-left-color:black;
+  outline-color: rgba(254,219,0,.5);
+}
+
+.customSelect:hover,
+select:hover {
+  cursor:pointer;
+}
+.customSelect:hover::after {
+  color:rgba(254,219,0,1);
+  background-color: rgba(0,0,0,.5);
 }
