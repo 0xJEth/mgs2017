@@ -8,7 +8,7 @@ export const getRemPx = flow(getWindowSize, property('rem'))
 export const getWidthRem = createSelector(getWidthPx, getRemPx, divide)
 export const remSizes = [
   { min: 90, id: 'wide' },
-  { min: 70, id: 'goliLocks' },
+  { min: 70, id: 'goldiLocks' },
   { max: 50, id: 'skinny' },
 ]
 export function sizeChecker(widthRem) {
