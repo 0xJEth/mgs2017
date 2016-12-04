@@ -48,13 +48,14 @@ function Select({ firstOptionName, options, value, required, ...props }) {
 
 Select.propTypes = {
   firstOptionName: PropTypes.string,
-  value: PropTypes.string,
   onBlur: PropTypes.func,
   onChange: PropTypes.func.isRequired,
   options: PropTypes.array.isRequired,
   required: PropTypes.bool,
+  value: PropTypes.string,
 }
 Select.defaultProps = {
+  firstOptionName: '- All -',
   value: '',
 }
 export default Select
