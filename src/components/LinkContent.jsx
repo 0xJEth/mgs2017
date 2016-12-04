@@ -13,11 +13,12 @@ function getIcon(icon) {
 }
 
 // You can send it an icon or a name or both.
-function LinkContent({ defaultName, icon, name }) {
-  if (name && !icon) return <span>{name}</span>
-  if (!name && icon) return getIcon(icon)
-  if (icon && name) {
-    return createElement('span', null, getIcon(icon), createElement('span', null, name))
+function LinkContent({ children, defaultName, icon, name }) {
+  const text = isString(children) ? children : name
+  if (text && !icon) return <span>{text}</span>
+  if (!text && icon) return getIcon(icon)
+  if (icon && text) {
+    return createElement('span', null, getIcon(icon), createElement('span', null, text))
   }
   return <span>{defaultName}</span>
 }
@@ -25,6 +26,7 @@ LinkContent.defaultProps = {
   defaultName: 'Click here',
 }
 LinkContent.propTypes = {
+  children: PropTypes.node,
   defaultName: PropTypes.string.isRequired,
   icon: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   name: PropTypes.string,
