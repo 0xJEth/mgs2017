@@ -12,7 +12,13 @@ export function getHref({ href, link, siteId, src }) {
 
 function Link(props) {
   const { action, internal, ...rest } = props
-  if (action) return <button onClick={action} style={css('ba br1 p1 inlineBlock fs1 textReset bgTrans')}><LinkContent {...rest} /></button>
+  if (action) {
+    return (
+      <button onClick={action} style={css('ba br1 p1 inlineBlock fs1 textReset bgTrans')}>
+        <LinkContent {...rest} />
+      </button>
+    )
+  }
   if (internal) return <InternalLink {...rest}><LinkContent {...rest} /></InternalLink>
 
   return (

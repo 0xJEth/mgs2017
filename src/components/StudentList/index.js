@@ -6,13 +6,15 @@ import { selectForm } from 'redux-field'
 import { textSearchSelector } from '../Search'
 import { getProgram } from '../../select/program'
 
+const getShow = entityTypeSelector('Show')
 const getStudents = entityTypeSelector('Student')
 
 export function matchRef(entitySlice, predicate, item) {
-  return get(entitySlice, get(getRef(item, predicate), 'id'), {})
+  if (!entitySlice) return null
+  return get(entitySlice, get(getRef(item, predicate), 'id'), null)
 }
 
-export const itemFill = program => (item) => {
+export const itemFill = (program, show) => (item) => {
   const { familyName, givenName } = item
   const studentProgram = matchRef(program, 'program', item)
   return {
@@ -20,10 +22,11 @@ export const itemFill = program => (item) => {
     program: studentProgram,
     programName: studentProgram.name,
     searchable: (givenName + familyName).toLowerCase(),
+    show: matchRef(show, 'show', item),
   }
 }
-export const fillItems = (student, program) => mapValues(student, itemFill(program))
-export const itemsFilled = createSelector(getStudents, getProgram, fillItems)
+export const fillItems = (student, program, show) => mapValues(student, itemFill(program, show))
+export const itemsFilled = createSelector(getStudents, getProgram, getShow, fillItems)
 export const programFilterValue = select(selectForm, ['Student', 'program', 'value'])
 export function programFilter(items, id) {
   if (!id) return items

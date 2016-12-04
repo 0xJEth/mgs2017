@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react'
 import css from '../../style'
 import './Student.css'
 import Icon from '../Icon'
+import Link from '../Link'
 
 function StudentEl({ familyName, givenName, programName, show, website }) {
   const displayName = `${givenName} ${familyName}`
@@ -10,7 +11,7 @@ function StudentEl({ familyName, givenName, programName, show, website }) {
       <span className="name">{ displayName }</span>
       <span className="program">{ programName }</span>
       <span className="website">{ website }</span>
-      <span className="show"><a href="/details">{ show }</a></span>
+      {show && <span className="show"><Link href="/details" internal>{ show.name }</Link></span>}
       <span className="social" style={css('textRight')}>
         <Icon symbol="facebook" aria-hidden="true" />
         <Icon symbol="instagram" aria-hidden="true" />
@@ -24,7 +25,7 @@ StudentEl.propTypes = {
   familyName: PropTypes.string.isRequired,
   givenName: PropTypes.string.isRequired,
   programName: PropTypes.string.isRequired,
-  show: PropTypes.string.isRequired,
+  show: PropTypes.object,
   website: PropTypes.string.isRequired,
 }
 StudentEl.defaultProps = {
