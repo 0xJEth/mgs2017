@@ -34,8 +34,11 @@ function Alert(props) {
 Alert.defaultProps = {
   color: styles.color,
 }
+const colorObjProps = PropTypes.shape({
+  r: PropTypes.number, g: PropTypes.number, b: PropTypes.number,
+})
 Alert.propTypes = {
-  color: PropTypes.objectOf(PropTypes.string).isRequired,
+  color: PropTypes.oneOfType([colorObjProps, PropTypes.string]).isRequired,
   children: PropTypes.node,
   style: PropTypes.object,
   type: PropTypes.oneOf(['success', 'info', 'warning', 'danger']),
