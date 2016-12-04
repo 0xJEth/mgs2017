@@ -1,8 +1,11 @@
 import React, { PropTypes } from 'react'
+import { map } from 'lodash'
 import css from '../../style'
 import './ShowItem.css'
 
-function ShowGroup({ gallery, program, receptionDate, showDate, name }) {
+function ShowGroup({ endDate, program, receptionEnd, receptionStart, startDate, name }) {
+  const showDate = (startDate && `${startDate} - ${endDate}`) || ''
+  const receptionDate = `${receptionStart} ${receptionEnd}`
   return (
     <div className="showItem item">
       <a href="/details" className="block">
@@ -12,34 +15,30 @@ function ShowGroup({ gallery, program, receptionDate, showDate, name }) {
         <p>{ receptionDate }</p>
         <h2>Includes</h2>
         <ul style={css('lsNone m0 p0')}>
-          <li>
-            <h3 style={css('fs1 m0 p0')}>{ program.name }</h3>
-          </li>
-          <li>
-            <p style={css('fs1 m0 p0')}>{ gallery }</p>
-          </li>
-          <li>
-            <p style={css('fs1 m0 p0')}>Is this a list? what else is needed here?</p>
-          </li>
+          {program && map(program, item => <li>{item.name}</li>)}
         </ul>
       </a>
     </div>
   )
 }
 ShowGroup.propTypes = {
-  gallery: PropTypes.string.isRequired,
+  // gallery: PropTypes.string.isRequired,
   program: PropTypes.shape({
     name: PropTypes.string,
   }).isRequired,
-  receptionDate: PropTypes.string.isRequired,
+  receptionEnd: PropTypes.string.isRequired,
+  receptionStart: PropTypes.string.isRequired,
   showDate: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
 }
 ShowGroup.defaultProps = {
+  endDate: '',
   gallery: 'Sheila & Richard Riggs Gallery',
   program: { name: 'Teaching, MA' },
-  receptionDate: 'Friday, February 26, 5–7 pm',
+  receptionEnd: '',
+  receptionStart: '',
   showDate: 'February 26–March 13, 2017',
   showName: 'Teaching',
+  startDate: '',
 }
 export default ShowGroup
