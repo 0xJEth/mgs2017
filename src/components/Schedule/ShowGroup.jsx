@@ -1,18 +1,30 @@
 import React, { PropTypes } from 'react'
 import { map } from 'lodash'
+import moment from 'moment'
 import css from '../../style'
 import './ShowItem.css'
 
-function ShowGroup({ endDate, program, receptionEnd, receptionStart, startDate, name }) {
-  const showDate = (startDate && `${startDate} - ${endDate}`) || ''
-  const receptionDate = `${receptionStart} ${receptionEnd}`
+function getShowDate({ startDate, endDate }) {
+  if (!startDate) return null
+  const startStr = moment(startDate).format('MMMM Do')
+  const endStr = moment(endDate).format('MMMM Do')
+  return `${startStr}–${endStr}`
+}
+function getReception({ receptionStart, receptionEnd }) {
+  if (!receptionStart) return null
+  const recStartStr = moment(receptionStart).utc().format('dddd, MMMM D, h')
+  const recEndStr = moment(receptionEnd).utc().format('hA')
+  return `Reception: ${recStartStr}–${recEndStr}`
+}
+function ShowGroup({ program, name, ...props }) {
+  const showDate = getShowDate(props)
+  const reception = getReception(props)
   return (
     <div className="showItem item">
       <a href="/details" className="block">
         <h1 style={css('m0 p0')}>{ name }</h1>
-        <p className="dateRange">{ showDate }</p>
-        <h2 style={css('m0 mt1 p0')}>Reception</h2>
-        <p>{ receptionDate }</p>
+        {showDate && <p className="dateRange">{showDate}</p>}
+        {reception && <h2 style={css('m0 mt1 p0')}>{reception}</h2>}
         <h2>Includes</h2>
         <ul style={css('lsNone m0 p0')}>
           {program && map(program, item => <li>{item.name}</li>)}

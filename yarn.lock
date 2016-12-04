@@ -3899,6 +3899,10 @@ moment@2.x.x:
   version "2.17.0"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.17.0.tgz#a4c292e02aac5ddefb29a6eed24f51938dd3b74f"
 
+moment@^2.17.1:
+  version "2.17.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.17.1.tgz#fed9506063f36b10f066c8b59a144d7faebe1d82"
+
 ms@0.7.1:
   version "0.7.1"
   resolved "https://registry.yarnpkg.com/ms/-/ms-0.7.1.tgz#9cd13c03adbff25b65effde7ce864ee952017098"
@@ -4964,18 +4968,7 @@ redux-field@^4.0.2:
     reselect "^2.5.4"
     seamless-immutable "^6.1.3"
 
-redux-graph@^2.7.0, redux-graph@^2.8.0:
-  version "2.8.0"
-  resolved "https://registry.yarnpkg.com/redux-graph/-/redux-graph-2.8.0.tgz#e005c00aef02c0c10627df465d06d4acb2f4637b"
-  dependencies:
-    cape-lodash "^1.7.0"
-    cape-redux "^2.2.1"
-    cape-select "^2.3.1"
-    lodash "^4.17.2"
-    redux "^3.6.0"
-    reselect "^2.5.4"
-
-redux-graph@^2.9.0:
+redux-graph@^2.7.0, redux-graph@^2.8.0, redux-graph@^2.9.0:
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/redux-graph/-/redux-graph-2.9.0.tgz#287301f95ad58499902ea6eda7f0a752d4f2acc0"
   dependencies:
