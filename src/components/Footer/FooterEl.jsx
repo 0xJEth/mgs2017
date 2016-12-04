@@ -14,7 +14,7 @@ function FooterEl({ archive, siteId, social }) {
           </a>
         </section>
         <section>
-          <ul className="ls-none m0 p0">
+          <ul style={css('lsNone m0 p0')}>
             <li><a href="">Office of Graduate Studies</a></li>
             <li>131 West North Avenue</li>
             <li>Baltimore, MD 21201</li>
@@ -22,13 +22,13 @@ function FooterEl({ archive, siteId, social }) {
           </ul>
         </section>
         <section>
-          <ul className="ls-none m0 p0">
+          <ul style={css('lsNone m0 p0')}>
             <li><a href="https://www.mica.edu/Admission_and_Financial_Aid/Graduate_Admission_and_Financial_Aid.html?utm_source=mica%20grad%20show2017">MICA Graduate Admissions</a></li>
             <li><a href="http://micagradstudies.tumblr.com/?utm_source=mica%20grad%20show2017">MICA Grad Show Blog</a></li>
             <li><a href="http://eepurl.com/bciqMT">Sign up for the MICA Grad Show mailing list</a></li>
           </ul>
         </section>
-        {archive && <Links className="archive" links={archive} siteId={siteId} />}
+        {archive && <Links className="archive" title="Archive" links={archive} siteId={siteId} />}
         {social && <Links className="social" links={social} />}
       </flex>
     </footer>
