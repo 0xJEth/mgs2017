@@ -6,7 +6,7 @@ import Links from './Links'
 
 function FooterEl({ archive, siteId, social }) {
   return (
-    <footer className="bg-yellow" style={css('pt4 pr1 pb6 pl1 mt2')}>
+    <footer className="bg-yellow" style={css('pt4 pr1 pb6 pl1')}>
       <flex style={css('flex')} >
         <section className="mica logo">
           <a href="http://www.mica.edu/?utm_source=mica%20grad%20show2017">
