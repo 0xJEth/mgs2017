@@ -27,7 +27,7 @@ function ShowGroup({ program, name, ...props }) {
         {reception && <h2 style={css('m0 mt1 p0')}>{reception}</h2>}
         <h2>Includes</h2>
         <ul style={css('lsNone m0 p0')}>
-          {program && map(program, item => <li>{item.name}</li>)}
+          {program && map(program, (item, key) => <li key={key}>{item.name}</li>)}
         </ul>
       </a>
     </div>
@@ -46,6 +46,7 @@ ShowGroup.propTypes = {
 ShowGroup.defaultProps = {
   endDate: '',
   gallery: 'Sheila & Richard Riggs Gallery',
+  name: '[name here...]',
   program: { name: 'Teaching, MA' },
   receptionEnd: '',
   receptionStart: '',

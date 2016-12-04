@@ -1,12 +1,14 @@
 import { camelCase, flow, mapValues } from 'lodash'
-import { groupBy, mapKeys } from 'lodash/fp'
+import { groupBy, mapKeys, sortBy } from 'lodash/fp'
+import fpValues from 'lodash/fp/mapValues'
+// import { condId, setField } from 'cape-lodash'
 import { buildFullEntity, entityTypeSelector } from 'redux-graph'
 import { createSelector, createStructuredSelector } from 'reselect'
 import { getProgram, getShow } from '../../select/'
 
 export const getShowGroup = entityTypeSelector('ShowGroup')
 
-export const itemFill = flow()
+// export const itemFill = flow()
 
 const selectGraph = createStructuredSelector({
   Show: getShow,
@@ -17,5 +19,10 @@ export const itemsFilled = createSelector(
   (graph, graphType) => mapValues(graphType, buildFullEntity(0, graph))
 )
 export const showGroupByName = createSelector(
-  itemsFilled, flow(groupBy('groupType'), mapKeys(camelCase))
+  itemsFilled, flow(
+    groupBy('groupType'),
+    mapKeys(camelCase),
+    fpValues(sortBy('startDate'))
+  )
 )
+// orderBy('startDate')

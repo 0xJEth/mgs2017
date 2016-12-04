@@ -13,7 +13,7 @@
     "react-scripts": "0.7.0"
   },
   "dependencies": {
-    "cape-lodash": "^1.8.0",
+    "cape-lodash": "^1.10.0",
     "cape-redux": "^3.0.0",
     "cape-redux-auth": "^4.0.0",
     "cape-redux-reducer": "^3.4.0",
