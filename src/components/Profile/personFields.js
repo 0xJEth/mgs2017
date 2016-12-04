@@ -19,11 +19,32 @@ export const instagram = {
   name: 'Instagram',
   type: 'text',
 }
+export const soundcloud = {
+  description: 'Soundcloud username',
+  id: 'soundcloud',
+  position: 5,
+  name: 'Soundcloud',
+  type: 'text',
+}
 export const twitter = {
   description: 'Twitter Handle',
   id: 'twitter',
   position: 4,
   name: 'Twitter',
+  type: 'text',
+}
+export const vimeo = {
+  id: 'vimeo',
+  description: 'Vimeo username',
+  name: 'Vimeo',
+  position: 6,
+  type: 'text',
+}
+export const youtube = {
+  id: 'youtube',
+  description: 'Youtube username',
+  name: 'Youtube',
+  position: 6,
   type: 'text',
 }
 export const name = {
@@ -48,6 +69,9 @@ const personFields = [
   facebook,
   instagram,
   twitter,
+  soundcloud,
+  youtube,
+  vimeo,
 ]
 
 export default personFields
