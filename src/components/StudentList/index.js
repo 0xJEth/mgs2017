@@ -2,9 +2,9 @@ import { get, mapValues } from 'lodash'
 import { entityTypeSelector, getRef } from 'redux-graph'
 import { createSelector } from 'reselect'
 import { textSearchSelector } from '../Search'
+import { getProgram } from '../../select/program'
 
 const getStudents = entityTypeSelector('Student')
-const getProgram = entityTypeSelector('Program')
 
 export function matchRef(entitySlice, predicate, item) {
   return get(entitySlice, get(getRef(item, predicate), 'id'), {})
