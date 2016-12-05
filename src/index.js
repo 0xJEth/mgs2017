@@ -1,4 +1,4 @@
-import React from 'react'
+import { createElement } from 'react'
 import { render } from 'react-dom'
 // Redux code to build store.
 import configureStore from './redux/configureStore'
@@ -17,4 +17,4 @@ const store = configureStore(initialState)
 // Define our destination where we insert our root react component.
 const destEl = window.document.getElementById('root')
 
-render(React.createElement(Root, { store }), destEl)
+render(createElement(Root, { store }), destEl)
