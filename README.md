@@ -758,6 +758,13 @@ This feature is experimental and still [has major usage issues](https://github.c
 
 ## Deployment
 
+Install b2 and authorize the account.
+
+```sh
+pip install --upgrade pip
+sudo pip install --upgrade --ignore-installed b2
+b2 authorize_account
+```
 ## Building for Relative Paths
 
 By default, Create React App produces a build assuming your app is hosted at the server root.<br>
@@ -769,38 +776,6 @@ To override this, specify the `homepage` in your `package.json`, for example:
 
 This will let Create React App correctly infer the root path to use in the generated HTML file.
 
-### GitHub Pages
-
->Note: this feature is available with `react-scripts@0.2.0` and higher.
-
-Open your `package.json` and add a `homepage` field:
-
-```js
-  "homepage": "http://myusername.github.io/my-app",
-```
-
-**The above step is important!**<br>
-Create React App uses the `homepage` field to determine the root URL in the built HTML file.
-
-Now, whenever you run `npm run build`, you will see a cheat sheet with instructions on how to deploy to GitHub pages.
-
-To publish it at [http://myusername.github.io/my-app](http://myusername.github.io/my-app), run:
-
-```sh
-npm install --save-dev gh-pages
-```
-
-Add the following script in your `package.json`:
-
-```js
-  // ...
-  "scripts": {
-    // ...
-    "deploy": "gh-pages -d build"
-  }
-```
-
-Then run:
 
 ```sh
 npm run deploy

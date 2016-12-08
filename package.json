@@ -41,10 +41,12 @@
     "tinycolor2": "^1.4.1"
   },
   "scripts": {
-    "css": "babel-node src/styleDumper.js",
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "css": "babel-node src/styleDumper.js",
+    "deploy": "npm run build && npm run upload",
+    "eject": "react-scripts eject",
+    "upload": "b2 sync --delete --replaceNewer build b2://cape-io/mgs2017",
+    "start": "react-scripts start",
+    "test": "react-scripts test --env=jsdom"
   }
 }
