@@ -100,6 +100,7 @@ export const styles = {
   ba: { borderStyle: 'solid', borderWidth: '1px' },
   bb: { borderBottomStyle: 'solid', borderBottomWidth: '1px' },
   bbn: { borderBottom: 'none' },
+  bgGray: bgColor('gray'),
   bgTrans: { background: 'transparent' },
   bl: { borderLeftStyle: 'solid', borderLeftWidth: '1px' },
   bln: { borderLeft: 'none' },
