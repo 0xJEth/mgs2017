@@ -51,6 +51,6 @@ export default function configureStore(initialState) {
   storeListener(firebase, store)
   store.dispatch(createSizeAction(window))
   store.dispatch(createRemAction(window))
-  listenResize(store.dispatch, window)
+  listenResize(store, window)
   return store
 }
