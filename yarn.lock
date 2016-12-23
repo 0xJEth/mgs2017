@@ -1246,21 +1246,9 @@ caniuse-db@^1.0.30000539, caniuse-db@^1.0.30000554:
   version "1.0.30000587"
   resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000587.tgz#18bb26f03139887539054cfe1c5358583eaabcf0"
 
-cape-lodash@^1.10.0:
+cape-lodash@^1.10.0, cape-lodash@^1.7.0, cape-lodash@^1.8.0, cape-lodash@^1.9.1:
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/cape-lodash/-/cape-lodash-1.10.0.tgz#8168b3b3949112c9eb622708a2823f8cddef53de"
-  dependencies:
-    lodash "^4.17.2"
-
-cape-lodash@^1.7.0, cape-lodash@^1.8.0:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/cape-lodash/-/cape-lodash-1.8.0.tgz#db06a55e0803da7e34f2e30c877a268442c64994"
-  dependencies:
-    lodash "^4.17.2"
-
-cape-lodash@^1.9.1:
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/cape-lodash/-/cape-lodash-1.9.1.tgz#71418250125f7dd7fcb209ff22f61dad9f87118e"
   dependencies:
     lodash "^4.17.2"
 
@@ -1314,6 +1302,14 @@ cape-redux@^2.2.1, cape-redux@^2.3.0:
 cape-redux@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/cape-redux/-/cape-redux-3.0.0.tgz#fb37ee4380c3e40f707ad922f5dc4a06db68059c"
+  dependencies:
+    cape-lodash "^1.8.0"
+    lodash "^4.17.2"
+    redux "^3.6.0"
+
+cape-redux@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/cape-redux/-/cape-redux-3.1.0.tgz#ae657a5bdc1c5deba51d1e5912aa6ad98ee73a5e"
   dependencies:
     cape-lodash "^1.8.0"
     lodash "^4.17.2"
@@ -5006,13 +5002,22 @@ redux-thunk@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.1.0.tgz#c724bfee75dbe352da2e3ba9bc14302badd89a98"
 
-redux-windowsize@^1.0.0, redux-windowsize@^1.0.3:
+redux-windowsize@^1.0.0:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/redux-windowsize/-/redux-windowsize-1.0.3.tgz#1cea4cbeba6451155c58145465317af72454caf1"
   dependencies:
     cape-lodash "^1.8.0"
     cape-redux "^3.0.0"
     lodash "^4.17.2"
+
+redux-windowsize@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/redux-windowsize/-/redux-windowsize-1.3.1.tgz#0a942a0b161b42ecff6afa8f8cae2bb82fa9132c"
+  dependencies:
+    cape-lodash "^1.8.0"
+    cape-redux "^3.1.0"
+    lodash "^4.17.2"
+    reselect "^2.5.4"
 
 redux@^3.2.1, redux@^3.5.2, redux@^3.6.0:
   version "3.6.0"
