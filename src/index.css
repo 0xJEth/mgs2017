@@ -203,7 +203,6 @@ page > main {
   min-height: 0;
 }
 
-
 /**** some @media things ****/
 .item-grid {
   display: flex;
@@ -229,13 +228,13 @@ page > main {
   }
 }
 
-@media (min-width: 70rem ) {
+@media (min-width: 65rem ) {
   .item-grid .item {
     width: calc(100% / 4);
   }
 }
 
-@media (min-width: 90rem ) {
+@media (min-width: 80rem ) {
   .item-grid .item {
     width: calc(100% / 5);
   }

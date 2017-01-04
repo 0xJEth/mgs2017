@@ -145,6 +145,7 @@ export const styles = {
   left1: { left: '1rem' },
   left50p,
   left1p5: { left: '1.5rem' },
+  left2: { left: '2rem' },
   lsInline: { display: 'flex', justifyContent: 'center' },
   lsNone: { listStyle: 'none' },
   mlrauto: { marginLeft: 'auto', marginRight: 'auto' },
