@@ -10,21 +10,23 @@ function ScheduleEl({ showGroups }) {
   return (
     <article id="schedule" style={css('pl1 pr1 pb2')}>
       <header>
-        <h1 style={css('m0 p0')}>Schedule</h1>
-        <Search />
+        <h1 style={css('m0 p0 pl1 pr1')}>Schedule</h1>
+        <div className="group" style={css('flex')}>
+          <Search style={css('flexAuto')} />
+        </div>
       </header>
 
       <section>
-        <h2 className="bb4 mt3 mb0p5">Exhibitions</h2>
-        <flex className="shows item-grid">
+        <h2 style={css('m0 mt3')}>Exhibitions</h2>
+        <div style={css('flex')} className="shows item-grid">
           {onCampusExhibition &&
             map(onCampusExhibition, item => <ShowItem key={item.id} {...item} />)
           }
-        </flex>
+        </div>
       </section>
 
       <section>
-        <h2 className="bb4 mt3 mb0p5">OneDays</h2>
+        <h2 style={css('m0 mt3')}>Events</h2>
         <div className="shows item-grid">
           {singleDay &&
             map(singleDay, item => <ShowItem key={item.id} {...item} />)
@@ -33,7 +35,12 @@ function ScheduleEl({ showGroups }) {
       </section>
 
       <section>
-        <h2 className="bb4 mt3 mb0p5">FilmFest</h2>
+        <h2 style={css('m0 mt3')}>FilmFest</h2>
+        <p>
+          In print materials, Film Fest is listed under “Events” with the
+          Social Design and Critical studies stuff... should we figure out
+          how to make that work?
+        </p>
         <div className="shows item-grid">
           <ShowItem />
           <ShowItem />
@@ -47,7 +54,7 @@ function ScheduleEl({ showGroups }) {
       </section>
 
       <section>
-        <h2 className="bb4 mt3 mb0p5">Curatorial...</h2>
+        <h2 style={css('m0 mt3')}>Curatorial Pratice</h2>
         <div className="shows item-grid">
           <ShowItem />
           <ShowItem />

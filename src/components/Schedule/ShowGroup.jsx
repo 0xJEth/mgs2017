@@ -14,21 +14,20 @@ function getReception({ receptionStart, receptionEnd }) {
   if (!receptionStart) return null
   const recStartStr = moment(receptionStart).utc().format('dddd, MMMM D, h')
   const recEndStr = moment(receptionEnd).utc().format('hA')
-  return `Reception: ${recStartStr}–${recEndStr}`
+  return `${recStartStr}–${recEndStr}`
 }
 function ShowGroup({ program, name, ...props }) {
   const showDate = getShowDate(props)
   const reception = getReception(props)
   return (
     <div className="showItem item">
-      <a href="/details" className="block">
-        <h1 style={css('m0 p0')}>{ name }</h1>
-        {showDate && <p className="dateRange">{showDate}</p>}
-        {reception && <h2 style={css('m0 mt1 p0')}>{reception}</h2>}
-        <h2>Includes</h2>
+      <a href="/details" className="block black" style={css('textReset')}>
+        <h1 style={css('m0 mb1')}>{ name }</h1>
+        {showDate && <h2 style={css('m0 mb1')} className="dateRange">{showDate}</h2>}
         <ul style={css('lsNone m0 p0')}>
           {program && map(program, (item, key) => <li key={key}>{item.name}</li>)}
         </ul>
+        {reception && <h2 style={css('m0 mt1 mb1')}>Reception: <br />{reception}</h2>}
       </a>
     </div>
   )
