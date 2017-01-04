@@ -13,7 +13,7 @@ function StudentListEl({ programOptions, students }) {
     <Page>
       <article id="studentList" className="text-left" style={css('p0 pl1 pr1')}>
         <header>
-          <h1 style={css('m0 p0')}>Students</h1>
+          <h1 style={css('m0 p0 pl1 pr1')}>Students</h1>
           <div className="group" style={css('flex')}>
             <Search collectionId={collectionId} style={css('flexAuto')} />
             {programOptions &&
@@ -33,8 +33,8 @@ function StudentListEl({ programOptions, students }) {
             <li className="student header" style={css('p0p5 pl2 pr2 bb')}>
               <span className="name"><strong>Name</strong></span>
               <span className="program"><strong>Program</strong></span>
-              <span className="website" />
               <span className="show"><strong>Show</strong></span>
+              <span className="website" />
               <span className="social" />
             </li>
             {map(students, item => <Student key={item.id} {...item} />)}
