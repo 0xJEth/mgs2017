@@ -210,10 +210,20 @@ page {
   flex-direction: column;
 }
 
+page > header {
+  z-index: 2
+}
+
 page > main {
   flex: 1;
   min-width: 0;
   min-height: 0;
+  box-shadow: 0 0 1rem 0 rgba(33, 26, 0, .33);
+  z-index: 1;
+}
+
+page > footer {
+  z-index: 0;
 }
 
 /**** some @media things ****/

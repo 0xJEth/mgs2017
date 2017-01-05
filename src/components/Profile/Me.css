@@ -5,3 +5,7 @@ flex {
 flex > div {
   flex: 1;
 }
+
+page#profile > main {
+  box-shadow: none;
+}
