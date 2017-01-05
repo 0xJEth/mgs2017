@@ -16,7 +16,7 @@ function Me({ auth, authWarn, isAuthenticated, isStudent, user }) {
   return (
     <Page id="profile">
       {!isStudent && <Alert type="danger">{authWarn}</Alert>}
-      <flex>
+      <flex className='bg-white' style={css('pb3')}>
         <div style={css('pl2 pr2')}>
           <h2>{name}</h2>
           <ul style={css('lsNone m0 p0')}>

@@ -40,6 +40,17 @@
   right: 1rem;
 }
 
+.menu .auth a:hover,
+.menu .me a:hover,
+.menu .logout a:hover,
+.menu .auth button:hover,
+.menu .me button:hover,
+.menu .logout button:hover {
+  border-bottom: 1px solid;
+  color: #655700;
+  cursor: pointer;
+}
+
 .menu .auth,
 .menu .me { top: 2rem; }
 .menu .logout { top: 3rem;}
