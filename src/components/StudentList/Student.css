@@ -15,14 +15,12 @@
 }
 .student:hover {
   background-color: #fff8cb;
-  cursor: pointer;
 }
 
 .student.header,
 .student.header:nth-child(even),
 .student.header:hover {
   background-color: transparent;
-  cursor: default;;
 }
 
 .student:last-child {

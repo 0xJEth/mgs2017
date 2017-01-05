@@ -1,13 +1,24 @@
 /** Header.css **/
-#siteHeader .mgsLogo {
+#siteHeader nav {
   max-width: 30rem;
-  margin-bottom: 1rem;
+  padding-top: 3rem;
   margin-left: auto;
   margin-right: auto;
   display: block;
 }
 
+#siteHeader .mgsLogo {
+  width: 100%;
+  height:auto;
+  margin-bottom: 2rem;
+}
+
+#siteHeader .menu {
+  border-top: 1px solid;
+}
+
 .menu,
+.menu > li,
 .menu > li a,
 .menu > li button {
   text-align: center;
@@ -15,8 +26,8 @@
   transition: all 333ms;
 }
 
-.menu > li a:hover,
-.menu > li button:hover {
+.menu > .home a:hover,
+.menu > .students a:hover {
   background-color: #211a00;
   color: #fffdf4;
 }
@@ -24,29 +35,47 @@
 .menu .auth,
 .menu .me,
 .menu .logout {
+  text-align: right;
   position: absolute;
   right: 1rem;
 }
 
 .menu .auth,
-.menu .me { top: 1rem; }
-.menu .logout { top: 4rem;}
+.menu .me { top: 2rem; }
+.menu .logout { top: 3rem;}
 
-
-@media (min-width: 40rem) {
-  .menu {
-    display: flex;
-  }
-  .menu > li {
-    flex: 1 1 auto;
-    min-width: 0;
-    min-height: 0;
-  }
+.menu .auth,
+.menu .me,
+.menu .logout,
+.menu .auth button,
+.menu .me button,
+.menu .logout button {
+  font-family: inherit;
+  font-size: .8rem;
 }
 
-@media (max-width: 39.999rem) {
-  .menu > li a,
-  .menu > li button {
-    width: 100%;
-  }
+
+.menu > .home a,
+.menu > .students a {
+  padding: 1rem;
+  display: block;
+}
+
+.menu > .home.active a::after,
+.menu > .students.active a::after {
+  font-family: 'MicaGradShow';
+  content: '\f05c';
+  display: block;
+  height: 0;
+  position: relative;
+  top:-3px;
+}
+
+.menu {
+  display: flex;
+}
+.menu > li {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
 }
