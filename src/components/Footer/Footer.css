@@ -18,17 +18,69 @@ footer .social a:hover {
   color:#fedb00;
 }
 
-flex section {
-  flex: 3;
-  padding: 1em;
-}
-
-flex section.archive,
-flex section.social {
-  flex: 1;
-}
-
 footer .mica.logo {
   padding-top: 0;
   padding-right: 3em;
+}
+
+/*****/
+/*****/
+/* Trying to get this to work */
+/*****/
+/*****/
+
+footer flex {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+footer flex section {
+  padding: 1em;
+}
+
+footer flex section.mica {
+  max-width: 350px;
+}
+footer flex section {
+  width: 100%;
+}
+footer flex section.archive,
+footer flex section.social {
+  width: 50%;
+}
+
+@media (min-width: 750px) {
+  footer flex section {
+    width: 20%;
+  }
+  footer flex section.archive,
+  footer flex section.social {
+    width: 10%;
+  }
+}
+
+@media (max-width: 1099px) and (min-width: 750px) {
+  footer flex section.mica {
+    width: 100%;
+    max-width: none;
+  }
+  footer flex section.mica img {
+    width: 50%;
+    max-width: 350px;
+  }
+  footer flex section {
+    width: 30%;
+  }
+  footer flex section.archive,
+  footer flex section.social {
+    width: 15%;
+  }
+}
+
+@media (min-width: 1100px) {
+  footer flex section.mica {
+    width: 30%;
+    max-width: 350px;
+  }
 }
