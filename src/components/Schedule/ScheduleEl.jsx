@@ -34,7 +34,7 @@ function ScheduleEl({ showGroups }) {
         </div>
       </section>
 
-      <section>
+      {/* <section>
         <h2 style={css('m0 mt3 bb')}>FilmFest</h2>
         <p>
           In print materials, Film Fest is listed under “Events” with the
@@ -52,7 +52,7 @@ function ScheduleEl({ showGroups }) {
           <ShowItem />
         </div>
       </section>
-
+ */}
       <section>
         <h2 style={css('m0 mt3 bb')}>Curatorial Pratice</h2>
         <div className="shows item-grid">

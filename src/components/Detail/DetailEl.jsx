@@ -83,6 +83,6 @@ DetailEl.defaultProps = {
   program: 'Teaching, MA',
   receptionDate: 'Friday, February 26, 5–7 pm',
   showDate: 'February 26–March 13, 2017',
-  showName: 'Teaching',
+  showName: 'Show # / Event Name',
 }
 export default DetailEl
