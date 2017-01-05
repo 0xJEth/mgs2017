@@ -11,7 +11,27 @@
 .menu > li a,
 .menu > li button {
   text-align: center;
+  color: #211a00;
+  transition: all 333ms;
 }
+
+.menu > li a:hover,
+.menu > li button:hover {
+  background-color: #211a00;
+  color: #fffdf4;
+}
+
+.menu .auth,
+.menu .me,
+.menu .logout {
+  position: absolute;
+  right: 1rem;
+}
+
+.menu .auth,
+.menu .me { top: 1rem; }
+.menu .logout { top: 4rem;}
+
 
 @media (min-width: 40rem) {
   .menu {
@@ -28,11 +48,5 @@
   .menu > li a,
   .menu > li button {
     width: 100%;
-  }
-}
-
-@media (min-width: 50rem) {
-  #siteHeader .mgsLogo {
-    max-width: 64rem;
   }
 }

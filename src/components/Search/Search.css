@@ -27,9 +27,9 @@
 }
 
 .search-wrapper input:focus {
-  background-color: rgba(254,219,0,1);
-  border-color: rgba(254,219,0,1);
-  outline-color: rgba(254,219,0,.5);
+  background-color: rgba(255, 253, 244, 1);
+  border-color: rgba(255, 253, 244, 1);
+  outline-color: rgba(255, 253, 244, 0.5);
 }
 
 .search-wrapper input:focus ~ i {
@@ -87,10 +87,10 @@ select {
 }
 
 select:focus {
-  background-color: rgba(254,219,0,1);
-  border-color: rgba(254,219,0,1);
+  background-color: rgba(255, 253, 244, 1);
+  border-color: rgba(255, 253, 244, 1);
   border-left-color:black;
-  outline-color: rgba(254,219,0,.5);
+  outline-color: rgba(255, 253, 244, 0.5);
 }
 
 .customSelect:hover,

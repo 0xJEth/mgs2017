@@ -1,13 +1,12 @@
 .showItem {
-  background-color: #fffdf4;
+  background-color: rgba(254, 219, 0, 1);
   transition: all 400ms;
   z-index: 1;
 }
 
 .showItem:hover {
-  background-color: #fff198;
+  background-color: rgba(255, 253, 244, 1);
   box-shadow: 0 0 1em 0 #211a00;
-  color: #322b00;
   cursor: pointer;
   z-index: 10;
 }

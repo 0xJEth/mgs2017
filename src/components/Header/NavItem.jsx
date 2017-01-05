@@ -4,7 +4,7 @@ import css from '../../style'
 import LinkEl from '../Link'
 
 const styles = {
-  links: css('ba br1 p1 inlineBlock fs1 textReset'),
+  links: css('p1 block fs1 textReset'),
 }
 
 function NavItem({ isActive, id, ...props }) {

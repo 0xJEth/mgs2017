@@ -1,20 +1,14 @@
 import React, { PropTypes } from 'react'
 import mgsBlock from '../../mgs2017LogoBlock.svg'
-import mgsInline from '../../mgs2017LogoInline.svg'
 import css from '../../style'
 import './Header.css'
 import Menu from './Menu'
 
-const imgBySizeId = {
-  skinny: mgsBlock,
-  wide: mgsInline,
-}
-
-function HeaderEl({ siteName, sizeId }) {
+function HeaderEl({ siteName }) {
   return (
-    <header id="siteHeader" style={css('yellow p2 pt1 mb2')} >
+    <header id="siteHeader" className="bg-yellow" style={css('p2 pt1')} >
       <nav>
-        <img src={imgBySizeId[sizeId]} alt={siteName} title={siteName} className="mgsLogo" />
+        <img src={mgsBlock} alt={siteName} title={siteName} className="mgsLogo" />
         <Menu />
       </nav>
     </header>
@@ -22,10 +16,8 @@ function HeaderEl({ siteName, sizeId }) {
 }
 HeaderEl.propTypes = {
   siteName: PropTypes.string,
-  sizeId: PropTypes.string,
 }
 HeaderEl.defaultProps = {
   siteName: 'MICA Grad Show',
-  sizeId: 'wide',
 }
 export default HeaderEl

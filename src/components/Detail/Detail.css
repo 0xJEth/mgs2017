@@ -1,24 +1,42 @@
 detail {
-  height: 100%;
-  width: 100%;
+  background-color: #fffdf4;
+  border: 1em solid #fedb00;
+  box-shadow: inset 0px 0px 1em rgba(0,0,0,.5);
+  display: block;
   position: relative;
 }
 
-detail flex {
+detail .flex {
   display: flex;
-  min-height: 100vh;
+  flex-direction: column;
 }
 
-detail flex > div,
-detail flex > flex {
+detail .flex > div,
+detail .flex > .flex {
   flex: 1;
 }
 
-detail iframe {
-  height: 100%;
+detail .flex > .flex {
   width: 100%;
-  top:0;
-  right:0;
-  bottom:0;
-  left:0;
+}
+
+detail iframe {
+  width: 100%;
+  height: 60vh;
+}
+
+@media (min-width: 1000px ){
+  detail { min-height: 100vh; }
+  detail .flex {
+    flex-direction: row;
+    min-height: calc(100vh - 2em);
+  }
+  detail iframe {
+    height: 100%;
+    position: absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+  }
 }
