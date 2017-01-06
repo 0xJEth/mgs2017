@@ -1,4 +1,20 @@
 
-#blurb > div {
+#blurb .wrapper {
   max-width: 55rem;
+}
+#blurb .wrapper {
+  flex-direction: column;
+}
+#blurb .flexItem {
+  width: 100%;
+}
+
+@media (min-width: 40rem) {
+  #blurb .wrapper {
+    flex-direction: row;
+    align-items: center;
+  }
+  #blurb .flexItem {
+    width: 50%;
+  }
 }

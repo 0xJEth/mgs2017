@@ -5,11 +5,11 @@ import './Blurb.css'
 function Blurb({ description, tagline, siteName, mgsBlock }) {
   return (
     <section id="blurb" className="bg-white" style={css('pt2 pb2')}>
-      <div style={css('mlrauto flex')}>
-        <div style={css('w50 p1')}>
+      <div className="wrapper" style={css('mlrauto flex')}>
+        <div className="flexItem" style={css('p1')}>
           <img src={mgsBlock} alt={siteName} title={siteName} className="mgsLogo" />
         </div>
-        <div style={css('w50 p1 pt3')}>
+        <div className="flexItem" style={css('p1')}>
           <h1 style={css('m0 mb1 fs2')}>{tagline}</h1>
           {description.map((pText, index) => <p key={index}>{pText}</p>)}
         </div>
