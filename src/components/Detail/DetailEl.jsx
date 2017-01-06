@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import css from '../../style'
 import './Detail.css'
 
-function DetailEl({ gallery, program, receptionDate, showDate, showName }) {
+function DetailEl({ description, gallery, program, receptionDate, showDate, showName }) {
   return (
     <detail>
       <a href="/" className="close" style={css('absolute block top1 left1')}>
@@ -14,7 +14,7 @@ function DetailEl({ gallery, program, receptionDate, showDate, showName }) {
             <h1 style={css('m0')}>{ showName }</h1>
             <p className="dateRange" style={css('m0 fs2')}>{ showDate }</p>
             <p className="description">
-              Some things have a little description, that could get printed out here
+              {description}
             </p>
             <h2 style={css('m0 mt2 fs2')}>Reception</h2>
             <p>{ receptionDate }</p>
@@ -72,6 +72,7 @@ function DetailEl({ gallery, program, receptionDate, showDate, showName }) {
   )
 }
 DetailEl.propTypes = {
+  description: PropTypes.string,
   gallery: PropTypes.string.isRequired,
   program: PropTypes.string.isRequired,
   receptionDate: PropTypes.string.isRequired,
@@ -79,6 +80,7 @@ DetailEl.propTypes = {
   showName: PropTypes.string.isRequired,
 }
 DetailEl.defaultProps = {
+  description: 'Some things have a little description, that could get printed out here',
   gallery: 'Sheila & Richard Riggs Gallery',
   program: 'Teaching, MA',
   receptionDate: 'Friday, February 26, 5–7 pm',

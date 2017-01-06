@@ -6,9 +6,10 @@ import Search from '../Search/Search'
 import ShowItem from './ShowGroup'
 
 function ScheduleEl({ showGroups }) {
-  const { onCampusExhibition, singleDay } = showGroups
+  const { onCampusExhibition, singleDay, cityWide } = showGroups
   return (
     <article id="schedule" style={css('pl1 pr1 pb2')}>
+
       <header>
         <h1 style={css('m0 p0 pl1 pr1')}>Schedule</h1>
         <div className="group" style={css('flex')}>
@@ -53,20 +54,12 @@ function ScheduleEl({ showGroups }) {
         </div>
       </section>
  */}
-      <section>
+      <section style={css('mb3')}>
         <h2 style={css('m0 mt3 bb')}>Curatorial Pratice</h2>
         <div className="shows item-grid">
-          <ShowItem />
-          <ShowItem />
-          <ShowItem />
-          <ShowItem />
-          <ShowItem />
-          <ShowItem />
-          <ShowItem />
-          <ShowItem />
-          <ShowItem />
-          <ShowItem />
-          <ShowItem />
+          {cityWide &&
+            map(cityWide, item => <ShowItem key={item.id} {...item} />)
+          }
         </div>
       </section>
 
@@ -79,6 +72,7 @@ ScheduleEl.propTypes = {
   showGroups: PropTypes.shape({
     onCampusExhibition: PropTypes.arrayOf(PropTypes.object),
     singleDay: PropTypes.arrayOf(PropTypes.object),
+    cityWide: PropTypes.arrayOf(PropTypes.object),
   }),
 }
 export default ScheduleEl

@@ -1,9 +1,5 @@
 /** Header.css **/
 #siteHeader nav {
-  max-width: 30rem;
-  padding-top: 3rem;
-  margin-left: auto;
-  margin-right: auto;
   display: block;
 }
 
@@ -15,6 +11,7 @@
 
 #siteHeader .menu {
   border-top: 1px solid;
+  border-bottom: 1px solid;
 }
 
 .menu,
@@ -72,6 +69,12 @@
   display: block;
 }
 
+.menu > .home.active a,
+.menu > .students.active a {
+  background-color: #655700;
+  color: #fedb00;
+}
+/*
 .menu > .home.active a::after,
 .menu > .students.active a::after {
   font-family: 'MicaGradShow';
@@ -80,7 +83,7 @@
   height: 0;
   position: relative;
   top:-3px;
-}
+}*/
 
 .menu {
   display: flex;

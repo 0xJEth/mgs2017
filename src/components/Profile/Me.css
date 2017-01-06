@@ -1,3 +1,4 @@
+
 flex {
   display:flex;
 }
@@ -6,6 +7,15 @@ flex > div {
   flex: 1;
 }
 
-page#profile > main {
+#profile flex {
+  min-height: 100vh;
+}
+
+#profile > main {
   box-shadow: none;
+}
+
+#profile #blurb,
+#profile footer {
+  display: none;
 }

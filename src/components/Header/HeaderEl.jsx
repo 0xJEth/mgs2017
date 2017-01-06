@@ -2,13 +2,14 @@ import React, { PropTypes } from 'react'
 import mgsBlock from '../../mgs2017LogoBlock.svg'
 import css from '../../style'
 import './Header.css'
+import Blurb from '../Blurb/Blurb'
 import Menu from './Menu'
 
 function HeaderEl({ siteName }) {
   return (
-    <header id="siteHeader" className="bg-yellow" style={css('p2 pt1')} >
-      <nav>
-        <img src={mgsBlock} alt={siteName} title={siteName} className="mgsLogo" />
+    <header id="siteHeader" className="bg-white" style={css('p0 pt1')} >
+      <Blurb mgsBlock={mgsBlock} siteName={siteName} />
+      <nav className="bg-yellow" >
         <Menu />
       </nav>
     </header>

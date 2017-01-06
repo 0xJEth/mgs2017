@@ -16,7 +16,7 @@ function getReception({ receptionStart, receptionEnd }) {
   const recEndStr = moment(receptionEnd).utc().format('hA')
   return `${recStartStr}–${recEndStr}`
 }
-function ShowGroup({ program, name, ...props }) {
+function ShowGroup({ program, name, description, ...props }) {
   const showDate = getShowDate(props)
   const reception = getReception(props)
   return (
@@ -24,10 +24,10 @@ function ShowGroup({ program, name, ...props }) {
       <a href="/details" className="block black" style={css('textReset')}>
         <h1 style={css('m0 mb1')}>{ name }</h1>
         {showDate && <h2 style={css('m0 mb1')} className="dateRange">{showDate}</h2>}
+        {reception && <h2 style={css('m0 mt1 mb1')}>Reception: <br />{reception}</h2>}
         <ul style={css('lsNone m0 p0')}>
           {program && map(program, (item, key) => <li key={key}>{item.name}</li>)}
         </ul>
-        {reception && <h2 style={css('m0 mt1 mb1')}>Reception: <br />{reception}</h2>}
       </a>
     </div>
   )
@@ -41,6 +41,7 @@ ShowGroup.propTypes = {
   receptionStart: PropTypes.string.isRequired,
   showDate: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
 }
 ShowGroup.defaultProps = {
   endDate: '',
@@ -52,5 +53,6 @@ ShowGroup.defaultProps = {
   showDate: 'February 26–March 13, 2017',
   showName: 'Teaching',
   startDate: '',
+  description: 'Tk',
 }
 export default ShowGroup
