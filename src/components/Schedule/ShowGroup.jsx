@@ -16,7 +16,7 @@ function getReception({ receptionStart, receptionEnd }) {
   const recEndStr = moment(receptionEnd).utc().format('hA')
   return `${recStartStr}–${recEndStr}`
 }
-function ShowGroup({ program, name, description, link, ...props }) {
+function ShowGroup({ program, name, link, ...props }) {
   const showDate = getShowDate(props)
   const reception = getReception(props)
   return (
@@ -48,7 +48,7 @@ ShowGroup.propTypes = {
 ShowGroup.defaultProps = {
   endDate: '',
   gallery: 'Sheila & Richard Riggs Gallery',
-  link: '/details',
+  link: '/details/SHOW-NAME',
   name: '[name here...]',
   program: { name: 'Teaching, MA' },
   receptionEnd: '',
