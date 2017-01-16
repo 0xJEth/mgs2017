@@ -1,13 +1,13 @@
 import React, { PropTypes } from 'react'
+import noop from 'lodash/noop'
 import css from '../../style'
 import './Detail.css'
+import Close from '../CloseButton'
 
-function DetailEl({ description, gallery, program, receptionDate, showDate, showName }) {
+function DetailEl({ description, detailClose, gallery, program, receptionDate, showDate, showName }) {
   return (
     <detail>
-      <a href="/" className="close" style={css('absolute block top1 left1')}>
-        <i className="fa fa-close-circle-outline fa-2x black" />
-      </a>
+      <Close onClick={detailClose} />
       <div className="flex">
         <div className="flex" style={css('p2 pt4 pb4')}>
           <div className="mainContent">
@@ -29,37 +29,7 @@ function DetailEl({ description, gallery, program, receptionDate, showDate, show
             <p style={css('m0 mb1')}>list of students — based on the showgroup. Default to alpha order of all students in a particular showGroup (should the student names do anything? or are they just there for reference?)</p>
             <ul style={css('lsNone m0 p0')}>
               <li>
-                <p style={css('m0')}>Student Name / Program</p>
-              </li>
-              <li>
-                <p style={css('m0')}>Student Name / Program</p>
-              </li>
-              <li>
-                <p style={css('m0')}>Student Name / Program</p>
-              </li>
-              <li>
-                <p style={css('m0')}>Student Name / Program</p>
-              </li>
-              <li>
-                <p style={css('m0')}>Student Name / Program</p>
-              </li>
-              <li>
-                <p style={css('m0')}>Student Name / Program</p>
-              </li>
-              <li>
-                <p style={css('m0')}>Student Name / Program</p>
-              </li>
-              <li>
-                <p style={css('m0')}>Student Name / Program</p>
-              </li>
-              <li>
-                <p style={css('m0')}>Student Name / Program</p>
-              </li>
-              <li>
-                <p style={css('m0')}>Student Name / Program</p>
-              </li>
-              <li>
-                <p style={css('m0')}>Student Name / Program</p>
+                <p style={css('m0')}>Generate a list ... Student Name / Program</p>
               </li>
             </ul>
           </div>
@@ -73,6 +43,7 @@ function DetailEl({ description, gallery, program, receptionDate, showDate, show
 }
 DetailEl.propTypes = {
   description: PropTypes.string,
+  detailClose: PropTypes.func.isRequired,
   gallery: PropTypes.string.isRequired,
   program: PropTypes.string.isRequired,
   receptionDate: PropTypes.string.isRequired,
@@ -81,6 +52,7 @@ DetailEl.propTypes = {
 }
 DetailEl.defaultProps = {
   description: 'Some things have a little description, that could get printed out here',
+  detailClose: noop,
   gallery: 'Sheila & Richard Riggs Gallery',
   program: 'Teaching, MA',
   receptionDate: 'Friday, February 26, 5–7 pm',
