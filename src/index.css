@@ -262,11 +262,3 @@ page > footer {
     width: calc(100% / 5);
   }
 }
-
-/** hide some shit? **/
-@media (max-width: 49.999em) {
-  .hidden-sm {
-    display: none;
-    visibility: hidden;
-  }
-}

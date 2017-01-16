@@ -8,6 +8,7 @@
 
 .student {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .student:nth-child(even) {
@@ -39,8 +40,28 @@
 
 .student span.social {
   flex: 1;
+  text-align: right;
 }
 
 .student span.social i {
   margin-left: .25rem;
+}
+
+/** hide some shit? **/
+@media (max-width: 49.999em) {
+  .hidden-sm {
+    display: none;
+    visibility: hidden;
+  }
+  .student {
+    flex-direction: column;
+  }
+  .student span.social {
+    flex: 1;
+    text-align: left;
+  }
+  .student span.social {
+    flex: 1;
+    text-align: left;
+  }
 }

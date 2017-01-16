@@ -12,7 +12,7 @@ function StudentEl({ familyName, givenName, programName, show, social, website }
       <span className="program">{ programName }</span>
       <span className="show">{show && <Link href="/details" internal>{ show.name }</Link>}</span>
       <span className="website">{ website }</span>
-      <span className="social" style={css('textRight')}>
+      <span className="social">
         {social &&
           <div>
             <Icon symbol="facebook" aria-hidden="true" />

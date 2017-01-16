@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react'
 import { map } from 'lodash'
 import css from '../../style'
-import './StudentList.css'
 import Page from '../Page'
 import Search from '../Search/Search'
 import FilterSelect from '../FilterSelect'
