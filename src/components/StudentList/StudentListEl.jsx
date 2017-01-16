@@ -33,7 +33,6 @@ function StudentListEl({ programOptions, students }) {
               <span className="name"><strong>Name</strong></span>
               <span className="program"><strong>Program</strong></span>
               <span className="show"><strong>Show</strong></span>
-              <span className="website" />
               <span className="social" />
             </li>
             {map(students, item => <Student key={item.id} {...item} />)}

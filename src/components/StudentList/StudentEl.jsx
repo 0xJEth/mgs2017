@@ -8,13 +8,18 @@ function StudentEl({ familyName, givenName, programName, show, social, website }
   const displayName = `${givenName} ${familyName}`
   return (
     <li className="student" style={css('p0p5 pl2 pr2 bb')}>
-      <span className="name">{ displayName }</span>
-      <span className="program">{ programName }</span>
-      <span className="show">{show && <Link href="/details" internal>{ show.name }</Link>}</span>
-      <span className="website">{ website }</span>
+      <span className="name"><strong>{ displayName }</strong></span>
+      <span className="program">
+        <Link href="/details/SHOW-NAME" internal>{ programName }</Link>
+      </span>
+      <span className="show">
+        {show && <Link href="/details/SHOW-NAME" internal>{ show.name }</Link>}
+      </span>
       <span className="social">
         {social &&
           <div>
+            <Icon symbol="web" aria-hidden="true" />
+            <Icon symbol="email" aria-hidden="true" />
             <Icon symbol="facebook" aria-hidden="true" />
             <Icon symbol="instagram" aria-hidden="true" />
             <Icon symbol="soundcloud" aria-hidden="true" />
@@ -41,8 +46,9 @@ StudentEl.defaultProps = {
   givenName: 'Kristian',
   programName: 'MFA Graphic Design',
   show: 'Which show group, link to show details page',
-  website: 'TK',
   social: [
+    { web: 'www.yourname.com' },
+    { email: '' },
     { facebook: '' },
     { instagram: 'bjornmeansbear' },
     { soundcloud: 'bjornmeansbear' },
