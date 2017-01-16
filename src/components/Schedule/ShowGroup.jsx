@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 import { map } from 'lodash'
 import moment from 'moment'
+import Link from 'redux-history-component'
 import css from '../../style'
 import './ShowItem.css'
 
@@ -16,19 +17,23 @@ function getReception({ receptionStart, receptionEnd }) {
   const recEndStr = moment(receptionEnd).utc().format('hA')
   return `${recStartStr}–${recEndStr}`
 }
-function ShowGroup({ program, name, link, ...props }) {
+function getLink({ id, key }) {
+  return `/details/${key || id}`
+}
+function ShowGroup({ program, name, ...props }) {
   const showDate = getShowDate(props)
   const reception = getReception(props)
+  const link = getLink(props)
   return (
     <div className="showItem item">
-      <a href={link} className="block black" style={css('textReset')}>
+      <Link href={link} className="block black" style={css('textReset')}>
         <h1 style={css('m0 mb1')}>{ name }</h1>
         {showDate && <h2 style={css('m0 mb1')} className="dateRange">{showDate}</h2>}
         {reception && <h2 style={css('m0 mt1 mb1')}>Reception: <br />{reception}</h2>}
         <ul style={css('lsNone m0 p0')}>
           {program && map(program, (item, key) => <li key={key}>{item.name}</li>)}
         </ul>
-      </a>
+      </Link>
     </div>
   )
 }
@@ -41,14 +46,12 @@ ShowGroup.propTypes = {
   receptionEnd: PropTypes.string.isRequired,
   receptionStart: PropTypes.string.isRequired,
   showDate: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
 }
 ShowGroup.defaultProps = {
   endDate: '',
   gallery: 'Sheila & Richard Riggs Gallery',
-  link: '/details/SHOW-NAME',
   name: '[name here...]',
   program: { name: 'Teaching, MA' },
   receptionEnd: '',
