@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import ButtonEl from './Button'
 
 function CloseButton(props) {
-  return <ButtonEl className="close btn-small z4" icon="times-btl" {...props} />
+  return <ButtonEl className="close wtf" icon="close-circle-outline" style="bn p0 bgTrans fs2" {...props} />
 }
 
 CloseButton.propTypes = {

@@ -7,7 +7,7 @@ import Close from '../CloseButton'
 function DetailEl({ description, detailClose, gallery, program, receptionDate, showDate, showName }) {
   return (
     <detail>
-      <Close onClick={detailClose} />
+      <Close onClick={detailClose} style={css('absolute')} />
       <div className="flex">
         <div className="flex" style={css('p2 pt4 pb4')}>
           <div className="mainContent">
