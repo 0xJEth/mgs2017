@@ -45,3 +45,8 @@
 .editable-buttons {
   margin-left: .3rem;
 }
+
+/*.editable-empty,
+.editable-empty .btn-secret {
+  color: gray;
+}*/

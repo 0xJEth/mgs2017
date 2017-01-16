@@ -3,7 +3,6 @@ import { map } from 'lodash'
 import moment from 'moment'
 import css from '../../style'
 import './ShowItem.css'
-import Link from '../Link'
 
 function getShowDate({ startDate, endDate }) {
   if (!startDate) return null
