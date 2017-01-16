@@ -28,7 +28,7 @@
   margin-bottom: 2rem;
 }
 
-.student span {
+.student > span {
   flex: 3;
   min-width: 0;
   min-height: 0;
@@ -50,6 +50,9 @@
 .student span.social i {
   margin-left: .25rem;
 }
+.student span.social i:first-child {
+  margin-left: 0;
+}
 
 /** hide some shit? **/
 @media (max-width: 49.999em) {
@@ -60,9 +63,9 @@
   .student {
     flex-direction: column;
   }
+  .student span.show,
   .student span.social {
-    flex: 1;
-    text-align: left;
+    margin-top: .5rem;
   }
   .student span.social {
     flex: 1;

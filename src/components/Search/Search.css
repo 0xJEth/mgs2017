@@ -85,6 +85,11 @@ select {
   appearance: none;
   z-index: 1;
 }
+@media (max-width: 49.999rem) {
+  select {
+    border-left: none;
+  }
+}
 
 .customSelect::after {
   background-color: transparent;
