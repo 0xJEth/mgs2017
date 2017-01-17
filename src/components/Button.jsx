@@ -4,7 +4,7 @@ import css from '../style'
 
 function Button({ children, className, icon, styles, ...props }) {
   return (
-    <button {...props} style={css(`${styles}`)} className={classnames('', className)}>
+    <button {...props} style={css(styles)} className={classnames('', className)}>
       {icon && <i className={classnames('fa', `fa-${icon}`)} aria-hidden="true" />}
       {children}
     </button>

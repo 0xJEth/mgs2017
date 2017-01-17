@@ -6,6 +6,11 @@ detail {
   position: relative;
 }
 
+detail .close {
+  top: .5rem;
+  left: .5rem;
+}
+
 detail .flex {
   display: flex;
   flex-direction: column;
