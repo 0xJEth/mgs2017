@@ -22,10 +22,11 @@ function programStudents(programs) {
   const firstProgram = find(programs)
   return firstProgram && firstProgram.students
 }
-function Show({ allStudentsIn }) {
+function Show({ allStudentsIn, name }) {
   const students = programStudents(allStudentsIn)
   return (
     <div>
+      <strong>{name}</strong>
       {size(students) && map(students, ({ id, givenName, familyName }) =>
         <div key={id}>{givenName} {familyName}</div>
       )}
