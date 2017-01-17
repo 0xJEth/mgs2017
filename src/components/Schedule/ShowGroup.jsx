@@ -47,11 +47,9 @@ ShowGroup.propTypes = {
   receptionStart: PropTypes.string.isRequired,
   showDate: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
 }
 ShowGroup.defaultProps = {
   endDate: '',
-  gallery: 'Sheila & Richard Riggs Gallery',
   name: '[name here...]',
   program: { name: 'Teaching, MA' },
   receptionEnd: '',
@@ -59,6 +57,5 @@ ShowGroup.defaultProps = {
   showDate: 'February 26–March 13, 2017',
   showName: 'Teaching',
   startDate: '',
-  description: 'Tk',
 }
 export default ShowGroup
