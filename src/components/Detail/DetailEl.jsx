@@ -23,6 +23,7 @@ function DetailEl({ show, detailClose }) {
   const { description, program, name, ...props } = show
   const showDate = getShowDate(props)
   const reception = getReception(props)
+  console.log(props)
   return (
     <detail>
       <Close onClick={detailClose} style={css('absolute')} />
