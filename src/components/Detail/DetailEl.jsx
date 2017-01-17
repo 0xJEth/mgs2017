@@ -50,7 +50,7 @@ DetailEl.propTypes = {
     program: PropTypes.string.isRequired,
     receptionDate: PropTypes.string.isRequired,
     showDate: PropTypes.string.isRequired,
-    showName: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
   }),
 }
 DetailEl.defaultProps = {

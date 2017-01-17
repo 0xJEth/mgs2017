@@ -1,11 +1,18 @@
 import React, { PropTypes } from 'react'
 import css from '../../style'
 import './Student.css'
-import Icon from '../Icon'
 import Link from '../Link'
 
-function StudentEl({ familyName, givenName, programName, show, social, website }) {
+function StudentEl({ familyName, givenName, programName, show, url, email, facebook, instagram, soundcloud, twitter, vimeo, youtube }) {
   const displayName = `${givenName} ${familyName}`
+  const emailStr = `mailto:${email}`
+  const facebookStr = `https://www.facebook.com/${facebook}`
+  const instagramStr = `https://www.instagram.com/${instagram}`
+  const soundcloudStr = `https://www.soundcloud.com/${soundcloud}`
+  const twitterStr = `https://www.twitter.com/${twitter}`
+  const vimeoStr = `https://www.vimeo.com/${vimeo}`
+  const youtubeStr = `https://www.youtube.com/${youtube}`
+
   return (
     <li className="student" style={css('p0p5 pl2 pr2 bb')}>
       <span className="name"><strong>{ displayName }</strong></span>
@@ -16,18 +23,16 @@ function StudentEl({ familyName, givenName, programName, show, social, website }
         {show && <Link href="/details/SHOW-NAME" internal>{ show.name }</Link>}
       </span>
       <span className="social">
-        {social &&
-          <div>
-            <Icon symbol="web" aria-hidden="true" />
-            <Icon symbol="email" aria-hidden="true" />
-            <Icon symbol="facebook" aria-hidden="true" />
-            <Icon symbol="instagram" aria-hidden="true" />
-            <Icon symbol="soundcloud" aria-hidden="true" />
-            <Icon symbol="twitter" aria-hidden="true" />
-            <Icon symbol="vimeo" aria-hidden="true" />
-            <Icon symbol="youtube" aria-hidden="true" />
-          </div>
-        }
+        <div>
+          {url && <Link href={url} icon="web" />}
+          {email && <Link href={emailStr} icon="email" />}
+          {facebook && <Link href={facebookStr} icon="facebook" />}
+          {instagram && <Link href={instagramStr} icon="instagram" />}
+          {soundcloud && <Link href={soundcloudStr} icon="soundcloud" />}
+          {twitter && <Link href={twitterStr} icon="twitter" />}
+          {vimeo && <Link href={vimeoStr} icon="vimeo" />}
+          {youtube && <Link href={youtubeStr} icon="youtube" />}
+        </div>
       </span>
     </li>
   )
@@ -38,23 +43,15 @@ StudentEl.propTypes = {
   givenName: PropTypes.string.isRequired,
   programName: PropTypes.string.isRequired,
   show: PropTypes.object,
-  social: PropTypes.array,
-  website: PropTypes.string,
+  url: PropTypes.string,
+  email: PropTypes.string,
+  facebook: PropTypes.string,
+  instagram: PropTypes.string,
+  soundcloud: PropTypes.string,
+  twitter: PropTypes.string,
+  vimeo: PropTypes.string,
+  youtube: PropTypes.string,
 }
 StudentEl.defaultProps = {
-  familyName: 'Bjornard',
-  givenName: 'Kristian',
-  programName: 'MFA Graphic Design',
-  show: 'Which show group, link to show details page',
-  social: [
-    { web: 'www.yourname.com' },
-    { email: '' },
-    { facebook: '' },
-    { instagram: 'bjornmeansbear' },
-    { soundcloud: 'bjornmeansbear' },
-    { twitter: 'bjornmeansbear' },
-    { vimeo: 'bjornmeansbear' },
-    { youtube: 'kristianbjornard' },
-  ],
 }
 export default StudentEl

@@ -47,13 +47,6 @@
   text-align: right;
 }
 
-.student span.social i {
-  margin-left: .25rem;
-}
-.student span.social i:first-child {
-  margin-left: 0;
-}
-
 .student a {
   color: #211a00;
   text-decoration: none;
@@ -65,6 +58,19 @@
 .student a:hover {
   color: #322b00;
   border-bottom-color: #322b00;
+}
+
+.student span.social a {
+  border-bottom: none;
+}
+.student span.social a i {
+  margin-left: .25rem;
+}
+.student span.social a:first-child i {
+  margin-left: 0;
+}
+.student span.social a:hover {
+  color: #cbaf00;
 }
 
 /** hide some shit? **/
