@@ -17,10 +17,12 @@ function StudentEl({ familyName, givenName, programName, show, url, email, faceb
     <li className="student" style={css('p0p5 pl2 pr2 bb')}>
       <span className="name"><strong>{ displayName }</strong></span>
       <span className="program">
-        <Link href="/details/SHOW-NAME" internal>{ programName }</Link>
+        {/* <Link href="/details/SHOW-NAME" internal>{ programName }</Link> */}
+        <i>{ programName }</i>
       </span>
       <span className="show">
-        {show && <Link href="/details/SHOW-NAME" internal>{ show.name }</Link>}
+        {/* {show && <Link href="/details/SHOW-NAME" internal>{ show.name }</Link>} */}
+        {show && <p>{ show.name } </p>}
       </span>
       <span className="social">
         <div>
