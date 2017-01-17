@@ -15,6 +15,6 @@ const getShowId = flow(getProps, get('route.params.showId'))
 
 const selectShow = getSelect(itemsFilled, getShowId)
 const mapProps = createStructuredSelector({
-  show: selectShow,
+  showGroup: selectShow,
 })
 export default connect(mapProps)(Component)

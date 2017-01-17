@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react'
-import { map } from 'lodash'
-import noop from 'lodash/noop'
+import { find, map, size } from 'lodash'
 import moment from 'moment'
 import css from '../../style'
 import './Detail.css'
@@ -18,12 +17,33 @@ function getReception({ receptionStart, receptionEnd }) {
   const recEndStr = moment(receptionEnd).utc().format('hA')
   return `${recStartStr}–${recEndStr}`
 }
-function DetailEl({ show, detailClose }) {
-  if (!show) return <div>Loading</div>
-  const { description, program, name, ...props } = show
+function programStudents(programs) {
+  if (!size(programs)) return null
+  const firstProgram = find(programs)
+  return firstProgram && firstProgram.students
+}
+function Show({ allStudentsIn, name }) {
+  const students = programStudents(allStudentsIn)
+  return (
+    <div>
+      {name}
+      {size(students) && map(students, ({ id, givenName, familyName }) =>
+        <div key={id}>{givenName} {familyName}</div>
+      )}
+    </div>
+  )
+}
+Show.propTypes = {
+  allStudentsIn: PropTypes.objectOf(PropTypes.object),
+  name: PropTypes.string,
+}
+
+function DetailEl({ showGroup, detailClose }) {
+  if (!showGroup) return <div>Loading</div>
+  const { description, program, name, show, ...props } = showGroup
   const showDate = getShowDate(props)
   const reception = getReception(props)
-  console.log(props)
+  console.log(show)
   return (
     <detail>
       <Close onClick={detailClose} style={css('absolute')} />
@@ -46,6 +66,7 @@ function DetailEl({ show, detailClose }) {
             </ul>
           </div>
           <div className="studentList" style={css('selfEnd')}>
+            { map(show, showItem => <Show key={showItem.id} {...showItem} />) }
             <p style={css('m0 mb1')}>list of students — based on the showgroup. Default to alpha order of all students in a particular showGroup (should the student names do anything? or are they just there for reference?)</p>
             <ul style={css('lsNone m0 mb1 p0')}>
               <li>
@@ -65,10 +86,10 @@ function DetailEl({ show, detailClose }) {
   )
 }
 DetailEl.propTypes = {
-  show: PropTypes.shape({
+  showGroup: PropTypes.shape({
     description: PropTypes.string,
     gallery: PropTypes.string,
-    program: PropTypes.string.isRequired,
+    program: PropTypes.object.isRequired,
     receptionDate: PropTypes.string.isRequired,
     showDate: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
@@ -76,12 +97,12 @@ DetailEl.propTypes = {
   detailClose: PropTypes.func.isRequired,
 }
 DetailEl.defaultProps = {
-  description: 'Some things have a little description, that could get printed out here',
-  gallery: 'Sheila & Richard Riggs Gallery',
-  program: 'Teaching, MA',
-  receptionDate: 'Friday, February 26, 5–7 pm',
-  showDate: 'February 26–March 13, 2017',
-  showName: 'Show # / Event Name',
-  detailClose: noop,
+  // description: 'Some things have a little description, that could get printed out here',
+  // gallery: 'Sheila & Richard Riggs Gallery',
+  // program: 'Teaching, MA',
+  // receptionDate: 'Friday, February 26, 5–7 pm',
+  // showDate: 'February 26–March 13, 2017',
+  // showName: 'Show # / Event Name',
+  // detailClose: noop,
 }
 export default DetailEl
