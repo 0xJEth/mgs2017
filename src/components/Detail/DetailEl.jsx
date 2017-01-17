@@ -4,14 +4,16 @@ import css from '../../style'
 import './Detail.css'
 import Close from '../CloseButton'
 
-function DetailEl({ description, detailClose, gallery, program, receptionDate, showDate, showName }) {
+function DetailEl({ show }) {
+  if (!show) return <div>Loading</div>
+  const { description, detailClose, gallery, program, receptionDate, showDate, name } = show
   return (
     <detail>
       <Close onClick={detailClose} style={css('absolute')} />
       <div className="flex">
         <div className="flex" style={css('p2 pt4 pb4')}>
           <div className="mainContent">
-            <h1 style={css('m0')}>{ showName }</h1>
+            <h1 style={css('m0')}>{ name }</h1>
             <p className="dateRange" style={css('m0 fs2')}>{ showDate }</p>
             <p className="description">
               {description}
@@ -20,7 +22,7 @@ function DetailEl({ description, detailClose, gallery, program, receptionDate, s
             <p>{ receptionDate }</p>
             <ul style={css('lsNone m0 p0 mt2')}>
               <li>
-                <h3 style={css('m0 mb0p5')}>{ program }</h3>
+                <h3 style={css('m0 mb0p5')}>{ program.id }</h3>
                 <p>{ gallery } » any galleries should show up on the map</p>
               </li>
             </ul>
@@ -42,13 +44,14 @@ function DetailEl({ description, detailClose, gallery, program, receptionDate, s
   )
 }
 DetailEl.propTypes = {
-  description: PropTypes.string,
-  detailClose: PropTypes.func.isRequired,
-  gallery: PropTypes.string.isRequired,
-  program: PropTypes.string.isRequired,
-  receptionDate: PropTypes.string.isRequired,
-  showDate: PropTypes.string.isRequired,
-  showName: PropTypes.string.isRequired,
+  show: PropTypes.shape({
+    description: PropTypes.string,
+    gallery: PropTypes.string,
+    program: PropTypes.string.isRequired,
+    receptionDate: PropTypes.string.isRequired,
+    showDate: PropTypes.string.isRequired,
+    showName: PropTypes.string.isRequired,
+  }),
 }
 DetailEl.defaultProps = {
   description: 'Some things have a little description, that could get printed out here',
