@@ -30,13 +30,14 @@ function DetailEl({ show, detailClose }) {
         <div className="flex" style={css('p2 pt4 pb4')}>
           <div className="mainContent">
             <h1 style={css('m0')}>{ name }</h1>
-            <p className="dateRange" style={css('m0 fs2')}>{ showDate }</p>
-            <p className="description">
-              { description }
-            </p>
-            <h2 style={css('m0 mt2 fs2')}>Reception</h2>
-            <p>{ reception }</p>
+            { showDate && <p className="dateRange" style={css('m0 fs2')}>{ showDate }</p>}
+            {description && <p className="description">{ description }</p>}
+            {reception && <div>
+              <h2 style={css('m0 mt2 fs2')}>Reception</h2>
+              <p>{ reception }</p>
+            </div>}
             <ul style={css('lsNone m0 p0 mt2')}>
+              <h2 style={css('m0 mt2 fs2')}>Location</h2>
               <li>
                 <h3 style={css('m0 mb0p5')}>{ program.id }</h3>
                 <p>location.name? » any galleries should show up on the map</p>
