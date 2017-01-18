@@ -29,8 +29,8 @@ function Show({ allStudentsIn, name }) {
   const students = programStudents(program)
   return (
     <div>
-      <pre>{name}</pre>
       {program && <h4>{program.name}</h4>}
+      <strong>{name}</strong>
       {size(students) && map(students, ({ id, givenName, familyName }) =>
         <div key={id}>{givenName} {familyName}</div>
       )}
@@ -71,15 +71,6 @@ function DetailEl({ showGroup, detailClose }) {
           </div>
           <div className="studentList" style={css('selfEnd')}>
             { map(show, showItem => <Show key={showItem.id} {...showItem} />) }
-            <p style={css('m0 mb1')}>list of students — based on the showgroup. Default to alpha order of all students in a particular showGroup (should the student names do anything? or are they just there for reference?)</p>
-            <ul style={css('lsNone m0 mb1 p0')}>
-              <li>
-                <p style={css('m0')}>Generate a list ... Student Name and their Program? is a program listing useful on this page anywhere???</p>
-              </li>
-            </ul>
-            <ul style={css('lsNone m0 p0')}>
-              {program && map(program, (item, key) => <li key={key}>{item.name}</li>)}
-            </ul>
           </div>
         </div>
         <div className="map" style={css('relative')}>
