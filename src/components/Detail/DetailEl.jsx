@@ -17,16 +17,20 @@ function getReception({ receptionStart, receptionEnd }) {
   const recEndStr = moment(receptionEnd).utc().format('hA')
   return `${recStartStr}–${recEndStr}`
 }
-function programStudents(programs) {
+function getFirstProgram(programs) {
   if (!size(programs)) return null
-  const firstProgram = find(programs)
-  return firstProgram && firstProgram.students
+  return find(programs)
+}
+function programStudents(program) {
+  return program && program.students
 }
 function Show({ allStudentsIn, name }) {
-  const students = programStudents(allStudentsIn)
+  const program = getFirstProgram(allStudentsIn)
+  const students = programStudents(program)
   return (
     <div>
-      {name}
+      <pre>{name}</pre>
+      {program && <h4>{program.name}</h4>}
       {size(students) && map(students, ({ id, givenName, familyName }) =>
         <div key={id}>{givenName} {familyName}</div>
       )}
