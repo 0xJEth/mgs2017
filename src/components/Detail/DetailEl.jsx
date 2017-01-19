@@ -28,9 +28,8 @@ function Show({ allStudentsIn, name }) {
   const program = getFirstProgram(allStudentsIn)
   const students = programStudents(program)
   return (
-    <div>
-      {program && <h4>{program.name}</h4>}
-      <strong>{name}</strong>
+    <div style={css('m1')} >
+      {program && <h4 style={css('m0 mb0p5')} >{program.name}</h4>}
       {size(students) && map(students, ({ id, givenName, familyName }) =>
         <div key={id}>{givenName} {familyName}</div>
       )}
