@@ -47,6 +47,10 @@ detail iframe {
     bottom:0;
     left:0;
   }
+  detail .studentList {
+    height: calc(100vh - 8rem);
+    overflow: auto;
+  }
 }
 
 detail .studentList {
