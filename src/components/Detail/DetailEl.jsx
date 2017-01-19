@@ -5,6 +5,7 @@ import css from '../../style'
 import './Detail.css'
 import Close from '../CloseButton'
 import DetailMap from './DetailMap'
+import LocationList from './LocationList'
 
 function getShowDate({ startDate, endDate }) {
   if (!startDate) return null
@@ -25,7 +26,7 @@ function getFirstProgram(programs) {
 function programStudents(program) {
   return program && program.students
 }
-function Show({ allStudentsIn, name }) {
+function Show({ allStudentsIn }) {
   const program = getFirstProgram(allStudentsIn)
   const students = programStudents(program)
   return (
@@ -39,7 +40,6 @@ function Show({ allStudentsIn, name }) {
 }
 Show.propTypes = {
   allStudentsIn: PropTypes.objectOf(PropTypes.object),
-  name: PropTypes.string,
 }
 
 function DetailEl({ showGroup, detailClose }) {
@@ -62,12 +62,7 @@ function DetailEl({ showGroup, detailClose }) {
               <h2 style={css('m0 mt2 fs2')}>Reception</h2>
               <p>{ reception }</p>
             </div>}
-            <ul style={css('lsNone m0 p0 mt2')}>
-              <h2 style={css('m0 mt2 fs2')}>Location</h2>
-              <li>
-                <p>location.name? » any galleries should show up on the map</p>
-              </li>
-            </ul>
+            <LocationList show={show} />
           </div>
           <div className="studentList" style={css('selfEnd')}>
             { map(show, showItem => <Show key={showItem.id} {...showItem} />) }
