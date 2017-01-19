@@ -42,14 +42,15 @@ Show.propTypes = {
 }
 
 function DetailEl({ showGroup, detailClose }) {
-  if (!showGroup) return <div>Loading</div>
+  const close = <Close onClick={detailClose} style={css('absolute')} />
+  if (!showGroup) return <div>Loading {close}</div>
   const { description, program, name, show, ...props } = showGroup
   const showDate = getShowDate(props)
   const reception = getReception(props)
   console.log(show)
   return (
     <detail>
-      <Close onClick={detailClose} style={css('absolute')} />
+      {close}
       <div className="flex">
         <div className="flex" style={css('p2 pt4 pb4')}>
           <div className="mainContent">
