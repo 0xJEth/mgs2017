@@ -30,12 +30,12 @@ function Show({ allStudentsIn }) {
   const program = getFirstProgram(allStudentsIn)
   const students = programStudents(program)
   return (
-    <div style={css('m1')} >
+    <ul style={css('m0 mt1 p0 lsNone')} >
       {program && <h4 style={css('m0 mb0p5')} >{program.name}</h4>}
       {size(students) && map(students, ({ id, givenName, familyName }) =>
-        <div key={id}>{givenName} {familyName}</div>
+        <li key={id}>{givenName} {familyName}</li>
       )}
-    </div>
+    </ul>
   )
 }
 Show.propTypes = {
