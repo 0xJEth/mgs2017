@@ -33,6 +33,7 @@ DetailMap.propTypes = {
   options: PropTypes.shape({
     scrollwheel: PropTypes.bool,
   }),
+  show: PropTypes.objectOf(PropTypes.object),
   togglePin: PropTypes.func,
   zoom: PropTypes.number,
 }
@@ -48,7 +49,6 @@ DetailMap.defaultProps = {
     streetViewControl: false,
     zoomControl: true,
   },
-  show: PropTypes.objectOf(PropTypes.object),
   zoom: 14,
 }
 export default DetailMap

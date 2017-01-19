@@ -48,7 +48,6 @@ function DetailEl({ showGroup, detailClose }) {
   const { description, name, show, ...props } = showGroup
   const showDate = getShowDate(props)
   const reception = getReception(props)
-  console.log(show)
   return (
     <detail>
       {close}
@@ -71,7 +70,7 @@ function DetailEl({ showGroup, detailClose }) {
         {/* <div className="map" style={css('relative')}>
           <iframe className="mapFrame" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB5Ls4YpQRd3Pc6nDpWbc-Hsr0UYT_L90E&q=MICA,Baltimore+MD" />
         </div> */}
-        <DetailMap style={css('relative')} />
+        <DetailMap style={css('relative')} show={show} />
       </div>
     </detail>
   )
