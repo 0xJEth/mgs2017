@@ -1,5 +1,5 @@
-import { compact, every, filter, flow, map, method, propertyOf } from 'lodash'
-import { getOr } from 'lodash/fp'
+import { compact, every, filter, flow, lowerCase, map, method, propertyOf } from 'lodash'
+import { join, getOr } from 'lodash/fp'
 import { selectForm } from 'redux-field'
 import { createSelector } from 'reselect'
 
@@ -24,6 +24,7 @@ export const textSearchValue = collectionId => flow(
 export const textSearchSelector = (itemsSelector, collectionId) => createSelector(
   itemsSelector, textSearchValue(collectionId), searchItems
 )
+export const arrayToSearch = flow(join(''), lowerCase)
 export function makeSearchString(fieldIds) {
-  return item => map(fieldIds, propertyOf(item)).join('').toLowerCase()
+  return item => arrayToSearch(map(fieldIds, propertyOf(item)))
 }

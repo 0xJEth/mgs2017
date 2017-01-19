@@ -1,11 +1,11 @@
 import { camelCase, flow, mapValues } from 'lodash'
-import { groupBy, mapKeys, sortBy } from 'lodash/fp'
+import { get, groupBy, map, mapKeys, sortBy } from 'lodash/fp'
 import fpValues from 'lodash/fp/mapValues'
 import { setField } from 'cape-lodash'
 import { buildFullEntity, entityTypeSelector } from 'redux-graph'
 import { createSelector, createStructuredSelector } from 'reselect'
 import { getProgramFull, getShowFull } from '../../select/'
-import { makeSearchString, textSearchSelector } from '../Search'
+import { arrayToSearch, makeSearchString, textSearchSelector } from '../Search'
 
 export const getShowGroup = entityTypeSelector('ShowGroup')
 
@@ -15,8 +15,9 @@ const selectGraph = createStructuredSelector({
   Show: getShowFull,
   Program: getProgramFull,
 })
-
-export const getSearchable = makeSearchString(['name', 'description'])
+export const programNames = flow(get('program'), map('name'), arrayToSearch)
+export const getSearchable = item =>
+  makeSearchString(['name', 'description']) + programNames(item)
 
 export const itemFill = graph => flow(
   buildFullEntity(0, graph),
