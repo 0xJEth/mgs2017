@@ -5,6 +5,7 @@ import { createObj } from 'cape-lodash'
 import tinycolor from 'tinycolor2'
 
 export const grey = tinycolor({ r: 220, g: 220, b: 220 })
+export const yellow = tinycolor({ r: 254, g: 219, b: 0 })
 
 export function boxShadow(color = grey) {
   return { boxShadow: `0 0 .2em 0 ${color.setAlpha(0.2).toRgbString()}` }
@@ -101,6 +102,7 @@ export const styles = {
   bb: { borderBottomStyle: 'solid', borderBottomWidth: '1px' },
   bbn: { borderBottom: 'none' },
   bgGray: bgColor('gray'),
+  bgYellow: bgColor(`${yellow}`),
   bgTrans: { background: 'transparent' },
   bl: { borderLeftStyle: 'solid', borderLeftWidth: '1px' },
   bln: { borderLeft: 'none' },

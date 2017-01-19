@@ -18,7 +18,8 @@
 }
 
 .menu > .home a,
-.menu > .students a {
+.menu > .students a,
+.menu > .studentList a {
   background-color: #fff198;
   border: 1px solid;
   display: block;
@@ -26,14 +27,16 @@
 }
 
 .menu > .home a:hover,
-.menu > .students a:hover {
+.menu > .students a:hover,
+.menu > .studentList a:hover {
   background-color: #211a00;
   color: #fffdf4;
   border-color:#211a00;
 }
 
 .menu > .home.active a,
-.menu > .students.active a {
+.menu > .students.active a,
+.menu > .studentList.active a {
   background-color: transparent;
   border-bottom: none;
   border-left: none;
@@ -44,7 +47,8 @@
 .menu > .home a {
   border-left: none;
 }
-.menu > .students a {
+.menu > .students a,
+.menu > .studentList a {
   border-right: none;
 }
 
