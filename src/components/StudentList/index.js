@@ -3,7 +3,7 @@ import { entityTypeSelector, getRef } from 'redux-graph'
 import { createSelector } from 'reselect'
 import { select } from 'cape-select'
 import { selectForm } from 'redux-field'
-import { textSearchSelector } from '../Search'
+import { makeSearchString, textSearchSelector } from '../Search'
 import { getProgram, getShow } from '../../select/'
 
 export const getStudents = entityTypeSelector('Student')
@@ -12,15 +12,15 @@ export function matchRef(entitySlice, predicate, item) {
   if (!entitySlice) return null
   return get(entitySlice, get(getRef(item, predicate), 'id'), null)
 }
+export const getSearchable = makeSearchString(['givenName', 'familyName'])
 
 export const itemFill = (program, show) => (item) => {
-  const { familyName, givenName } = item
   const studentProgram = matchRef(program, 'program', item)
   return {
     ...item,
     program: studentProgram,
     programName: studentProgram.name,
-    searchable: (givenName + familyName).toLowerCase(),
+    searchable: getSearchable(item),
     show: matchRef(show, 'show', item),
   }
 }
