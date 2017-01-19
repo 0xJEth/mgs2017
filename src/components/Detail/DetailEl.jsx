@@ -44,7 +44,7 @@ Show.propTypes = {
 
 function DetailEl({ showGroup, detailClose }) {
   const close = <Close onClick={detailClose} style={css('absolute')} />
-  if (!showGroup) return <div>Loading {close}</div>
+  if (!showGroup) return <div><h4 style={css('fixed positionCenter')} >Loading</h4> {close}</div>
   const { description, name, show, ...props } = showGroup
   const showDate = getShowDate(props)
   const reception = getReception(props)
@@ -67,9 +67,6 @@ function DetailEl({ showGroup, detailClose }) {
             { map(show, showItem => <Show key={showItem.id} {...showItem} />) }
           </div>
         </div>
-        {/* <div className="map" style={css('relative')}>
-          <iframe className="mapFrame" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB5Ls4YpQRd3Pc6nDpWbc-Hsr0UYT_L90E&q=MICA,Baltimore+MD" />
-        </div> */}
         <DetailMap style={css('relative')} show={show} />
       </div>
     </detail>
