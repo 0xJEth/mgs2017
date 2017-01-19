@@ -62,12 +62,12 @@ detail .studentList {
   width: 200px;
   z-index: 20;
   text-align: center;
-  bottom: 3.5em;
+  bottom: 1em;
   left:-25px;
   position: absolute;
   box-sizing: border-box;
-  padding: .66rem;
-  box-shadow: 0 0 .8rem 0 rgba(0,0,0,.25);
+  padding: 1rem 1rem 1.25rem 1rem;
+  box-shadow: 0 0 1rem 0 rgba(0,0,0,.33);
 }
 
 .mapPopup::before {
@@ -85,10 +85,9 @@ detail .studentList {
   content: '';
 }
 
-.mapPin svg path {
-  fill: rgba(242,103,070,1);
+.galleryLocation .mapPopup {
+  display: none;
 }
-
-.mapPin:hover svg path {
-  fill: rgba(192,132,180,1);
+.galleryLocation:hover .mapPopup {
+  display: block;
 }
