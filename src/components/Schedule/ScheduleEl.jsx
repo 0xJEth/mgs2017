@@ -7,14 +7,13 @@ import ShowItem from './ShowGroup'
 
 function ScheduleEl({ curatorialPracticeBlurb, showGroups }) {
   const { onCampusExhibition, singleDay, cityWide } = showGroups
-  const collectionId = showGroups
   return (
     <article id="schedule" style={css('pl1 pr1 pb2')}>
 
       <header>
         <h1 style={css('m0 p0 pl1 pr1')}>Schedule</h1>
         <div className="group" style={css('flex')}>
-          <Search collectionId={collectionId} style={css('flexAuto')} />
+          <Search collectionId={'ShowGroup'} style={css('flexAuto')} />
         </div>
       </header>
 
