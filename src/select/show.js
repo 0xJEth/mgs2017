@@ -5,8 +5,10 @@ import { createSelector, createStructuredSelector } from 'reselect'
 import { getProgramFull } from '../select/'
 
 export const getShow = entityTypeSelector('Show')
+export const getLocation = entityTypeSelector('Location')
 
 const selectGraph = createStructuredSelector({
+  Location: getLocation,
   Program: getProgramFull,
 })
 export const getShowFull = createSelector(
