@@ -3,8 +3,8 @@ import css from '../../style'
 
 function DetailMapLocation() {
   return (
-    <div style={css('m1')}>
-      <p>A Thing!</p>
+    <div style={css('p1 br1 bgYellow')}>
+      <p style={css('p0 m0 textCenter')}>A</p>
     </div>
   )
 }
