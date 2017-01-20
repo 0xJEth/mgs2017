@@ -1,5 +1,5 @@
 .showItem {
-  background-color: rgba(254, 219, 0, 1);
+  background-color: rgba(254, 219, 0, 0);
   transition: all 400ms;
   z-index: 1;
 }

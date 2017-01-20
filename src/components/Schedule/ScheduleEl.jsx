@@ -4,6 +4,9 @@ import css from '../../style'
 import './Schedule.css'
 import Search from '../Search/Search'
 import ShowItem from './ShowGroup'
+import ShapeOne from '../Shapes/ShapeOne'
+import ShapeTwo from '../Shapes/ShapeTwo'
+import ShapeThree from '../Shapes/ShapeThree'
 
 function ScheduleEl({ curatorialPracticeBlurb, showGroups }) {
   const { onCampusExhibition, singleDay, cityWide } = showGroups
@@ -24,6 +27,7 @@ function ScheduleEl({ curatorialPracticeBlurb, showGroups }) {
             map(onCampusExhibition, item => <ShowItem key={item.id} {...item} />)
           }
         </div>
+        <ShapeOne />
       </section>
 
       <section>
@@ -33,30 +37,12 @@ function ScheduleEl({ curatorialPracticeBlurb, showGroups }) {
             map(singleDay, item => <ShowItem key={item.id} {...item} />)
           }
         </div>
+        <ShapeTwo />
       </section>
 
-      {/* <section>
-        <h2 style={css('m0 mt3 bb')}>FilmFest</h2>
-        <p>
-          In print materials, Film Fest is listed under “Events” with the
-          Social Design and Critical studies stuff... should we figure out
-          how to make that work?
-        </p>
-        <div className="shows item-grid">
-          <ShowItem />
-          <ShowItem />
-          <ShowItem />
-          <ShowItem />
-          <ShowItem />
-          <ShowItem />
-          <ShowItem />
-          <ShowItem />
-        </div>
-      </section>
- */}
       <section style={css('mb3')}>
         <h2 style={css('m0 mt3 bb')}>Curatorial Pratice</h2>
-        <div style={css('mt1 mb1 mw7')}>
+        <div style={css('mt1 mb1 mw7 bgYellow')}>
           <p>{curatorialPracticeBlurb}</p>
         </div>
         <div className="shows item-grid">
@@ -64,6 +50,7 @@ function ScheduleEl({ curatorialPracticeBlurb, showGroups }) {
             map(cityWide, item => <ShowItem key={item.id} {...item} />)
           }
         </div>
+        <ShapeThree />
       </section>
 
     </article>

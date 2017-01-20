@@ -1,4 +1,27 @@
 #schedule section {
   padding-left: 1rem;
   padding-right: 1rem;
+  position: relative;
+}
+
+.shapes {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  z-index: -1;
+}
+
+.shapes.shape1 {
+  top: -5rem;
+  left: -7.7rem;
+}
+
+.shapes.shape2 {
+  top: -4.5rem;
+  left: -4rem;
+}
+
+.shapes.shape3 {
+  top: -4rem;
+  left: -5rem;
 }
