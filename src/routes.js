@@ -7,6 +7,7 @@ addRoutes({
   home: '/',
   me: '/me',
   studentList: '/students',
+  filmfest: '/filmfest',
 })
 
 export default locationInfo

@@ -7,6 +7,7 @@ import './ShowItem.css'
 
 function getShowDate({ startDate, endDate }) {
   if (!startDate) return null
+  if (!endDate) return null
   const startStr = moment(startDate).format('MMMM Do')
   const endStr = moment(endDate).format('MMMM Do')
   return `${startStr}–${endStr}`
