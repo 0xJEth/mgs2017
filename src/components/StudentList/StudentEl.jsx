@@ -20,10 +20,10 @@ function StudentEl({ familyName, givenName, programName, show, url, email, faceb
         {/* <Link href="/details/SHOW-NAME" internal>{ programName }</Link> */}
         <i>{ programName }</i>
       </span>
-      <span className="show">
+      {/* <span className="show"> */}
         {/* {show && <Link href="/details/SHOW-NAME" internal>{ show.name }</Link>} */}
-        {show && <p>{ show.name } </p>}
-      </span>
+        {/* {show && <p>{ show.name } </p>} */}
+      {/* </span> */}
       <span className="social">
         <div>
           {url && <Link href={url} icon="web" />}
