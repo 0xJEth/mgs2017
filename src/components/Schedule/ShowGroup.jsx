@@ -5,10 +5,11 @@ import Link from 'redux-history-component'
 import css from '../../style'
 import './ShowItem.css'
 
-function getShowDate({ startDate, endDate }) {
+function getShowDate({ startDate, endDate, ongoing }) {
   if (!startDate) return null
   const startStr = moment(startDate).format('MMMM Do')
   if (!endDate) return startStr
+  if (ongoing) return `${startStr}–Ongoing`
   const endStr = moment(endDate).format('MMMM Do')
   return `${startStr}–${endStr}`
 }
