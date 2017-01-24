@@ -7,10 +7,11 @@ import Close from '../CloseButton'
 import DetailMap from './DetailMap'
 import LocationList from './LocationList'
 
-function getShowDate({ startDate, endDate }) {
+function getShowDate({ startDate, endDate, ongoing }) {
   if (!startDate) return null
   const startStr = moment(startDate).format('MMMM Do')
   if (!endDate) return startStr
+  if (ongoing) return `${startStr}–Ongoing`
   const endStr = moment(endDate).format('MMMM Do')
   return `${startStr}–${endStr}`
 }
@@ -57,8 +58,8 @@ function DetailEl({ showGroup, detailClose }) {
           <div className="mainContent">
             <h1 style={css('m0')}>{ name }</h1>
             { showDate && <p className="dateRange" style={css('m0 fs2')}>{ showDate }</p>}
-            {description && <p className="description">{ description }</p>}
-            {reception && <div>
+            { description && <p className="description">{ description }</p>}
+            { reception && <div>
               <h2 style={css('m0 mt2 fs2')}>Reception</h2>
               <p>{ reception }</p>
             </div>}

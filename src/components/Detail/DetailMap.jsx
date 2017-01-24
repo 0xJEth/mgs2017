@@ -38,7 +38,6 @@ DetailMap.propTypes = {
   zoom: PropTypes.number,
 }
 DetailMap.defaultProps = {
-  center: { lat: 39.30902, lng: -76.62016 },
   defaultCenter: {
     lat: 39.30902,
     lng: -76.62016,
