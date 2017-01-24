@@ -4,6 +4,10 @@
   z-index: 1;
 }
 
+.item-grid .showItem.item {
+  padding-bottom: 2rem;
+}
+
 .showItem:hover {
   background-color: rgba(255, 253, 244, 1);
   box-shadow: 0 0 1em 0 #211a00;
