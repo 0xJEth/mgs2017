@@ -26,6 +26,7 @@ function FooterEl({ archive, siteId, social }) {
             <li><a href="https://www.mica.edu/Admission_and_Financial_Aid/Graduate_Admission_and_Financial_Aid.html?utm_source=mica%20grad%20show2017">MICA Graduate Admissions</a></li>
             <li><a href="http://micagradstudies.tumblr.com/?utm_source=mica%20grad%20show2017">MICA Grad Show Blog</a></li>
             <li><a href="http://eepurl.com/bciqMT">Sign up for the MICA Grad Show mailing list</a></li>
+            <li><a href="http://www.micagradcommunity.org/?utm_source=mica%20grad%20show2017">MICA Grad Community</a></li>
           </ul>
         </section>
         {archive && <Links className="archive" title="Archive" links={archive} siteId={siteId} />}
