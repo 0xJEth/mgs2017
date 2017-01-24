@@ -2,11 +2,18 @@ import React, { PropTypes } from 'react'
 import { find, map } from 'lodash'
 import css from '../../style'
 
-function LocationItem({ name }) {
-  return <li>{name}</li>
+function LocationItem({ name, galleryHours }) {
+  return (
+    <li style={css('mb0p5')}>{name}
+      {galleryHours && <div className="openHours" style={css('fs0p75')}>
+        Open: {galleryHours}
+      </div>}
+    </li>
+  )
 }
 LocationItem.propTypes = {
   name: PropTypes.string.isRequired,
+  galleryHours: PropTypes.string.isRequired,
 }
 
 function LocationList({ show }) {
