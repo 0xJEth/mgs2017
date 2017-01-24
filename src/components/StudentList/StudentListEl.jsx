@@ -5,6 +5,7 @@ import Page from '../Page'
 import Search from '../Search/Search'
 import FilterSelect from '../FilterSelect'
 import Student from './Student'
+import StudentEmail from './StudentEmail'
 
 function StudentListEl({ programOptions, students }) {
   const collectionId = 'Student'
@@ -39,6 +40,9 @@ function StudentListEl({ programOptions, students }) {
           </ul>
         </section>
       </article>
+      <ul>
+        {map(students, item => <StudentEmail key={item.id} {...item} />)}
+      </ul>
     </Page>
   )
 }
