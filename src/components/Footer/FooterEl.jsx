@@ -15,7 +15,7 @@ function FooterEl({ archive, siteId, social }) {
         </section>
         <section>
           <ul style={css('lsNone m0 p0')}>
-            <li><a href="">Office of Graduate Studies</a></li>
+            <li><a href="http://www.micagradcommunity.org/?utm_source=mica%20grad%20show2017">Office of Graduate Studies</a></li>
             <li>131 West North Avenue</li>
             <li>Baltimore, MD 21201</li>
             <li>(410) 225-5274</li>
@@ -34,11 +34,11 @@ function FooterEl({ archive, siteId, social }) {
     </footer>
   )
 }
-FooterEl.defaultProps = {
-}
 FooterEl.propTypes = {
   archive: PropTypes.array,
   siteId: PropTypes.string,
   social: PropTypes.array,
+}
+FooterEl.defaultProps = {
 }
 export default FooterEl
