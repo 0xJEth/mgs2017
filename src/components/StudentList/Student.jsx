@@ -3,7 +3,11 @@ import css from '../../style'
 import './Student.css'
 import Link from '../Link'
 
-function StudentEl({ familyName, givenName, programName, show, url, email, facebook, instagram, soundcloud, twitter, vimeo, youtube }) {
+function StudentEl(props) {
+  const {
+    familyName, givenName, show, url, email, program,
+    facebook, instagram, soundcloud, twitter, vimeo, youtube,
+  } = props
   const displayName = `${givenName} ${familyName}`
   const emailStr = `mailto:${email}`
   const facebookStr = `https://www.facebook.com/${facebook}`
@@ -18,7 +22,7 @@ function StudentEl({ familyName, givenName, programName, show, url, email, faceb
       <span className="name"><strong>{ displayName }</strong></span>
       <span className="program">
         {/* <Link href="/details/SHOW-NAME" internal>{ programName }</Link> */}
-        <i>{ programName }</i>
+        <i>{ program.name }</i>
       </span>
       <span className="show">
         {/* {show && <Link href="/details/SHOW-NAME" internal>{ show.name }</Link>} */}
@@ -43,7 +47,9 @@ function StudentEl({ familyName, givenName, programName, show, url, email, faceb
 StudentEl.propTypes = {
   familyName: PropTypes.string.isRequired,
   givenName: PropTypes.string.isRequired,
-  programName: PropTypes.string.isRequired,
+  program: PropTypes.shape({
+    name: PropTypes.string,
+  }),
   show: PropTypes.object,
   url: PropTypes.string,
   email: PropTypes.string,

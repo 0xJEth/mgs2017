@@ -2,10 +2,11 @@ import { mapValues } from 'lodash'
 import { buildFullEntity, entityTypeSelector } from 'redux-graph'
 import { createSelector, createStructuredSelector } from 'reselect'
 // import { itemFiller } from './util'
-import { getProgramFull } from '../select/'
+import { getProgramFull } from './program'
 
 export const getShow = entityTypeSelector('Show')
 export const getLocation = entityTypeSelector('Location')
+export const getShowGroup = entityTypeSelector('ShowGroup')
 
 const selectGraph = createStructuredSelector({
   Location: getLocation,

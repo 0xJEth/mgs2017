@@ -7,6 +7,7 @@ import FilterSelect from '../FilterSelect'
 import Student from './Student'
 
 function StudentListEl({ programOptions, students }) {
+  console.log(students)
   const collectionId = 'Student'
   return (
     <Page>

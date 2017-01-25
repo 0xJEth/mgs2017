@@ -1,10 +1,11 @@
-import { filter, get, mapValues } from 'lodash'
-import { entityTypeSelector, getRef } from 'redux-graph'
+import { flow, filter, get, mapValues } from 'lodash'
+import { buildFullEntity, entityTypeSelector, getRef } from 'redux-graph'
 import { createSelector } from 'reselect'
 import { select } from 'cape-select'
+import { setField } from 'cape-lodash'
 import { selectForm } from 'redux-field'
 import { makeSearchString, textSearchSelector } from '../Search'
-import { getProgram, getShow } from '../../select/'
+import { selectGraph } from '../../select/'
 
 export const getStudents = entityTypeSelector('Student')
 
@@ -14,18 +15,15 @@ export function matchRef(entitySlice, predicate, item) {
 }
 export const getSearchable = makeSearchString(['givenName', 'familyName'])
 
-export const itemFill = (program, show) => (item) => {
-  const studentProgram = matchRef(program, 'program', item)
-  return {
-    ...item,
-    program: studentProgram,
-    programName: studentProgram.name,
-    searchable: getSearchable(item),
-    show: matchRef(show, 'show', item),
-  }
-}
-export const fillItems = (student, program, show) => mapValues(student, itemFill(program, show))
-export const itemsFilled = createSelector(getStudents, getProgram, getShow, fillItems)
+export const itemFill = graph => flow(
+  buildFullEntity(0, graph),
+  setField('searchable', getSearchable)
+)
+export const itemsFilled = createSelector(
+  selectGraph, getStudents,
+  (graph, graphType) => mapValues(graphType, itemFill(graph))
+)
+
 export const programFilterValue = select(selectForm, ['Student', 'program', 'value'])
 export function programFilter(items, id) {
   if (!id) return items
