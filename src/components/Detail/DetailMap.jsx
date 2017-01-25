@@ -32,6 +32,9 @@ DetailMap.propTypes = {
   }),
   options: PropTypes.shape({
     scrollwheel: PropTypes.bool,
+    mapTypeControl: PropTypes.bool,
+    streetViewControl: PropTypes.bool,
+    zoomControl: PropTypes.bool,
   }),
   show: PropTypes.objectOf(PropTypes.object),
   togglePin: PropTypes.func,
