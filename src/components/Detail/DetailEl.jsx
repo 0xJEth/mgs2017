@@ -47,7 +47,7 @@ Show.propTypes = {
 function DetailEl({ showGroup, detailClose }) {
   const close = <Close onClick={detailClose} style={css('absolute')} />
   if (!showGroup) return <div><h4 style={css('fixed positionCenter')} >Loading</h4> {close}</div>
-  const { description, name, show, ...props } = showGroup
+  const { description, name, show, defaultCenter, zoom, ...props } = showGroup
   const showDate = getShowDate(props)
   const reception = getReception(props)
   return (
@@ -69,19 +69,21 @@ function DetailEl({ showGroup, detailClose }) {
             { map(show, showItem => <Show key={showItem.id} {...showItem} />) }
           </div>
         </div>
-        <DetailMap style={css('relative')} show={show} />
+        <DetailMap defaultCenter={defaultCenter} zoom={zoom} style={css('relative')} show={show} />
       </div>
     </detail>
   )
 }
 DetailEl.propTypes = {
   showGroup: PropTypes.shape({
+    defaultCenter: PropTypes.object,
     description: PropTypes.string,
     gallery: PropTypes.string,
     program: PropTypes.object.isRequired,
     receptionDate: PropTypes.string.isRequired,
     showDate: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
+    zoom: PropTypes.number,
   }),
   detailClose: PropTypes.func.isRequired,
 }
