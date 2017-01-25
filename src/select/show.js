@@ -11,6 +11,7 @@ export const getShowGroup = entityTypeSelector('ShowGroup')
 const selectGraph = createStructuredSelector({
   Location: getLocation,
   Program: getProgramFull,
+  ShowGroup: getShowGroup,
 })
 export const getShowFull = createSelector(
   selectGraph, getShow,
