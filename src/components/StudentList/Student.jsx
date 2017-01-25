@@ -1,7 +1,12 @@
 import React, { PropTypes } from 'react'
+import { find } from 'lodash'
 import css from '../../style'
 import './Student.css'
 import Link from '../Link'
+
+function getShowGroupName(show) {
+  return find(show.showGroup).name
+}
 
 function StudentEl(props) {
   const {
@@ -26,7 +31,7 @@ function StudentEl(props) {
       </span>
       <span className="show">
         {/* {show && <Link href="/details/SHOW-NAME" internal>{ show.name }</Link>} */}
-        {show && <p>{ show.name } </p>}
+        {show && <p>{ getShowGroupName(show) } </p>}
       </span>
       <span className="social">
         <div>
