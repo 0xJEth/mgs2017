@@ -53,6 +53,14 @@ detail iframe {
   }
 }
 
+@media (max-width: 999px) {
+  detail #detail-map-locations {
+      min-height: 75vh;
+      position: relative;
+      display: block;
+  }
+}
+
 detail .studentList {
   font-size: .8rem;
 }

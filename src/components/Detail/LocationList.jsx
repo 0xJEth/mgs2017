@@ -12,8 +12,8 @@ function LocationItem({ name, galleryHours }) {
   )
 }
 LocationItem.propTypes = {
-  name: PropTypes.string.isRequired,
-  galleryHours: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  galleryHours: PropTypes.string,
 }
 
 function LocationList({ show }) {

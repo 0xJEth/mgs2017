@@ -36,10 +36,10 @@ function DetailMapLocation({ building, name, streetAddress, zip, galleryHours })
 
 DetailMapLocation.propTypes = {
   building: PropTypes.string,
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   streetAddress: PropTypes.string,
-  zip: PropTypes.string.isRequired,
-  galleryHours: PropTypes.array,
+  zip: PropTypes.string,
+  galleryHours: PropTypes.string,
 }
 DetailMapLocation.defaultProps = {
 }

@@ -43,13 +43,27 @@ function Show({ allStudentsIn }) {
 Show.propTypes = {
   allStudentsIn: PropTypes.objectOf(PropTypes.object),
 }
+// function customCenter({ lat, lng }) {
+//   if (!lat) return null
+//   if (!lng) return null
+//   const defaultCenter = {
+//     lat: lat,
+//     lng: lng,
+//   }
+//   return defaultCenter
+// }
 
 function DetailEl({ showGroup, detailClose }) {
   const close = <Close onClick={detailClose} style={css('absolute')} />
   if (!showGroup) return <div><h4 style={css('fixed positionCenter')} >Loading</h4> {close}</div>
-  const { description, name, show, defaultCenter, zoom, ...props } = showGroup
+  const { description, name, show, lat, lng, zoom, ...props } = showGroup
   const showDate = getShowDate(props)
   const reception = getReception(props)
+  const defaultCenter = {
+    lat: lat,
+    lng: lng,
+  }
+
   return (
     <detail>
       {close}
@@ -69,19 +83,21 @@ function DetailEl({ showGroup, detailClose }) {
             { map(show, showItem => <Show key={showItem.id} {...showItem} />) }
           </div>
         </div>
-        <DetailMap defaultCenter={defaultCenter} zoom={zoom} style={css('relative')} show={show} />
+        { lat && <DetailMap defaultCenter={defaultCenter} zoom={zoom} style={css('relative')} show={show} /> }
+        { !lat && <DetailMap zoom={zoom} style={css('relative')} show={show} /> }
       </div>
     </detail>
   )
 }
 DetailEl.propTypes = {
   showGroup: PropTypes.shape({
-    defaultCenter: PropTypes.object,
     description: PropTypes.string,
     gallery: PropTypes.string,
+    lat: PropTypes.number,
+    lng: PropTypes.number,
     program: PropTypes.object.isRequired,
-    receptionDate: PropTypes.string.isRequired,
-    showDate: PropTypes.string.isRequired,
+    receptionDate: PropTypes.string,
+    showDate: PropTypes.string,
     name: PropTypes.string.isRequired,
     zoom: PropTypes.number,
   }),
