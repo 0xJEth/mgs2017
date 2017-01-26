@@ -10,8 +10,8 @@ import LocationList from './LocationList'
 function getShowDate({ startDate, endDate, ongoing }) {
   if (!startDate) return null
   const startStr = moment(startDate).format('MMMM Do')
-  if (!endDate) return startStr
   if (ongoing) return `${startStr}–Ongoing`
+  if (!endDate) return null
   const endStr = moment(endDate).format('MMMM Do')
   return `${startStr}–${endStr}`
 }
@@ -54,7 +54,6 @@ function DetailEl({ showGroup, detailClose }) {
     lat,
     lng,
   }
-
   return (
     <detail>
       {close}
@@ -86,6 +85,7 @@ DetailEl.propTypes = {
     gallery: PropTypes.string,
     lat: PropTypes.number,
     lng: PropTypes.number,
+    ongoing: PropTypes.bool,
     program: PropTypes.object.isRequired,
     receptionDate: PropTypes.string,
     showDate: PropTypes.string,
