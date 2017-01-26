@@ -43,15 +43,6 @@ function Show({ allStudentsIn }) {
 Show.propTypes = {
   allStudentsIn: PropTypes.objectOf(PropTypes.object),
 }
-// function customCenter({ lat, lng }) {
-//   if (!lat) return null
-//   if (!lng) return null
-//   const defaultCenter = {
-//     lat: lat,
-//     lng: lng,
-//   }
-//   return defaultCenter
-// }
 
 function DetailEl({ showGroup, detailClose }) {
   const close = <Close onClick={detailClose} style={css('absolute')} />
@@ -60,8 +51,8 @@ function DetailEl({ showGroup, detailClose }) {
   const showDate = getShowDate(props)
   const reception = getReception(props)
   const defaultCenter = {
-    lat: lat,
-    lng: lng,
+    lat,
+    lng,
   }
 
   return (
