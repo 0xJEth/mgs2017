@@ -6,11 +6,7 @@ import Search from '../Search/Search'
 import FilterSelect from '../FilterSelect'
 import Student from './Student'
 
-function StudentListEl({ programOptions, shows, students }) {
-  function getPropShows({ program, show }) {
-    if (show) return undefined
-    return shows[program.id]
-  }
+function StudentListEl({ programOptions, students }) {
   const collectionId = 'Student'
   return (
     <Page>
@@ -40,7 +36,7 @@ function StudentListEl({ programOptions, shows, students }) {
               <span className="social" />
             </li>
             {map(students, item =>
-              <Student key={item.id} shows={getPropShows(item)} {...item} />)
+              <Student key={item.id} {...item} />)
             }
           </ul>
         </section>
@@ -50,7 +46,6 @@ function StudentListEl({ programOptions, shows, students }) {
 }
 
 StudentListEl.propTypes = {
-  shows: PropTypes.objectOf(PropTypes.object),
   students: PropTypes.objectOf(PropTypes.object),
   programOptions: PropTypes.arrayOf(PropTypes.object),
 }
