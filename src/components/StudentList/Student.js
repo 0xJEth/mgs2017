@@ -2,6 +2,7 @@ import { connect } from 'react-redux'
 import { nthArg } from 'lodash'
 import { createSelector } from 'reselect'
 import { structuredSelector } from 'cape-select'
+import { saveShow } from '../../fire/actions'
 import { showByProgram } from '../../select/show'
 import Component from './StudentEl'
 
@@ -18,4 +19,7 @@ const getState = structuredSelector({
   shows: getShows,
 })
 
-export default connect(getState)(Component)
+const actions = {
+  saveShow,
+}
+export default connect(getState, actions)(Component)
