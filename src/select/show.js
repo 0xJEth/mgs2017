@@ -1,4 +1,6 @@
-import { mapValues } from 'lodash'
+import { flow, forEach, isEmpty, mapValues, set } from 'lodash'
+import { transform } from 'lodash/fp'
+// import { replaceField } from 'cape-lodash'
 import { buildFullEntity, entityTypeSelector } from 'redux-graph'
 import { createSelector, createStructuredSelector } from 'reselect'
 // import { itemFiller } from './util'
@@ -13,7 +15,22 @@ const selectGraph = createStructuredSelector({
   Program: getProgramFull,
   ShowGroup: getShowGroup,
 })
+export const itemFill = graph => flow(
+  buildFullEntity(0, graph),
+  // replaceField('location', find),
+)
 export const getShowFull = createSelector(
   selectGraph, getShow,
-  (graph, graphType) => mapValues(graphType, buildFullEntity(0, graph))
+  (graph, graphType) => mapValues(graphType, itemFill(graph))
+)
+function setProgram(result, value) {
+  if (isEmpty(value)) return result
+  const { program, id, name } = value
+  forEach(program, prog => set(result, [prog.id, id], name))
+  return result
+}
+
+export const showByProgram = flow(
+  getShowFull,
+  transform(setProgram, undefined)
 )
