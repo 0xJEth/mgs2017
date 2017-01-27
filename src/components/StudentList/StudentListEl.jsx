@@ -7,7 +7,6 @@ import FilterSelect from '../FilterSelect'
 import Student from './Student'
 
 function StudentListEl({ programOptions, students }) {
-  console.log(students)
   const collectionId = 'Student'
   return (
     <Page>
@@ -36,7 +35,9 @@ function StudentListEl({ programOptions, students }) {
               <span className="show"><strong>Show</strong></span>
               <span className="social" />
             </li>
-            {map(students, item => <Student key={item.id} {...item} />)}
+            {map(students, item =>
+              <Student key={item.id} {...item} />)
+            }
           </ul>
         </section>
       </article>
