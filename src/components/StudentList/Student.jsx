@@ -3,6 +3,7 @@ import { find } from 'lodash'
 import css from '../../style'
 import './Student.css'
 import Link from '../Link'
+import Select from '../Editable/Select'
 
 function getShowGroupName(show) {
   return find(show.showGroup).name
@@ -10,7 +11,7 @@ function getShowGroupName(show) {
 
 function StudentEl(props) {
   const {
-    familyName, givenName, show, url, email, program,
+    familyName, givenName, show, url, email, program, shows,
     facebook, instagram, soundcloud, twitter, vimeo, youtube,
   } = props
   const displayName = `${givenName} ${familyName}`
@@ -32,6 +33,7 @@ function StudentEl(props) {
       <span className="show">
         {/* {show && <Link href="/details/SHOW-NAME" internal>{ show.name }</Link>} */}
         {show && <p>{ getShowGroupName(show) } </p>}
+        {shows && <Select options={shows} />}
       </span>
       <span className="social">
         <div>
@@ -55,7 +57,10 @@ StudentEl.propTypes = {
   program: PropTypes.shape({
     name: PropTypes.string,
   }),
-  show: PropTypes.object,
+  show: PropTypes.shape({
+    name: PropTypes.string,
+  }),
+  shows: PropTypes.objectOf(PropTypes.string),
   url: PropTypes.string,
   email: PropTypes.string,
   facebook: PropTypes.string,

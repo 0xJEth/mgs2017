@@ -6,8 +6,11 @@ import Search from '../Search/Search'
 import FilterSelect from '../FilterSelect'
 import Student from './Student'
 
-function StudentListEl({ programOptions, students }) {
-  console.log(students)
+function StudentListEl({ programOptions, shows, students }) {
+  function getPropShows({ program, show }) {
+    if (show) return undefined
+    return shows[program.id]
+  }
   const collectionId = 'Student'
   return (
     <Page>
@@ -36,7 +39,9 @@ function StudentListEl({ programOptions, students }) {
               <span className="show"><strong>Show</strong></span>
               <span className="social" />
             </li>
-            {map(students, item => <Student key={item.id} {...item} />)}
+            {map(students, item =>
+              <Student key={item.id} shows={getPropShows(item)} {...item} />)
+            }
           </ul>
         </section>
       </article>
@@ -45,6 +50,7 @@ function StudentListEl({ programOptions, students }) {
 }
 
 StudentListEl.propTypes = {
+  shows: PropTypes.objectOf(PropTypes.object),
   students: PropTypes.objectOf(PropTypes.object),
   programOptions: PropTypes.arrayOf(PropTypes.object),
 }
