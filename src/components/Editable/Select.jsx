@@ -14,7 +14,7 @@ function Select({ options, value, ...props }) {
 
 Select.propTypes = {
   value: PropTypes.string,
-  onBlur: PropTypes.func.isRequired,
+  onBlur: PropTypes.func,
   onChange: PropTypes.func.isRequired,
   options: PropTypes.objectOf(PropTypes.string),
 }

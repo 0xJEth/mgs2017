@@ -2,6 +2,7 @@ import { connect } from 'react-redux'
 import { nthArg } from 'lodash'
 import { createSelector } from 'reselect'
 import { structuredSelector } from 'cape-select'
+import { mapDispatchToProps } from 'cape-redux'
 import { saveShow } from '../../fire/actions'
 import { showByProgram } from '../../select/show'
 import Component from './StudentEl'
@@ -19,7 +20,11 @@ const getState = structuredSelector({
   shows: getShows,
 })
 
-const actions = {
-  saveShow,
-}
+const actions = mapDispatchToProps(object => ({
+  saveShow: showId => saveShow({
+    subject: { type: 'Show', id: showId },
+    predicate: 'student',
+    object,
+  }),
+}))
 export default connect(getState, actions)(Component)

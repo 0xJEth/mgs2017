@@ -11,7 +11,7 @@ function getShowGroupName(show) {
 
 function StudentEl(props) {
   const {
-    familyName, givenName, show, url, email, program, shows,
+    familyName, givenName, show, url, email, program, saveShow, shows,
     facebook, instagram, soundcloud, twitter, vimeo, youtube,
   } = props
   const displayName = `${givenName} ${familyName}`
@@ -33,7 +33,7 @@ function StudentEl(props) {
       <span className="show">
         {/* {show && <Link href="/details/SHOW-NAME" internal>{ show.name }</Link>} */}
         {show && <p>{ getShowGroupName(show) } </p>}
-        {shows && <Select options={shows} />}
+        {shows && <Select options={shows} onChange={saveShow} />}
       </span>
       <span className="social">
         <div>
@@ -65,6 +65,7 @@ StudentEl.propTypes = {
   email: PropTypes.string,
   facebook: PropTypes.string,
   instagram: PropTypes.string,
+  saveShow: PropTypes.func.isRequired,
   soundcloud: PropTypes.string,
   twitter: PropTypes.string,
   vimeo: PropTypes.string,
