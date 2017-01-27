@@ -65,7 +65,7 @@
   }
 }
 
-select {
+.customSelect select {
   position: relative;
   margin: 0;
   background-color: transparent;
@@ -86,7 +86,7 @@ select {
   z-index: 1;
 }
 @media (max-width: 49.999rem) {
-  select {
+.customSelect select {
     border-left: none;
   }
 }
@@ -113,7 +113,7 @@ select {
   pointer-events: none;
 }
 
-select:focus {
+.customSelect select:focus {
   background-color: rgba(255, 253, 244, 1);
   border-color: rgba(255, 253, 244, 1);
   border-left-color:black;
@@ -121,7 +121,7 @@ select:focus {
 }
 
 .customSelect:hover,
-select:hover {
+.customSelect select:hover {
   cursor:pointer;
 }
 .customSelect:hover::after {
