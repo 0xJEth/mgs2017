@@ -1,7 +1,7 @@
 import { curry, flow, partial } from 'lodash'
 import { merge, pick } from 'lodash/fp'
 import { rename } from 'cape-lodash'
-import { insertFields } from 'redux-graph'
+import { buildTriple, getKey, insertFields, REFS } from 'redux-graph'
 
 export const userFields = pick([
   'displayName', 'email', 'emailVerified', 'isAnonymous', 'photoURL', 'uid',
@@ -31,7 +31,13 @@ export function entityUpdate({ entity, TIMESTAMP }, node) {
   return entityDb(entity, item).update(item)
   .then(() => item)
 }
-
+export function triplePut(store, tripleRaw, { entity }) {
+  const triple = buildTriple(tripleRaw)
+  const { subject, predicate, object } = triple
+  return entityDb(entity, subject).child(REFS).child(predicate).child(getKey(object))
+  .set(object)
+  .then(() => triple)
+}
 export function getValue(method, db, id) {
   return db.child(id)[method]('value').then(res => res.val())
 }
