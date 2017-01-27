@@ -58,20 +58,18 @@ function DetailEl({ showGroup, detailClose }) {
     <detail>
       {close}
       <div className="flex">
-        <div className="flex" style={css('p2 pt4 pb4')}>
-          <div className="mainContent">
-            <h1 style={css('m0')}>{ name }</h1>
-            { showDate && <p className="dateRange" style={css('m0 fs2')}>{ showDate }</p>}
-            { description && <p className="description">{ description }</p>}
-            { reception && <div>
-              <h2 style={css('m0 mt2 fs2')}>Reception</h2>
-              <p>{ reception }</p>
-            </div>}
-            <LocationList show={show} />
-          </div>
-          <div className="studentList" style={css('selfEnd')}>
-            { map(show, showItem => <Show key={showItem.id} {...showItem} />) }
-          </div>
+        <div className="mainContent" style={css('p2')}>
+          <h1 style={css('m0')}>{ name }</h1>
+          { showDate && <p className="dateRange" style={css('m0 fs2')}>{ showDate }</p>}
+          { description && <p className="description">{ description }</p>}
+          { reception && <div>
+            <h2 style={css('m0 mt2 fs2')}>Reception</h2>
+            <p>{ reception }</p>
+          </div>}
+          <LocationList show={show} />
+        </div>
+        <div className="studentList" style={css('p2')}>
+          { map(show, showItem => <Show key={showItem.id} {...showItem} />) }
         </div>
         { lat && <DetailMap defaultCenter={defaultCenter} zoom={zoom} style={css('relative')} show={show} /> }
         { !lat && <DetailMap zoom={zoom} style={css('relative')} show={show} /> }

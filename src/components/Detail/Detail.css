@@ -1,9 +1,11 @@
 detail {
   background-color: #fffdf4;
-  border: 1em solid #fedb00;
-  box-shadow: inset 0px 0px 1em rgba(0,0,0,.5);
+  border: 1rem solid #fedb00;
+  /*box-shadow: inset 0px 0px 1em rgba(0,0,0,.5);*/
   display: block;
   position: relative;
+  min-height: 100%;
+  min-height: 100vh;
 }
 
 detail .close {
@@ -16,55 +18,103 @@ detail .flex {
   flex-direction: column;
 }
 
-detail .flex > div,
-detail .flex > .flex {
+detail .flex > div {
   flex: 1;
-}
-
-detail .flex > .flex {
-  width: 100%;
-}
-
-detail iframe {
-  width: 100%;
-  height: 60vh;
-}
-
-@media (min-width: 1000px ){
-  detail { min-height: 100vh; }
-  detail .flex {
-    flex-direction: row;
-    min-height: calc(100vh - 2em);
-  }
-  detail .flex > .mainContent {
-    flex: 2;
-  }
-  detail iframe {
-    height: 100%;
-    position: absolute;
-    top:0;
-    right:0;
-    bottom:0;
-    left:0;
-  }
-  detail .studentList {
-    max-height: calc(100vh - 8rem);
-    overflow: auto;
-  }
-}
-
-@media (max-width: 999px) {
-  detail #detail-map-locations {
-      min-height: 75vh;
-      position: relative;
-      display: block;
-  }
 }
 
 detail .studentList {
   font-size: .8rem;
 }
 
+detail .google-map-container  {
+  height: 60%;
+  height: 60vh;
+}
+
+/** skinny mode stacking order **/
+detail .mainContent {
+  order: 1;
+}
+detail .studentList {
+  order: 3;
+}
+detail .google-map-container {
+  order: 2;
+}
+
+@media (min-width: 768px ) {
+  detail .flex {
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-height: calc(100vh - 2em);
+  }
+}
+
+@media (min-width: 768px ) and (max-width: 999.99px ) {
+  /** medium mode stacking order **/
+  detail .mainContent {
+    order: 2;
+  }
+  detail .studentList {
+    order: 3;
+  }
+  detail .google-map-container {
+    order: 1;
+  }
+
+  /** all other designs/flex stuff **/
+  detail .mainContent {
+    flex: 2;
+    width: calc(100% / 3 * 2);
+  }
+  detail .studentList {
+    flex: 1;
+    width: calc(100% / 3);
+  }
+  detail .flex > .google-map-container {
+    flex: none;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1000px ){
+  /** wide mode stacking order **/
+  detail .mainContent {
+    order: 1;
+  }
+  detail .studentList {
+    order: 2;
+  }
+  detail .google-map-container {
+    order: 3;
+  }
+
+  detail .mainContent,
+  detail .google-map-container {
+    min-height: calc(100vh - 2em);
+  }
+  detail .flex > .mainContent {
+    flex: 2;
+    width: calc(100% / 6 * 2);
+  }
+  detail .flex > .studentList {
+    flex: 1;
+    align-self: flex-end;
+    width: calc(100% / 6 * 1);
+  }
+  detail .flex > .google-map-container {
+    flex: 3;
+    height: calc(100vh - 2rem);
+    width: calc(100% / 6 * 3);
+  }
+
+  detail .studentList {
+    max-height: calc(100vh - 8rem);
+    overflow: auto;
+  }
+}
+
+/** map stuff **/
 .mapPopup {
   background: white;
   width: 200px;
