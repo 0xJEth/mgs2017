@@ -23,14 +23,26 @@ export const getShowFull = createSelector(
   selectGraph, getShow,
   (graph, graphType) => mapValues(graphType, itemFill(graph))
 )
+
 function setProgram(result, value) {
   if (isEmpty(value)) return result
   const { program, id, name } = value
   forEach(program, prog => set(result, [prog.id, id], name))
   return result
 }
-
 export const showByProgram = flow(
   getShowFull,
   transform(setProgram, undefined)
+)
+
+function setStudent(result, value) {
+  if (isEmpty(value)) return result
+  const { student, id } = value
+  if (isEmpty(student)) return result
+  forEach(student, kid => set(result, kid.id, id))
+  return result
+}
+export const studentShows = flow(
+  getShowFull,
+  transform(setStudent, undefined)
 )

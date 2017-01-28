@@ -31,11 +31,13 @@ export function entityUpdate({ entity, TIMESTAMP }, node) {
   return entityDb(entity, item).update(item)
   .then(() => item)
 }
-export function triplePut({ entity }, tripleRaw) {
+export function triplePut({ entity, TIMESTAMP }, tripleRaw) {
   const triple = buildTriple(tripleRaw)
   const { subject, predicate, object } = triple
-  return entityDb(entity, subject).child(REFS).child(predicate).child(getKey(object))
-  .set(object)
+  return entityDb(entity, subject).update({
+    [`${REFS}/${predicate}/${getKey(object)}`]: object,
+    dateModified: TIMESTAMP,
+  })
   .then(() => triple)
 }
 export function getValue(method, db, id) {
