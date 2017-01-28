@@ -19,12 +19,15 @@ const getShows = createSelector(
 const getState = structuredSelector({
   shows: getShows,
 })
-
-const actions = mapDispatchToProps(object => ({
-  saveShow: showId => saveShow({
-    subject: { type: 'Show', id: showId },
-    predicate: 'student',
-    object,
-  }),
+function studentShowHandler(object) {
+  return ({ target: { value } }) =>
+    saveShow({
+      subject: { type: 'Show', id: value },
+      predicate: 'student',
+      object,
+    })
+}
+const actions = mapDispatchToProps(student => ({
+  saveShow: studentShowHandler(student),
 }))
 export default connect(getState, actions)(Component)

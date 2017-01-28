@@ -6,7 +6,7 @@ function Select({ options, value, ...props }) {
   return (
     <select {...props} value={value}>
       {map(options, (label, val) =>
-        <option key={val} value={value}>{label}</option>
+        <option key={val} value={val}>{label}</option>
       )}
     </select>
   )

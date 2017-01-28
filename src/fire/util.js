@@ -31,7 +31,7 @@ export function entityUpdate({ entity, TIMESTAMP }, node) {
   return entityDb(entity, item).update(item)
   .then(() => item)
 }
-export function triplePut(store, tripleRaw, { entity }) {
+export function triplePut({ entity }, tripleRaw) {
   const triple = buildTriple(tripleRaw)
   const { subject, predicate, object } = triple
   return entityDb(entity, subject).child(REFS).child(predicate).child(getKey(object))
