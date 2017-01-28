@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "cape-lodash": "^1.10.0",
-    "cape-redux": "^3.0.0",
+    "cape-redux": "^3.1.0",
     "cape-redux-auth": "^4.0.0",
     "cape-redux-reducer": "^3.4.0",
     "cape-select": "^2.3.2",
