@@ -16,10 +16,24 @@ export function matchRef(entitySlice, predicate, item) {
 }
 export const getSearchable = makeSearchString(['givenName', 'familyName'])
 
+export function getShow(graph, showIndex) {
+  return (item) => {
+    if (item.show) return item
+    const show = showIndex[item.id] && graph.Show[showIndex[item.id]]
+    if (show) {
+      return {
+        ...item,
+        show,
+        shows: true,
+      }
+    }
+    return item
+  }
+}
 export const itemFill = (graph, showIndex) => flow(
   buildFullEntity(0, graph),
   setField('searchable', getSearchable),
-  setField('show', ({ show, id }) => show || (showIndex[id] && graph.Show[showIndex[id]]))
+  getShow(graph, showIndex)
 )
 export const itemsFilled = createSelector(
   selectGraph, getStudents, studentShows,

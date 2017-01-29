@@ -8,7 +8,7 @@ import { showByProgram } from '../../select/show'
 import Component from './StudentEl'
 
 function getProgramShows({ program, show }, shows) {
-  if (show) return undefined
+  if (show && !shows) return undefined
   return shows[program.id]
 }
 const getShows = createSelector(
