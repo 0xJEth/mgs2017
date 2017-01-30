@@ -35,9 +35,7 @@ function StudentListEl({ programOptions, students }) {
               <span className="show"><strong>Show</strong></span>
               <span className="social" />
             </li>
-            {map(students, item =>
-              <Student key={item.id} {...item} />)
-            }
+            {map(students, item => <Student key={item.id} {...item} />)}
           </ul>
         </section>
       </article>
@@ -46,7 +44,10 @@ function StudentListEl({ programOptions, students }) {
 }
 
 StudentListEl.propTypes = {
-  students: PropTypes.objectOf(PropTypes.object),
+  students: PropTypes.oneOfType([
+    PropTypes.objectOf(PropTypes.object),
+    PropTypes.arrayOf(PropTypes.object),
+  ]),
   programOptions: PropTypes.arrayOf(PropTypes.object),
 }
 StudentListEl.defaultProps = {
