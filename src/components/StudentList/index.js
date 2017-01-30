@@ -36,9 +36,9 @@ export function getShow(graph, showIndex) {
 }
 export const itemFill = (graph, showIndex) => flow(
   buildFullEntity(0, graph),
+  getShow(graph, showIndex),
   setField('showGroupName', getShowGroupName),
-  setField('searchable', getSearchable),
-  getShow(graph, showIndex)
+  setField('searchable', getSearchable)
 )
 export const itemsFilled = createSelector(
   selectGraph, getStudents, studentShows,
