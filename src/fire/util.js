@@ -19,6 +19,9 @@ export const ensureIdType = curry((type, item, id) =>
 export function entityDb(db, item) {
   return db.child(item.type).child(item.id)
 }
+export function entityPath(item, field = '') {
+  return `${item.type}/${item.id}/${field}`
+}
 export function entitySet({ entity, TIMESTAMP }, node) {
   const item = insertFields(node)
   item.dateCreated = TIMESTAMP
@@ -31,13 +34,20 @@ export function entityUpdate({ entity, TIMESTAMP }, node) {
   return entityDb(entity, item).update(item)
   .then(() => item)
 }
-export function triplePut({ entity, TIMESTAMP }, tripleRaw) {
-  const triple = buildTriple(tripleRaw)
+export function triplePut({ entity, TIMESTAMP }, { payload, meta }) {
+  const triple = buildTriple(payload)
   const { subject, predicate, object } = triple
-  return entityDb(entity, subject).update({
-    [`${REFS}/${predicate}/${getKey(object)}`]: object,
-    dateModified: TIMESTAMP,
-  })
+  const path = `${REFS}/${predicate}/${getKey(object)}`
+  const updateObj = {
+    [entityPath(subject, path)]: object,
+    [entityPath(subject, 'dateModified')]: TIMESTAMP,
+  }
+  if (meta.previousSubject) {
+    const prevSubj = meta.previousSubject
+    updateObj[entityPath(prevSubj, path)] = null
+    updateObj[entityPath(prevSubj, 'dateModified')] = TIMESTAMP
+  }
+  return entity.update(updateObj)
   .then(() => triple)
 }
 export function getValue(method, db, id) {

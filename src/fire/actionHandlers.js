@@ -25,7 +25,7 @@ export const handleFieldSubmit = cond([
   [isProfileField, handleProfileField],
   [stubTrue, nextAction],
 ])
-export function handleStudentShow(firebase, store, action, next) {
+export function handleTriplePut(firebase, store, action, next) {
   next(action)
-  triplePut(firebase, action.payload)
+  triplePut(firebase, action)
 }

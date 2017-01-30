@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { nthArg } from 'lodash'
+import { nthArg, get } from 'lodash'
 import { createSelector } from 'reselect'
 import { structuredSelector } from 'cape-select'
 import { mapDispatchToProps } from 'cape-redux'
@@ -25,7 +25,7 @@ function studentShowHandler(object) {
       subject: { type: 'Show', id: value },
       predicate: 'student',
       object,
-    })
+    }, { previousSubject: { id: get(object, ['show', 'id']), type: 'Show' } })
 }
 const actions = mapDispatchToProps(student => ({
   saveShow: studentShowHandler(student),
