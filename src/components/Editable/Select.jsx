@@ -5,6 +5,7 @@ function Select({ options, value, ...props }) {
   if (isEmpty(options)) return <div>NO OPTIONS</div>
   return (
     <select {...props} value={value}>
+      <option value="-">- Select -</option>
       {map(options, (label, val) =>
         <option key={val} value={val}>{label}</option>
       )}
