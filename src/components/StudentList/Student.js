@@ -7,9 +7,9 @@ import { saveShow } from '../../fire/actions'
 import { showByProgram } from '../../select/show'
 import Component from './StudentEl'
 
-function getProgramShows({ program, show }, shows) {
+function getProgramShows({ program, show, shows }, showsIndex) {
   if (show && !shows) return undefined
-  return shows[program.id]
+  return showsIndex[program.id]
 }
 const getShows = createSelector(
   nthArg(1),

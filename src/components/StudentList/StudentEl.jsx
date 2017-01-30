@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import { find } from 'lodash'
+import { find, get } from 'lodash'
 import css from '../../style'
 import './Student.css'
 import LinkEl from '../Link'
@@ -33,7 +33,7 @@ function StudentEl(props) {
       <span className="show">
         {/* {show && <Link href="/details/SHOW-NAME" internal>{ show.name }</Link>} */}
         {show && <p>{ getShowGroupName(show) } </p>}
-        {shows && <Select options={shows} onChange={saveShow} />}
+        {shows && <Select options={shows} onChange={saveShow} value={get(show, 'id')} />}
       </span>
       <span className="social">
         <div>
