@@ -56,7 +56,7 @@ StudentEl.propTypes = {
   show: PropTypes.shape({
     name: PropTypes.string,
   }),
-  showGroupName: PropTypes.string.isRequired,
+  showGroupName: PropTypes.string,
   shows: PropTypes.objectOf(PropTypes.string),
   url: PropTypes.string,
   email: PropTypes.string,
