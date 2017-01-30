@@ -5,15 +5,17 @@ import { structuredSelector } from 'cape-select'
 import { mapDispatchToProps } from 'cape-redux'
 import { saveShow } from '../../fire/actions'
 import { showByProgram } from '../../select/show'
+import { isAdmin } from '../../select/perms'
 import Component from './StudentEl'
 
-function getProgramShows({ program, show, shows }, showsIndex) {
-  if (show && !shows) return undefined
+function getProgramShows({ program, show, shows }, showsIndex, hasPerm) {
+  if ((show && !shows) || !hasPerm) return undefined
   return showsIndex[program.id]
 }
 const getShows = createSelector(
   nthArg(1),
   showByProgram,
+  isAdmin,
   getProgramShows
 )
 const getState = structuredSelector({

@@ -1,5 +1,5 @@
-import { eq, flow, get, isMatch, partialRight } from 'lodash'
-import { filter, map, omit, sortBy } from 'lodash/fp'
+import { flow, get, includes, isMatch, partial, partialRight } from 'lodash'
+import { eq, filter, map, omit, sortBy } from 'lodash/fp'
 import { createSelector, createStructuredSelector } from 'reselect'
 import { isAnonymous, isAuthenticated, selectUid } from 'cape-redux-auth'
 import { selectGraph } from 'redux-graph'
@@ -15,16 +15,27 @@ export function filterItems(items, perms) {
     map(omit(['position', 'validator']))
   )(items)
 }
-export function hasMicaEmail(state) {
-  const userEmail = get(selectGraph(state), ['GoogleUser', selectUid(state), 'email'])
-  const emailDomain = userEmail && userEmail.split('@')[1].toLowerCase()
-  return eq(emailDomain, 'mica.edu')
+export function getUserEmail(state) {
+  return get(selectGraph(state), ['GoogleUser', selectUid(state), 'email'])
 }
+export function getEmailDomain(email) {
+  return email && email.split('@')[1].toLowerCase()
+}
+export const hasMicaEmail = flow(
+  getUserEmail,
+  getEmailDomain,
+  eq('mica.edu')
+)
 export const isStudent = hasMicaEmail
 
+export const isAdmin = flow(
+  getUserEmail,
+  partial(includes, ['kai@sundaysenergy.com', 'kbjornard@mica.edu'])
+)
 export const permissions = createStructuredSelector({
   isAnonymous,
   isAuthenticated,
   isStudent,
+  isAdmin,
 })
 export const filterPerms = partialRight(createSelector, permissions, filterItems)
