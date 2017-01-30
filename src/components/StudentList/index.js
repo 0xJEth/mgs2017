@@ -1,4 +1,4 @@
-import { flow, filter, get, mapValues } from 'lodash'
+import { find, flow, filter, get, mapValues } from 'lodash'
 import { buildFullEntity, entityTypeSelector, getRef } from 'redux-graph'
 import { createSelector } from 'reselect'
 import { select } from 'cape-select'
@@ -14,7 +14,11 @@ export function matchRef(entitySlice, predicate, item) {
   if (!entitySlice) return null
   return get(entitySlice, get(getRef(item, predicate), 'id'), null)
 }
-export const getSearchable = makeSearchString(['givenName', 'familyName'])
+export function getShowGroupName(student) {
+  const showGroup = get(student, 'show.showGroup')
+  return (showGroup && find(showGroup).name) || null
+}
+export const getSearchable = makeSearchString(['givenName', 'familyName', 'showGroupName'])
 
 export function getShow(graph, showIndex) {
   return (item) => {
@@ -32,6 +36,7 @@ export function getShow(graph, showIndex) {
 }
 export const itemFill = (graph, showIndex) => flow(
   buildFullEntity(0, graph),
+  setField('showGroupName', getShowGroupName),
   setField('searchable', getSearchable),
   getShow(graph, showIndex)
 )

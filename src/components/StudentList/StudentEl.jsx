@@ -1,17 +1,13 @@
 import React, { PropTypes } from 'react'
-import { find, get } from 'lodash'
+import { get } from 'lodash'
 import css from '../../style'
 import './Student.css'
 import LinkEl from '../Link'
 import Select from '../Editable/Select'
 
-function getShowGroupName(show) {
-  return find(show.showGroup).name
-}
-
 function StudentEl(props) {
   const {
-    familyName, givenName, show, url, email, program, saveShow, shows,
+    familyName, givenName, show, url, email, program, saveShow, shows, showGroupName,
     facebook, instagram, soundcloud, twitter, vimeo, youtube,
   } = props
   const displayName = `${givenName} ${familyName}`
@@ -32,7 +28,7 @@ function StudentEl(props) {
       </span>
       <span className="show">
         {/* {show && <Link href="/details/SHOW-NAME" internal>{ show.name }</Link>} */}
-        {show && <p>{ getShowGroupName(show) } </p>}
+        {show && <p>{ showGroupName } </p>}
         {shows && <Select options={shows} onChange={saveShow} value={get(show, 'id')} />}
       </span>
       <span className="social">
@@ -60,6 +56,7 @@ StudentEl.propTypes = {
   show: PropTypes.shape({
     name: PropTypes.string,
   }),
+  showGroupName: PropTypes.string.isRequired,
   shows: PropTypes.objectOf(PropTypes.string),
   url: PropTypes.string,
   email: PropTypes.string,
