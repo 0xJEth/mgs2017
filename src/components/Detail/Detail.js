@@ -8,11 +8,6 @@ import Component from './DetailEl'
 
 const getShowId = flow(getProps, get('route.params.showId'))
 
-// const itemsFilled = createSelector(
-//   selectGraph, getShowGroup,
-//   (graph, graphType) => mapValues(graphType, buildFullEntity(0, graph))
-// )
-
 const selectShow = getSelect(itemsFilled, getShowId)
 const mapProps = createStructuredSelector({
   showGroup: selectShow,

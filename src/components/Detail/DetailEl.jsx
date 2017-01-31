@@ -28,13 +28,15 @@ function getFirstProgram(programs) {
 function programStudents(program) {
   return program && program.students
 }
-function Show({ allStudentsIn }) {
+
+function Show({ allStudentsIn, name, student }) {
   const program = getFirstProgram(allStudentsIn)
-  const students = programStudents(program)
+  const students = student || programStudents(program)
   return (
     <ul style={css('m0 mt1 p0 lsNone')} >
       {program && <h4 style={css('m0 mb0p5')} >{program.name}</h4>}
-      {size(students) && map(students, ({ id, givenName, familyName }) =>
+      {!program && <h4 style={css('m0 mb0p5')} >{name}</h4>}
+      {size(students) > 0 && map(students, ({ id, givenName, familyName }) =>
         <li key={id}>{givenName} {familyName}</li>
       )}
     </ul>
@@ -42,6 +44,8 @@ function Show({ allStudentsIn }) {
 }
 Show.propTypes = {
   allStudentsIn: PropTypes.objectOf(PropTypes.object),
+  name: PropTypes.string,
+  student: PropTypes.objectOf(PropTypes.object),
 }
 
 function DetailEl({ showGroup, detailClose }) {

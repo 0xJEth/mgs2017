@@ -5,6 +5,7 @@ import { buildFullEntity, entityTypeSelector } from 'redux-graph'
 import { createSelector, createStructuredSelector } from 'reselect'
 // import { itemFiller } from './util'
 import { getProgramFull } from './program'
+import { getStudent } from './student'
 
 export const getShow = entityTypeSelector('Show')
 export const getLocation = entityTypeSelector('Location')
@@ -14,6 +15,7 @@ const selectGraph = createStructuredSelector({
   Location: getLocation,
   Program: getProgramFull,
   ShowGroup: getShowGroup,
+  Student: getStudent,
 })
 export const itemFill = graph => flow(
   buildFullEntity(0, graph),
