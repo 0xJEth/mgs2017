@@ -34,8 +34,7 @@ function Show({ allStudentsIn, name, student }) {
   const students = student || programStudents(program)
   return (
     <ul style={css('m0 mt1 p0 lsNone')} >
-      {program && <h4 style={css('m0 mb0p5')} >{program.name}</h4>}
-      {!program && <h4 style={css('m0 mb0p5')} >{name}</h4>}
+      <h4 style={css('m0 mb0p5')} >{name}</h4>
       {size(students) > 0 && map(students, ({ id, givenName, familyName }) =>
         <li key={id}>{givenName} {familyName}</li>
       )}
@@ -62,7 +61,7 @@ function DetailEl({ showGroup, detailClose }) {
     <detail>
       {close}
       <div className="flex">
-        <div className="mainContent" style={css('p2')}>
+        <div className="mainContent">
           <h1 style={css('m0')}>{ name }</h1>
           { showDate && <p className="dateRange" style={css('m0 fs2')}>{ showDate }</p>}
           { description && <p className="description">{ description }</p>}

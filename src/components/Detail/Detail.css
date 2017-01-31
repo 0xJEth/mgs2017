@@ -22,6 +22,11 @@ detail .flex > div {
   flex: 1;
 }
 
+detail .flex > .mainContent {
+  padding: 2rem;
+  padding-top: 4rem;
+}
+
 detail .studentList {
   font-size: .8rem;
 }
@@ -37,9 +42,20 @@ detail .mainContent {
 }
 detail .studentList {
   order: 3;
+  display: flex;
+  flex-wrap: wrap;
+}
+detail .studentList > ul {
+  width: 50%;
 }
 detail .google-map-container {
   order: 2;
+}
+
+@media (min-width: 600px ) and (max-width: 767.99px ) {
+  detail .studentList > ul {
+    width: calc(100% / 3);
+  }
 }
 
 @media (min-width: 768px ) {
@@ -47,6 +63,12 @@ detail .google-map-container {
     flex-direction: row;
     flex-wrap: wrap;
     min-height: calc(100vh - 2em);
+  }
+  detail .flex > .mainContent {
+    padding-top: 2rem;
+  }
+  detail .studentList > ul {
+    width: 50%;
   }
 }
 
@@ -102,6 +124,15 @@ detail .google-map-container {
     flex: 1;
     align-self: flex-end;
     width: calc(100% / 6 * 1);
+    max-height: calc(100vh - 4rem);
+    overflow: auto;
+    padding-bottom: 2rem;
+  }
+  detail .studentList {
+    display: block;
+  }
+  detail .studentList > ul {
+    width: 100%;
   }
   detail .flex > .google-map-container {
     flex: 3;
@@ -109,10 +140,6 @@ detail .google-map-container {
     width: calc(100% / 6 * 3);
   }
 
-  detail .studentList {
-    max-height: calc(100vh - 8rem);
-    overflow: auto;
-  }
 }
 
 /** map stuff **/
