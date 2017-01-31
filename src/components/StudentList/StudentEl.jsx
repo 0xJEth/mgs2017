@@ -23,11 +23,9 @@ function StudentEl(props) {
     <li className="student" style={css('p0p5 pl2 pr2 bb')}>
       <span className="name"><strong>{ displayName }</strong></span>
       <span className="program">
-        {/* <Link href="/details/SHOW-NAME" internal>{ programName }</Link> */}
         <i>{ program.name }</i>
       </span>
       <span className="show">
-        {/* {show && <Link href="/details/SHOW-NAME" internal>{ show.name }</Link>} */}
         {show && <p>{ showGroupName } </p>}
         {shows && <Select options={shows} onChange={saveShow} value={get(show, 'id')} />}
       </span>
