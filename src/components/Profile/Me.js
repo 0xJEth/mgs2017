@@ -4,10 +4,12 @@ import { createStructuredSelector } from 'reselect'
 import { isAnonymous, isAuthenticated, selectUser } from 'cape-redux-auth'
 import Component from './Me.jsx'
 import { auth } from '../../fire/actions'
-import { isStudent } from '../../select/perms'
+import { hasMicaEmail, isStudent } from '../../select/perms'
 
 export const getState = createStructuredSelector({
   authWarn: property('db.authWarn'),
+  authStudentMissing: property('db.authStudentMissing'),
+  hasMicaEmail,
   isAnonymous,
   isAuthenticated,
   isStudent,
