@@ -1,5 +1,5 @@
 import { find, flow, filter, get, mapValues } from 'lodash'
-import { buildFullEntity, entityTypeSelector, getRef } from 'redux-graph'
+import { buildFullEntity, getRef } from 'redux-graph'
 import { createSelector } from 'reselect'
 import { select } from 'cape-select'
 import { setField } from 'cape-lodash'
@@ -7,8 +7,6 @@ import { selectForm } from 'redux-field'
 import { makeSearchString, textSearchSelector } from '../Search'
 import { selectGraph } from '../../select/'
 import { studentShows } from '../../select/show'
-
-export const getStudents = entityTypeSelector('Student')
 
 export function matchRef(entitySlice, predicate, item) {
   if (!entitySlice) return null
@@ -41,8 +39,8 @@ export const itemFill = (graph, showIndex) => flow(
   setField('searchable', getSearchable)
 )
 export const itemsFilled = createSelector(
-  selectGraph, getStudents, studentShows,
-  (graph, graphType, showIndex) => mapValues(graphType, itemFill(graph, showIndex))
+  selectGraph, studentShows,
+  (graph, showIndex) => mapValues(graph.Student, itemFill(graph, showIndex))
 )
 
 export const programFilterValue = select(selectForm, ['Student', 'program', 'value'])

@@ -5,6 +5,7 @@ import { boolSelector, getSelect } from 'cape-select'
 import { isAnonymous, isAuthenticated, selectUid } from 'cape-redux-auth'
 import { selectGraph } from 'redux-graph'
 import { getStudent } from './student'
+import { getEmailDomain, getEmailId } from './util'
 
 export function validate(perms) {
   return ({ validator }) => !validator || isMatch(perms, validator)
@@ -19,15 +20,6 @@ export function filterItems(items, perms) {
 }
 export function getUserEmail(state) {
   return get(selectGraph(state), ['GoogleUser', selectUid(state), 'email'])
-}
-export function getEmailParts(email) {
-  return (email && email.toLowerCase().split('@')) || []
-}
-export function getEmailDomain(email) {
-  return getEmailParts(email)[1]
-}
-export function getEmailId(email) {
-  return getEmailParts(email)[0]
 }
 
 export const hasMicaEmail = flow(

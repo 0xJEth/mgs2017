@@ -14,3 +14,12 @@ export function itemFiller(typeId, refTypeIds) {
     (graph, graphType) => mapValues(graphType, buildFullEntity(0, graph))
   )
 }
+export function getEmailParts(email) {
+  return (email && email.toLowerCase().split('@')) || []
+}
+export function getEmailDomain(email) {
+  return getEmailParts(email)[1]
+}
+export function getEmailId(email) {
+  return getEmailParts(email)[0]
+}
