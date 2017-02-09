@@ -1,6 +1,6 @@
-import { flow, forEach, isEmpty, mapValues, set } from 'lodash'
+import { find, flow, forEach, isEmpty, mapValues, set, size } from 'lodash'
 import { transform } from 'lodash/fp'
-// import { replaceField } from 'cape-lodash'
+import { setField } from 'cape-lodash'
 import { buildFullEntity, entityTypeSelector } from 'redux-graph'
 import { createSelector, createStructuredSelector } from 'reselect'
 // import { itemFiller } from './util'
@@ -17,8 +17,19 @@ const selectGraph = createStructuredSelector({
   ShowGroup: getShowGroup,
   Student: getStudent,
 })
+export function getFirstProgram(programs) {
+  if (!size(programs)) return null
+  return find(programs)
+}
+export function programStudents(program) {
+  return program && program.students
+}
+export function getStudents({ allStudentsIn, student }) {
+  return student || flow(getFirstProgram, programStudents)(allStudentsIn)
+}
 export const itemFill = graph => flow(
   buildFullEntity(0, graph),
+  setField('student', getStudents),
   // replaceField('location', find),
 )
 export const getShowFull = createSelector(
@@ -39,7 +50,7 @@ export const showByProgram = flow(
 
 function setStudent(result, value) {
   if (isEmpty(value)) return result
-  const { student, id } = value
+  const { id, student } = value
   if (isEmpty(student)) return result
   forEach(student, kid => set(result, kid.id, id))
   return result

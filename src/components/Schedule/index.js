@@ -1,4 +1,4 @@
-import { camelCase, find, flow, mapValues, set, unset } from 'lodash'
+import { camelCase, compact, find, flow, mapValues, set, unset } from 'lodash'
 import { get, groupBy, map, mapKeys, sortBy } from 'lodash/fp'
 import fpValues from 'lodash/fp/mapValues'
 import { setField } from 'cape-lodash'
@@ -13,7 +13,7 @@ export const programNames = flow(get('program'), map('name'), arrayToSearch)
 export const getSearchable = item =>
   makeSearchString(['name', 'description']) + programNames(item)
 
-export const pluckLocations = flow(get('show'), map(flow(get('location'), find)))
+export const pluckLocations = flow(get('show'), map(flow(get('location'), find)), compact)
 export const itemFill = graph => flow(
   buildFullEntity(0, graph),
   setField('searchable', getSearchable),
