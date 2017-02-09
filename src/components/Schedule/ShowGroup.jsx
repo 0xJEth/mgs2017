@@ -1,30 +1,13 @@
 import React, { PropTypes } from 'react'
 import { map } from 'lodash'
-import moment from 'moment'
 import Link from 'redux-history-component'
 import css from '../../style'
 import './ShowItem.css'
 
-function getShowDate({ startDate, endDate, ongoing }) {
-  if (!startDate) return null
-  const startStr = moment(startDate).format('MMMM Do')
-  if (ongoing) return `${startStr}–Ongoing`
-  if (!endDate) return startStr
-  const endStr = moment(endDate).format('MMMM Do')
-  return `${startStr}–${endStr}`
-}
-function getReception({ receptionStart, receptionEnd }) {
-  if (!receptionStart) return null
-  const recStartStr = moment(receptionStart).utc().format('dddd, MMMM D, h')
-  const recEndStr = moment(receptionEnd).utc().format('hA')
-  return `${recStartStr}–${recEndStr}`
-}
 function getLink({ id, key }) {
   return `/details/${key || id}`
 }
-function ShowGroup({ program, name, ...props }) {
-  const showDate = getShowDate(props)
-  const reception = getReception(props)
+function ShowGroup({ name, program, reception, showDate, ...props }) {
   const link = getLink(props)
   return (
     <div className="showItem item">
@@ -45,8 +28,7 @@ ShowGroup.propTypes = {
   program: PropTypes.shape({
     name: PropTypes.string,
   }).isRequired,
-  receptionEnd: PropTypes.string.isRequired,
-  receptionStart: PropTypes.string.isRequired,
+  reception: PropTypes.string,
   showDate: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
 }
@@ -54,8 +36,6 @@ ShowGroup.defaultProps = {
   endDate: '',
   name: '[name here...]',
   program: { name: 'Teaching, MA' },
-  receptionEnd: '',
-  receptionStart: '',
   showDate: 'February 26–March 13, 2017',
   showName: 'Teaching',
   startDate: '',
