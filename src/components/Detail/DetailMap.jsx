@@ -1,24 +1,24 @@
 import React, { PropTypes } from 'react'
 import GoogleMap from 'google-map-react'
-import { find, map } from 'lodash'
+import { map } from 'lodash'
 // import css from '../../style'
 import LocationItem from './DetailMapLocation'
 
-function DetailMap({ defaultCenter, zoom, show }) {
+function DetailMap({ locations, style, ...props }) {
   return (
     <div
       className="google-map-container"
       id="detail-map-locations"
+      style={style}
     >
       <GoogleMap
-        defaultCenter={defaultCenter}
-        defaultZoom={zoom}
+        {...props}
         bootstrapURLKeys={{
           key: 'AIzaSyCWW7BwZB4inhmk-k5RWdXRo2pD-5X--YA',
           language: 'en',
         }}
       >
-        { map(show, showItem => <LocationItem key={showItem.id} {...find(showItem.location)} />) }
+        { map(locations, location => <LocationItem key={location.id} {...location} />) }
       </GoogleMap>
     </div>
   )
@@ -36,7 +36,8 @@ DetailMap.propTypes = {
     streetViewControl: PropTypes.bool,
     zoomControl: PropTypes.bool,
   }),
-  show: PropTypes.objectOf(PropTypes.object),
+  locations: PropTypes.arrayOf(PropTypes.object),
+  style: PropTypes.objectOf(PropTypes.string),
   togglePin: PropTypes.func,
   zoom: PropTypes.number,
 }
