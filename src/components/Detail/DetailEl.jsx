@@ -1,26 +1,11 @@
 import React, { PropTypes } from 'react'
 import { find, map, size } from 'lodash'
-import moment from 'moment'
 import css from '../../style'
 import './Detail.css'
 import Close from '../CloseButton'
 import DetailMap from './DetailMap'
 import LocationList from './LocationList'
 
-function getShowDate({ startDate, endDate, ongoing }) {
-  if (!startDate) return null
-  const startStr = moment(startDate).format('MMMM Do')
-  if (ongoing) return `${startStr}–Ongoing`
-  if (!endDate) return null
-  const endStr = moment(endDate).format('MMMM Do')
-  return `${startStr}–${endStr}`
-}
-function getReception({ receptionStart, receptionEnd }) {
-  if (!receptionStart) return null
-  const recStartStr = moment(receptionStart).utc().format('dddd, MMMM D, h')
-  const recEndStr = moment(receptionEnd).utc().format('hA')
-  return `${recStartStr}–${recEndStr}`
-}
 function getFirstProgram(programs) {
   if (!size(programs)) return null
   return find(programs)
@@ -50,9 +35,10 @@ Show.propTypes = {
 function DetailEl({ showGroup, detailClose }) {
   const close = <Close onClick={detailClose} style={css('absolute')} />
   if (!showGroup) return <div><h4 style={css('fixed positionCenter')} >Loading</h4> {close}</div>
-  const { description, extraChild, name, lat, lng, locations, show, zoom, ...props } = showGroup
-  const showDate = getShowDate(props)
-  const reception = getReception(props)
+  const {
+    description, extraChild, name, lat, lng, locations, reception, show, showDate, zoom,
+  } = showGroup
+
   return (
     <detail>
       {close}
@@ -63,7 +49,7 @@ function DetailEl({ showGroup, detailClose }) {
           { description && <p className="description">{ description }</p>}
           <LocationList show={show} reception={reception} />
           {extraChild &&
-            <LocationList show={extraChild.show} reception={getReception(extraChild)} />
+            <LocationList show={extraChild.show} reception={extraChild.reception} />
           }
         </div>
         <DetailMap
