@@ -50,7 +50,7 @@ Show.propTypes = {
 function DetailEl({ showGroup, detailClose }) {
   const close = <Close onClick={detailClose} style={css('absolute')} />
   if (!showGroup) return <div><h4 style={css('fixed positionCenter')} >Loading</h4> {close}</div>
-  const { description, name, lat, lng, locations, show, zoom, ...props } = showGroup
+  const { description, extraChild, name, lat, lng, locations, show, zoom, ...props } = showGroup
   const showDate = getShowDate(props)
   const reception = getReception(props)
   return (
@@ -61,14 +61,10 @@ function DetailEl({ showGroup, detailClose }) {
           <h1 style={css('m0')}>{ name }</h1>
           { showDate && <p className="dateRange" style={css('m0 fs2')}>{ showDate }</p>}
           { description && <p className="description">{ description }</p>}
-          { reception && <div>
-            <h2 style={css('m0 mt2 fs2')}>Reception</h2>
-            <p>{ reception }</p>
-          </div>}
-          <LocationList show={show} />
-        </div>
-        <div className="studentList" style={css('p2')}>
-          { map(show, showItem => <Show key={showItem.id} {...showItem} />) }
+          <LocationList show={show} reception={reception} />
+          {extraChild &&
+            <LocationList show={extraChild.show} reception={getReception(extraChild)} />
+          }
         </div>
         <DetailMap
           defaultCenter={lat ? { lat, lng } : undefined}
