@@ -36,19 +36,22 @@ export const itemFill = graph => flow(
   setField('reception', getReception),
   setField('showDate', getShowDate)
 )
-
-export function mergeShows(showgroups) {
-  const childId = 'recL5bU5855qMhQT4'
-  const child = showgroups[childId]
-  const parentId = 'recy5OLOvJNnpWuAD'
-  const parent = showgroups[parentId]
-  set(showgroups, [parentId, 'extraChild'], child)
-  if (parent && parent.locations) {
-    set(showgroups, [parentId, 'locations'], parent.locations.concat(child.locations))
+export function mergeShow(childId, parentId) {
+  return showgroups => {
+    const child = showgroups[childId]
+    const parent = showgroups[parentId]
+    set(showgroups, [parentId, 'extraChild'], child)
+    if (parent && parent.locations) {
+      set(showgroups, [parentId, 'locations'], parent.locations.concat(child.locations))
+    }
+    unset(showgroups, childId)
+    return showgroups
   }
-  unset(showgroups, childId)
-  return showgroups
 }
+export const mergeShows = flow(
+  mergeShow('recL5bU5855qMhQT4', 'recy5OLOvJNnpWuAD'),
+  mergeShow('reclZwOjZuXJVbRg1', 'recPkxpU5hm2lfIWC')
+)
 
 export const itemsFilled = createSelector(
   selectGraph, getShowGroup,
