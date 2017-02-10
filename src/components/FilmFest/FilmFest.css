@@ -12,3 +12,10 @@
 .filmTitle {
   font-style: italic;
 }
+
+@media (max-width: 36em) {
+  .mainContent {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
