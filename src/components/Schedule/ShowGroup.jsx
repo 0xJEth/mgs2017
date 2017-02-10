@@ -1,11 +1,17 @@
 import React, { PropTypes } from 'react'
-import { map } from 'lodash'
+import { map, propertyOf } from 'lodash'
 import Link from 'redux-history-component'
 import css from '../../style'
 import './ShowItem.css'
 
-function getLink({ id, key }) {
-  return `/details/${key || id}`
+export const linkMap = propertyOf({
+  recL5bU5855qMhQT4: 'recy5OLOvJNnpWuAD',
+  reclZwOjZuXJVbRg1: 'recPkxpU5hm2lfIWC',
+  recnt8Oz3oN0HBKSH: 'recdoBpSFrFhf1WwX',
+})
+
+export function getLink({ id, key }) {
+  return `/details/${key || linkMap(id) || id}`
 }
 
 function Reception({ date, extra }) {

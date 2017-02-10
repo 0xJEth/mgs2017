@@ -12,11 +12,11 @@ export function matchRef(entitySlice, predicate, item) {
   if (!entitySlice) return null
   return get(entitySlice, get(getRef(item, predicate), 'id'), null)
 }
-export function getShowGroupName(student) {
-  const showGroup = get(student, 'show.showGroup')
-  return (showGroup && find(showGroup).name) || null
+export function getShowGroup(student) {
+  const showGroup = find(get(student, 'show.showGroup'))
+  return (showGroup && showGroup.id) ? showGroup : null
 }
-export const getSearchable = makeSearchString(['givenName', 'familyName', 'showGroupName'])
+export const getSearchable = makeSearchString(['givenName', 'familyName', 'showGroup.name'])
 
 export function getShow(graph, showIndex) {
   return (item) => {
@@ -35,7 +35,7 @@ export function getShow(graph, showIndex) {
 export const itemFill = (graph, showIndex) => flow(
   buildFullEntity(0, graph),
   getShow(graph, showIndex),
-  setField('showGroupName', getShowGroupName),
+  setField('showGroup', getShowGroup),
   setField('searchable', getSearchable)
 )
 export const itemsFilled = createSelector(
