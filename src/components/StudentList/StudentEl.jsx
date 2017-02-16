@@ -7,7 +7,7 @@ import Select from '../Editable/Select'
 
 function StudentEl(props) {
   const {
-    familyName, givenName, show, url, email, program, saveShow, shows, showGroupName,
+    familyName, givenName, name, show, url, email, program, saveShow, shows, showGroupName,
     facebook, instagram, soundcloud, twitter, vimeo, youtube,
   } = props
   const displayName = `${givenName} ${familyName}`
@@ -21,7 +21,8 @@ function StudentEl(props) {
 
   return (
     <li className="student" style={css('p0p5 pl2 pr2 bb')}>
-      <span className="name"><strong>{ displayName }</strong></span>
+      {!name && <span className="name"><strong>{ displayName }</strong></span> }
+      {name && <span className="name"><strong>{ name }</strong></span> }
       <span className="program">
         <i>{ program.name }</i>
       </span>
@@ -48,6 +49,7 @@ function StudentEl(props) {
 StudentEl.propTypes = {
   familyName: PropTypes.string.isRequired,
   givenName: PropTypes.string.isRequired,
+  name: PropTypes.string,
   program: PropTypes.shape({
     name: PropTypes.string,
   }),
