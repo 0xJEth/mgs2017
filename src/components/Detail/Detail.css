@@ -11,6 +11,7 @@ detail {
 detail .close {
   top: .5rem;
   left: .5rem;
+  z-index: 999;
 }
 
 detail .flex {
