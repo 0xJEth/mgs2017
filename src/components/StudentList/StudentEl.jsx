@@ -4,10 +4,11 @@ import css from '../../style'
 import './Student.css'
 import LinkEl from '../Link'
 import Select from '../Editable/Select'
+import { getLink } from '../Schedule/ShowGroup'
 
 function StudentEl(props) {
   const {
-    familyName, givenName, name, show, url, email, program, saveShow, shows, showGroupName,
+    familyName, givenName, name, show, url, email, program, saveShow, shows, showGroup,
     facebook, instagram, soundcloud, twitter, vimeo, youtube,
   } = props
   const displayName = `${givenName} ${familyName}`
@@ -27,7 +28,7 @@ function StudentEl(props) {
         <i>{ program.name }</i>
       </span>
       <span className="show">
-        {show && <p>{ showGroupName } </p>}
+        {show && <p><LinkEl href={getLink(showGroup)} internal>{ showGroup.name }</LinkEl></p>}
         {shows && <Select options={shows} onChange={saveShow} value={get(show, 'id')} />}
       </span>
       <span className="social">
@@ -56,7 +57,10 @@ StudentEl.propTypes = {
   show: PropTypes.shape({
     name: PropTypes.string,
   }),
-  showGroupName: PropTypes.string,
+  showGroup: PropTypes.shape({
+    id: PropTypes.string,
+    name: PropTypes.string,
+  }),
   shows: PropTypes.objectOf(PropTypes.string),
   url: PropTypes.string,
   email: PropTypes.string,
