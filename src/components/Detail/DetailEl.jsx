@@ -40,10 +40,10 @@ function DetailEl({ showGroup, detailClose }) {
   } = showGroup
 
   return (
-    <detail>
+    <detail className={showGroup.id} >
       {close}
       <div className="flex">
-        <div className="mainContent">
+        <div className="mainContent" style={css('relative')}>
           <h1 style={css('m0')}>{ name }</h1>
           { showDate && <p className="dateRange" style={css('m0 fs2')}>{ showDate }</p>}
           { description && <p className="description">{ description }</p>}

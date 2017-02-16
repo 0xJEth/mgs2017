@@ -41,7 +41,7 @@ function ScheduleEl({ curatorialPracticeBlurb, showGroups }) {
       </section>
 
       <section style={css('mb3')}>
-        <h2 style={css('m0 mt3 bb')}>Curatorial Pratice</h2>
+        <h2 style={css('m0 mt3 bb')}>Curatorial Practice</h2>
         <div style={css('mt1 mb1 mw7 bgYellow')}>
           <p>{curatorialPracticeBlurb}</p>
         </div>

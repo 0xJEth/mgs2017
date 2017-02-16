@@ -39,7 +39,7 @@ function LocationList({ show, reception }) {
           <p>{ reception }</p>
         </div>
       }
-      <ul style={css('lsNone m0 p0 mt2')}>
+      <ul style={css('lsNone m0 p0 mt2 relative')}>
         <h2 style={css('mt2 mb0p5 fs2')}>Location</h2>
         {map(show, item => (
           <LocationItem key={item.id} location={find(item.location)} students={item.student} />
