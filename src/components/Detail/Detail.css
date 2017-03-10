@@ -28,10 +28,6 @@ detail .flex > .mainContent {
   padding-top: 4rem;
 }
 
-detail .studentList {
-  font-size: .8rem;
-}
-
 detail .google-map-container  {
   height: 60%;
   height: 60vh;
@@ -42,13 +38,17 @@ detail .mainContent {
   order: 1;
 }
 detail .studentList {
+  font-size: .8rem;
   order: 3;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
 }
+
 detail .studentList > ul {
   width: 50%;
 }
+
 detail .google-map-container {
   order: 2;
 }

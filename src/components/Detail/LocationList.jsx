@@ -13,7 +13,7 @@ function LocationItem({ location, students }) {
         </div>
       }
       {size(students) > 0 &&
-        <ul style={css('m0 mt1 p0 lsNone')} className="studentList">
+        <ul style={css('mt0p5 mb2 p0 lsNone')} className="studentList">
           {map(students, ({ id, givenName, familyName }) =>
             <li key={id}>{givenName} {familyName}</li>
           )}
