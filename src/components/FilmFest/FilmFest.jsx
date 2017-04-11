@@ -10,7 +10,7 @@ function FilmFest() {
         <h1 style={css('m0')}>Filmmaking MFA Screenings</h1>
         <p className="dateRange" style={css('m0 fs2')}>April 28th–April 30th</p>
         <p className="description">
-          Episodic pilots, narrative films, and non-fiction programming by our inaugural class. All film screenings are in Falvey Hall in MICA’s Brown Center.
+          Episodic pilots, narrative films, and non-fiction programming by our inaugural class. All film screenings are in Falvey Hall in MICA’s Brown Center. Read more and watch trailers at <a href="http://micafilmmaking.org/">micafilmmaking.org</a>
         </p>
         <div className="filmfest">
           <section>
