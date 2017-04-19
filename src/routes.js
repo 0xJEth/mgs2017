@@ -1,13 +1,11 @@
-import createRouter from 'location-info'
+import reducer, { addRoutes } from 'location-info'
 
-const { addRoutes, locationInfo } = createRouter({ trailingSlash: false })
-addRoutes({
+export const routes = {
   colors: '/colors',
   filmfest: '/details/recPkxpU5hm2lfIWC',
   details: '/details/:showId',
   home: '/',
   me: '/me',
   studentList: '/students',
-})
-
-export default locationInfo
+}
+export const locInfo = reducer(undefined, addRoutes(routes))

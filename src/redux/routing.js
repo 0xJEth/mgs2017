@@ -3,8 +3,6 @@ import { flow, partial, property } from 'lodash'
 import { createSelector } from 'reselect'
 import { getProps, select } from 'cape-select'
 
-import locationInfo from '../routes'
-
 export const routeParamsPath = ['route', 'params']
 export const routeParams = flow(getProps, property(routeParamsPath))
 export const routeParam = partial(select, routeParams)
@@ -14,7 +12,7 @@ function routeInfoSelector(history) {
   return {
     history,
     // Location object gets sent to locationInfo
-    route: locationInfo(history.location),
+    route: {},
   }
 }
 // Pass in the state object and return some info about a "route".

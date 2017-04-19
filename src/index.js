@@ -6,11 +6,14 @@ import configureStore from './redux/configureStore'
 import Root from './redux/Root'
 import './index.css'
 import './components/Editable/Editable.css'
+import { locInfo } from './routes'
 
 /* global window */
 
 // Define our inital state object. This could be a fetch() to an API endpoint.
-const initialState = window.reactData || {}
+const initialState = {
+  locInfo,
+}
 // Configure and create our Redux store.
 const store = configureStore(initialState)
 
