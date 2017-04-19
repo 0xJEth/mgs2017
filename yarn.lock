@@ -1246,7 +1246,13 @@ caniuse-db@^1.0.30000539, caniuse-db@^1.0.30000554:
   version "1.0.30000587"
   resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000587.tgz#18bb26f03139887539054cfe1c5358583eaabcf0"
 
-cape-lodash@^1.10.0, cape-lodash@^1.11.0, cape-lodash@^1.7.0, cape-lodash@^1.8.0:
+cape-lodash@^1.10.0, cape-lodash@^1.12.0:
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/cape-lodash/-/cape-lodash-1.12.0.tgz#75da92fd3a3920db8966cff0103e03b65b82821b"
+  dependencies:
+    lodash "^4.17.2"
+
+cape-lodash@^1.11.0, cape-lodash@^1.7.0, cape-lodash@^1.8.0:
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/cape-lodash/-/cape-lodash-1.11.0.tgz#ba6d6d20e20bc771dcfcf32775d395fda4fb5007"
   dependencies:
@@ -1275,15 +1281,16 @@ cape-redux-collection@^4.0.1:
     redux-history-sync "^3.1.0"
     reselect "^2.5.4"
 
-cape-redux-reducer@^3.8.1:
-  version "3.8.1"
-  resolved "https://registry.yarnpkg.com/cape-redux-reducer/-/cape-redux-reducer-3.8.1.tgz#ba51c5de51b4b66cd772ab5c628120dd1cb51182"
+cape-redux-reducer@^3.9.2:
+  version "3.9.2"
+  resolved "https://registry.yarnpkg.com/cape-redux-reducer/-/cape-redux-reducer-3.9.2.tgz#888adaad1aee00b5cc4a2d4a24635847a9a34097"
   dependencies:
     cape-lodash "^1.11.0"
     cape-redux "^3.1.0"
     cape-redux-auth "^4.0.0"
     cape-redux-collection "^4.0.1"
     cape-select "^2.4.0"
+    location-info "^4.0.1"
     lodash "^4.17.4"
     redux "^3.6.0"
     redux-field "^4.5.0"
@@ -3646,6 +3653,17 @@ location-info@^3.1.1:
   resolved "https://registry.yarnpkg.com/location-info/-/location-info-3.1.1.tgz#2b37f04d8f054de5f6c9666fcb69e7fa690ca0a8"
   dependencies:
     lodash "^4.16.4"
+    url-pattern "^1.0.2"
+
+location-info@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/location-info/-/location-info-4.0.1.tgz#e553aff22c445fb7df536f99c7c7277c98ed93e8"
+  dependencies:
+    cape-lodash "^1.12.0"
+    cape-redux "^3.1.0"
+    cape-select "^2.4.0"
+    lodash "^4.17.4"
+    reselect "^3.0.0"
     url-pattern "^1.0.2"
 
 lodash-es@^4.2.0, lodash-es@^4.2.1:

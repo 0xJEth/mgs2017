@@ -16,7 +16,7 @@
     "cape-lodash": "^1.11.0",
     "cape-redux": "^3.1.0",
     "cape-redux-auth": "^4.0.0",
-    "cape-redux-reducer": "^3.8.1",
+    "cape-redux-reducer": "^3.9.2",
     "cape-select": "^2.3.2",
     "cape-style": "^1.0.0",
     "classnames": "^2.2.5",
