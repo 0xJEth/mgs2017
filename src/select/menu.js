@@ -2,8 +2,8 @@ import { flow, partial, property } from 'lodash'
 import { createStructuredSelector } from 'reselect'
 import { bindActionCreators } from 'redux'
 import { createObj } from 'cape-lodash'
+import { getRouteId } from 'cape-react-app'
 import { filterPerms } from './perms'
-import { getRouteId } from '../redux/routing'
 import { auth, logout } from '../fire/actions'
 
 export const getMenu = property('db.menu')
