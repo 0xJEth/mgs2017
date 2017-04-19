@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import css from '../../style'
+import css from 'cape-style'
 import './Search.css'
 import Icon from '../Icon'
 

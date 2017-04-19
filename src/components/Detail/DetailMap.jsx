@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import GoogleMap from 'google-map-react'
 import { map } from 'lodash'
-// import css from '../../style'
+// import css from 'cape-style'
 import LocationItem from './DetailMapLocation'
 
 function DetailMap({ locations, style, ...props }) {

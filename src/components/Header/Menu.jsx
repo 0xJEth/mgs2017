@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import map from 'lodash/map'
 import { connect } from 'react-redux'
 import { menuActions, menuSelector } from '../../select/menu'
-import css from '../../style'
+import css from 'cape-style'
 import NavItem from './NavItem'
 
 function Menu({ activeId, links, actions }) {

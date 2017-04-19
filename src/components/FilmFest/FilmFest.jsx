@@ -1,5 +1,5 @@
 import React from 'react'
-import css from '../../style'
+import css from 'cape-style'
 import './FilmFest.css'
 import Page from '../Page'
 

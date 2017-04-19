@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import { map, propertyOf } from 'lodash'
 import Link from 'redux-history-component'
-import css from '../../style'
+import css from 'cape-style'
 import './ShowItem.css'
 
 export const linkMap = propertyOf({

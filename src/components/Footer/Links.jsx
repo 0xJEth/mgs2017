@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import { map } from 'lodash'
 import classnames from 'classnames'
-import css from '../../style'
+import css from 'cape-style'
 import LinkEl from '../Link'
 
 function Links({ className, links, title, siteId }) {

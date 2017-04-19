@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { get } from 'lodash'
-import css from '../../style'
+import css from 'cape-style'
 import './Student.css'
 import LinkEl from '../Link'
 import Select from '../Editable/Select'

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import mgsBlock from '../../mgs2017LogoBlock.svg'
-import css from '../../style'
+import css from 'cape-style'
 import './Header.css'
 import Blurb from '../Blurb/Blurb'
 import Menu from './Menu'

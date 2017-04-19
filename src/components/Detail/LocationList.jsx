@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { find, map, size } from 'lodash'
-import css from '../../style'
+import css from 'cape-style'
 
 function LocationItem({ location, students }) {
   if (!location) return <p>No location.</p>

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import classnames from 'classnames'
-import css from '../style'
+import css from 'cape-style'
 
 function Button({ children, className, icon, styles, ...props }) {
   return (

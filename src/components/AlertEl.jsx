@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import { get, merge } from 'lodash'
 import classnames from 'classnames'
 import tinycolor from 'tinycolor2'
-import css from '../style'
+import css from 'cape-style'
 
 const styles = {
   base: css('ba br1 p1 m1'),

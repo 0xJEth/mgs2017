@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { template } from 'lodash'
-import css from '../../style'
+import css from 'cape-style'
 import './Me.css'
 import Button from '../Button'
 import Alert from '../Alert'

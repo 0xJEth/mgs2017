@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import { map, partial } from 'lodash'
+import { partial } from 'lodash'
 import { clear, getState, onChange, save } from 'redux-field'
 import { connect } from 'react-redux'
 import { mapDispatchToProps } from 'cape-redux'

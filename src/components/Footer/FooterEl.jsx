@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import micaLogo from '../../micaLogo.svg'
-import css from '../../style'
+import css from 'cape-style'
 import './Footer.css'
 import Links from './Links'
 

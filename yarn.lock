@@ -1246,13 +1246,7 @@ caniuse-db@^1.0.30000539, caniuse-db@^1.0.30000554:
   version "1.0.30000587"
   resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000587.tgz#18bb26f03139887539054cfe1c5358583eaabcf0"
 
-cape-lodash@^1.10.0, cape-lodash@^1.7.0, cape-lodash@^1.8.0:
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/cape-lodash/-/cape-lodash-1.10.0.tgz#8168b3b3949112c9eb622708a2823f8cddef53de"
-  dependencies:
-    lodash "^4.17.2"
-
-cape-lodash@^1.11.0:
+cape-lodash@^1.10.0, cape-lodash@^1.11.0, cape-lodash@^1.7.0, cape-lodash@^1.8.0:
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/cape-lodash/-/cape-lodash-1.11.0.tgz#ba6d6d20e20bc771dcfcf32775d395fda4fb5007"
   dependencies:
@@ -1281,20 +1275,22 @@ cape-redux-collection@^4.0.1:
     redux-history-sync "^3.1.0"
     reselect "^2.5.4"
 
-cape-redux-reducer@^3.4.0:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/cape-redux-reducer/-/cape-redux-reducer-3.4.0.tgz#e2a3e6352af9cc944caf68c905affc8b978c2964"
+cape-redux-reducer@^3.8.1:
+  version "3.8.1"
+  resolved "https://registry.yarnpkg.com/cape-redux-reducer/-/cape-redux-reducer-3.8.1.tgz#ba51c5de51b4b66cd772ab5c628120dd1cb51182"
   dependencies:
-    cape-lodash "^1.8.0"
-    cape-redux "^3.0.0"
+    cape-lodash "^1.11.0"
+    cape-redux "^3.1.0"
     cape-redux-auth "^4.0.0"
     cape-redux-collection "^4.0.1"
-    lodash "^4.17.2"
-    redux-field "^4.0.2"
-    redux-graph "^2.8.0"
+    cape-select "^2.4.0"
+    lodash "^4.17.4"
+    redux "^3.6.0"
+    redux-field "^4.5.0"
+    redux-graph "^2.12.1"
     redux-history-sync "^3.1.0"
-    redux-thunk "^2.1.0"
-    redux-windowsize "^1.0.0"
+    redux-thunk "^2.2.0"
+    redux-windowsize "^1.3.1"
 
 cape-redux@^2.2.1, cape-redux@^2.3.0:
   version "2.3.0"
@@ -1304,14 +1300,6 @@ cape-redux@^2.2.1, cape-redux@^2.3.0:
     lodash "^4.17.2"
     redux "^3.6.0"
     seamless-immutable "^6.3.0"
-
-cape-redux@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/cape-redux/-/cape-redux-3.0.0.tgz#fb37ee4380c3e40f707ad922f5dc4a06db68059c"
-  dependencies:
-    cape-lodash "^1.8.0"
-    lodash "^4.17.2"
-    redux "^3.6.0"
 
 cape-redux@^3.1.0:
   version "3.1.0"
@@ -1334,6 +1322,14 @@ cape-select@^2.4.0:
   dependencies:
     cape-lodash "^1.7.0"
     lodash "^4.17.2"
+
+cape-style@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/cape-style/-/cape-style-1.0.0.tgz#bb8cfab5bb1bcf2454968b54bfb7ca2c03d40cf6"
+  dependencies:
+    cape-lodash "^1.11.0"
+    lodash "^4.17.4"
+    reselect "^3.0.0"
 
 cardinal@^1.0.0:
   version "1.0.0"
@@ -1631,6 +1627,13 @@ cosmiconfig@^2.1.0:
     os-homedir "^1.0.1"
     parse-json "^2.2.0"
     require-from-string "^1.1.0"
+
+create-react-class@^15.5.1:
+  version "15.5.2"
+  resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.5.2.tgz#6a8758348df660b88326a0e764d569f274aad681"
+  dependencies:
+    fbjs "^0.8.9"
+    object-assign "^4.1.1"
 
 cross-spawn@4.0.2:
   version "4.0.2"
@@ -2411,6 +2414,18 @@ fbjs@^0.8.1, fbjs@^0.8.3, fbjs@^0.8.4:
     loose-envify "^1.0.0"
     object-assign "^4.1.0"
     promise "^7.1.1"
+    ua-parser-js "^0.7.9"
+
+fbjs@^0.8.9:
+  version "0.8.12"
+  resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.12.tgz#10b5d92f76d45575fd63a217d4ea02bea2f8ed04"
+  dependencies:
+    core-js "^1.0.0"
+    isomorphic-fetch "^2.1.1"
+    loose-envify "^1.0.0"
+    object-assign "^4.1.0"
+    promise "^7.1.1"
+    setimmediate "^1.0.5"
     ua-parser-js "^0.7.9"
 
 figures@^1.3.5:
@@ -3633,7 +3648,7 @@ location-info@^3.1.1:
     lodash "^4.16.4"
     url-pattern "^1.0.2"
 
-lodash-es@^4.2.1:
+lodash-es@^4.2.0, lodash-es@^4.2.1:
   version "4.17.2"
   resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.2.tgz#59011b585166e613eb9dd5fc256b2cd1a30f3712"
 
@@ -3769,11 +3784,11 @@ lodash.words@^3.0.0:
   dependencies:
     lodash._root "^3.0.0"
 
-"lodash@>=3.5 <5", lodash@^4.0.0, lodash@^4.15.0, lodash@^4.16.2, lodash@^4.17.4, lodash@^4.3.0:
+"lodash@>=3.5 <5", "lodash@^ 4.17.2", lodash@^4.0.0, lodash@^4.15.0, lodash@^4.16.2, lodash@^4.16.4, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
-"lodash@^ 4.17.2", lodash@^4.16.4, lodash@^4.17.2, lodash@^4.2.0, lodash@^4.2.1:
+lodash@^4.17.2:
   version "4.17.2"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.2.tgz#34a3055babe04ce42467b607d700072c7ff6bf42"
 
@@ -4115,6 +4130,10 @@ oauth-sign@~0.8.1:
 object-assign@4.1.0, object-assign@^4.0.1, object-assign@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.0.tgz#7a3b3d0e98063d43f4c03f2e8ae6cd51a86883a0"
+
+object-assign@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
 
 object.omit@^2.0.0:
   version "2.0.1"
@@ -4634,6 +4653,12 @@ promise@7.1.1, promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
+prop-types@^15.0.0:
+  version "15.5.8"
+  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.8.tgz#6b7b2e141083be38c8595aa51fc55775c7199394"
+  dependencies:
+    fbjs "^0.8.9"
+
 proxy-addr@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/proxy-addr/-/proxy-addr-1.1.2.tgz#b4cc5f22610d9535824c123aef9d3cf73c40ba37"
@@ -4779,6 +4804,18 @@ react-redux@^4.0.0, react-redux@^4.4.5, react-redux@^4.4.6:
     invariant "^2.0.0"
     lodash "^4.2.0"
     loose-envify "^1.1.0"
+
+react-redux@^5.0.1:
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-5.0.4.tgz#1563babadcfb2672f57f9ceaa439fb16bf85d55b"
+  dependencies:
+    create-react-class "^15.5.1"
+    hoist-non-react-statics "^1.0.3"
+    invariant "^2.0.0"
+    lodash "^4.2.0"
+    lodash-es "^4.2.0"
+    loose-envify "^1.1.0"
+    prop-types "^15.0.0"
 
 react-scripts@0.7.0:
   version "0.7.0"
@@ -4996,7 +5033,20 @@ redux-field@^4.0.2:
     reselect "^2.5.4"
     seamless-immutable "^6.1.3"
 
-redux-graph@^2.10.0, redux-graph@^2.7.0, redux-graph@^2.8.0:
+redux-field@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/redux-field/-/redux-field-4.5.0.tgz#feff5f41a1603bb47c89c5a7b00d465dc9ee5573"
+  dependencies:
+    cape-lodash "^1.10.0"
+    cape-redux "^3.1.0"
+    cape-select "^2.4.0"
+    lodash "^ 4.17.2"
+    react-redux "^5.0.1"
+    redux "^3.6.0"
+    reselect "^2.5.4"
+    seamless-immutable "^6.1.3"
+
+redux-graph@^2.10.0, redux-graph@^2.7.0:
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/redux-graph/-/redux-graph-2.10.0.tgz#36906793aa31e676fd117a3a8d0975dd210ff665"
   dependencies:
@@ -5006,6 +5056,17 @@ redux-graph@^2.10.0, redux-graph@^2.7.0, redux-graph@^2.8.0:
     lodash "^4.17.4"
     redux "^3.6.0"
     reselect "^2.5.4"
+
+redux-graph@^2.12.1:
+  version "2.12.1"
+  resolved "https://registry.yarnpkg.com/redux-graph/-/redux-graph-2.12.1.tgz#02e6742389f8715ead44751aa8e767f63c12ca47"
+  dependencies:
+    cape-lodash "^1.11.0"
+    cape-redux "^3.1.0"
+    cape-select "^2.4.0"
+    lodash "^4.17.4"
+    redux "^3.6.0"
+    reselect "^3.0.0"
 
 redux-history-component@^1.0.2:
   version "1.0.2"
@@ -5032,7 +5093,11 @@ redux-thunk@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.1.0.tgz#c724bfee75dbe352da2e3ba9bc14302badd89a98"
 
-redux-windowsize@^1.0.0, redux-windowsize@^1.3.1:
+redux-thunk@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.2.0.tgz#e615a16e16b47a19a515766133d1e3e99b7852e5"
+
+redux-windowsize@^1.3.1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/redux-windowsize/-/redux-windowsize-1.3.1.tgz#0a942a0b161b42ecff6afa8f8cae2bb82fa9132c"
   dependencies:
@@ -5171,6 +5236,10 @@ reselect@^2.5.4:
   version "2.5.4"
   resolved "https://registry.yarnpkg.com/reselect/-/reselect-2.5.4.tgz#b7d23fdf00b83fa7ad0279546f8dbbbd765c7047"
 
+reselect@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/reselect/-/reselect-3.0.0.tgz#b2e35977f03048700028eaee3a8c0639e40e8f35"
+
 resolve-from@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/resolve-from/-/resolve-from-1.0.1.tgz#26cbfe935d1aeeeabb29bc3fe5aeb01e93d44226"
@@ -5293,6 +5362,10 @@ set-blocking@^2.0.0, set-blocking@~2.0.0:
 set-immediate-shim@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/set-immediate-shim/-/set-immediate-shim-1.0.1.tgz#4b2b1b27eb808a9f8dcc481a58e5e56f599f3f61"
+
+setimmediate@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/setimmediate/-/setimmediate-1.0.5.tgz#290cbb232e306942d7d7ea9b83732ab7856f8285"
 
 setprototypeof@1.0.2:
   version "1.0.2"

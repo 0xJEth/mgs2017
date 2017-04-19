@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { map } from 'lodash'
-import css from '../../style'
+import css from 'cape-style'
 import Field from './Field'
 
 function Fields({ entity, fields, prefix, title }) {
