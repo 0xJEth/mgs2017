@@ -1391,15 +1391,7 @@ cape-select@^2.3.1, cape-select@^2.4.0:
     cape-lodash "^1.7.0"
     lodash "^4.17.2"
 
-cape-style@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/cape-style/-/cape-style-1.0.0.tgz#bb8cfab5bb1bcf2454968b54bfb7ca2c03d40cf6"
-  dependencies:
-    cape-lodash "^1.11.0"
-    lodash "^4.17.4"
-    reselect "^3.0.0"
-
-cape-style@^1.0.2:
+cape-style@^1.0.0, cape-style@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/cape-style/-/cape-style-1.0.2.tgz#8fd3468bfdb65a5dcf613d77117a2ed2203c95f4"
   dependencies:
@@ -5239,6 +5231,18 @@ redux-history-component@^1.0.2:
     react "^15.4.1"
     react-redux "^4.4.6"
     redux "^3.2.1"
+    redux-history-sync "^3.1.0"
+
+redux-history-component@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/redux-history-component/-/redux-history-component-2.1.0.tgz#0f6e64033c90bd459e16c4d6231d2aea16adf3a2"
+  dependencies:
+    classnames "^2.2.5"
+    lodash "^4.17.4"
+    prop-types "^15.5.8"
+    react "^15.5.4"
+    react-redux "^5.0.4"
+    redux "^3.6.0"
     redux-history-sync "^3.1.0"
 
 redux-history-sync@^3.1.0:

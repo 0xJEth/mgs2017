@@ -1,8 +1,7 @@
+import React from 'react'
 // http://jxnblk.com/writing/posts/color-palette-documentation-for-living-style-guides/
 // would be nice to build something like this for each siteId
 // good way to get some color combos, etc.
-
-import React from 'react'
 
 function ColorStripes() {
   return (

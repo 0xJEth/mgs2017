@@ -2,8 +2,8 @@ import { flow, partial } from 'lodash'
 import { connect } from 'react-redux'
 import { mapDispatchToProps } from 'cape-redux'
 import { getState, onSubmit } from 'redux-field'
+import Component from 'cape-mixer/lib/Editable/FieldGroupEl'
 import { getFieldId } from './utils'
-import Component from './FieldGroupEl'
 
 export function getStateProps(state, props) {
   const fieldState = getState(state, props)
