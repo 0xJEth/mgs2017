@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import css from 'cape-style'
-import './Blurb.css'
+// import './Blurb.css'
 
 function Blurb({ description, tagline, siteName, mgsBlock }) {
   return (

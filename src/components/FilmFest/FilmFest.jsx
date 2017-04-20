@@ -1,6 +1,6 @@
 import React from 'react'
 import css from 'cape-style'
-import './FilmFest.css'
+// import './FilmFest.css'
 import Page from '../Page'
 
 function FilmFest() {

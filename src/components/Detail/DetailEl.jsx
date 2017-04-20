@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { find, map, size } from 'lodash'
 import css from 'cape-style'
 import Close from 'cape-mixer/lib/CloseButton'
-import './Detail.css'
+// import './Detail.css'
 import DetailMap from './DetailMap'
 import LocationList from './LocationList'
 

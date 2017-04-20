@@ -4,7 +4,7 @@ import { get } from 'lodash'
 import css from 'cape-style'
 import LinkEl from 'cape-mixer/lib/Link'
 import Select from 'cape-mixer/lib/SelectEl'
-import './Student.css'
+// import './Student.css'
 import { getLink } from '../Schedule/ShowGroup'
 
 function StudentEl(props) {

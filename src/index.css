@@ -262,3 +262,832 @@ page > footer {
     width: calc(100% / 5);
   }
 }
+
+
+/* From components/Blurb/Blurb.css */
+#blurb .wrapper {
+  max-width: 55rem;
+}
+#blurb .wrapper {
+  flex-direction: column;
+}
+#blurb .flexItem {
+  width: 100%;
+}
+@media (min-width: 40rem) {
+  #blurb .wrapper {
+    flex-direction: row;
+    align-items: center;
+  }
+  #blurb .flexItem {
+    width: 50%;
+  }
+}
+
+/* From components/Detail/Detail.css */
+detail {
+  background-color: #fffdf4;
+  border: 1rem solid #fedb00;
+  /*box-shadow: inset 0px 0px 1em rgba(0,0,0,.5);*/
+  display: block;
+  position: relative;
+  min-height: 100%;
+  min-height: 100vh;
+}
+
+detail .close {
+  top: .5rem;
+  left: .5rem;
+  z-index: 999;
+}
+
+detail .flex {
+  display: flex;
+  flex-direction: column;
+}
+
+detail .flex > div {
+  flex: 1;
+}
+
+detail .flex > .mainContent {
+  padding: 2rem;
+  padding-top: 4rem;
+}
+
+detail .google-map-container  {
+  height: 60%;
+  height: 60vh;
+}
+
+/** skinny mode stacking order **/
+detail .mainContent {
+  order: 1;
+}
+detail .studentList {
+  font-size: .8rem;
+  order: 3;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+detail .studentList > ul {
+  width: 50%;
+}
+
+detail .google-map-container {
+  order: 2;
+}
+
+@media (min-width: 600px ) and (max-width: 767.99px ) {
+  detail .studentList > ul {
+    width: calc(100% / 3);
+  }
+}
+
+@media (min-width: 768px ) {
+  detail .flex {
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-height: calc(100vh - 2em);
+  }
+  detail .flex > .mainContent {
+    padding-top: 2rem;
+  }
+  detail .studentList > ul {
+    width: 50%;
+  }
+}
+
+@media (min-width: 768px ) and (max-width: 999.99px ) {
+  /** medium mode stacking order **/
+  detail .mainContent {
+    order: 2;
+  }
+  detail .studentList {
+    order: 3;
+  }
+  detail .google-map-container {
+    order: 1;
+  }
+
+  /** all other designs/flex stuff **/
+  detail .mainContent {
+    flex: 2;
+    width: calc(100% / 3 * 2);
+  }
+  detail .studentList {
+    flex: 1;
+    width: calc(100% / 3);
+  }
+  detail .flex > .google-map-container {
+    flex: none;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1000px ){
+  /** wide mode stacking order **/
+  detail .mainContent {
+    order: 1;
+  }
+  detail .studentList {
+    order: 2;
+  }
+  detail .google-map-container {
+    order: 3;
+  }
+
+  detail .mainContent,
+  detail .google-map-container {
+    min-height: calc(100vh - 2em);
+  }
+  detail .flex > .mainContent {
+    flex: 2;
+    height: calc(100vh - 2rem);
+    width: auto;
+    overflow: auto;
+    padding-top: 4rem;
+    position: relative;
+  }
+  /*detail .flex > .studentList {
+    flex: 1;
+    align-self: flex-end;
+    width: calc(100% / 6 * 1);
+    max-height: calc(100vh - 4rem);
+    overflow: auto;
+    padding-bottom: 2rem;
+  }*/
+  detail .studentList {
+    display: block;
+  }
+  detail .studentList > ul {
+    width: 100%;
+  }
+  /*temporary*/
+  .recy5OLOvJNnpWuAD detail .studentList {
+    position: absolute;
+    right: 2rem;
+    top: -460%;
+    margin-bottom: 4rem;
+  }
+  detail .flex > .google-map-container {
+    flex: 3;
+    height: calc(100vh - 2rem);
+    width: auto;
+  }
+
+}
+
+/** map stuff **/
+.mapPopup {
+  background: white;
+  width: 200px;
+  z-index: 20;
+  text-align: center;
+  bottom: 1em;
+  left:-25px;
+  position: absolute;
+  box-sizing: border-box;
+  padding: 1rem 1rem 1.25rem 1rem;
+  box-shadow: 0 0 1rem 0 rgba(0,0,0,.33);
+}
+
+.mapPopup::before {
+  background: white;
+  width: 1rem;
+  height: 1rem;
+  display: block;
+  position: absolute;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  transform: rotate(45deg);
+  bottom: -.5rem;
+  left: 29px;
+  z-index: 19;
+  content: '';
+}
+
+.galleryLocation .mapPopup {
+  display: none;
+}
+.galleryLocation:hover .mapPopup {
+  display: block;
+}
+
+/* From components/Editable/Editable.css */
+.editable-click,
+.editable-parent,
+.editable-row,
+.editable-buttons,
+.btn-secret,
+.editable-row > input,
+.editable-fixed-value {
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+.editable-click,
+.editable-parent,
+.editable-row,
+.editable-buttons {
+  display:inline-block;
+  position: relative;
+  min-height: calc(1.4rem + 2px);
+}
+
+.btn-secret,
+.editable-row > input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #fedb00;
+  padding:0;
+  transition: all 300ms;
+  cursor: pointer;
+}
+
+.btn-secret,
+.editable-row > input,
+.editable-fixed-value {
+  margin-left: .5rem;
+}
+
+.btn-secret:focus,
+.editable-row > input:focus {
+  background-color: #fedb00;
+  outline-color: #fedb00;
+  padding-left: .3rem;
+  padding-right: .3rem;
+}
+
+.editable-buttons {
+  margin-left: .3rem;
+}
+
+/*.editable-empty,
+.editable-empty .btn-secret {
+  color: gray;
+}*/
+
+/* absolute z10 textCenter br0p25 textReset */
+.help-block {
+  position: absolute;
+  top:1.7em;
+  z-index: 1000000;
+  padding: .3em .5em;
+  color: #fffdf4;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: break-word;
+  white-space: pre;
+  pointer-events: none;
+  background-color: rgba(50, 43, 0, .8);
+  border-radius: .25em;
+  -webkit-font-smoothing: subpixel-antialiased;
+  box-shadow: 0 0 .2em 0 rgba(50, 43, 0, .2);
+}
+
+.help-block::before {
+  position: absolute;
+  top: -.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000001;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  border: .25em solid transparent;
+  border-bottom-color: rgba(50, 43, 0, .8);
+  color: rgba(50, 43, 0, .8);
+  content: '';
+}
+
+/* From components/FilmFest/FilmFest.css */
+.filmfest ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sub-section {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.filmTitle {
+  font-style: italic;
+}
+
+@media (max-width: 36em) {
+  .mainContent {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid white;
+  transition: all 350ms;
+}
+
+a:hover {
+  color: #655700;
+  border-bottom-color: #655700;
+}
+
+/* From components/Footer/Footer.css */
+footer {
+  line-height: 1.4;
+}
+
+footer a {
+  color:black;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+footer a:hover {
+  border-bottom-color: #fedb00;
+}
+
+footer .social a:hover {
+  border-bottom-color: transparent;
+  color:#fedb00;
+}
+
+footer .mica.logo {
+  padding-top: 0;
+  padding-right: 3em;
+}
+
+/*****/
+/*****/
+/* Trying to get this to work */
+/*****/
+/*****/
+
+footer flex {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+footer flex section {
+  padding: 1em;
+}
+
+footer flex section.mica {
+  max-width: 350px;
+}
+footer flex section {
+  width: 100%;
+}
+footer flex section.archive,
+footer flex section.social {
+  width: 50%;
+}
+
+@media (min-width: 750px) {
+  footer flex section {
+    width: 20%;
+  }
+  footer flex section.archive,
+  footer flex section.social {
+    width: 10%;
+  }
+}
+
+@media (max-width: 1099px) and (min-width: 750px) {
+  footer flex section.mica {
+    width: 100%;
+    max-width: none;
+  }
+  footer flex section.mica img {
+    width: 50%;
+    max-width: 350px;
+  }
+  footer flex section {
+    width: 30%;
+  }
+  footer flex section.archive,
+  footer flex section.social {
+    width: 15%;
+  }
+}
+
+@media (min-width: 1100px) {
+  footer flex section.mica {
+    width: 30%;
+    max-width: 350px;
+  }
+}
+
+/* From components/Header/Header.css */
+/** Header.css **/
+#siteHeader nav {
+  display: block;
+}
+
+#siteHeader .mgsLogo {
+  width: 100%;
+  height:auto;
+}
+
+.menu,
+.menu > li,
+.menu > li a,
+.menu > li button {
+  text-align: center;
+  color: #211a00;
+  transition: all 333ms;
+}
+
+.menu > .home a,
+.menu > .students a,
+.menu > .studentList a {
+  background-color: #fff198;
+  border: 1px solid;
+  display: block;
+  padding: 1rem;
+}
+
+.menu > .home a:hover,
+.menu > .students a:hover,
+.menu > .studentList a:hover {
+  background-color: #211a00;
+  color: #fffdf4;
+  border-color:#211a00;
+}
+
+.menu > .home.active a,
+.menu > .students.active a,
+.menu > .studentList.active a {
+  background-color: transparent;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  color: inherit;
+}
+
+.menu > .home a {
+  border-left: none;
+}
+.menu > .students a,
+.menu > .studentList a {
+  border-right: none;
+}
+
+.menu .auth,
+.menu .me,
+.menu .logout {
+  text-align: right;
+  position: absolute;
+  right: 1rem;
+}
+
+.menu .auth a:hover,
+.menu .me a:hover,
+.menu .logout a:hover,
+.menu .auth button:hover,
+.menu .me button:hover,
+.menu .logout button:hover {
+  border-bottom: 1px solid;
+  color: #655700;
+  cursor: pointer;
+}
+
+.menu .auth,
+.menu .me { top: 2rem; }
+.menu .logout { top: 3rem;}
+
+.menu .auth,
+.menu .me,
+.menu .logout,
+.menu .auth button,
+.menu .me button,
+.menu .logout button {
+  font-family: inherit;
+  font-size: .8rem;
+}
+
+.menu {
+  display: flex;
+}
+.menu > li {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+}
+
+/* from components/Profile/Me.css */
+
+flex {
+  display:flex;
+}
+
+flex > div {
+  flex: 1;
+}
+
+#profile flex {
+  min-height: 100vh;
+}
+
+#profile > main {
+  box-shadow: none;
+}
+
+#profile #blurb,
+#profile footer {
+  display: none;
+}
+
+/* From components/Schedule/Schedule.css */
+#schedule section {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: relative;
+}
+
+.shapes {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  z-index: -1;
+}
+
+.shapes.shape1 {
+  top: -5rem;
+  left: -7.7rem;
+}
+
+.shapes.shape2 {
+  top: -4.5rem;
+  left: -4rem;
+}
+
+.shapes.shape3 {
+  top: -4rem;
+  left: -5rem;
+}
+/* From components/Schedule/ShowItem.css */
+.showItem {
+  background-color: rgba(254, 219, 0, 0);
+  transition: all 400ms;
+  z-index: 1;
+}
+
+.item-grid .showItem.item {
+  padding-bottom: 2rem;
+}
+
+.showItem:hover {
+  background-color: rgba(255, 253, 244, 1);
+  box-shadow: 0 0 1em 0 #211a00;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.item h1 {
+  font-size: 1.8rem;
+}
+.item h2 {
+  font-size: 1rem;
+}
+.item h3 {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+/** from components/Search/Search.css */
+.group {
+  margin-left: -1rem;
+  margin-right: -1rem;
+  flex-direction: column;
+}
+
+@media (min-width: 50rem) {
+  .group {
+    flex-direction: row;
+  }
+}
+
+/** search stuff **/
+.search-wrapper {
+  position: relative;
+  width: 100%;
+}
+@media (min-width: 50rem) {
+  .search-wrapper {
+    width: 60%;
+  }
+}
+
+.search-wrapper input {
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  display: block;
+  height: 3rem;
+  font-size: 1.25rem;
+  line-height: 3rem;
+  width: 100%;
+  padding: .5rem 2rem .5rem 4rem;
+  transition: all 300ms;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 49.999rem) {
+  #studentList .search-wrapper input {
+    border-bottom: none;
+  }
+}
+
+.search-wrapper input:focus {
+  background-color: rgba(255, 253, 244, 1);
+  border-color: rgba(255, 253, 244, 1);
+  outline-color: rgba(255, 253, 244, 0.5);
+}
+
+.search-wrapper input:focus ~ i {
+  color: white;
+}
+
+/** selection picker, where to put this instead? **/
+.customSelect {
+  display:block;
+  position: relative;
+  width: 100%;
+}
+@media (min-width: 50rem) {
+  .customSelect {
+    width: 40%;
+  }
+}
+
+.customSelect select {
+  position: relative;
+  margin: 0;
+  background-color: transparent;
+  background-image: none;
+  width: 100%;
+  padding: 0;
+  font-size: 1rem;
+  border: none;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  padding-left: 1rem;
+  border-radius: 0;
+  height: 3rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  z-index: 1;
+}
+@media (max-width: 49.999rem) {
+.customSelect select {
+    border-left: none;
+  }
+}
+
+.customSelect::after {
+  background-color: transparent;
+  display:block;
+  position: absolute;
+  right: 0;
+  top:0;
+  height: 3rem;
+  width: 1em;
+  line-height: 3rem;
+  font-family: 'MicaGradShow';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  text-rendering: auto;
+  content: '\f05c';
+  font-size: 3rem;
+  z-index: 2;
+  border-left: 1px solid black;
+  text-align: center;
+  pointer-events: none;
+}
+
+.customSelect select:focus {
+  background-color: rgba(255, 253, 244, 1);
+  border-color: rgba(255, 253, 244, 1);
+  border-left-color:black;
+  outline-color: rgba(255, 253, 244, 0.5);
+}
+
+.customSelect:hover,
+.customSelect select:hover {
+  cursor:pointer;
+}
+.customSelect:hover::after {
+  color:rgba(254,219,0,1);
+  background-color: #211a00;
+}
+
+/* from components/StudentList/Student.css */
+.student-list {
+  list-style: none;
+  margin: 0;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding: 0;
+}
+
+.student {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.student:nth-child(even) {
+  background-color: #ffea65;
+}
+.student:hover {
+  background-color: #fff8cb;
+}
+
+.student.header,
+.student.header:nth-child(even),
+.student.header:hover {
+  background-color: transparent;
+}
+
+.student:last-child {
+  margin-bottom: 2rem;
+}
+
+.student > span {
+  flex: 3;
+  min-width: 0;
+  min-height: 0;
+}
+
+.student span.name {
+  flex: 4;
+}
+
+.student span.program {
+  flex: 5;
+}
+
+.student span.social {
+  flex: 2;
+  text-align: right;
+}
+
+.student a {
+  color: #211a00;
+  text-decoration: none;
+  border-bottom: 1px solid #fff8cb;
+  transition: all 300ms;
+}
+
+.student:hover a,
+.student a:hover {
+  color: #322b00;
+  border-bottom-color: #322b00;
+}
+
+.student span.social a {
+  border-bottom: none;
+}
+.student span.social a i {
+  margin-left: .25rem;
+}
+.student span.social a:first-child i {
+  margin-left: 0;
+}
+.student span.social a:hover {
+  color: #cbaf00;
+}
+
+/** hide some shit? **/
+@media (max-width: 49.999em) {
+  .hidden-sm {
+    display: none;
+    visibility: hidden;
+  }
+  .student {
+    flex-direction: column;
+  }
+  .student span.show,
+  .student span.social {
+    margin-top: .5rem;
+  }
+  .student span.social {
+    flex: 1;
+    text-align: left;
+  }
+}
