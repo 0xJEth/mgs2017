@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { mapDispatchToProps } from 'cape-redux'
 import { clear, getState, onChange } from 'redux-field'
 import Component from 'cape-mixer/lib/Editable/FieldEditEl'
+import './FieldHelp.css'
 import { getFieldId } from './utils'
 
 export const pickFieldState = pick(['errorMessage', 'hasError', 'suggestion', 'value'])

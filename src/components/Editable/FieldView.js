@@ -3,7 +3,7 @@ import { pick } from 'lodash/fp'
 import { connect } from 'react-redux'
 import { mapDispatchToProps } from 'cape-redux'
 import { getState, open } from 'redux-field'
-import Component from './FieldViewEl'
+import Component from 'cape-mixer/lib/Editable/FieldViewEl'
 
 export const pickFieldState = pick(['isSaving', 'value'])
 export const getFieldState = flow(getState, pickFieldState)

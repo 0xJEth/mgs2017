@@ -1,7 +1,8 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { map } from 'lodash'
 import css from 'cape-style'
-import Field from './Field'
+import Field from 'cape-mixer/lib/Editable/Field'
 
 function Fields({ entity, fields, prefix, title }) {
   return (
