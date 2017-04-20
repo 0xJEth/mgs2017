@@ -699,6 +699,10 @@ footer flex section.social {
   height:auto;
 }
 
+header .menu {
+  margin:0;
+}
+
 .menu,
 .menu > li,
 .menu > li a,
@@ -933,7 +937,8 @@ flex > div {
   }
 }
 
-.customSelect select {
+.customSelect select,
+.customSelect > div {
   position: relative;
   margin: 0;
   background-color: transparent;
@@ -953,8 +958,13 @@ flex > div {
   appearance: none;
   z-index: 1;
 }
+.customSelect > div {
+  line-height: 3rem;
+}
+
 @media (max-width: 49.999rem) {
-.customSelect select {
+  .customSelect select,
+  .customSelect > div {
     border-left: none;
   }
 }
