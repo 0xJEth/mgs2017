@@ -996,3 +996,98 @@ flex > div {
   color:rgba(254,219,0,1);
   background-color: #211a00;
 }
+
+/* from components/StudentList/Student.css */
+.student-list {
+  list-style: none;
+  margin: 0;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding: 0;
+}
+
+.student {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.student:nth-child(even) {
+  background-color: #ffea65;
+}
+.student:hover {
+  background-color: #fff8cb;
+}
+
+.student.header,
+.student.header:nth-child(even),
+.student.header:hover {
+  background-color: transparent;
+}
+
+.student:last-child {
+  margin-bottom: 2rem;
+}
+
+.student > span {
+  flex: 3;
+  min-width: 0;
+  min-height: 0;
+}
+
+.student span.name {
+  flex: 4;
+}
+
+.student span.program {
+  flex: 5;
+}
+
+.student span.social {
+  flex: 2;
+  text-align: right;
+}
+
+.student a {
+  color: #211a00;
+  text-decoration: none;
+  border-bottom: 1px solid #fff8cb;
+  transition: all 300ms;
+}
+
+.student:hover a,
+.student a:hover {
+  color: #322b00;
+  border-bottom-color: #322b00;
+}
+
+.student span.social a {
+  border-bottom: none;
+}
+.student span.social a i {
+  margin-left: .25rem;
+}
+.student span.social a:first-child i {
+  margin-left: 0;
+}
+.student span.social a:hover {
+  color: #cbaf00;
+}
+
+/** hide some shit? **/
+@media (max-width: 49.999em) {
+  .hidden-sm {
+    display: none;
+    visibility: hidden;
+  }
+  .student {
+    flex-direction: column;
+  }
+  .student span.show,
+  .student span.social {
+    margin-top: .5rem;
+  }
+  .student span.social {
+    flex: 1;
+    text-align: left;
+  }
+}

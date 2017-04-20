@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import { get } from 'lodash'
 import css from 'cape-style'
 import LinkEl from 'cape-mixer/lib/Link'
-import './Student.css'
+// import './Student.css'
 import Select from '../Editable/Select'
 import { getLink } from '../Schedule/ShowGroup'
 
