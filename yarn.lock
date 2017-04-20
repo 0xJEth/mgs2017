@@ -1294,6 +1294,18 @@ cape-lodash@^1.10.0, cape-lodash@^1.11.0, cape-lodash@^1.12.0, cape-lodash@^1.7.
   dependencies:
     lodash "^4.17.2"
 
+cape-mixer@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/cape-mixer/-/cape-mixer-0.3.0.tgz#6e6fac2b6fb14af13dd6dfb48a8eb9aeb6a40201"
+  dependencies:
+    cape-redux "^3.1.0"
+    cape-style "^1.0.0"
+    classnames "^2.2.5"
+    lodash "^4.17.4"
+    react "^15.5.4"
+    react-dom "^15.5.4"
+    redux-history-component "^1.0.2"
+
 cape-react-app@^1.0.16:
   version "1.0.16"
   resolved "https://registry.yarnpkg.com/cape-react-app/-/cape-react-app-1.0.16.tgz#ad2810e6e55e5435b15b73a8db07dac439b79bd0"
@@ -1386,6 +1398,15 @@ cape-style@^1.0.0:
     cape-lodash "^1.11.0"
     lodash "^4.17.4"
     reselect "^3.0.0"
+
+cape-style@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/cape-style/-/cape-style-1.0.2.tgz#8fd3468bfdb65a5dcf613d77117a2ed2203c95f4"
+  dependencies:
+    cape-lodash "^1.11.0"
+    lodash "^4.17.4"
+    reselect "^3.0.0"
+    tinycolor2 "^1.4.1"
 
 cardinal@^1.0.0:
   version "1.0.0"

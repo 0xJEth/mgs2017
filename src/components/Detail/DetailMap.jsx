@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import GoogleMap from 'google-map-react'
 import { map } from 'lodash'
 // import css from 'cape-style'

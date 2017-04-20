@@ -1,8 +1,9 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { map } from 'lodash'
 import classnames from 'classnames'
 import css from 'cape-style'
-import LinkEl from '../Link'
+import LinkEl from 'cape-mixer/lib/Link'
 
 function Links({ className, links, title, siteId }) {
   return (

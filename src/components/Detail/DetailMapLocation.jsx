@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import css from 'cape-style'
 
 function DetailMapLocation({ building, name, streetAddress, zip, galleryHours }) {
