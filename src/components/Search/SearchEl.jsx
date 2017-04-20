@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import css from 'cape-style'
 import Icon from 'cape-mixer/lib/Icon'
-import './Search.css'
+// import './Search.css'
 
 function SearchEl({ onChange, value }) {
   return (
