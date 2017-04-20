@@ -3,7 +3,7 @@ import { get, omit, overArgs, partial } from 'lodash'
 import { mapDispatchToProps } from 'cape-redux'
 import { select, structuredSelector } from 'cape-select'
 import { onChange, selectForm } from 'redux-field'
-import Component from './Select'
+import Component from 'cape-mixer/lib/SelectEl'
 
 export function getPrefix({ collectionId = 'default', fieldId = 'field' }) {
   return [collectionId, fieldId]
