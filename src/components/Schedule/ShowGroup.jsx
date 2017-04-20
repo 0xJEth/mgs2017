@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { map, propertyOf } from 'lodash'
 import Link from 'redux-history-component'
 import css from 'cape-style'

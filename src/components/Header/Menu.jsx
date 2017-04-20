@@ -1,8 +1,9 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import map from 'lodash/map'
 import { connect } from 'react-redux'
-import { menuActions, menuSelector } from '../../select/menu'
 import css from 'cape-style'
+import { menuActions, menuSelector } from '../../select/menu'
 import NavItem from './NavItem'
 
 function Menu({ activeId, links, actions }) {

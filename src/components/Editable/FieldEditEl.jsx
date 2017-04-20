@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-import EditableButtons from './FieldButtons'
+import EditableButtons from 'cape-mixer/lib/Editable/FieldButtons'
 import Help from './FieldHelp'
 
 // Manage help text.
