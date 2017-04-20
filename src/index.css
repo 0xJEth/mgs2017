@@ -476,6 +476,96 @@ detail .google-map-container {
   display: block;
 }
 
+/* From components/Editable/Editable.css */
+.editable-click,
+.editable-parent,
+.editable-row,
+.editable-buttons,
+.btn-secret,
+.editable-row > input,
+.editable-fixed-value {
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+.editable-click,
+.editable-parent,
+.editable-row,
+.editable-buttons {
+  display:inline-block;
+  position: relative;
+  min-height: calc(1.4rem + 2px);
+}
+
+.btn-secret,
+.editable-row > input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #fedb00;
+  padding:0;
+  transition: all 300ms;
+  cursor: pointer;
+}
+
+.btn-secret,
+.editable-row > input,
+.editable-fixed-value {
+  margin-left: .5rem;
+}
+
+.btn-secret:focus,
+.editable-row > input:focus {
+  background-color: #fedb00;
+  outline-color: #fedb00;
+  padding-left: .3rem;
+  padding-right: .3rem;
+}
+
+.editable-buttons {
+  margin-left: .3rem;
+}
+
+/*.editable-empty,
+.editable-empty .btn-secret {
+  color: gray;
+}*/
+
+/* absolute z10 textCenter br0p25 textReset */
+.help-block {
+  position: absolute;
+  top:1.7em;
+  z-index: 1000000;
+  padding: .3em .5em;
+  color: #fffdf4;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: break-word;
+  white-space: pre;
+  pointer-events: none;
+  background-color: rgba(50, 43, 0, .8);
+  border-radius: .25em;
+  -webkit-font-smoothing: subpixel-antialiased;
+  box-shadow: 0 0 .2em 0 rgba(50, 43, 0, .2);
+}
+
+.help-block::before {
+  position: absolute;
+  top: -.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000001;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  border: .25em solid transparent;
+  border-bottom-color: rgba(50, 43, 0, .8);
+  color: rgba(50, 43, 0, .8);
+  content: '';
+}
+
 /* From components/FilmFest/FilmFest.css */
 .filmfest ul {
   list-style: none;
@@ -509,6 +599,190 @@ a {
 a:hover {
   color: #655700;
   border-bottom-color: #655700;
+}
+
+/* From components/Footer/Footer.css */
+footer {
+  line-height: 1.4;
+}
+
+footer a {
+  color:black;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+footer a:hover {
+  border-bottom-color: #fedb00;
+}
+
+footer .social a:hover {
+  border-bottom-color: transparent;
+  color:#fedb00;
+}
+
+footer .mica.logo {
+  padding-top: 0;
+  padding-right: 3em;
+}
+
+/*****/
+/*****/
+/* Trying to get this to work */
+/*****/
+/*****/
+
+footer flex {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+footer flex section {
+  padding: 1em;
+}
+
+footer flex section.mica {
+  max-width: 350px;
+}
+footer flex section {
+  width: 100%;
+}
+footer flex section.archive,
+footer flex section.social {
+  width: 50%;
+}
+
+@media (min-width: 750px) {
+  footer flex section {
+    width: 20%;
+  }
+  footer flex section.archive,
+  footer flex section.social {
+    width: 10%;
+  }
+}
+
+@media (max-width: 1099px) and (min-width: 750px) {
+  footer flex section.mica {
+    width: 100%;
+    max-width: none;
+  }
+  footer flex section.mica img {
+    width: 50%;
+    max-width: 350px;
+  }
+  footer flex section {
+    width: 30%;
+  }
+  footer flex section.archive,
+  footer flex section.social {
+    width: 15%;
+  }
+}
+
+@media (min-width: 1100px) {
+  footer flex section.mica {
+    width: 30%;
+    max-width: 350px;
+  }
+}
+
+/* From components/Header/Header.css */
+/** Header.css **/
+#siteHeader nav {
+  display: block;
+}
+
+#siteHeader .mgsLogo {
+  width: 100%;
+  height:auto;
+}
+
+.menu,
+.menu > li,
+.menu > li a,
+.menu > li button {
+  text-align: center;
+  color: #211a00;
+  transition: all 333ms;
+}
+
+.menu > .home a,
+.menu > .students a,
+.menu > .studentList a {
+  background-color: #fff198;
+  border: 1px solid;
+  display: block;
+  padding: 1rem;
+}
+
+.menu > .home a:hover,
+.menu > .students a:hover,
+.menu > .studentList a:hover {
+  background-color: #211a00;
+  color: #fffdf4;
+  border-color:#211a00;
+}
+
+.menu > .home.active a,
+.menu > .students.active a,
+.menu > .studentList.active a {
+  background-color: transparent;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  color: inherit;
+}
+
+.menu > .home a {
+  border-left: none;
+}
+.menu > .students a,
+.menu > .studentList a {
+  border-right: none;
+}
+
+.menu .auth,
+.menu .me,
+.menu .logout {
+  text-align: right;
+  position: absolute;
+  right: 1rem;
+}
+
+.menu .auth a:hover,
+.menu .me a:hover,
+.menu .logout a:hover,
+.menu .auth button:hover,
+.menu .me button:hover,
+.menu .logout button:hover {
+  border-bottom: 1px solid;
+  color: #655700;
+  cursor: pointer;
+}
+
+.menu .auth,
+.menu .me { top: 2rem; }
+.menu .logout { top: 3rem;}
+
+.menu .auth,
+.menu .me,
+.menu .logout,
+.menu .auth button,
+.menu .me button,
+.menu .logout button {
+  font-family: inherit;
+  font-size: .8rem;
+}
+
+.menu {
+  display: flex;
+}
+.menu > li {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
 }
 
 /* From components/Schedule/Schedule.css */

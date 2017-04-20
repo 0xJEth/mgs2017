@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import css from 'cape-style'
 import micaLogo from '../../micaLogo.svg'
-import './Footer.css'
+// import './Footer.css'
 import Links from './Links'
 
 function FooterEl({ archive, siteId, social }) {

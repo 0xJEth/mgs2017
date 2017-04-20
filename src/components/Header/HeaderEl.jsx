@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import css from 'cape-style'
 import mgsBlock from '../../mgs2017LogoBlock.svg'
-import './Header.css'
+// import './Header.css'
 import Blurb from '../Blurb/Blurb'
 import Menu from './Menu'
 
