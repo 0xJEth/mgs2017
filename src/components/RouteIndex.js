@@ -1,15 +1,6 @@
-import colors from './ColorStripes'
-import details from './Detail/Detail'
-import home from './App'
-import me from './Profile/Me'
-import studentList from './StudentList/StudentList'
-import filmfest from './FilmFest/FilmFest'
-
-export {
-  colors,
-  details,
-  home,
-  me,
-  studentList,
-  filmfest,
-}
+export { default as colors } from './ColorStripes'
+export { default as details } from './Detail/Detail'
+export { default as home } from './App'
+export { default as me } from './Profile/Me'
+export { default as studentList } from './StudentList/StudentList'
+export { default as filmfest } from './FilmFest/FilmFest'

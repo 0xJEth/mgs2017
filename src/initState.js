@@ -21,6 +21,7 @@ export default {
       apiKey: 'AIzaSyB4ZUWrwOLk0AcIlJvRjX2Npw4VWuAHjO0',
       authDomain: 'mica2017-18d52.firebaseapp.com',
       databaseURL: 'https://mica2017-18d52.firebaseio.com',
+      storageBucket: 'mica2017-18d52.appspot.com',
     },
     entityType: {
       ShowGroup: true,

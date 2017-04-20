@@ -2,8 +2,8 @@ import { connect } from 'react-redux'
 import { property } from 'lodash'
 import { createStructuredSelector } from 'reselect'
 import { isAnonymous, isAuthenticated, selectUser } from 'cape-redux-auth'
+import { auth } from 'cape-firebase'
 import Component from './Me.jsx'
-import { auth } from '../../fire/actions'
 import { hasMicaEmail, isStudent } from '../../select/perms'
 
 export const getState = createStructuredSelector({

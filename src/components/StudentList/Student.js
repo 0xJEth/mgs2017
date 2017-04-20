@@ -3,7 +3,7 @@ import { nthArg, get } from 'lodash'
 import { createSelector } from 'reselect'
 import { structuredSelector } from 'cape-select'
 import { mapDispatchToProps } from 'cape-redux'
-import { saveShow } from '../../fire/actions'
+import { saveTriple } from 'cape-firebase'
 import { showByProgram } from '../../select/show'
 import { isAdmin } from '../../select/perms'
 import Component from './StudentEl'
@@ -23,7 +23,7 @@ const getState = structuredSelector({
 })
 function studentShowHandler(object) {
   return ({ target: { value } }) =>
-    saveShow({
+    saveTriple({
       subject: { type: 'Show', id: value },
       predicate: 'student',
       object,

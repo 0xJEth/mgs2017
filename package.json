@@ -13,9 +13,9 @@
     "react-scripts": "^0.9.5"
   },
   "dependencies": {
-    "cape-firebase": "^1.0.2",
+    "cape-firebase": "^1.0.4",
     "cape-lodash": "^1.12.0",
-    "cape-react-app": "^1.0.8",
+    "cape-react-app": "^1.0.16",
     "cape-redux": "^3.1.0",
     "cape-redux-auth": "^4.0.0",
     "cape-select": "^2.4.0",
