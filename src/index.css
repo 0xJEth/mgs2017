@@ -262,3 +262,41 @@ page > footer {
     width: calc(100% / 5);
   }
 }
+
+
+
+
+/* From components/FilmFest/FilmFest.css */
+.filmfest ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sub-section {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.filmTitle {
+  font-style: italic;
+}
+
+@media (max-width: 36em) {
+  .mainContent {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid white;
+  transition: all 350ms;
+}
+
+a:hover {
+  color: #655700;
+  border-bottom-color: #655700;
+}
