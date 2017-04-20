@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { map, propertyOf } from 'lodash'
 import Link from 'redux-history-component'
 import css from 'cape-style'
-import './ShowItem.css'
+// import './ShowItem.css'
 
 export const linkMap = propertyOf({
   recL5bU5855qMhQT4: 'recy5OLOvJNnpWuAD',
