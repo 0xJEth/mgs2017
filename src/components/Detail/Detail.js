@@ -6,7 +6,7 @@ import { itemsFilled } from '../Schedule'
 import { detailClose } from './back'
 import Component from './DetailEl'
 
-const getShowId = flow(getProps, get('route.params.showId'))
+const getShowId = flow(getProps, get('params.showId'))
 
 const selectShow = getSelect(itemsFilled, getShowId)
 const mapProps = createStructuredSelector({
