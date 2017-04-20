@@ -785,6 +785,30 @@ footer flex section.social {
   min-height: 0;
 }
 
+/* from components/Profile/Me.css */
+
+flex {
+  display:flex;
+}
+
+flex > div {
+  flex: 1;
+}
+
+#profile flex {
+  min-height: 100vh;
+}
+
+#profile > main {
+  box-shadow: none;
+}
+
+#profile #blurb,
+#profile footer {
+  display: none;
+}
+
+
 /* From components/Schedule/Schedule.css */
 #schedule section {
   padding-left: 1rem;
