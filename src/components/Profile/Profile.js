@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { selectUser } from 'cape-redux-auth'
-import Component from '../Editable/Fields'
+import Component from 'cape-mixer/lib/Editable/Fields'
 import fields from './personFields'
 
 export const PREFIX = 'profile'

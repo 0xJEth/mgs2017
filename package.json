@@ -1,6 +1,6 @@
 {
   "name": "mgs-2017",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-preset-es2015": "^6.24.1",
@@ -13,12 +13,13 @@
     "react-scripts": "^0.9.5"
   },
   "dependencies": {
-    "cape-firebase": "^1.0.4",
+    "cape-firebase": "^1.0.7",
     "cape-lodash": "^1.12.0",
-    "cape-mixer": "^1.0.1",
+    "cape-mixer": "^1.0.2",
     "cape-react-app": "^1.0.17",
     "cape-redux": "^3.1.0",
     "cape-redux-auth": "^4.0.0",
+    "cape-redux-reducer": "^3.11.0",
     "cape-select": "^2.4.0",
     "cape-style": "^1.0.3",
     "classnames": "^2.2.5",

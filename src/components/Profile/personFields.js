@@ -1,3 +1,5 @@
+export const ACCEPT_FILE_TYPE = 'image/jpeg'
+
 export const email = {
   id: 'email',
   position: 1,
@@ -62,6 +64,15 @@ export const url = {
   name: 'Website',
   type: 'url',
 }
+export const art = {
+  accept: ACCEPT_FILE_TYPE,
+  collectionId: 'ImageObject',
+  id: 'art',
+  name: 'Artwork',
+  position: 12,
+  single: false,
+  type: 'file',
+}
 const personFields = [
   name,
   email,
@@ -72,6 +83,7 @@ const personFields = [
   soundcloud,
   youtube,
   vimeo,
+  art,
 ]
 
 export default personFields

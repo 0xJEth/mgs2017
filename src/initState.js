@@ -24,6 +24,7 @@ export default {
       storageBucket: 'mica2017-18d52.appspot.com',
     },
     entityType: {
+      ImageObject: true,
       ShowGroup: true,
       Show: true,
       Program: true,
