@@ -25,6 +25,7 @@ export default {
     },
     entityType: {
       CreativeWork: true,
+      ImageObject: true,
       ShowGroup: true,
       Show: true,
       Program: true,
