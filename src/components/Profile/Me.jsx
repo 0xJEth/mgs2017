@@ -3,11 +3,13 @@ import PropTypes from 'prop-types'
 import { template } from 'lodash'
 import css from 'cape-style'
 import Button from 'cape-mixer/lib/Button'
+
 // import './Me.css'
 import Alert from '../Alert'
 import Page from '../Page'
 import Profile from './Profile'
 import ArtGrid from './Art'
+import ArtEdit from './ArtEdit'
 
 const styles = {
   login: css('ba br1 p1 block mlrauto fs2 bgTrans'),
@@ -37,7 +39,8 @@ function Me(props) {
           </ul>
         </div>
         <div className="pl2 pr2">
-          <Profile />
+          {!params.artId && <Profile />}
+          {params.artId && <ArtEdit collectionId="CreativeWork" id={params.artId} />}
           <ArtGrid activeId={params.artId} items={artwork} />
         </div>
       </flex>
@@ -46,6 +49,10 @@ function Me(props) {
 }
 Me.defaultProps = {
   artwork: null,
+  authStudentMissing: null,
+  authWarn: null,
+  params: {},
+  user: {},
 }
 Me.propTypes = {
   artwork: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.string, type: PropTypes.string })),
@@ -55,6 +62,7 @@ Me.propTypes = {
   hasMicaEmail: PropTypes.bool.isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
   isStudent: PropTypes.bool.isRequired,
+  params: PropTypes.objectOf(PropTypes.string),
   user: PropTypes.shape({
     email: PropTypes.string,
     name: PropTypes.string,
