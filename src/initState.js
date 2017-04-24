@@ -7,7 +7,7 @@ export const routes = {
   filmfest: '/details/recPkxpU5hm2lfIWC',
   details: '/details/:showId',
   home: '/',
-  me: '/me',
+  me: '/me(/:artId)',
   studentList: '/students',
 }
 export const locInfo = reducer(undefined, addRoutes(routes))
@@ -24,7 +24,7 @@ export default {
       storageBucket: 'mica2017-18d52.appspot.com',
     },
     entityType: {
-      ImageObject: true,
+      CreativeWork: true,
       ShowGroup: true,
       Show: true,
       Program: true,

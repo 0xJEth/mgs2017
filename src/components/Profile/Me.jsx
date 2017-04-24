@@ -7,6 +7,7 @@ import Button from 'cape-mixer/lib/Button'
 import Alert from '../Alert'
 import Page from '../Page'
 import Profile from './Profile'
+import ArtGrid from './Art'
 
 const styles = {
   login: css('ba br1 p1 block mlrauto fs2 bgTrans'),
@@ -14,13 +15,13 @@ const styles = {
 
 function Me(props) {
   const {
-    auth, authStudentMissing, authWarn, hasMicaEmail, isAuthenticated, isStudent, user,
+    artwork, auth, authStudentMissing, authWarn,
+    hasMicaEmail, isAuthenticated, isStudent, params, user,
   } = props
-
   if (!isAuthenticated) return <Button onClick={auth} style={styles.login}>Login</Button>
   if (!user.email) return <p>Loading...</p>
 
-  const { email, name, image } = user
+  const { email, name, id, image } = user
   const micaNoInfo = hasMicaEmail && !isStudent
   return (
     <Page id="profile">
@@ -32,17 +33,22 @@ function Me(props) {
           <ul style={css('lsNone m0 p0')}>
             <li><img src={image} alt={name} /></li>
             <li><strong>Email: </strong>{email}</li>
+            <li>{id}</li>
           </ul>
         </div>
         <div className="pl2 pr2">
           <Profile />
+          <ArtGrid activeId={params.artId} items={artwork} />
         </div>
       </flex>
     </Page>
   )
 }
-
+Me.defaultProps = {
+  artwork: null,
+}
 Me.propTypes = {
+  artwork: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.string, type: PropTypes.string })),
   auth: PropTypes.func.isRequired,
   authStudentMissing: PropTypes.string,
   authWarn: PropTypes.string,
