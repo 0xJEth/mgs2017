@@ -12,6 +12,6 @@ const selectEntityFull = fullEntitySelector(selectEntity)
 export const getStateProps = structuredSelector({
   entity: selectEntityFull,
   fields: sortBy(entityFields, 'position'),
-  title: 'Artwork',
+  title: 'Edit/Add Artwork:',
 })
 export default connect(getStateProps)(Component)

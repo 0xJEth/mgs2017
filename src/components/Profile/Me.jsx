@@ -30,7 +30,7 @@ function Me(props) {
       {micaNoInfo && <Alert type="danger">{authStudentMissing}</Alert>}
       {!hasMicaEmail && <Alert type="danger">{template(authWarn)(user)}</Alert>}
       <flex className="bg-white" style={css('pb3')}>
-        <div style={css('pl2 pr2')}>
+        <div style={css('pl2 pr1')}>
           <h2>{name}</h2>
           <ul style={css('lsNone m0 p0')}>
             <li><img src={image} alt={name} /></li>
@@ -38,11 +38,13 @@ function Me(props) {
             <li>{id}</li>
           </ul>
         </div>
-        <div className="pl2 pr2">
+        <div style={css('pl1 pr1')}>
           <Profile />
         </div>
-        {params.artId && <ArtEdit prefix={['CreativeWork', params.artId]} />}
-        <ArtGrid activeId={params.artId} items={artwork} />
+        <div className="art" style={css('pl1 pr2')}>
+          {params.artId && <ArtEdit prefix={['CreativeWork', params.artId]} />}
+          <ArtGrid activeId={params.artId} items={artwork} />
+        </div>
       </flex>
     </Page>
   )

@@ -1129,3 +1129,15 @@ flex > div {
     text-align: left;
   }
 }
+
+
+
+
+/** ARTWORKS ON PROFILE EDITOR **/
+.artworks > ul {
+  border-top: 1px solid rgba(0,0,0,.25);
+}
+.artworks > ul > li {
+  padding: .75rem 0;
+  border-bottom: 1px solid rgba(0,0,0,.25);
+}
