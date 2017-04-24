@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { map } from 'lodash'
-import ArtEdit from './ArtEdit'
+import ArtEdit from './ArtGridLink'
 
 function ArtGrid({ createItem, items }) {
   return (
@@ -18,6 +18,7 @@ ArtGrid.defaultProps = {
   items: null,
 }
 ArtGrid.propTypes = {
+  createItem: PropTypes.func.isRequired,
   items: PropTypes.arrayOf(PropTypes.object),
 }
 export default ArtGrid

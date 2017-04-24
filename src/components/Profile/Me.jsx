@@ -22,9 +22,9 @@ function Me(props) {
   } = props
   if (!isAuthenticated) return <Button onClick={auth} style={styles.login}>Login</Button>
   if (!user.email) return <p>Loading...</p>
-
   const { email, name, id, image } = user
   const micaNoInfo = hasMicaEmail && !isStudent
+
   return (
     <Page id="profile">
       {micaNoInfo && <Alert type="danger">{authStudentMissing}</Alert>}
@@ -39,10 +39,10 @@ function Me(props) {
           </ul>
         </div>
         <div className="pl2 pr2">
-          {!params.artId && <Profile />}
-          {params.artId && <ArtEdit collectionId="CreativeWork" id={params.artId} />}
-          <ArtGrid activeId={params.artId} items={artwork} />
+          <Profile />
         </div>
+        {params.artId && <ArtEdit prefix={['CreativeWork', params.artId]} />}
+        <ArtGrid activeId={params.artId} items={artwork} />
       </flex>
     </Page>
   )
