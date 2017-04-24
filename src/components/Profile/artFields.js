@@ -46,6 +46,6 @@ export const image = {
   id: 'image',
   name: 'Image',
   position: 12,
-  single: false,
+  single: true,
   type: 'file',
 }
