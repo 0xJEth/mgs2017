@@ -29,21 +29,28 @@ function Me(props) {
     <Page id="profile">
       {micaNoInfo && <Alert type="danger">{authStudentMissing}</Alert>}
       {!hasMicaEmail && <Alert type="danger">{template(authWarn)(user)}</Alert>}
-      <flex className="bg-white" style={css('pb3')}>
-        <div style={css('pl2 pr1')}>
+      <flex className="bg-white" style={css('pb3 pl1 pr1')}>
+        <h2 style={css('pl1 pr1 w100')}>{name}</h2>
+        <flex style={css('w100')}>
+          <p style={css('pl1 pr1 m0')}><strong>Email: </strong>{email}</p>
+          <p style={css('pl1 pr1 m0')}>{id}</p>
+        </flex>
+        {/* <div style={css('pl1 pr1')}>
           <h2>{name}</h2>
           <ul style={css('lsNone m0 p0')}>
             <li><img src={image} alt={name} /></li>
             <li><strong>Email: </strong>{email}</li>
             <li>{id}</li>
           </ul>
-        </div>
-        <div style={css('pl1 pr1')}>
+        </div> */}
+        <div className="third" style={css('pl1 pr1')}>
           <Profile />
         </div>
-        <div className="art" style={css('pl1 pr2')}>
-          {params.artId && <ArtEdit prefix={['CreativeWork', params.artId]} />}
+        <div className="third artGrid" style={css('pl1 pr1')}>
           <ArtGrid activeId={params.artId} items={artwork} />
+        </div>
+        <div className="third artEdit" style={css('pl1 pr1')}>
+          {params.artId && <ArtEdit prefix={['CreativeWork', params.artId]} />}
         </div>
       </flex>
     </Page>

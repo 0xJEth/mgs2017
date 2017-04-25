@@ -6,12 +6,12 @@ import css from 'cape-style'
 function ArtEdit({ id, isActive, onDelete, title, image }) {
   const style = isActive ? css('ba bw0p125 pl1 pr1') : null
   return (
-    <li key={id} style={style}>
+    <li className="artwork" key={id} style={style}>
       <Link href={`/me/${id}`} style={css('block')}>
-        <span>{title || 'Untitled'}</span>
+        <p>{title || 'Untitled'}</p>
         {image && image.url && <img src={`${image.url}?w=300`} alt={title} />}
       </Link>
-      {onDelete && <button onClick={onDelete} style={css('absolute right0')}>Delete</button>}
+      {onDelete && <button className="delete" onClick={onDelete}><i className="fa fa-trash-o fa-2x"></i></button>}
     </li>
   )
 }

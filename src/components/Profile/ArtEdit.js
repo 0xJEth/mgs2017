@@ -12,6 +12,6 @@ const addId = (item, id) => ({ ...item, id, ho: 'l' })
 export const getStateProps = structuredSelector({
   entity: selectEntityFull,
   fields: sortBy(map(entityFields, addId), 'position'),
-  title: 'Artwork',
+  title: 'Edit Artwork',
 })
 export default connect(getStateProps)(Component)
