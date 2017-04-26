@@ -553,6 +553,12 @@ detail .google-map-container {
   margin-left: .3rem;
 }
 
+.dz-details {
+  font-family: monospace;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 /*.editable-empty,
 .editable-empty .btn-secret {
   color: gray;
@@ -661,9 +667,7 @@ footer .mica.logo {
 /*****/
 
 footer flex {
-  display: flex;
   width: 100%;
-  flex-wrap: wrap;
 }
 
 footer flex section {
@@ -818,26 +822,53 @@ header .menu {
 }
 
 /* from components/Profile/Me.css */
-
 flex {
   display:flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-
 #profile > main {
   box-shadow: none;
 }
-
 #profile #blurb,
 #profile footer {
   display: none;
 }
-li.artwork {position: relative; }
-.delete {
+/** ARTWORKS ON PROFILE EDITOR **/
+.artworks > ul {
+  border-top: 1px solid rgba(0,0,0,.25);
+}
+.artworks > ul > li.artwork {
+  border-bottom: 1px solid rgba(0,0,0,.25);
+}
+li.artwork {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 1rem;
+}
+li.artwork:hover {
+  background: #fff8cb;
+  box-shadow: 0 0 .4rem 0 rgba(050,043,000,.5);
+}
+li.artwork.active::after {
+  content: '';
   position: absolute;
-  top: .25rem;
-  right:1rem;
+  display: block;
+  right: -1em;
+  top: calc(50% - .5rem);
+  border-left: 1rem solid black;
+  border-top: 1rem solid transparent;
+  border-bottom: 1rem solid transparent;
+}
+li.artwork a {
+  padding: .75rem;
+  text-decoration: none;
+  border-bottom: none;
+  align-items: center;
+  width: calc(100% - 2.5rem);
+}
+.delete {
   height: 2rem;
   width: 2rem;
   background-color: transparent;
@@ -849,13 +880,17 @@ li.artwork {position: relative; }
   opacity: 0;
   z-index: 1;
   outline: 0;
-  cursor: pointer;
+  align-items: flex-end;
+  transition: 350ms;
 }
 .artwork:hover .delete {
   opacity: 1;
 }
 .delete:hover {
   box-shadow: 0 0 .5rem 0 rgba(0,0,0,.4);
+  transform: scale(1.2);
+  background-color: rgba(195,115,099,.8);
+  color:white;
 }
 .delete:active,
 .delete:focus {
@@ -1155,16 +1190,4 @@ li.artwork {position: relative; }
     flex: 1;
     text-align: left;
   }
-}
-
-
-
-
-/** ARTWORKS ON PROFILE EDITOR **/
-.artworks > ul {
-  border-top: 1px solid rgba(0,0,0,.25);
-}
-.artworks > ul > li {
-  padding: .75rem 0;
-  border-bottom: 1px solid rgba(0,0,0,.25);
 }
