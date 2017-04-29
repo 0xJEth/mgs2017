@@ -1,5 +1,3 @@
-export const ACCEPT_FILE_TYPE = 'image/jpeg'
-
 export const title = {
   name: 'Title',
   type: 'text',
@@ -41,7 +39,7 @@ export const sortOrder = {
   type: 'number',
 }
 export const image = {
-  accept: ACCEPT_FILE_TYPE,
+  accept: 'image/*',
   collectionId: 'ImageObject',
   id: 'image',
   name: 'Image',
