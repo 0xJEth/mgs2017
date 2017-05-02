@@ -9,7 +9,7 @@ function Page({ children, className, id, style }) {
   return (
     <page className={classnames('', className)} id={id} style={style}>
       <Header />
-      <main className="bg-yellow" style={css('pt3')} >
+      <main className="bg-yellow">
         {children}
       </main>
       <Footer />

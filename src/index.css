@@ -220,6 +220,7 @@ page > main {
   min-height: 0;
   box-shadow: 0 0 1rem 0 rgba(33, 26, 0, .33);
   z-index: 1;
+  padding-top: 3rem;
 }
 
 page > footer {
@@ -829,6 +830,7 @@ flex {
 }
 #profile > main {
   box-shadow: none;
+  padding-top: 0;
 }
 #profile #blurb,
 #profile footer {

@@ -8,7 +8,7 @@ import Menu from './Menu'
 
 function HeaderEl({ siteName }) {
   return (
-    <header id="siteHeader" className="bg-white" style={css('p0 pt1')} >
+    <header id="siteHeader" className="bg-white" >
       <Blurb mgsBlock={mgsBlock} siteName={siteName} />
       <nav className="bg-yellow" >
         <Menu />
