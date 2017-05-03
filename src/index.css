@@ -568,7 +568,7 @@ detail .google-map-container {
 /* absolute z10 textCenter br0p25 textReset */
 .help-block {
   position: absolute;
-  top:1.7em;
+  bottom:-1.7em;
   z-index: 1000000;
   padding: .3em .5em;
   color: #fffdf4;
@@ -835,6 +835,10 @@ flex {
 #profile #blurb,
 #profile footer {
   display: none;
+}
+#profile-statement {
+  min-height: 6em;
+  min-width: 100%;
 }
 /** ARTWORKS ON PROFILE EDITOR **/
 .artworks > ul {
