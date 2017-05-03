@@ -32,7 +32,6 @@ export function addItemActions(dispatch, activeId) {
   })
 }
 export function getActions(dispatch, { activeId, items }) {
-  console.log(items)
   return {
     createItem: flow(createItem, dispatch),
     items: map(items, addItemActions(dispatch, activeId)),
