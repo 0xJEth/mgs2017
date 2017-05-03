@@ -836,10 +836,17 @@ flex {
 #profile footer {
   display: none;
 }
-#profile-statement {
+
+[id*="-statement-group"] .editable-parent,
+[id*="-statement-group"] .editable-row {
+  display: block;
+}
+
+[id*="-statement-group"] textarea {
   min-height: 6em;
   min-width: 100%;
 }
+
 /** ARTWORKS ON PROFILE EDITOR **/
 .artworks > ul {
   border-top: 1px solid rgba(0,0,0,.25);
@@ -906,10 +913,8 @@ li.artwork a {
   -o-box-shadow: 0 0 0 2px #fff,0 0 1px 4px rgba(195,115,099,.8);
   box-shadow: 0 0 0 2px #fff, 0 0 1px 4px rgba(195,115,099,.8);
 }
-#profile-statement-group .editable-parent {
-  display: block;
-}
-#profile-statement-group .help-block {
+
+[id*="-statement-group"] .help-block {
   position: static;
   bottom: initial;
   z-index: initial;
