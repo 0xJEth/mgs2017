@@ -66,7 +66,7 @@ export const url = {
 }
 export const statement = {
   id: 'statement',
-  description: 'The statement you want to accompany your profile.',
+  description: 'A statement to accompany your profile. This input accepts Markdown. Underscores either side text makes it _italic_, two asterixes make text **bold**, and links can be handled [like this](url). ',
   position: 1,
   minRows: 6,
   name: 'Artist Statement',

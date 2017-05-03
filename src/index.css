@@ -906,6 +906,33 @@ li.artwork a {
   -o-box-shadow: 0 0 0 2px #fff,0 0 1px 4px rgba(195,115,099,.8);
   box-shadow: 0 0 0 2px #fff, 0 0 1px 4px rgba(195,115,099,.8);
 }
+#profile-statement-group .editable-parent {
+  display: block;
+}
+#profile-statement-group .help-block {
+  position: static;
+  bottom: initial;
+  z-index: initial;
+  padding: 0;
+  text-align: left;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: initial;
+  white-space: initial;
+  pointer-events: initial;
+  background-color: transparent;
+  border-radius: none;
+  -webkit-font-smoothing: subpixel-antialiased;
+  box-shadow: none;
+  /**/
+  font-size: .8em;
+  line-height: 1.2;
+  color: gray;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 
 /* From components/Schedule/Schedule.css */
 #schedule section {
