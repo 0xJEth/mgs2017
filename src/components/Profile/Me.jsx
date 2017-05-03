@@ -22,7 +22,7 @@ function Me(props) {
   } = props
   if (!isAuthenticated) return <Button onClick={auth} style={styles.login}>Login</Button>
   if (!user.email) return <p>Loading...</p>
-  const { email, name, id, image } = user
+  const { email, name, id } = user
   const micaNoInfo = hasMicaEmail && !isStudent
 
   return (
