@@ -64,10 +64,20 @@ export const url = {
   name: 'Website',
   type: 'url',
 }
+export const statement = {
+  id: 'statement',
+  description: 'The statement you want to accompany your profile.',
+  position: 1,
+  minRows: 6,
+  name: 'Artist Statement',
+  type: 'textarea',
+  // validators: ['isRequired'],
+}
 
 const personFields = [
   name,
   email,
+  statement,
   url,
   facebook,
   instagram,
