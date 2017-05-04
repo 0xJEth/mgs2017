@@ -43,7 +43,7 @@ function Me(props) {
             <li>{id}</li>
           </ul>
         </div> */}
-        <div className="third" style={css('pl1 pr1')}>
+        <div className="third personal" style={css('pl1 pr1')}>
           <Profile />
         </div>
         <div className="third artGrid" style={css('pl1 pr1')}>

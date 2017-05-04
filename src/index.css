@@ -837,7 +837,7 @@ flex {
   display: none;
 }
 
-.fields li:nth-child(3) {
+.personal li:nth-child(3) {
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding-top: 1rem;
