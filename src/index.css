@@ -786,6 +786,7 @@ header .menu {
   text-align: right;
   position: absolute;
   right: 1rem;
+  z-index: 9999;
 }
 
 .menu .auth a:hover,
