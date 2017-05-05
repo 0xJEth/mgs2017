@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { filter, flow, map, property, propertyOf } from 'lodash'
+import { filter, map, property } from 'lodash'
 import { createSelector, createStructuredSelector } from 'reselect'
 import { entityTypeSelector, getFullEntity } from 'redux-graph'
 import { select } from 'cape-select'
@@ -12,7 +12,7 @@ export const userIsAgentOf = select(selectUser, 'rangeIncludes.agent')
 export const getArtItems = entityTypeSelector('CreativeWork')
 
 export function getArtRefs(refs, arts) {
-  const getArt = flow(property('id'), propertyOf(arts))
+  const getArt = item => arts[item.id] || item
   return (refs && map(filter(refs, { type: 'CreativeWork' }), getArt)) || null
 }
 export const getArtwork = createSelector(userIsAgentOf, getArtItems, getArtRefs)
