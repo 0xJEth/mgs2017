@@ -568,7 +568,7 @@ detail .google-map-container {
 /* absolute z10 textCenter br0p25 textReset */
 .help-block {
   position: absolute;
-  bottom:-1.7em;
+  bottom:-2.1em;
   z-index: 1000000;
   padding: .3em .5em;
   color: #fffdf4;
@@ -769,6 +769,7 @@ header .menu {
   border-bottom: none;
   border-left: none;
   border-right: none;
+  border-bottom-color: #fedb00;
   color: inherit;
 }
 
@@ -848,14 +849,22 @@ flex {
   border-color: lightgray;
 }
 
+.personal li:nth-child(3),
+.personal li:nth-child(3) * {
+  text-align: left;
+  margin-left: 0;
+}
+
 [id*="-statement-group"] .editable-parent,
 [id*="-statement-group"] .editable-row {
   display: block;
 }
 
 [id*="-statement-group"] textarea {
-  min-height: 6em;
+  min-height: 9em;
+  font-size: 1rem;
   min-width: 100%;
+  padding: .5rem;
 }
 
 /** ARTWORKS ON PROFILE EDITOR **/

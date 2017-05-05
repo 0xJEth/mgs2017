@@ -9,7 +9,7 @@ function SearchEl({ onChange, value }) {
     <label className="search-wrapper" htmlFor="search" style={css('flexAuto relative fs1p5 lh3')}>
       <Icon
         hidden
-        style={css('absolute lh3 z2 fs1p618 left2')}
+        style={css('absolute lh3 z2 fs1p618 ml2')}
         symbol="search"
       />
       <input
