@@ -1264,7 +1264,7 @@ cape-firebase@^0.3.0:
     redux-field "^4.4.1"
     redux-graph "^2.10.0"
 
-cape-firebase@^1.0.6, cape-firebase@^1.0.7, cape-firebase@^1.0.8:
+cape-firebase@^1.0.7, cape-firebase@^1.0.8:
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/cape-firebase/-/cape-firebase-1.0.8.tgz#798fb599e8bf14757278312dbbc36c030308293e"
   dependencies:
@@ -1283,9 +1283,9 @@ cape-lodash@^1.10.0, cape-lodash@^1.11.0, cape-lodash@^1.12.0, cape-lodash@^1.7.
   dependencies:
     lodash "^4.17.2"
 
-cape-mixer@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/cape-mixer/-/cape-mixer-1.1.2.tgz#bc1e074ae9b0ff5bda9a02617e553cf80ffa0bea"
+cape-mixer@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/cape-mixer/-/cape-mixer-1.1.3.tgz#9a31ccfd0805c554a321cd0fa53b405a4f267997"
   dependencies:
     attr-accept "^1.1.0"
     cape-firebase "^1.0.7"
@@ -1354,26 +1354,7 @@ cape-redux-collection@^4.0.1:
     redux-history-sync "^3.1.0"
     reselect "^3.0.0"
 
-cape-redux-reducer@^3.10.3:
-  version "3.11.0"
-  resolved "https://registry.yarnpkg.com/cape-redux-reducer/-/cape-redux-reducer-3.11.0.tgz#9bb6a8f24164c77fe0ca8ee5a97ba951c9aa42c5"
-  dependencies:
-    cape-firebase "^1.0.6"
-    cape-lodash "^1.12.0"
-    cape-redux "^3.1.0"
-    cape-redux-auth "^4.0.0"
-    cape-redux-collection "^4.0.1"
-    cape-select "^2.4.0"
-    location-info "^4.0.3"
-    lodash "^4.17.4"
-    redux "^3.6.0"
-    redux-field "^4.5.0"
-    redux-graph "^2.12.1"
-    redux-history-sync "^3.1.0"
-    redux-thunk "^2.2.0"
-    redux-windowsize "^1.3.1"
-
-cape-redux-reducer@^3.11.3, cape-redux-reducer@^3.6.0:
+cape-redux-reducer@^3.10.3, cape-redux-reducer@^3.11.3, cape-redux-reducer@^3.6.0:
   version "3.11.3"
   resolved "https://registry.yarnpkg.com/cape-redux-reducer/-/cape-redux-reducer-3.11.3.tgz#010d74c78e3af24bfd57c8cbc5f5d3347f801998"
   dependencies:
