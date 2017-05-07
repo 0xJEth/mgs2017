@@ -38,8 +38,9 @@ export const sortOrder = {
   position: 15,
   type: 'number',
 }
-export const url = {
-  id: 'url',
+export const associatedMedia = {
+  id: 'associatedMedia',
+  collectionId: 'MediaObject',
   description: 'Link to vimeo, soundcoud etc.',
   name: 'Art URL',
   position: 5,
