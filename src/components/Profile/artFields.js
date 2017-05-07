@@ -35,8 +35,15 @@ export const sortOrder = {
   name: 'Sort Order',
   min: 0,
   max: 20,
-  position: 5,
+  position: 15,
   type: 'number',
+}
+export const url = {
+  id: 'url',
+  description: 'Link to vimeo, soundcoud etc.',
+  name: 'Art URL',
+  position: 5,
+  type: 'url',
 }
 export const image = {
   accept: 'image/*',
