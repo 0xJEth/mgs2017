@@ -43,18 +43,18 @@ function StudentInfo(props) {
 StudentInfo.propTypes = {
   familyName: PropTypes.string.isRequired,
   givenName: PropTypes.string.isRequired,
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
   program: PropTypes.shape({
     name: PropTypes.string,
-  }),
-  url: PropTypes.string,
-  email: PropTypes.string,
-  facebook: PropTypes.string,
-  instagram: PropTypes.string,
-  soundcloud: PropTypes.string,
-  twitter: PropTypes.string,
-  vimeo: PropTypes.string,
-  youtube: PropTypes.string,
+  }).isRequired,
+  url: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  facebook: PropTypes.string.isRequired,
+  instagram: PropTypes.string.isRequired,
+  soundcloud: PropTypes.string.isRequired,
+  twitter: PropTypes.string.isRequired,
+  vimeo: PropTypes.string.isRequired,
+  youtube: PropTypes.string.isRequired,
 }
 StudentInfo.defaultProps = {
 }

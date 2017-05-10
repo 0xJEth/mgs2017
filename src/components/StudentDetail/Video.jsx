@@ -1,4 +1,6 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
+import css from 'cape-style'
 
 function getSrc(provider, url) {
   let src = ''
@@ -27,7 +29,7 @@ function Video({ provider, url, ...rest }) {
 
 Video.propTypes = {
   provider: PropTypes.string.isRequired,
-  url: PropTypes.object.isRequired,
+  url: PropTypes.objectOf(PropTypes.object).isRequired,
 }
 Video.defaultProps = {
   frameBorder: '0',

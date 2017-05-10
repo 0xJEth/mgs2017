@@ -1,4 +1,6 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
+// import css from 'cape-style'
 
 function ProgramList({ program, peers }) {
   return (
@@ -14,17 +16,19 @@ function ProgramList({ program, peers }) {
 }
 
 ProgramList.propTypes = {
-  peers: PropTypes.array,
-  program: PropTypes.object.isRequired,
+  peers: PropTypes.objectOf(PropTypes.array),
+  program: PropTypes.objectOf(PropTypes.object).isRequired,
 }
 ProgramList.defaultProps = {
   program: {
     name: 'GDMFA',
   },
-  peers: {
-    id: '034655',
-    name: 'Snake Pliskin',
-  },
+  peers: [
+    {
+      id: '034655',
+      name: 'Snake Pliskin',
+    },
+  ],
 }
 
 export default ProgramList

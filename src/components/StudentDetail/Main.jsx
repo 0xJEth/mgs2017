@@ -1,4 +1,6 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
+// import css from 'cape-style'
 
 // import Slideshow from './Slideshow'
 import NoImages from './NoImages'
@@ -35,14 +37,13 @@ function Main({ collection, user }) {
 
 // TODO: look at the data and set these correctly
 Main.propTypes = {
-  collection:  PropTypes.objectOf(PropTypes.array),
-  user: PropTypes.objectOf(PropTypes.object),
+  collection: PropTypes.objectOf(PropTypes.array).isRequired,
+  user: PropTypes.objectOf(PropTypes.object).isRequired,
 }
 Main.defaultProps = {
   user: {
     statement: 'Beans coffee, cortado body arabica barista americano. Medium fair trade aroma bar, turkish, instant grounds frappuccino irish aged whipped. Et grinder frappuccino variety, aged, cream acerbic mug grinder brewed. Percolator brewed body, cultivar medium milk fair trade froth french press.',
   },
 }
-
 
 export default Main
