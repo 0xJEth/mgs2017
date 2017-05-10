@@ -7,5 +7,6 @@ export const routes = {
   home: '/',
   me: '/me',
   studentList: '/students',
+  studentDetail: '/students/person',
 }
 export const locInfo = reducer(undefined, addRoutes(routes))
