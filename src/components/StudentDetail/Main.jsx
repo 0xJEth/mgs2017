@@ -35,8 +35,8 @@ function Main({ collection, user }) {
 
 // TODO: look at the data and set these correctly
 Main.propTypes = {
-  collection: PropTypes.array,
-  user: PropTypes.object,
+  collection:  PropTypes.objectOf(PropTypes.array),
+  user: PropTypes.objectOf(PropTypes.object),
 }
 Main.defaultProps = {
   user: {
