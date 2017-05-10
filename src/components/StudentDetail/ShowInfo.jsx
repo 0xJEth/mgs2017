@@ -11,9 +11,9 @@ function ShowDetails({ showName, showLocation, showDates }) {
 }
 
 ShowDetails.propTypes = {
-  showName: PropType.string,
-  showLocation: PropType.string,
-  showDates: PropType.string,
+  showName: PropTypes.string,
+  showLocation: PropTypes.string,
+  showDates: PropTypes.string,
 }
 ShowDetails.defaultProps = {
   showName: 'Show III',
