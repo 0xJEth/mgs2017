@@ -21,8 +21,11 @@ function Show({ allStudentsIn, name, student }) {
   return (
     <ul style={css('m0 mt1 p0 lsNone')} >
       <h4 style={css('m0 mb0p5')} >{name}</h4>
-      {size(students) > 0 && map(students, ({ id, givenName, familyName }) =>
-        <li key={id}>{givenName} {familyName}</li>
+      {size(students) > 0 && map(students, ({ id, givenName, familyName, name }) =>
+        <li key={id}>
+          {!name && <span className="name"><strong>{givenName} {familyName}</strong></span> }
+          {name && <span className="name"><strong>{ name }</strong></span> }
+        </li>
       )}
     </ul>
   )
