@@ -5,7 +5,6 @@ import Main from './Main'
 function StudentDetail({ closePopup }) {
   return (
     <div id="student-overlay">
-      <p>Huh</p>
       <div className="wrapper">
         <button onClick={closePopup} role="button" className="close">
           <i className="fa fa-times fa-2x" />
