@@ -5,6 +5,7 @@ import { createSelector } from 'reselect'
 import { setWith } from 'cape-lodash'
 import { getEmailParts } from './util'
 
+// Limit to mica.edu people. Key by email username.
 export const personFill = flow(
   map(setWith('emailParts', 'email', getEmailParts)),
   filter(matchesProperty('emailParts[1]', 'mica.edu')),
