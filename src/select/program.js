@@ -2,7 +2,7 @@ import { map, mapValues, sortBy } from 'lodash/fp'
 import { createSelector } from 'reselect'
 import { entityTypeSelector } from 'redux-graph'
 import { renamePick, setField } from 'cape-lodash'
-import { getStudent } from './student'
+import { getStudent } from './person'
 
 export const doIf = onTrue => thing => (thing ? onTrue(thing) : thing)
 export const getProgram = entityTypeSelector('Program')

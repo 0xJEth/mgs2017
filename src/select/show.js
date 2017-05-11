@@ -3,14 +3,16 @@ import { transform } from 'lodash/fp'
 import { setField } from 'cape-lodash'
 import { buildFullEntity, entityTypeSelector } from 'redux-graph'
 import { createSelector, createStructuredSelector } from 'reselect'
-// import { itemFiller } from './util'
+import { getStudent } from './person'
 import { getProgramFull } from './program'
-import { getStudent } from './student'
 
 export const getShow = entityTypeSelector('Show')
 export const getLocation = entityTypeSelector('Location')
 export const getShowGroup = entityTypeSelector('ShowGroup')
-
+console.log('getLoc', getLocation)
+console.log('getProg', getProgramFull)
+console.log('getShowGroup', getShowGroup)
+console.log('getStudent', getStudent)
 const selectGraph = createStructuredSelector({
   Location: getLocation,
   Program: getProgramFull,

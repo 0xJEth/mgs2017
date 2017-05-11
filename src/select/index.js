@@ -1,7 +1,7 @@
 import { createStructuredSelector } from 'reselect'
 import { getProgramFull } from './program'
 import { getShowFull } from './show'
-import { getStudent } from './student'
+import { getStudent } from './person'
 
 export const selectGraph = createStructuredSelector({
   Show: getShowFull,

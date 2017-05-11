@@ -1,17 +1,17 @@
-import { find, flow, get, mapValues, merge } from 'lodash'
+import { find, flow, get, mapValues } from 'lodash'
 import { setField } from 'cape-lodash'
 import { createSelector, createStructuredSelector } from 'reselect'
-import { buildFullEntity, entityTypeSelector } from 'redux-graph'
+import { buildFullEntity } from 'redux-graph'
 import { makeSearchString } from '../components/Search'
 
-import { getPerson } from './person'
-import { getShowFull, studentShows } from './show'
+import { getStudent } from './person'
 import { getProgramFull } from './program'
+import { getShowFull, studentShows } from './show'
 
 export const selectGraph = createStructuredSelector({
   Program: getProgramFull,
   Show: getShowFull,
-  Student: entityTypeSelector('Student'),
+  Student: getStudent,
 })
 
 // full student
@@ -44,10 +44,4 @@ export const studentFill = (graph, showIndex) => flow(
 export const studentsFilled = createSelector(
   selectGraph, studentShows,
   (graph, showIndex) => mapValues(graph.Student, studentFill(graph, showIndex))
-)
-export const getStudent = createSelector(
-  studentsFilled,
-  getPerson,
-  (Student, Person) => mapValues(Student, item =>
-    (Person[item.id] ? merge({}, Person[item.id], item) : item))
 )
