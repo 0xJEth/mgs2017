@@ -5,26 +5,35 @@ import StudentInfo from './StudentInfo'
 import ShowInfo from './ShowInfo'
 import Main from './Main'
 
-function StudentDetail({ closePopup }) {
+function StudentDetail({ closePopup, student }) {
   return (
     <div id="student-overlay">
-      <div className="wrapper">
-        <button onClick={closePopup} role="button" className="close">
-          <i className="fa fa-times fa-2x" />
-        </button>
+      {!student && <p>loading...</p>}
+      {student &&
+        <div className="wrapper">
+          <button onClick={closePopup} role="button" className="close">
+            <i className="fa fa-times fa-2x" />
+          </button>
 
-        <div className="info container">
-          <StudentInfo />
-          <ShowInfo />
+          <div className="info container">
+            <StudentInfo />
+            <ShowInfo />
+          </div>
+
+          <Main />
+
         </div>
-
-        <Main />
-
-      </div>
+      }
     </div>
   )
 }
 StudentDetail.propTypes = {
   closePopup: PropTypes.func.isRequired,
+  student: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+  }),
+}
+StudentDetail.defaultProps = {
+  student: null,
 }
 export default StudentDetail
