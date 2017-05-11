@@ -21,9 +21,7 @@ function StudentInfo(props) {
     <li className="student" style={css('p0p5 pl2 pr2 bb')}>
       {!name && <span className="name"><strong>{ displayName }</strong></span> }
       {name && <span className="name"><strong>{ name }</strong></span> }
-      <span className="program">
-        <i>{ program.name }</i>
-      </span>
+      {program && <span className="program"><i>{ program.name }</i></span>}
       <span className="social">
         <div>
           {url && <LinkEl href={url} icon="web" />}
