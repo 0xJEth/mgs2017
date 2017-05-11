@@ -37,8 +37,8 @@ Show.propTypes = {
 }
 
 function DetailEl({ showGroup, detailClose }) {
-  const close = <Close icon="close-circle-outline" onClick={detailClose} style={css('absolute')} />
-  if (!showGroup) return <div><h4 style={css('fixed positionCenter')} >Loading</h4> {close}</div>
+  const close = <Close icon="times-btl" onClick={detailClose} style={css('absolute')} />
+  if (!showGroup) return <div><p className="flex loading">loading...</p> {close}</div>
   const {
     description, extraChild, name, lat, lng, locations, reception, show, showDate, zoom,
   } = showGroup
