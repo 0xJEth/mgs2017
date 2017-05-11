@@ -1231,4 +1231,9 @@ li.artwork a {
   justify-content: center;
   text-align: center;
   min-height: 100vh;
+  animation: loadingAnimation 2s infinite ease-in-out;
+}
+@keyframes loadingAnimation {
+  0%, 100% { text-shadow: 0 0 0 rgba(254,219,000,0); }
+  50% { text-shadow: .5em .5em .25em rgba(254,219,000,.8); }
 }
