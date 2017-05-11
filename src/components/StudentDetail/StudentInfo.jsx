@@ -18,23 +18,23 @@ function StudentInfo(props) {
   const youtubeStr = `https://www.youtube.com/${youtube}`
 
   return (
-    <li className="student" style={css('p0p5 pl2 pr2 bb')}>
-      {!name && <span className="name"><strong>{ displayName }</strong></span> }
-      {name && <span className="name"><strong>{ name }</strong></span> }
-      {program && <span className="program"><i>{ program.name }</i></span>}
-      <span className="social">
-        <div>
-          {url && <LinkEl href={url} icon="web" />}
-          {email && <LinkEl href={emailStr} icon="email" />}
-          {facebook && <LinkEl href={facebookStr} icon="facebook" />}
-          {instagram && <LinkEl href={instagramStr} icon="instagram" />}
-          {soundcloud && <LinkEl href={soundcloudStr} icon="soundcloud" />}
-          {twitter && <LinkEl href={twitterStr} icon="twitter" />}
-          {vimeo && <LinkEl href={vimeoStr} icon="vimeo" />}
-          {youtube && <LinkEl href={youtubeStr} icon="youtube" />}
-        </div>
-      </span>
-    </li>
+    <ul className="studentInfo" style={css('m0 p0 lsNone')}>
+      {!name && <li className="name"><h2>{ displayName }</h2></li> }
+      {name && <li className="name"><h2>{ name }</h2></li> }
+      {program && <li className="program"><i>{ program.name }</i></li>}
+      <li className="social">
+        <ul style={css('m0 p0 lsNone')}>
+          {url && <li><LinkEl href={url} icon="web" /></li>}
+          {email && <li><LinkEl href={emailStr} icon="email" /></li>}
+          {facebook && <li><LinkEl href={facebookStr} icon="facebook" /></li>}
+          {instagram && <li><LinkEl href={instagramStr} icon="instagram" /></li>}
+          {soundcloud && <li><LinkEl href={soundcloudStr} icon="soundcloud" /></li>}
+          {twitter && <li><LinkEl href={twitterStr} icon="twitter" /></li>}
+          {vimeo && <li><LinkEl href={vimeoStr} icon="vimeo" /></li>}
+          {youtube && <li><LinkEl href={youtubeStr} icon="youtube" /></li>}
+        </ul>
+      </li>
+    </ul>
   )
 }
 
