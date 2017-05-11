@@ -1,3 +1,4 @@
+import { mapValues, merge } from 'lodash'
 import { filter, flow, keyBy, map, matchesProperty } from 'lodash/fp'
 import { createSelector } from 'reselect'
 import { setWith } from 'cape-lodash'
@@ -14,4 +15,10 @@ export const personFill = flow(
 export const getPerson = createSelector(
   entityTypeSelector('Person'),
   personFill
+)
+export const getStudent = createSelector(
+  entityTypeSelector('Student'),
+  getPerson,
+  (Student, Person) => mapValues(Student, item =>
+    (Person[item.id] ? merge({}, Person[item.id], item) : item))
 )
