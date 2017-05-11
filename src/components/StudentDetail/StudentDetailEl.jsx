@@ -6,7 +6,6 @@ import ShowInfo from './ShowInfo'
 import Main from './Main'
 
 function StudentDetail({ closePopup, student }) {
-  console.log(student)
   return (
     <div id="student-overlay">
       {!student && <p className="flex loading">loading...</p>}
@@ -18,7 +17,7 @@ function StudentDetail({ closePopup, student }) {
 
           <div className="info container">
             <StudentInfo {...student} />
-            <ShowInfo />
+            <ShowInfo {...student.show} />
           </div>
 
           <Main />

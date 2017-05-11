@@ -32,7 +32,7 @@ function Show({ allStudentsIn, name, student }) {
 }
 Show.propTypes = {
   allStudentsIn: PropTypes.objectOf(PropTypes.object),
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
   student: PropTypes.objectOf(PropTypes.object),
 }
 

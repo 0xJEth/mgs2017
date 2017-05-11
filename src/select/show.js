@@ -3,12 +3,33 @@ import { transform } from 'lodash/fp'
 import { setField } from 'cape-lodash'
 import { buildFullEntity, entityTypeSelector } from 'redux-graph'
 import { createSelector, createStructuredSelector } from 'reselect'
+import moment from 'moment'
 import { getStudent } from './person'
 import { getProgramFull } from './program'
 
 export const getShow = entityTypeSelector('Show')
 export const getLocation = entityTypeSelector('Location')
-export const getShowGroup = entityTypeSelector('ShowGroup')
+export function getReception({ receptionStart, receptionEnd }) {
+  if (!receptionStart) return null
+  const recStartStr = moment(receptionStart).utc().format('dddd, MMMM D, h')
+  const recEndStr = moment(receptionEnd).utc().format('hA')
+  return `${recStartStr}–${recEndStr}`
+}
+function getShowDate({ startDate, endDate, ongoing }) {
+  if (!startDate) return null
+  const startStr = moment(startDate).format('MMMM Do')
+  if (ongoing) return `${startStr}–Ongoing`
+  if (!endDate) return startStr
+  const endStr = moment(endDate).format('MMMM Do')
+  return `${startStr}–${endStr}`
+}
+export const fillShowGroup = flow(
+  setField('reception', getReception),
+  setField('showDate', getShowDate)
+)
+export const getShowGroup = createSelector(
+  entityTypeSelector('ShowGroup'), showgroups => mapValues(showgroups, fillShowGroup)
+)
 
 const selectGraph = createStructuredSelector({
   Location: getLocation,
