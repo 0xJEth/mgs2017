@@ -8,7 +8,7 @@ import Main from './Main'
 function StudentDetail({ closePopup, student }) {
   return (
     <div id="student-overlay">
-      {!student && <p>loading...</p>}
+      {!student && <p className="flex loading">loading...</p>}
       {student &&
         <div className="wrapper">
           <button onClick={closePopup} role="button" className="close">
