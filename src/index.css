@@ -1238,6 +1238,7 @@ li.artwork a {
   50% { text-shadow: .5em .5em .25em rgba(254,219,000,.8); }
 }
 
+/**** STUDENTDETAILS ****/
 /** overlay actual styles! **/
 #student-overlay {
   position: fixed;
@@ -1249,3 +1250,175 @@ li.artwork a {
   box-shadow: inset 0 0 1em rgba(0,0,0,.25);
   overflow-y: auto;
 }
+#student-overlay .wrapper {
+  padding: 1em;
+  width: 100%;
+  min-height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.student-details {
+  margin-bottom: 3rem;
+}
+/*** ********* ***/
+/*** SLIDESHOW ***/
+/*** ********* ***/
+#slideshow .thumbs {
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  width: 5000%;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  -moz-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+}
+#slideshow .thumbs li {
+  opacity: .3333333333;
+  transition: all 300ms;
+  display: inline-block;
+  margin-left: .25rem;
+  margin-right: .25rem;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0);
+  z-index: 1;
+}
+#slideshow .thumbs li.active{
+  opacity: 1;
+  background-color:white;
+  box-shadow: 0 0 1.25rem 0 rgba(0,0,0,.5);
+  left: 50%;
+  -webkit-transform: translate(-50%,0) scale(1.05,1.05);
+  -moz-transform: translate(-50%,0) scale(1.05,1.05);
+  transform: translate(-50%,0) scale(1.05,1.05);
+  z-index: 2;
+  position: absolute;
+}
+#slideshow .thumbs li.first.last.active {
+  position: static;
+  left: initial;
+  -webkit-transform: translate(0,0) scale(1.05,1.05);
+  -moz-transform: translate(0,0) scale(1.05,1.05);
+  transform: translate(0,0) scale(1.05,1.05);
+}
+#slideshow .thumbs li img {
+  height: 500px;
+  width: auto;
+  display: block;
+  max-width: none;
+}
+/** slideshow strip buttons **/
+ul.thumbs-navigation {
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+ul.thumbs-navigation,
+ul.thumbs-navigation li {
+  position: static;
+}
+
+ul.thumbs-navigation li button {
+  border: none;
+  background: transparent;
+  color: rgba(0,0,0,.33);
+  display: block;
+  height: 5rem;
+  width: 5rem;
+  position: absolute;
+  top:200px;
+  transition: all 222ms;
+}
+
+ul.thumbs-navigation li:hover button,
+ul.thumbs-navigation li button:hover {
+  color: rgba(254,219,000,1);
+}
+
+ul.thumbs-navigation li:first-child button {
+  left: 10%;
+}
+ul.thumbs-navigation li:last-child button {
+  right: 10%;
+}
+
+/** slideshow strip indicators **/
+ul.thumbs-indicator {
+  margin: 2rem 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+ul.thumbs-indicator li {
+  display: inline-block;
+  margin: 0 .25rem;
+  width: .75rem;
+  height: .75rem;
+}
+ul.thumbs-indicator li span {
+  cursor: pointer;
+  display: block;
+  width: .75rem;
+  height: .75rem;
+  border: 2px solid #333;
+  border-radius: .75rem;
+  transition: all 1s ease;
+  /**/
+  text-indent: 200%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+ul.thumbs-indicator li span.active {
+  background-color: #333;
+}
+
+/**** / BEGIN TEXT STYLING ****/
+div.student-details h2{
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    margin: 0;
+}
+li.program h3{
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0;
+    line-height: 1;
+}
+li.location{
+    font-size: 14px;
+    line-height: 1;
+}
+li.email button{
+    border: none;
+    background: none;
+    padding: 0;
+    color: rgba(254,219,000,1);
+}
+li.website a, li.instagram a, li.twitter a{
+    text-decoration: none;
+    color: rgba(254,219,000,1);
+}
+li.website, li.email, li.instagram, li.twitter{
+    line-height: 1;
+}
+li.website a:hover, li.email button:hover, li.instagram a:hover, li.twitter a:hover{
+    text-decoration: underline;
+}
+div.statement {
+    line-height: 1.5;
+}
+aside.program-list h3 {
+    text-transform: uppercase;
+    font-size: 14px;
+    margin: 3px 0 0 0;
+}
+ul.program-peers li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+}
+ul.program-peers li a:hover {
+    color: rgba(254,219,000,1);
+}
+/**** / END STUDENTDETAILS ****/
