@@ -1,5 +1,8 @@
-import React, { PropTypes } from 'react'
-import Info from './Info'
+import React from 'react'
+import PropTypes from 'prop-types'
+// import css from 'cape-style'
+import StudentInfo from './StudentInfo'
+import ShowInfo from './ShowInfo'
 import Main from './Main'
 
 function StudentDetail({ closePopup }) {
@@ -10,7 +13,11 @@ function StudentDetail({ closePopup }) {
           <i className="fa fa-times fa-2x" />
         </button>
 
-        <Info />
+        <div className="info container">
+          <StudentInfo />
+          <ShowInfo />
+        </div>
+
         <Main />
 
       </div>
