@@ -8,7 +8,6 @@ html {
   -webkit-box-sizing: inherit;
   -moz-box-sizing: inherit;
   box-sizing: inherit;
-  /* type stuff */
   -moz-font-feature-settings: "kern";
   -webkit-font-feature-settings: "kern";
   -ms-font-feature-settings: "kern";
@@ -16,13 +15,6 @@ html {
   font-feature-settings: "kern";
   font-kerning: normal;
   text-rendering: optimizeLegibility;
-  /*-ms-word-break: break-all;
-  word-break: break-all;*/
-  /*Non standard for webkit */
-  /*word-break: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;*/
 }
 
 body {
@@ -50,6 +42,18 @@ p + p { margin-top: 1rem; }
 img {
   max-width: 100%;
   height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid white;
+  transition: all 350ms;
+}
+
+a:hover {
+  color: #655700;
+  border-bottom-color: #655700;
 }
 
 a.highlighted {
@@ -204,6 +208,10 @@ a.highlighted.hl2 .mark {
   .tenth    { width: calc( 100% / 10); }
 }
 
+flex, .flex {
+  display: flex;
+}
+
 page {
   display: flex;
   min-height: 100vh;
@@ -264,12 +272,21 @@ page > footer {
   }
 }
 
+@media (min-width: 95rem ) {
+  .item-grid .item {
+    width: calc(100% / 6);
+  }
+}
+
+@media (min-width: 110rem ) {
+  .item-grid .item {
+    width: calc(100% / 7);
+  }
+}
 
 /* From components/Blurb/Blurb.css */
 #blurb .wrapper {
   max-width: 55rem;
-}
-#blurb .wrapper {
   flex-direction: column;
 }
 #blurb .flexItem {
@@ -289,7 +306,6 @@ page > footer {
 detail {
   background-color: #fffdf4;
   border: 1rem solid #fedb00;
-  /*box-shadow: inset 0px 0px 1em rgba(0,0,0,.5);*/
   display: block;
   position: relative;
   min-height: 100%;
@@ -331,7 +347,6 @@ detail .close:active {
 }
 
 detail .flex {
-  display: flex;
   flex-direction: column;
 }
 
@@ -440,14 +455,6 @@ detail .google-map-container {
     padding-top: 4rem;
     position: relative;
   }
-  /*detail .flex > .studentList {
-    flex: 1;
-    align-self: flex-end;
-    width: calc(100% / 6 * 1);
-    max-height: calc(100vh - 4rem);
-    overflow: auto;
-    padding-bottom: 2rem;
-  }*/
   detail .studentList {
     display: block;
   }
@@ -560,15 +567,10 @@ detail .google-map-container {
   margin-bottom: 1rem;
 }
 
-/*.editable-empty,
-.editable-empty .btn-secret {
-  color: gray;
-}*/
-
 /* absolute z10 textCenter br0p25 textReset */
 .help-block {
   position: absolute;
-  bottom:-2.1em;
+  bottom:-2.25em;
   z-index: 1000000;
   padding: .3em .5em;
   color: #fffdf4;
@@ -624,18 +626,6 @@ detail .google-map-container {
   }
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-  border-bottom: 1px solid white;
-  transition: all 350ms;
-}
-
-a:hover {
-  color: #655700;
-  border-bottom-color: #655700;
-}
-
 /* From components/Footer/Footer.css */
 footer {
   line-height: 1.4;
@@ -660,12 +650,6 @@ footer .mica.logo {
   padding-top: 0;
   padding-right: 3em;
 }
-
-/*****/
-/*****/
-/* Trying to get this to work */
-/*****/
-/*****/
 
 footer flex {
   width: 100%;
@@ -722,7 +706,6 @@ footer flex section.social {
 }
 
 /* From components/Header/Header.css */
-/** Header.css **/
 #siteHeader nav {
   display: block;
 }
@@ -826,7 +809,6 @@ header .menu {
 
 /* from components/Profile/Me.css */
 flex {
-  display:flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
@@ -940,18 +922,12 @@ li.artwork a {
   z-index: initial;
   padding: 0;
   text-align: left;
-  text-decoration: none;
-  text-shadow: none;
-  text-transform: none;
-  letter-spacing: normal;
   word-wrap: initial;
   white-space: initial;
   pointer-events: initial;
   background-color: transparent;
   border-radius: none;
-  -webkit-font-smoothing: subpixel-antialiased;
   box-shadow: none;
-  /**/
   font-size: .8em;
   line-height: 1.2;
   color: gray;
@@ -1247,4 +1223,12 @@ li.artwork a {
     flex: 1;
     text-align: left;
   }
+}
+
+/********** Student "overlay" profile pager thiny *****************/
+.flex.loading {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
 }
