@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 // import css from 'cape-style'
+import mgsBlock from '../../mgs2017LogoBlock.svg'
 
 // import Slideshow from './Slideshow'
 import NoImages from './NoImages'
@@ -19,16 +20,17 @@ function Main({ collection, user }) {
       } */}
       <NoImages />
       <div className="container flex">
-        <div className="group">
-          <ProgramList {...user} />
-          { statement &&
-            <div
-              className="statement six columns"
-              dangerouslySetInnerHTML={{
-                __html: statement,
-              }}
-            />
-          }
+        <ProgramList {...user} />
+        { statement &&
+          <div
+            className="statement w50"
+            dangerouslySetInnerHTML={{
+              __html: statement,
+            }}
+          />
+        }
+        <div className="logo w20">
+          <img src={mgsBlock} alt="MICA Grad Show 2017"className="mgsLogo" />
         </div>
       </div>
     </div>

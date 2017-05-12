@@ -23,15 +23,15 @@ function StudentInfo(props) {
       {name && <li className="name"><h2>{ name }</h2></li> }
       {program && <li className="program"><i>{ program.name }</i></li>}
       <li className="social">
-        <ul style={css('m0 p0 lsNone')}>
-          {url && <li><LinkEl href={url} icon="web" /></li>}
-          {email && <li><LinkEl href={emailStr} icon="email" /></li>}
-          {facebook && <li><LinkEl href={facebookStr} icon="facebook" /></li>}
-          {instagram && <li><LinkEl href={instagramStr} icon="instagram" /></li>}
-          {soundcloud && <li><LinkEl href={soundcloudStr} icon="soundcloud" /></li>}
-          {twitter && <li><LinkEl href={twitterStr} icon="twitter" /></li>}
-          {vimeo && <li><LinkEl href={vimeoStr} icon="vimeo" /></li>}
-          {youtube && <li><LinkEl href={youtubeStr} icon="youtube" /></li>}
+        <ul style={css('m0 mt0p5 p0 lsNone flex fs1p5')}>
+          {url && <li style={css('mr0p25')}><LinkEl href={url} icon="web" /></li>}
+          {email && <li style={css('mr0p25')}><LinkEl href={emailStr} icon="email" /></li>}
+          {facebook && <li style={css('mr0p25')}><LinkEl href={facebookStr} icon="facebook" /></li>}
+          {instagram && <li style={css('mr0p25')}><LinkEl href={instagramStr} icon="instagram" /></li>}
+          {soundcloud && <li style={css('mr0p25')}><LinkEl href={soundcloudStr} icon="soundcloud" /></li>}
+          {twitter && <li style={css('mr0p25')}><LinkEl href={twitterStr} icon="twitter" /></li>}
+          {vimeo && <li style={css('mr0p25')}><LinkEl href={vimeoStr} icon="vimeo" /></li>}
+          {youtube && <li style={css('mr0p25')}><LinkEl href={youtubeStr} icon="youtube" /></li>}
         </ul>
       </li>
     </ul>
