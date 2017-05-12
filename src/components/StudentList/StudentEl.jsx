@@ -7,12 +7,20 @@ import Select from 'cape-mixer/lib/SelectEl'
 // import './Student.css'
 import { getLink } from '../Schedule/ShowGroup'
 
+function StudentLink({ children, detailUrl }) {
+  if (!detailUrl) return children
+  return <LinkEl href={detailUrl}>{children}</LinkEl>
+}
+StudentLink.propTypes = {
+  children: PropTypes.node.isRequired,
+  detailUrl: PropTypes.string.isRequired,
+}
+
 function StudentEl(props) {
   const {
-    familyName, givenName, name, show, url, email, program, saveShow, shows, showGroup,
+    detailUrl, name, show, url, email, program, saveShow, shows, showGroup,
     facebook, instagram, soundcloud, twitter, vimeo, youtube,
   } = props
-  const displayName = `${givenName} ${familyName}`
   const emailStr = `mailto:${email}`
   const facebookStr = `https://www.facebook.com/${facebook}`
   const instagramStr = `https://www.instagram.com/${instagram}`
@@ -23,8 +31,9 @@ function StudentEl(props) {
 
   return (
     <li className="student" style={css('p0p5 pl2 pr2 bb')}>
-      {!name && <span className="name"><strong>{ displayName }</strong></span> }
-      {name && <span className="name"><strong>{ name }</strong></span> }
+      <span className="name">
+        <StudentLink detailUrl={detailUrl}><strong>{ name }</strong></StudentLink>
+      </span>
       <span className="program">
         <i>{ program.name }</i>
       </span>
@@ -49,9 +58,8 @@ function StudentEl(props) {
 }
 
 StudentEl.propTypes = {
-  familyName: PropTypes.string.isRequired,
-  givenName: PropTypes.string.isRequired,
-  name: PropTypes.string,
+  detailUrl: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   program: PropTypes.shape({
     name: PropTypes.string,
   }),
