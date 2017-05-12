@@ -18,7 +18,7 @@ function Main({ collection, user }) {
         :
       } */}
       <NoImages />
-      <div className="container">
+      <div className="container flex">
         <div className="group">
           <ProgramList {...user} />
           { statement &&

@@ -2,7 +2,7 @@ import React from 'react'
 
 function noImage() {
   return (
-    <div className="no-images flex w100 p4">
+    <div className="no-images flex w100">
       <p>Images Forthcoming</p>
     </div>
   )
