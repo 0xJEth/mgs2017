@@ -5,10 +5,9 @@ import mgsBlock from '../../mgs2017LogoBlock.svg'
 
 // import Slideshow from './Slideshow'
 import NoImages from './NoImages'
-import ProgramList from './ProgramList'
+// import ProgramList from './ProgramList'
 
-function Main({ collection, user }) {
-  const { statement } = user
+function Main({ statement }) {
   return (
     <div className="student-main">
       {/* { collection && collection.length ?
@@ -20,7 +19,7 @@ function Main({ collection, user }) {
       } */}
       <NoImages />
       <div className="container flex">
-        <ProgramList {...user} />
+        {/* <ProgramList {...user} /> */}
         { statement &&
           <div
             className="statement w50"
@@ -37,15 +36,12 @@ function Main({ collection, user }) {
   )
 }
 
-// TODO: look at the data and set these correctly
 Main.propTypes = {
-  collection: PropTypes.objectOf(PropTypes.array).isRequired,
-  user: PropTypes.objectOf(PropTypes.object).isRequired,
+  // collection: PropTypes.objectOf(PropTypes.array).isRequired,
+  statement: PropTypes.string,
 }
 Main.defaultProps = {
-  user: {
-    statement: 'Beans coffee, cortado body arabica barista americano. Medium fair trade aroma bar, turkish, instant grounds frappuccino irish aged whipped. Et grinder frappuccino variety, aged, cream acerbic mug grinder brewed. Percolator brewed body, cultivar medium milk fair trade froth french press.',
-  },
+  statement: 'Beans coffee, cortado body arabica barista americano...',
 }
 
 export default Main
