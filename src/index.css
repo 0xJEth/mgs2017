@@ -1271,7 +1271,6 @@ li.artwork a {
 #student-overlay .student-main .container {
   max-width: 1000px;
   width: 100%;
-  align-items: baseline;
   justify-content: space-between;
   margin-left: auto;
   margin-right: auto;

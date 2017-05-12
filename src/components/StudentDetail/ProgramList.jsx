@@ -4,7 +4,7 @@ import css from 'cape-style'
 
 function ProgramList({ program, peers }) {
   return (
-    <aside className="program-list three columns">
+    <aside className="program-list w20">
       <h3>{program.name}</h3>
       <ul className="program-peers" style={css('m0 p0 lsNone')}>
         <li id={peers.id}>
