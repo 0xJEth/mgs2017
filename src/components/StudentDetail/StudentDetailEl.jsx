@@ -20,7 +20,7 @@ function StudentDetail({ closePopup, student }) {
             <ShowInfo {...student.show} />
           </div>
 
-          <Main />
+          <Main {...student} />
 
         </div>
       }
