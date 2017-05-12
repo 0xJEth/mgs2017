@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import marked from 'marked'
 // import css from 'cape-style'
 import mgsBlock from '../../mgs2017LogoBlock.svg'
 
@@ -23,9 +24,7 @@ function Main({ statement }) {
         { statement &&
           <div
             className="statement w50"
-            dangerouslySetInnerHTML={{
-              __html: statement,
-            }}
+            dangerouslySetInnerHTML={{ __html: marked(statement) }}
           />
         }
         <div className="logo w20">
