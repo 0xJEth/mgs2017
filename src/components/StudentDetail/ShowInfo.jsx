@@ -9,11 +9,12 @@ function getLocName(loc) {
   return get(find(loc), 'name')
 }
 function ShowDetails({ name, location, showGroup }) {
+  const showHref = `/details/${get(find(showGroup), 'id')}`
   return (
     <ul className="show-details" style={css('m0 p0 lsNone')}>
       <li className="name">
         <h2>
-          <LinkEl href={getLink(showGroup)} internal>
+          <LinkEl href={showHref} internal>
             { get(find(showGroup), 'name') }
           </LinkEl>
         </h2>
