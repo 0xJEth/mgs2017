@@ -1,7 +1,7 @@
 export const ACCEPT_FILE_TYPE = 'image/jpeg'
 
-export const email = {
-  id: 'email',
+export const contactEmail = {
+  id: 'contactEmail',
   position: 1,
   isRequired: true,
   type: 'email',
@@ -76,7 +76,7 @@ export const statement = {
 
 const personFields = [
   name,
-  email,
+  contactEmail,
   statement,
   url,
   facebook,
