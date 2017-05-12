@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import css from 'cape-style'
+import css from 'cape-style'
 
 function ProgramList({ program, peers }) {
   return (
     <aside className="program-list three columns">
       <h3>{program.name}</h3>
-      <ul className="program-peers list-reset">
+      <ul className="program-peers" style={css('m0 p0 lsNone')}>
         <li id={peers.id}>
           {peers.name} - Peer names and link to their profile page...
         </li>
