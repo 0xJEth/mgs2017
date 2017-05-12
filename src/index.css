@@ -1254,13 +1254,13 @@ li.artwork a {
   border: 1rem solid rgba(254,219,000,1);
   box-shadow: inset 0 0 1em rgba(0,0,0,.25);
   overflow-y: auto;
+  overflow-x: hidden;
+  padding: 2rem 2rem 4rem;
 }
 #student-overlay .wrapper {
   padding: 1em;
   width: 100%;
   min-height: 100%;
-  overflow-y: scroll;
-  overflow-x: hidden;
   flex-direction: column;
   flex-wrap: wrap;
 }
@@ -1274,6 +1274,23 @@ li.artwork a {
   justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
+  flex-direction: column;
+  text-align: center;
+}
+.info .social > ul {
+  justify-content: center;
+  text-align: center;
+}
+@media (min-width: 600px) {
+  #student-overlay .info,
+  #student-overlay .student-main .container {
+    flex-direction: row;
+    text-align: left;
+  }
+  .info .social > ul {
+    justify-content: flex-start;
+    text-align: left;
+  }
 }
 #student-overlay .no-images {
   padding: 4rem;
@@ -1281,7 +1298,8 @@ li.artwork a {
   justify-content: center;
   border-top: 1px solid;
   border-bottom: 1px solid;
-  margin: 2rem auto 1rem auto;
+  margin: 2rem -4rem 1rem -4rem;
+  width: calc(100% + 8rem);
 }
 #student-overlay .logo img {
   vertical-align: top;
