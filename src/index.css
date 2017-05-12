@@ -312,7 +312,8 @@ detail {
   min-height: 100vh;
 }
 
-detail .close {
+detail .close,
+#student-overlay .close {
   position: absolute;
   top: .5rem;
   left: .5rem;
@@ -329,7 +330,9 @@ detail .close {
 }
 
 detail .close:hover,
-detail .close:active {
+detail .close:active,
+#student-overlay .close:hover,
+#student-overlay .close:active {
   background: #211a00;
   color:#fffdf4;
   border-color:#211a00;
@@ -337,7 +340,9 @@ detail .close:active {
 }
 
 detail .close:focus,
-detail .close:active {
+detail .close:active,
+#student-overlay .close:focus,
+#student-overlay .close:active {
   outline: 0;
   -webkit-box-shadow: 0 0 0 2px #fffdf4, 0 0 1px 4px #fedb00;
   -moz-box-shadow: 0 0 0 2px #fffdf4,0 0 1px 4px #fedb00;
@@ -1256,9 +1261,26 @@ li.artwork a {
   min-height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
+  flex-direction: column;
 }
 .student-details {
   margin-bottom: 3rem;
+}
+#student-overlay .info {
+  max-width: 1000px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+}
+#student-overlay .no-images {
+  padding: 4rem;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  margin: 2rem auto 1rem auto;
 }
 /*** ********* ***/
 /*** SLIDESHOW ***/

@@ -12,10 +12,10 @@ function StudentDetail({ closePopup, student }) {
     <div id="student-overlay">
       {!student && <p className="flex loading">loading...</p>}
       {student &&
-        <div className="wrapper">
+        <div className="wrapper flex">
           {close}
 
-          <div className="info container">
+          <div className="info container flex">
             <StudentInfo {...student} />
             <ShowInfo {...student.show} />
           </div>
