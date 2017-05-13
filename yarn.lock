@@ -5229,6 +5229,17 @@ redux-history-sync@^3.1.0:
     lodash "^4.17.2"
     redux "^3.6.0"
 
+redux-history-sync@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/redux-history-sync/-/redux-history-sync-3.2.0.tgz#54debd2ff9ef514b9a7d8a597354dcfaf83a980b"
+  dependencies:
+    cape-redux "^3.1.0"
+    cape-select "^2.4.0"
+    classnames "^2.2.5"
+    lodash "^4.17.2"
+    redux "^3.6.0"
+    reselect "^3.0.1"
+
 redux-thunk@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.2.0.tgz#e615a16e16b47a19a515766133d1e3e99b7852e5"
@@ -5397,6 +5408,10 @@ reselect@^2.5.4:
 reselect@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/reselect/-/reselect-3.0.0.tgz#b2e35977f03048700028eaee3a8c0639e40e8f35"
+
+reselect@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/reselect/-/reselect-3.0.1.tgz#efdaa98ea7451324d092b2b2163a6a1d7a9a2147"
 
 resolve-from@^1.0.0:
   version "1.0.1"

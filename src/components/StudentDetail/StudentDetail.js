@@ -3,6 +3,7 @@ import { createStructuredSelector } from 'reselect'
 import { getProp, getSelect } from 'cape-select'
 import { studentsFilled } from '../../select/student'
 import Component from './StudentDetailEl'
+import { closePopup } from './back'
 
 export const getEntity = getSelect(
   studentsFilled,
@@ -11,5 +12,7 @@ export const getEntity = getSelect(
 export const getState = createStructuredSelector({
   student: getEntity,
 })
-
-export default connect(getState)(Component)
+export const actions = {
+  closePopup,
+}
+export default connect(getState, actions)(Component)
