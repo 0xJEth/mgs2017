@@ -56,47 +56,6 @@ a:hover {
   border-bottom-color: #655700;
 }
 
-a.highlighted {
-  color: inherit;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  word-break: break-word;
-  transition: all 300ms;
-  position: relative;
-  display: inline-block;
-  transition: all 400ms ease;
-}
-
-a.highlighted * {
-  transition: all 400ms ease;
-}
-
-a.highlighted .text {
-  position: relative;
-  display: block;
-  z-index: 1;
-}
-
-a.highlighted .mark {
-  display:block;
-  position: absolute;
-  top: .3em;
-  left: 7%;
-  height: .9em;
-  width: 95%;
-  background-color: #fedb00;
-  z-index: 0;
-  -webkit-transform: skewX(5deg);
-  transform: skewX(5deg);
-}
-
-a.highlighted.hl2 .mark {
-  left: 5%;
-  width: 97%;
-  -webkit-transform: none;
-  transform: none;
-}
-
 /** ============================= **/
 /** ============================= **/
 /** Functional CSS atomic modules **/
