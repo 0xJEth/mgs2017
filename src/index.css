@@ -151,6 +151,8 @@ a:hover {
 .border-yellow-d5-hover:hover { border-color: #322b00; }
 .border-black-hover:hover     { border-color: #211a00; }
 
+[class*="-hover"], button { transition: all 350ms; }
+
 @media (min-width: 50rem) {
   .w10  { width: 10%; }
   .w20  { width: 20%; }
