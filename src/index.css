@@ -1285,53 +1285,39 @@ ul.thumbs-indicator li span.active {
 }
 
 /**** / BEGIN TEXT STYLING ****/
-div.student-details h2{
-    font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: .5px;
-    margin: 0;
+.student-details h2{
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin: 0;
 }
 li.program h3{
-    font-weight: 400;
-    font-size: 14px;
-    margin: 0;
-    line-height: 1;
-}
-li.location{
-    font-size: 14px;
-    line-height: 1;
+  font-weight: 400;
+  margin: 0;
 }
 li.email button{
-    border: none;
-    background: none;
-    padding: 0;
-    color: rgba(254,219,000,1);
+  border: none;
+  background: none;
+  padding: 0;
+  color: rgba(254,219,000,1);
 }
 li.website a, li.instagram a, li.twitter a{
-    text-decoration: none;
-    color: rgba(254,219,000,1);
+  text-decoration: none;
+  color: rgba(254,219,000,1);
 }
-li.website, li.email, li.instagram, li.twitter{
-    line-height: 1;
-}
-li.website a:hover, li.email button:hover, li.instagram a:hover, li.twitter a:hover{
-    text-decoration: underline;
-}
-div.statement {
-    line-height: 1.5;
+.statement {
+  line-height: 1.5;
 }
 aside.program-list h3 {
-    text-transform: uppercase;
-    font-size: 14px;
-    margin: 3px 0 0 0;
+  text-transform: uppercase;
+  margin: 0;
 }
 ul.program-peers li a {
-    text-decoration: none;
-    color: #000;
-    font-size: 14px;
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
 }
 ul.program-peers li a:hover {
-    color: rgba(254,219,000,1);
+  color: rgba(254,219,000,1);
 }
 /**** / END STUDENTDETAILS ****/
 
