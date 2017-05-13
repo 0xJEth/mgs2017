@@ -195,14 +195,7 @@ a:hover {
   .tenth    { width: calc( 100% / 10); }
 }
 
-page,
-flex,
-.flex,
-.item-grid,
-.studentList,
-.menu,
-li.artwork,
-.student {
+page, flex, .flex, .item-grid, .studentList, .menu, li.artwork, .student {
   display: flex;
 }
 
@@ -239,37 +232,31 @@ page > footer {
   padding: 1em;
   width: 100%;
 }
-
 @media (min-width: 40rem ) {
   .item-grid .item {
     width: calc(100% / 2);
   }
 }
-
 @media (min-width: 50rem ) {
   .item-grid .item {
     width: calc(100% / 3);
   }
 }
-
 @media (min-width: 65rem ) {
   .item-grid .item {
     width: calc(100% / 4);
   }
 }
-
 @media (min-width: 80rem ) {
   .item-grid .item {
     width: calc(100% / 5);
   }
 }
-
 @media (min-width: 95rem ) {
   .item-grid .item {
     width: calc(100% / 6);
   }
 }
-
 @media (min-width: 110rem ) {
   .item-grid .item {
     width: calc(100% / 7);
@@ -295,17 +282,7 @@ page > footer {
 }
 
 /* From components/Detail/Detail.css */
-detail {
-  background-color: #fffdf4;
-  border: 1rem solid rgba(254,219,000,1);
-  display: block;
-  position: relative;
-  min-height: 100%;
-  min-height: 100vh;
-}
-
-detail .close,
-#student-overlay .close {
+.close {
   position: fixed;
   top: 1.5rem;
   left: 1.5rem;
@@ -321,26 +298,31 @@ detail .close,
   cursor: pointer;
 }
 
-detail .close:hover,
-detail .close:active,
-#student-overlay .close:hover,
-#student-overlay .close:active {
+.close:hover,
+.close:active {
   background: #211a00;
   color:#fffdf4;
   border-color:#211a00;
   box-shadow: 0 0 .5em 0 rgba(33, 26, 0, .5);
 }
 
-detail .close:focus,
-detail .close:active,
-#student-overlay .close:focus,
-#student-overlay .close:active {
+.close:focus,
+.close:active {
   outline: 0;
   -webkit-box-shadow: 0 0 0 2px #fffdf4, 0 0 1px 4px #fedb00;
   -moz-box-shadow: 0 0 0 2px #fffdf4,0 0 1px 4px #fedb00;
   -ms-box-shadow: 0 0 0 2px #fffdf4,0 0 1px 4px #fedb00;
   -o-box-shadow: 0 0 0 2px #fffdf4,0 0 1px 4px #fedb00;
   box-shadow: 0 0 0 2px #fffdf4, 0 0 1px 4px #fedb00;
+}
+
+detail {
+  background-color: #fffdf4;
+  border: 1rem solid rgba(254,219,000,1);
+  display: block;
+  position: relative;
+  min-height: 100%;
+  min-height: 100vh;
 }
 
 detail .flex {
@@ -457,19 +439,11 @@ detail .google-map-container {
   detail .studentList > ul {
     width: 100%;
   }
-  /*temporary*/
-  .recy5OLOvJNnpWuAD detail .studentList {
-    position: absolute;
-    right: 2rem;
-    top: -460%;
-    margin-bottom: 4rem;
-  }
   detail .flex > .google-map-container {
     flex: 3;
     height: calc(100vh - 2rem);
     width: auto;
   }
-
 }
 
 /** map stuff **/
@@ -506,97 +480,6 @@ detail .google-map-container {
 }
 .galleryLocation:hover .mapPopup {
   display: block;
-}
-
-/* From components/Editable/Editable.css */
-.editable-click,
-.editable-parent,
-.editable-row,
-.editable-buttons,
-.btn-secret,
-.editable-row > input,
-.editable-fixed-value {
-  font-size: 1rem;
-  line-height: 1.4rem;
-}
-
-.editable-click,
-.editable-parent,
-.editable-row,
-.editable-buttons {
-  display:inline-block;
-  position: relative;
-  min-height: calc(1.4rem + 2px);
-}
-
-.btn-secret,
-.editable-row > input {
-  background: transparent;
-  border: none;
-  border-bottom: 2px solid #fedb00;
-  padding:0;
-  transition: all 300ms;
-  cursor: pointer;
-}
-
-.btn-secret,
-.editable-row > input,
-.editable-fixed-value {
-  margin-left: .5rem;
-}
-
-.btn-secret:focus,
-.editable-row > input:focus {
-  background-color: #fedb00;
-  outline-color: #fedb00;
-  padding-left: .3rem;
-  padding-right: .3rem;
-}
-
-.editable-buttons {
-  margin-left: .3rem;
-}
-
-.dz-details {
-  font-family: monospace;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-/* absolute z10 textCenter br0p25 textReset */
-.help-block {
-  position: absolute;
-  bottom:-2.25em;
-  z-index: 1000000;
-  padding: .3em .5em;
-  color: #fffdf4;
-  text-align: center;
-  text-decoration: none;
-  text-shadow: none;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: break-word;
-  white-space: pre;
-  pointer-events: none;
-  background-color: rgba(50, 43, 0, .8);
-  border-radius: .25em;
-  -webkit-font-smoothing: subpixel-antialiased;
-  box-shadow: 0 0 .2em 0 rgba(50, 43, 0, .2);
-}
-
-.help-block::before {
-  position: absolute;
-  top: -.5em;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000001;
-  width: 0;
-  height: 0;
-  pointer-events: none;
-  border: .25em solid transparent;
-  border-bottom-color: rgba(50, 43, 0, .8);
-  color: rgba(50, 43, 0, .8);
-  content: '';
 }
 
 /* From components/FilmFest/FilmFest.css */
@@ -720,7 +603,6 @@ header .menu {
 .menu > li a,
 .menu > li button {
   text-align: center;
-  color: #211a00;
   transition: all 333ms;
 }
 
@@ -731,6 +613,7 @@ header .menu {
   border: 1px solid;
   display: block;
   padding: 1rem;
+  width: 100%;
 }
 
 .menu > .home a:hover,
@@ -1172,7 +1055,6 @@ li.artwork a {
 }
 
 .student a {
-  color: #211a00;
   text-decoration: none;
   border-bottom: 1px solid #fff8cb;
   transition: all 300ms;
@@ -1452,3 +1334,99 @@ ul.program-peers li a:hover {
     color: rgba(254,219,000,1);
 }
 /**** / END STUDENTDETAILS ****/
+
+/** Editor related stuff, some of this should go into cape mixer module!?! **/
+/** Editor related stuff, some of this should go into cape mixer module!?! **/
+/** Editor related stuff, some of this should go into cape mixer module!?! **/
+/** Editor related stuff, some of this should go into cape mixer module!?! **/
+/** Editor related stuff, some of this should go into cape mixer module!?! **/
+/* From components/Editable/Editable.css */
+.editable-click,
+.editable-parent,
+.editable-row,
+.editable-buttons,
+.btn-secret,
+.editable-row > input,
+.editable-fixed-value {
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+.editable-click,
+.editable-parent,
+.editable-row,
+.editable-buttons {
+  display:inline-block;
+  position: relative;
+  min-height: calc(1.4rem + 2px);
+}
+
+.btn-secret,
+.editable-row > input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #fedb00;
+  padding:0;
+  transition: all 300ms;
+  cursor: pointer;
+}
+
+.btn-secret,
+.editable-row > input,
+.editable-fixed-value {
+  margin-left: .5rem;
+}
+
+.btn-secret:focus,
+.editable-row > input:focus {
+  background-color: #fedb00;
+  outline-color: #fedb00;
+  padding-left: .3rem;
+  padding-right: .3rem;
+}
+
+.editable-buttons {
+  margin-left: .3rem;
+}
+
+.dz-details {
+  font-family: monospace;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* absolute z10 textCenter br0p25 textReset */
+.help-block {
+  position: absolute;
+  bottom:-2.25em;
+  z-index: 1000000;
+  padding: .3em .5em;
+  color: #fffdf4;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: break-word;
+  white-space: pre;
+  pointer-events: none;
+  background-color: rgba(50, 43, 0, .8);
+  border-radius: .25em;
+  -webkit-font-smoothing: subpixel-antialiased;
+  box-shadow: 0 0 .2em 0 rgba(50, 43, 0, .2);
+}
+
+.help-block::before {
+  position: absolute;
+  top: -.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000001;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  border: .25em solid transparent;
+  border-bottom-color: rgba(50, 43, 0, .8);
+  color: rgba(50, 43, 0, .8);
+  content: '';
+}
