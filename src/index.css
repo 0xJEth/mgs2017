@@ -195,9 +195,8 @@ a:hover {
   .tenth    { width: calc( 100% / 10); }
 }
 
-page, flex, .flex, .item-grid, .studentList, .menu, li.artwork, .student {
-  display: flex;
-}
+page, flex, .flex, .item-grid, .studentList, .menu, li.artwork, .student { display: flex; }
+flex, detail .flex, detail .studentList, #student-overlay .wrapper, .student { flex-wrap: wrap; }
 
 page {
   min-height: 100vh;
@@ -350,7 +349,6 @@ detail .mainContent {
 detail .studentList {
   font-size: .8rem;
   order: 3;
-  flex-wrap: wrap;
   flex-direction: column;
 }
 
@@ -371,7 +369,6 @@ detail .google-map-container {
 @media (min-width: 768px ) {
   detail .flex {
     flex-direction: row;
-    flex-wrap: wrap;
     min-height: calc(100vh - 2em);
   }
   detail .flex > .mainContent {
@@ -686,7 +683,6 @@ header .menu {
 /* from components/Profile/Me.css */
 flex {
   flex-direction: row;
-  flex-wrap: wrap;
 }
 #profile > main {
   box-shadow: none;
@@ -1014,10 +1010,6 @@ li.artwork a {
   padding: 0;
 }
 
-.student {
-  flex-wrap: wrap;
-}
-
 .student:nth-child(even) {
   background-color: #ffea65;
 }
@@ -1130,8 +1122,8 @@ li.artwork a {
   width: 100%;
   min-height: 100%;
   flex-direction: column;
-  flex-wrap: wrap;
 }
+
 .student-details {
   margin-bottom: 3rem;
 }
