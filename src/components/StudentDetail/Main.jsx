@@ -28,7 +28,7 @@ function Main({ statement }) {
           />
         }
         <div className="logo w20">
-          <img src={mgsBlock} alt="MICA Grad Show 2017"className="mgsLogo" />
+          <img src={mgsBlock} alt="MICA Grad Show 2017" className="mgsLogo" />
         </div>
       </div>
     </div>

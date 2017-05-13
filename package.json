@@ -28,6 +28,7 @@
     "google-map-react": "^0.24.0",
     "location-info": "^4.0.3",
     "lodash": "^4.17.4",
+    "marked": "^0.3.6",
     "moment": "^2.18.1",
     "prop-types": "^15.5.8",
     "radium": "^0.18.2",
