@@ -195,12 +195,18 @@ a:hover {
   .tenth    { width: calc( 100% / 10); }
 }
 
-flex, .flex {
+page,
+flex,
+.flex,
+.item-grid,
+.studentList,
+.menu,
+li.artwork,
+.student {
   display: flex;
 }
 
 page {
-  display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
@@ -224,7 +230,6 @@ page > footer {
 
 /**** some @media things ****/
 .item-grid {
-  display: flex;
   flex-direction: row;
   flex-flow: row wrap;
   margin-left: -1rem;
@@ -363,7 +368,6 @@ detail .mainContent {
 detail .studentList {
   font-size: .8rem;
   order: 3;
-  display: flex;
   flex-wrap: wrap;
   flex-direction: column;
 }
@@ -790,9 +794,6 @@ header .menu {
   font-size: .8rem;
 }
 
-.menu {
-  display: flex;
-}
 .menu > li {
   flex: 1 1 auto;
   min-width: 0;
@@ -849,7 +850,6 @@ flex {
   border-bottom: 1px solid rgba(0,0,0,.25);
 }
 li.artwork {
-  display: flex;
   align-items: center;
   justify-content: space-between;
 }
@@ -1132,7 +1132,6 @@ li.artwork a {
 }
 
 .student {
-  display: flex;
   flex-wrap: wrap;
 }
 
