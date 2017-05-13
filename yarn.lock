@@ -5220,16 +5220,7 @@ redux-history-component@^2.1.0:
     redux "^3.6.0"
     redux-history-sync "^3.1.0"
 
-redux-history-sync@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/redux-history-sync/-/redux-history-sync-3.1.0.tgz#892998c5413d7c13dc26fe03230de054e8a13751"
-  dependencies:
-    cape-redux "^2.2.1"
-    classnames "^2.2.5"
-    lodash "^4.17.2"
-    redux "^3.6.0"
-
-redux-history-sync@^3.2.0:
+redux-history-sync@^3.1.0, redux-history-sync@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/redux-history-sync/-/redux-history-sync-3.2.0.tgz#54debd2ff9ef514b9a7d8a597354dcfaf83a980b"
   dependencies:
