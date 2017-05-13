@@ -16,7 +16,7 @@
     "cape-firebase": "^1.0.8",
     "cape-lodash": "^1.12.0",
     "cape-mixer": "^1.2.0",
-    "cape-react-app": "^1.0.20",
+    "cape-react-app": "^1.0.21",
     "cape-redux": "^3.1.0",
     "cape-redux-auth": "^4.0.0",
     "cape-redux-reducer": "^3.11.3",
