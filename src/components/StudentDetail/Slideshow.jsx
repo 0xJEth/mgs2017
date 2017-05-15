@@ -4,6 +4,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import classnames from 'classnames'
 
 import SlideNavigation from './SlideNavigation'
+import SlideThumb from './SlideThumb'
 
 class Slideshow extends Component {
 
@@ -237,10 +238,10 @@ class Slideshow extends Component {
           </ReactCSSTransitionGroup>
         </ul>
         { collectionExists &&
-            <SlideNavigation
-              slideAdvance={this.slideAdvance}
-              slideRewind={this.slideRewind}
-            />
+          <SlideNavigation
+            slideAdvance={this.slideAdvance}
+            slideRewind={this.slideRewind}
+          />
         }
         {slideIndicators}
       </div>
@@ -251,7 +252,6 @@ class Slideshow extends Component {
 
 // TODO: real proptypes
 Slideshow.propTypes = {
-  user: PropTypes.object,
   collection: PropTypes.array,
 }
 Slideshow.defaultProps = {
