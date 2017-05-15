@@ -7,12 +7,7 @@ function SlideThumb({ classNames, src, title, handleClick, videoInfo }) {
   return (
     <li className={classnames(classNames)}>
       { videoInfo && videoInfo.url ? <Video {...videoInfo} /> : (
-        <img
-          src={src + '?w=1200'}
-          title={title}
-          alt={title}
-          onClick={handleClick}
-        />
+        <img src={`${src}?w=1200`} title={title} alt={title} onClick={handleClick} />
       )}
     </li>
   )

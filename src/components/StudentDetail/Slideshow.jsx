@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import ReactCSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
 // import { Link, Navigation } from 'react-router'
 import classnames from 'classnames'
 
@@ -92,19 +92,18 @@ class Slideshow extends Component {
     )
     // Add the slides that should appear before the active slide
     slides = slides.concat(
-      viewableSlides.nextSlides.map((slideIndex) => {
-        return this.generateSlide(
+      viewableSlides.nextSlides.map(slideIndex =>
+        this.generateSlide(
           collection[slideIndex], slideIndex, lastPosition, this.slideAdvance
         )
-      })
+      )
     )
     return slides
   }
 
   // Process work data to generate slide
   generateSlide(slideItem, slideIndex, lastPosition, handleClick) {
-    console.log(slideItem)
-    const { image } = slideItem
+    const { id, image, title } = slideItem
     const { currentPosition } = this.state
     const videoInfo = {}
     let imgSrc
@@ -128,9 +127,9 @@ class Slideshow extends Component {
     // }
     return (
       <SlideThumb
-        key={imgSrc}
+        key={id}
         src={imgSrc}
-        title={slideItem.title}
+        title={title}
         currentPosition={currentPosition}
         videoInfo={videoInfo}
         handleClick={handleClick}
@@ -159,13 +158,7 @@ class Slideshow extends Component {
           })}
         >
           { activeSlide ?
-              <span className="active">
-                {index}
-              </span>
-            :
-              <span>
-                {index}
-              </span>
+            <span className="active">{index}</span> : <span>{index}</span>
           }
         </li>
       )
@@ -253,7 +246,7 @@ class Slideshow extends Component {
 
 // TODO: real proptypes
 Slideshow.propTypes = {
-  collection: PropTypes.array,
+  collection: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 Slideshow.defaultProps = {
 }
