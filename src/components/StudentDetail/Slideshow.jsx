@@ -73,18 +73,18 @@ class Slideshow extends Component {
     }
   }
 
-  // Get the active slides for a given collection based on position
+  // Get the active slides for a given collection based on position.
   getThumbs(collection) {
     const lastPosition = collection.length - 1
     const { currentPosition } = this.state
     const viewableSlides = this.getSlideIndices(currentPosition)
-    // Add the slides that should appear before the active slide
-    let slides = viewableSlides.previousSlides.map((slideIndex) => {
-      return this.generateSlide(
+    // Add the slides that should appear before the active slide.
+    let slides = viewableSlides.previousSlides.map(slideIndex =>
+      this.generateSlide(
         collection[slideIndex], slideIndex, lastPosition, this.slideRewind
       )
-    })
-    // Add the active slide
+    )
+    // Add the active slide.
     slides.push(
       this.generateSlide(
         collection[currentPosition], currentPosition, lastPosition, null
@@ -103,28 +103,29 @@ class Slideshow extends Component {
 
   // Process work data to generate slide
   generateSlide(slideItem, slideIndex, lastPosition, handleClick) {
-    const { work } = slideItem
+    console.log(slideItem)
+    const { image } = slideItem
     const { currentPosition } = this.state
     const videoInfo = {}
     let imgSrc
     // work is sometimes undefined. check for info in work.url and set the
     // image source.
-    if (work) {
-      if (work.url) {
-        imgSrc = work.url.href
+    if (image) {
+      if (image.url) {
+        imgSrc = image.url
       }
     }
     // If it's an embeddable thing with html and the active slide
-    if (work && work.data && currentPosition === slideIndex) {
-      if (work.data.html) {
-        videoInfo.provider = work.provider.name
-        videoInfo.url = work.url
-      }
-    } else if (work && work.data && currentPosition !== slideIndex) {
-      if (work.data.html) {
-        imgSrc = work.preview.image.url
-      }
-    }
+    // if (work && work.data && currentPosition === slideIndex) {
+    //   if (work.data.html) {
+    //     videoInfo.provider = work.provider.name
+    //     videoInfo.url = work.url
+    //   }
+    // } else if (work && work.data && currentPosition !== slideIndex) {
+    //   if (work.data.html) {
+    //     imgSrc = work.preview.image.url
+    //   }
+    // }
     return (
       <SlideThumb
         key={imgSrc}

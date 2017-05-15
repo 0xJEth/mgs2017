@@ -31,7 +31,7 @@ export const medium = {
   type: 'text',
   position: 4,
 }
-export const sortOrder = {
+export const position = {
   name: 'Sort Order',
   min: 0,
   max: 20,
