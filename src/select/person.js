@@ -1,5 +1,5 @@
 import { mapValues, merge, overSome } from 'lodash'
-import { filter, flow, keyBy, map, matchesProperty } from 'lodash/fp'
+import { filter, flow, get, keyBy, map, matchesProperty } from 'lodash/fp'
 import { createSelector } from 'reselect'
 import { setField, setWith } from 'cape-lodash'
 import { entityTypeSelector } from 'redux-graph'
@@ -10,7 +10,8 @@ export const getHasDetail = overSome([
 ])
 export const personFill = flow(
   setWith('emailParts', 'email', getEmailParts),
-  setField('hasDetail', getHasDetail)
+  setField('hasDetail', getHasDetail),
+  setField('personId', get('id'))
 )
 // Limit to mica.edu people. Key by email username.
 // @TODO will need to add artwork?
