@@ -12,7 +12,7 @@ function Main({ art, statement }) {
   return (
     <div className="student-main">
       { art && <Slideshow collection={art} /> }
-      <NoImages />
+      {!art && <NoImages /> }
       <div className="container flex">
         {/* <ProgramList {...user} /> */}
         { statement &&
