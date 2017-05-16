@@ -6,15 +6,7 @@ import LinkEl from 'cape-mixer/lib/Link'
 import Select from 'cape-mixer/lib/SelectEl'
 // import './Student.css'
 import { getLink } from '../Schedule/ShowGroup'
-
-function StudentLink({ children, detailUrl }) {
-  if (!detailUrl) return children
-  return <LinkEl href={detailUrl}>{children}</LinkEl>
-}
-StudentLink.propTypes = {
-  children: PropTypes.node.isRequired,
-  detailUrl: PropTypes.string.isRequired,
-}
+import StudentLink from '../StudentLink'
 
 function StudentEl(props) {
   const {
