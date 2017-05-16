@@ -1,18 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import css from 'cape-style'
+import Icon from 'cape-mixer/lib/Icon'
+import css from 'cape-style'
 
 function slideNavigation({ slideAdvance, slideRewind }) {
   return (
     <ul className="thumbs-navigation">
       <li>
         <button onClick={slideRewind}>
-          <i className="fa fa-chevron-circle-left fa-5x" />
+          <Icon
+            hidden
+            symbol="arrow-left-bold-circle"
+            className="fa-5x"
+          />
         </button>
       </li>
       <li>
         <button onClick={slideAdvance}>
-          <i className="fa fa-chevron-circle-right fa-5x" />
+          <Icon
+            hidden
+            symbol="arrow-right-bold-circle"
+            className="fa-5x"
+          />
         </button>
       </li>
     </ul>

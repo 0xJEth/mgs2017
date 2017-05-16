@@ -1172,23 +1172,26 @@ li.artwork a {
   border-top: 1px solid;
   border-bottom: 1px solid;
   margin: 2rem -4rem 1rem -4rem;
-  padding: 1rem 0 ;
+  padding: 2rem 0;
   width: calc(100% + 8rem);
   min-height: 600px;
 }
-#slideshow .thumbs {
-  position: absolute;
-  padding: 0;
+#slideshow ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: block;
   text-align: center;
-  width: 5000%;
+  position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
-
+/** slides **/
+#slideshow .thumbs {
+  position: absolute;
+  text-align: center;
+  width: 5000%;
+}
 #slideshow .thumbs li {
   opacity: .3333333333;
   transition: all 300ms;
@@ -1198,49 +1201,49 @@ li.artwork a {
   box-shadow: 0 0 0 0 rgba(0,0,0,0);
   z-index: 1;
 }
-
 #slideshow .thumbs li.active{
   opacity: 1;
   background-color:white;
   box-shadow: 0 0 1.25rem 0 rgba(0,0,0,.5);
   left: 50%;
-  transform: translate(-50%,1%) scale(1.05);
+  transform: translate(-50%,0) scale(1.05);
   z-index: 2;
   position: absolute;
 }
-
 #slideshow .thumbs li.first.last.active {
   position: static;
   left: initial;
-  transform: translate(0,1%) scale(1.05);
+  transform: translate(0,0) scale(1.05);
 }
-
 #slideshow .thumbs li img {
   height: 500px;
   width: auto;
   display: block;
   max-width: none;
 }
-/** slideshow strip buttons **/
+/** slideshow left/right buttons **/
 ul.thumbs-navigation {
-  padding: 0;
-  list-style: none;
-  text-align: center;
+  top:0;
+  bottom:0;
+  width: 100%;
 }
 ul.thumbs-navigation li button {
   border: none;
   background: transparent;
-  color: rgba(0,0,0,.33);
+  color: #655700;
   display: block;
   height: 5rem;
   width: 5rem;
   position: absolute;
-  top:200px;
+  top: calc(50% - 2.5rem);
+  z-index: 10;
   transition: all 222ms;
+  opacity: .3;
 }
 ul.thumbs-navigation li:hover button,
 ul.thumbs-navigation li button:hover {
-  color: rgba(254,219,000,1);
+  color: #fedb00;
+  opacity: 1;
 }
 ul.thumbs-navigation li:first-child button {
   left: 10%;
@@ -1250,16 +1253,8 @@ ul.thumbs-navigation li:last-child button {
 }
 /** slideshow strip indicators **/
 ul.thumbs-indicator {
-  margin: 2rem 0;
-  padding: 0;
-  list-style: none;
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 1rem;
 }
-
 ul.thumbs-indicator li {
   display: inline-block;
   margin: 0 .25rem;
