@@ -1,15 +1,15 @@
 import { find, flow, get, mapValues } from 'lodash'
 import { setField } from 'cape-lodash'
 import { createSelector, createStructuredSelector } from 'reselect'
-import { buildFullEntity } from 'redux-graph'
+import { buildFullEntity, entityTypeSelector } from 'redux-graph'
 import { makeSearchString } from '../components/Search'
 
 import { getStudent } from './person'
-import { getProgramFull } from './program'
+// import { getProgramFull } from './program'
 import { getShowFull, studentShows } from './show'
 
 export const selectGraph = createStructuredSelector({
-  Program: getProgramFull,
+  Program: entityTypeSelector('Program'),
   Show: getShowFull,
   Student: getStudent,
 })

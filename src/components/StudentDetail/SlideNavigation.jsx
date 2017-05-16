@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Icon from 'cape-mixer/lib/Icon'
-import css from 'cape-style'
+// import css from 'cape-style'
 
 function slideNavigation({ slideAdvance, slideRewind }) {
   return (
