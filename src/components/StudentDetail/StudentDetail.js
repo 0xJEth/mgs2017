@@ -1,13 +1,19 @@
 import { connect } from 'react-redux'
-import { createStructuredSelector } from 'reselect'
+import { createSelector, createStructuredSelector } from 'reselect'
 import { getProp, getSelect } from 'cape-select'
 import { studentsFilled } from '../../select/student'
+import { artGraph, addStudentArt } from '../../select/art'
 import Component from './StudentDetailEl'
 import { closePopup } from './back'
 
-export const getEntity = getSelect(
+export const getStudent = getSelect(
   studentsFilled,
   getProp('params.studentId'),
+)
+export const getEntity = createSelector(
+  artGraph,
+  getStudent,
+  addStudentArt
 )
 export const getState = createStructuredSelector({
   student: getEntity,

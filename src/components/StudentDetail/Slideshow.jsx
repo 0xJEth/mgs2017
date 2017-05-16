@@ -1,9 +1,10 @@
 import React, { Component, PropTypes } from 'react'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import ReactCSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
 // import { Link, Navigation } from 'react-router'
 import classnames from 'classnames'
 
 import SlideNavigation from './SlideNavigation'
+import SlideThumb from './SlideThumb'
 
 class Slideshow extends Component {
 
@@ -72,18 +73,18 @@ class Slideshow extends Component {
     }
   }
 
-  // Get the active slides for a given collection based on position
+  // Get the active slides for a given collection based on position.
   getThumbs(collection) {
     const lastPosition = collection.length - 1
     const { currentPosition } = this.state
     const viewableSlides = this.getSlideIndices(currentPosition)
-    // Add the slides that should appear before the active slide
-    let slides = viewableSlides.previousSlides.map((slideIndex) => {
-      return this.generateSlide(
+    // Add the slides that should appear before the active slide.
+    let slides = viewableSlides.previousSlides.map(slideIndex =>
+      this.generateSlide(
         collection[slideIndex], slideIndex, lastPosition, this.slideRewind
       )
-    })
-    // Add the active slide
+    )
+    // Add the active slide.
     slides.push(
       this.generateSlide(
         collection[currentPosition], currentPosition, lastPosition, null
@@ -91,44 +92,44 @@ class Slideshow extends Component {
     )
     // Add the slides that should appear before the active slide
     slides = slides.concat(
-      viewableSlides.nextSlides.map((slideIndex) => {
-        return this.generateSlide(
+      viewableSlides.nextSlides.map(slideIndex =>
+        this.generateSlide(
           collection[slideIndex], slideIndex, lastPosition, this.slideAdvance
         )
-      })
+      )
     )
     return slides
   }
 
   // Process work data to generate slide
   generateSlide(slideItem, slideIndex, lastPosition, handleClick) {
-    const { work } = slideItem
+    const { id, image, title } = slideItem
     const { currentPosition } = this.state
     const videoInfo = {}
     let imgSrc
     // work is sometimes undefined. check for info in work.url and set the
     // image source.
-    if (work) {
-      if (work.url) {
-        imgSrc = work.url.href
+    if (image) {
+      if (image.url) {
+        imgSrc = image.url
       }
     }
     // If it's an embeddable thing with html and the active slide
-    if (work && work.data && currentPosition === slideIndex) {
-      if (work.data.html) {
-        videoInfo.provider = work.provider.name
-        videoInfo.url = work.url
-      }
-    } else if (work && work.data && currentPosition !== slideIndex) {
-      if (work.data.html) {
-        imgSrc = work.preview.image.url
-      }
-    }
+    // if (work && work.data && currentPosition === slideIndex) {
+    //   if (work.data.html) {
+    //     videoInfo.provider = work.provider.name
+    //     videoInfo.url = work.url
+    //   }
+    // } else if (work && work.data && currentPosition !== slideIndex) {
+    //   if (work.data.html) {
+    //     imgSrc = work.preview.image.url
+    //   }
+    // }
     return (
       <SlideThumb
-        key={imgSrc}
+        key={id}
         src={imgSrc}
-        title={slideItem.title}
+        title={title}
         currentPosition={currentPosition}
         videoInfo={videoInfo}
         handleClick={handleClick}
@@ -157,13 +158,7 @@ class Slideshow extends Component {
           })}
         >
           { activeSlide ?
-              <span className="active">
-                {index}
-              </span>
-            :
-              <span>
-                {index}
-              </span>
+            <span className="active">{index}</span> : <span>{index}</span>
           }
         </li>
       )
@@ -237,10 +232,10 @@ class Slideshow extends Component {
           </ReactCSSTransitionGroup>
         </ul>
         { collectionExists &&
-            <SlideNavigation
-              slideAdvance={this.slideAdvance}
-              slideRewind={this.slideRewind}
-            />
+          <SlideNavigation
+            slideAdvance={this.slideAdvance}
+            slideRewind={this.slideRewind}
+          />
         }
         {slideIndicators}
       </div>
@@ -251,8 +246,7 @@ class Slideshow extends Component {
 
 // TODO: real proptypes
 Slideshow.propTypes = {
-  user: PropTypes.object,
-  collection: PropTypes.array,
+  collection: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 Slideshow.defaultProps = {
 }

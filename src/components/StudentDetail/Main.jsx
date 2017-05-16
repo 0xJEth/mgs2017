@@ -4,20 +4,14 @@ import marked from 'marked'
 // import css from 'cape-style'
 import mgsBlock from '../../mgs2017LogoBlock.svg'
 
-// import Slideshow from './Slideshow'
+import Slideshow from './Slideshow'
 import NoImages from './NoImages'
 // import ProgramList from './ProgramList'
 
-function Main({ statement }) {
+function Main({ art, statement }) {
   return (
     <div className="student-main">
-      {/* { collection && collection.length ?
-          <Slideshow
-            user={user}
-            collection={collection}
-          />
-        :
-      } */}
+      { art && <Slideshow collection={art} /> }
       <NoImages />
       <div className="container flex">
         {/* <ProgramList {...user} /> */}
@@ -36,7 +30,7 @@ function Main({ statement }) {
 }
 
 Main.propTypes = {
-  // collection: PropTypes.objectOf(PropTypes.array).isRequired,
+  art: PropTypes.arrayOf(PropTypes.object).isRequired,
   statement: PropTypes.string,
 }
 Main.defaultProps = {

@@ -1,19 +1,23 @@
-import { map, mapValues, zipObject } from 'lodash'
+import { flow, identity, map, mapValues, zipObject } from 'lodash'
 import { buildFullEntity, entityTypeSelector, selectGraph } from 'redux-graph'
 import { createSelector, createStructuredSelector } from 'reselect'
 
 export function getGraphSlice(refTypeIds) {
-  return createStructuredSelector(zipObject(refTypeIds, map(refTypeIds, entityTypeSelector)))
+  const structSelect = zipObject(refTypeIds, map(refTypeIds, entityTypeSelector))
+  return createStructuredSelector(structSelect)
+}
+export function buildFullEntities(graph, graphType) {
+  return mapValues(graphType, buildFullEntity(0, graph))
+}
+export function itemsFilled(itemFill = identity) {
+  return (graph, graphType) => mapValues(graphType, flow(buildFullEntity(0, graph), itemFill))
+}
+// Extract specific ref entity types. Take refs of typeId and fill them in.
+export function itemFiller(typeId, refTypeIds, itemFill) {
+  const getGraphState = (!refTypeIds) ? selectGraph : getGraphSlice(refTypeIds)
+  return createSelector(getGraphState, entityTypeSelector(typeId), itemsFilled(itemFill))
 }
 
-export function itemFiller(typeId, refTypeIds) {
-  const getGraphState = (!refTypeIds) ? selectGraph : getGraphSlice(refTypeIds)
-  return createSelector(
-    getGraphState,
-    entityTypeSelector(typeId),
-    (graph, graphType) => mapValues(graphType, buildFullEntity(0, graph))
-  )
-}
 export function getEmailParts(email) {
   return (email && email.toLowerCase().split('@')) || []
 }
