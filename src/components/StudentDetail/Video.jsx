@@ -37,8 +37,6 @@ Video.propTypes = {
 Video.defaultProps = {
   frameBorder: '0',
   allowFullScreen: true,
-  mozAllowFullScreen: true,
-  webkitAllowFullScreen: true,
 }
 
 export default Video
