@@ -29,7 +29,10 @@ function Video({ provider, url, ...rest }) {
 
 Video.propTypes = {
   provider: PropTypes.string.isRequired,
-  url: PropTypes.objectOf(PropTypes.object).isRequired,
+  url: PropTypes.shape({
+    pathname: PropTypes.string,
+    query: PropTypes.object,
+  }).isRequired,
 }
 Video.defaultProps = {
   frameBorder: '0',
