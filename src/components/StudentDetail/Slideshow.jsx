@@ -222,7 +222,7 @@ class Slideshow extends Component {
 
     return (
       <div id="slideshow">
-        <ul className="thumbs clearfix">
+        <ul className="thumbs">
           <ReactCSSTransitionGroup
             transitionName={animation}
             transitionEnterTimeout={500}
