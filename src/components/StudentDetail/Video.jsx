@@ -20,10 +20,12 @@ function getSrc(provider, url) {
 function Video({ provider, url, ...rest }) {
   const src = getSrc(provider, url)
   return (
-    <iframe
-      {...rest}
-      src={src}
-    />
+    <div className="videoContainer">
+      <iframe
+        {...rest}
+        src={src}
+      />
+    </div>
   )
 }
 

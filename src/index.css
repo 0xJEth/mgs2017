@@ -1200,6 +1200,7 @@ li.artwork a {
   margin-right: .25rem;
   box-shadow: 0 0 0 0 rgba(0,0,0,0);
   z-index: 1;
+  position: relative;
 }
 #slideshow .thumbs li.active{
   opacity: 1;
@@ -1221,10 +1222,22 @@ li.artwork a {
   display: block;
   max-width: none;
 }
+#slideshow .videoContainer {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  width: 700px;
+}
+#slideshow .videoContainer iframe {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 /** slideshow left/right buttons **/
 ul.thumbs-navigation {
-  top:0;
-  bottom:0;
   width: 100%;
 }
 ul.thumbs-navigation li button {
@@ -1235,7 +1248,7 @@ ul.thumbs-navigation li button {
   height: 5rem;
   width: 5rem;
   position: absolute;
-  top: calc(50% - 2.5rem);
+  top: calc(250px - 2.5rem);
   z-index: 10;
   transition: all 222ms;
   opacity: .3;
