@@ -5,7 +5,9 @@ import { setField, setWith } from 'cape-lodash'
 import { entityTypeSelector } from 'redux-graph'
 import { getEmailParts } from './util'
 
-export const getHasDetail = overSome(['statement'])
+export const getHasDetail = overSome([
+  'statement', 'rangeIncludes.agent',
+])
 export const personFill = flow(
   setWith('emailParts', 'email', getEmailParts),
   setField('hasDetail', getHasDetail)
