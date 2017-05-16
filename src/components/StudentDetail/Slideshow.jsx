@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import { isObject } from 'lodash'
 import ReactCSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
 // import { Link, Navigation } from 'react-router'
 import classnames from 'classnames'
@@ -103,7 +104,7 @@ class Slideshow extends Component {
 
   // Process work data to generate slide
   generateSlide(slideItem, slideIndex, lastPosition, handleClick) {
-    const { id, image, title } = slideItem
+    const { associatedMedia, id, image, title } = slideItem
     const { currentPosition } = this.state
     const videoInfo = {}
     let imgSrc
@@ -115,16 +116,17 @@ class Slideshow extends Component {
       }
     }
     // If it's an embeddable thing with html and the active slide
-    // if (work && work.data && currentPosition === slideIndex) {
-    //   if (work.data.html) {
-    //     videoInfo.provider = work.provider.name
-    //     videoInfo.url = work.url
-    //   }
-    // } else if (work && work.data && currentPosition !== slideIndex) {
-    //   if (work.data.html) {
-    //     imgSrc = work.preview.image.url
-    //   }
-    // }
+    if (isObject(associatedMedia)) {
+      if (currentPosition === slideIndex) {
+        if (associatedMedia.html) {
+          videoInfo.provider = associatedMedia.provider.name
+          videoInfo.url = associatedMedia.url
+        }
+      }
+      if (associatedMedia.html) {
+        imgSrc = imgSrc || associatedMedia.image.url
+      }
+    }
     return (
       <SlideThumb
         key={id}
