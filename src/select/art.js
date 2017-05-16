@@ -1,5 +1,4 @@
-// import { filter } from 'lodash'
-import { flow, get, mapValues, pickBy, sortBy } from 'lodash/fp'
+import { filter, flow, get, mapValues, pickBy, sortBy } from 'lodash/fp'
 import { setField } from 'cape-lodash'
 import { buildFullEntity, getGraphNode } from 'redux-graph'
 // import { createSelector } from 'reselect'
@@ -24,7 +23,12 @@ export function expandGetFullEntities(graphSlice) {
 export function addStudentArt(graphSlice, student) {
   if (!student) return null
   return setField('art',
-    flow(getArtRefs, expandGetFullEntities(graphSlice), sortBy(['position', 'title']))
+    flow(
+      getArtRefs,
+      expandGetFullEntities(graphSlice),
+      sortBy(['position', 'title']),
+      filter(item => item.image || item.associatedMedia)
+    )
   )(student)
 }
 // export const getArtwork = createSelector(userIsAgentOf, getArtItems, getArtRefs)
