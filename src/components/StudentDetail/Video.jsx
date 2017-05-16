@@ -1,15 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import css from 'cape-style'
+// import css from 'cape-style'
 
 function getSrc(provider, url) {
   let src = ''
   switch (provider) {
     case 'Vimeo':
-      src = 'https://player.vimeo.com/video' + url.pathname
+      src = `https://player.vimeo.com/video${url.pathname}`
       break
     case 'YouTube':
-      src = 'https://www.youtube.com/embed/' + url.query.v
+      src = `https://www.youtube.com/embed/${url.query.v}`
       break
     default:
       break
