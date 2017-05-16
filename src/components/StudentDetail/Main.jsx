@@ -6,7 +6,7 @@ import mgsBlock from '../../mgs2017LogoBlock.svg'
 
 import Slideshow from './Slideshow'
 import NoImages from './NoImages'
-// import ProgramList from './ProgramList'
+import ProgramList from './ProgramList'
 
 function Main({ art, statement }) {
   return (
@@ -14,7 +14,7 @@ function Main({ art, statement }) {
       { art && <Slideshow collection={art} /> }
       {!art && <NoImages /> }
       <div className="container flex">
-        {/* <ProgramList {...user} /> */}
+        <ProgramList />
         { statement &&
           <div
             className="statement w50"
