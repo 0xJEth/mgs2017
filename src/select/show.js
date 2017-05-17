@@ -63,7 +63,7 @@ function setProgram(result, value) {
   forEach(program, prog => set(result, [prog.id, id], name))
   return result
 }
-export const showByProgram = flow(
+export const showByProgram = createSelector(
   getShowFull,
   transform(setProgram, undefined)
 )

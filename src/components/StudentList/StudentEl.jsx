@@ -10,7 +10,7 @@ import StudentLink from '../StudentLink'
 
 function StudentEl(props) {
   const {
-    detailUrl, name, show, url, email, program, saveShow, shows, showGroup,
+    detailUrl, id, name, show, url, email, program, saveShow, shows, showGroup,
     facebook, instagram, soundcloud, twitter, vimeo, youtube,
   } = props
   const emailStr = `mailto:${email}`
@@ -22,7 +22,7 @@ function StudentEl(props) {
   const youtubeStr = `https://www.youtube.com/${youtube}`
 
   return (
-    <li className="student" style={css('p0p5 pl2 pr2 bb')}>
+    <li className="student" style={css('p0p5 pl2 pr2 bb')} id={id}>
       <span className="name">
         <StudentLink detailUrl={detailUrl}><strong>{ name }</strong></StudentLink>
       </span>
@@ -51,6 +51,7 @@ function StudentEl(props) {
 
 StudentEl.propTypes = {
   detailUrl: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   program: PropTypes.shape({
     name: PropTypes.string,
