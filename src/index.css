@@ -195,7 +195,7 @@ a:hover {
   .tenth    { width: calc( 100% / 10); }
 }
 
-page, flex, .flex, .item-grid, .studentList, .menu, li.artwork, .student { display: flex; }
+page, flex, .flex, .item-grid, detail .studentList, .menu, li.artwork, .student { display: flex; }
 flex, detail .flex, detail .studentList, #student-overlay .wrapper, .student { flex-wrap: wrap; }
 
 page {
