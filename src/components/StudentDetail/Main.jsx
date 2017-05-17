@@ -31,10 +31,9 @@ function Main({ art, statement }) {
 
 Main.propTypes = {
   art: PropTypes.arrayOf(PropTypes.object).isRequired,
-  statement: PropTypes.string,
+  statement: PropTypes.string.isRequired,
 }
 Main.defaultProps = {
-  statement: 'Beans coffee, cortado body arabica barista americano...',
 }
 
 export default Main

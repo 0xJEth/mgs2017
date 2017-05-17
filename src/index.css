@@ -350,12 +350,17 @@ detail .studentList {
   font-size: .8rem;
   order: 3;
   flex-direction: column;
+  line-height: 1.375;
 }
-
+.studentList a {
+  border-bottom-color: #fedb00;
+}
 detail .studentList > ul {
   width: 50%;
 }
-
+.studentList > ul li {
+  margin-bottom: .125em;
+}
 detail .google-map-container {
   order: 2;
 }
@@ -1123,7 +1128,6 @@ li.artwork a {
   min-height: 100%;
   flex-direction: column;
 }
-
 .student-details {
   margin-bottom: 3rem;
 }
@@ -1136,6 +1140,9 @@ li.artwork a {
   margin-right: auto;
   flex-direction: column;
   text-align: center;
+}
+#student-overlay .student-main .container {
+  justify-content: space-around;
 }
 .info .social > ul {
   justify-content: center;
@@ -1160,6 +1167,9 @@ li.artwork a {
   border-bottom: 1px solid;
   margin: 2rem -4rem 1rem -4rem;
   width: calc(100% + 8rem);
+}
+#student-overlay .logo {
+  margin-bottom: 3rem;
 }
 #student-overlay .logo img {
   vertical-align: top;
