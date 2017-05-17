@@ -8,13 +8,13 @@ import Slideshow from './Slideshow'
 import NoImages from './NoImages'
 import ProgramList from './ProgramList'
 
-function Main({ art, statement }) {
+function Main({ art, program, statement }) {
   return (
     <div className="student-main">
       { art && <Slideshow collection={art} /> }
       {!art && <NoImages /> }
       <div className="container flex">
-        <ProgramList />
+        <ProgramList {...program} />
         { statement &&
           <div
             className="statement w50"
@@ -32,6 +32,9 @@ function Main({ art, statement }) {
 Main.propTypes = {
   art: PropTypes.arrayOf(PropTypes.object).isRequired,
   statement: PropTypes.string.isRequired,
+  program: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+  }).isRequired,
 }
 Main.defaultProps = {
 }

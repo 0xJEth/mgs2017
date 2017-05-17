@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { find, map, size } from 'lodash'
 import css from 'cape-style'
-import StudentLink from '../StudentLink'
+import Peers from '../Peers'
 
 function LocationItem({ location, students }) {
   if (!location) return <p>No location.</p>
@@ -14,15 +14,7 @@ function LocationItem({ location, students }) {
           Open: {galleryHours}
         </div>
       }
-      {size(students) > 0 &&
-        <ul style={css('mt0p5 mb2 p0 lsNone')} className="studentList">
-          {map(students, item => (
-            <li key={item.id}>
-              <StudentLink {...item}><span className="name">{item.name}</span></StudentLink>
-            </li>
-          ))}
-        </ul>
-      }
+      {size(students) > 0 && <Peers students={students} />}
     </li>
   )
 }
